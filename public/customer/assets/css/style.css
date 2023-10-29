@@ -2677,7 +2677,7 @@ blockquote .author .desc {
 	margin-bottom: 10px;
 }
 .stelina-iconbox-wrapp.default {
-	background: #ab8e66;
+	background: #4885f0;
 	padding: 50px 0;
 }
 .stelina-iconbox-wrapp.layout2 .stelina-iconbox.default .iconbox-inner .content .title {
@@ -6112,7 +6112,7 @@ ul.list-products {
 	display: inline-block;
 }
 .stelina-tabs .tab-link li.active a {
-	background-color: #ab8e66;
+	background-color: #4885f0;
 	color: #fff;
 }
 /*stelina-blog*/
@@ -6404,7 +6404,7 @@ ul.list-products {
 -----------------home 02------------------
 =========================================*/
 .top-bar {
-	background: #ab8e66;
+	background: #4885f0;
 	padding: 10px 0;
 	color: #fff;
 }
@@ -7130,7 +7130,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 .stelina-newsletter.style3 .submit-newsletter {
 	min-width: 139px;
 	margin-left: 5px;
-	background-color: #ab8e66;
+	background-color: #4885f0;
 	color: #ffffff;
 	vertical-align: top;
 	font-size: 14px;
@@ -8556,7 +8556,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 }
 /*banner home 02*/
 .item-banner.style4 .inner {
-	background-image: url(../images/banner-home-2.jpg);
+	background-image: url(../images/bestcoll.png);
 	background-size: cover;
 	background-position: 65% center;
 }
@@ -8577,7 +8577,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	max-width: 195px;
 }
 .item-banner.style5 .inner {
-	background-image: url(../images/banner-home-3.jpg);
+	background-image: url(../images/allpro1.png);
 	background-size: cover;
 	background-position: 65% center;
 }
@@ -8622,7 +8622,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 }
 /*banner home 03*/
 .item-banner.style7 .inner {
-	background-image: url(../images/banner-home-5.jpg);
+	background-image: url(../images/spdexuat.png);
 }
 .item-banner.style7 .banner-content {
 	padding-top: 59px;
@@ -8640,7 +8640,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	max-width: 185px;
 }
 .item-banner.style8 .inner {
-	background-image: url(../images/banner-home-6.jpg);
+	background-image: url(../images/spdexuat.png);
 }
 .item-banner.style8 .banner-content {
 	padding-top: 64px;
@@ -9289,7 +9289,7 @@ iframe {
 .stelina-newsletter.style1 .newsletter-form-wrap .submit-newsletter {
 	color: #fff;
 	width: 100%;
-	background: #ab8e66;
+	background: #4885f0;
 	height: 56px;
 	line-height: 56px;
 	padding: 0 15px;
@@ -10509,7 +10509,8 @@ iframe {
 		margin-bottom: 47px;
 	}
 	.logo img {
-		max-width: 140px;
+		max-width: 73px;
+		max-height: 270px;
 	}
 	.slick-dots {
 		margin-top: 25px;
@@ -11020,7 +11021,7 @@ iframe {
 .shopcart-description .actions .button-viewcart:hover, .kt-popup-quickview .mfp-close, .stelina-newsletter.style2 .newsletter-form-wrap .submit-newsletter:hover,
 .product-item.style-6 .loop-form-add-to-cart .button, .pinmap-buttom, .header-nav-wapper .vertical-wapper,
 .list-category .category-item:hover {
-	background-color: #ab8e66;
+	background-color: #4885f0;
 	
 }
 .product-item .button:hover,
@@ -11051,7 +11052,7 @@ a:hover, a:focus, a:active,
 .details-infor .group-button .yith-wcwl-add-to-wishlist div a:hover::before, .details-infor .group-button .size-chart-wrapp .btn-size-chart a:hover::before,
 .tab-details-product .tab-link li.active a, .review_form .comment-form-review .stars a.active, .review_form .comment-form-review .stars a:hover,
 .related .slick-slider.nav-center > .slick-arrow:hover, .up-sells .slick-slider.nav-center > .slick-arrow:hover, .slider-item .button:hover, .slick-slider.nav-center > .slick-arrow:hover {
-	color: #ab8e66;
+	color: #4885f0;
 	
 }
 .details-thumd .thumbnails_carousel .owl-item .active img {

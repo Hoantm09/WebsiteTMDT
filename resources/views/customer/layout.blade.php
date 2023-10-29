@@ -54,7 +54,7 @@
                     <div class="col-lg-3 col-sm-4 col-md-3 col-xs-7 col-ts-12 header-element">
                         <div class="logo">
                             <a href="/">
-                                <img src="{{ asset('customer/assets/.png') }}" alt="img">
+                                <img src="{{ asset('customer/assets/logo.png') }}" alt="img">
                             </a>
                         </div>
                     </div>
@@ -258,21 +258,22 @@
                     <div class="box-footer col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-sm hidden-md hidden-lg">
                         <div class="stelina-newsletter style1">
                             <div class="newsletter-head">
-                                <h3 class="title">ニュース</h3>
+                                <h3 class="title">Tin tức</h3>
                             </div>
                             <div class="newsletter-form-wrap">
                                 <div class="list">
-                                    SBTCメールマガジンは有限会社6789(SBTC SHOP)からのお知らせ、新製品のご案内などを読者の皆様にお届けするメールマガジンです。
+                                    Tạp chí thư SBTC là tạp chí thư cung cấp tin tức từ 6789 Ltd. (SBTC SHOP), thông tin về các sản phẩm mới, v.v. tới độc giả của chúng tôi.
                                 </div>
                                 <input type="email" class="input-text email email-newsletter"
                                        placeholder="Your email letter">
-                                <button class="button btn-submit submit-newsletter">会員登録</button>
+                                <button class="button btn-submit submit-newsletter">Đăng ký thành viên
+                                </button>
                             </div>
                         </div>
                     </div>
                     <div class="box-footer col-xs-12 col-sm-4 col-md-4 col-lg-4">
                         <div class="stelina-custommenu default">
-                            <h2 class="widgettitle">カテゴリ</h2>
+                            <h2 class="widgettitle">Loại mặt hàng</h2>
                             <ul class="menu category-list-footer">
 
                             </ul>
@@ -281,15 +282,16 @@
                     <div class="box-footer col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-xs">
                         <div class="stelina-newsletter style1">
                             <div class="newsletter-head">
-                                <h3 class="title">ニュース</h3>
+                                <h3 class="title">Tin tức</h3>
                             </div>
                             <div class="newsletter-form-wrap">
                                 <div class="list">
-                                    SBTCメールマガジンは株式会社6789(SBTC SHOP)からのお知らせ、新製品のご案内などを読者の皆様にお届けするメールマガジンです。
+                                    Tạp chí thư SBTC là tạp chí thư cung cấp tin tức từ Công ty TNHH 6789 (SBTC SHOP), thông tin về các sản phẩm mới, v.v. tới độc giả của chúng tôi.
                                 </div>
                                 <input type="email" class="input-text email email-newsletter"
                                        placeholder="Your email letter">
-                                <button class="button btn-submit submit-newsletter">会員登録</button>
+                                <button class="button btn-submit submit-newsletter">Đăng ký thành viên
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -301,7 +303,7 @@
                                     <a href="{{ route("customer.view.about") }}">About Us</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="{{ route("customer.view.rule_privacy") }}">プライバシーポリシー</a>
+                                    <a href="{{ route("customer.view.rule_privacy") }}">Chính sách bảo mật</a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="{{ route("customer.view.rule_pay") }}">Thanh Toán</a>
@@ -310,16 +312,16 @@
                                     <a href="{{ route("customer.view.rule_order") }}">Cách Thức Đặt Hàng</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="{{ route("customer.view.rule_back") }}">返品・交換について</a>
+                                    <a href="{{ route("customer.view.rule_back") }}">Đổi trả</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="{{ route("customer.view.rule_product") }}">商品について</a>
+                                    <a href="{{ route("customer.view.rule_product") }}">Về sản phẩm</a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="{{ route("customer.view.rule_ship") }}">Giao Hàng</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="{{ route("customer.view.rule_recruit") }}">採用情報</a>
+                                    <a href="{{ route("customer.view.rule_recruit") }}">Thông tin tuyển dụng</a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="{{ route("customer.view.contact") }}">Liên Hện Với Chúng Tôi</a>
@@ -334,12 +336,12 @@
                             <div class="stelina-socials">
                                 <ul class="socials">
                                     <li>
-                                        <a href="https://www.facebook.com/sbtc.co.ltd" class="social-item" target="_blank">
+                                        <a href="https://www.facebook.com" class="social-item" target="_blank">
                                             <i class="icon fa fa-facebook"></i>
                                         </a>
                                     </li> 
                                     <li>
-                                        <a href="https://www.instagram.com/6789.co.ltd/" class="social-item" target="_blank">
+                                        <a href="https://www.instagram.com" class="social-item" target="_blank">
                                             <i class="icon fa fa-instagram"></i>
                                         </a>
                                     </li>

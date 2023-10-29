@@ -53,7 +53,7 @@
         <div class="stelina-product produc-featured rows-space-65">
             <div class="container">
                 <h3 class="custommenu-title-blog">
-                    今日の取引
+                    Today's Deals
                 </h3>
                 <div class="owl-products owl-slick equal-container nav-center product-new-list"
                      data-slick='{"autoplay":false, "autoplaySpeed":1000, "arrows":false, "dots":true, "infinite":false, "speed":800, "rows":1}'
@@ -121,10 +121,10 @@
                             <a data-toggle="tab" aria-expanded="true" href="#bestseller">Bestseller</a>
                         </li> -->
                         <li class="active">
-                            <a data-toggle="tab" aria-expanded="true" href="#new_arrivals">新着</a>
+                            <a data-toggle="tab" aria-expanded="true" href="#new_arrivals">New</a>
                         </li>
                         <li class="">
-                            <a data-toggle="tab" aria-expanded="true" href="#top-rated">上面図</a>
+                            <a data-toggle="tab" aria-expanded="true" href="#top-rated">Top View</a>
                         </li>
                     </ul>
                 </div>
@@ -157,10 +157,10 @@
                                 </div>
                                 <div class="content">
                                     <h4 class="title">
-                                        宅配便/無料配送
+                                        Chuyển phát nhanh/Giao hàng miễn phí
                                     </h4>
                                     <div class="text">
-                                        離島･一部地域は追加送料がかかる場合があります。
+                                        Phí vận chuyển bổ sung có thể áp dụng cho các đảo xa và một số khu vực.
                                     </div>
                                 </div>
                             </div>
@@ -174,10 +174,10 @@
                                 </div>
                                 <div class="content">
                                     <h4 class="title">
-                                        ー返品・交換は可能？
+                                        Có thể trả/trao đổi được không?
                                     </h4>
                                     <div class="text">
-                                        商品到着後3日以内、未使用(未開封) <br> 未通電の場合に限り返品・交換をお受け致します。
+                                        Chúng tôi sẽ chỉ chấp nhận trả lại hoặc trao đổi nếu sản phẩm chưa được sử dụng (chưa mở) và không được cấp nguồn trong vòng 3 ngày kể từ ngày nhận sản phẩm.
                                     </div>
                                 </div>
                             </div>
@@ -191,10 +191,10 @@
                                 </div>
                                 <div class="content">
                                     <h4 class="title">
-                                        個人情報保護
+                                        Bảo vệ thông tin cá nhân
                                     </h4>
                                     <div class="text">
-                                        これらの情報をSBTCが扱う場合、いかなる取扱いケースに於いても第三者への漏えいが無きよう、 細心の注意と最高水準のセキュリティーを以って取扱いをいたします。
+                                        Khi SBTC xử lý thông tin này, chúng tôi sẽ đảm bảo không rò rỉ thông tin cho bên thứ ba trong mọi trường hợp xử lý. Chúng tôi sẽ xử lý thông tin của bạn với sự cẩn trọng tối đa và tiêu chuẩn bảo mật cao nhất.
                                     </div>
                                 </div>
                             </div>
