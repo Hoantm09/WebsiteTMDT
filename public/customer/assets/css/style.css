@@ -8577,9 +8577,9 @@ body.vertical-menu-open .vertical-menu-overlay {
 	max-width: 195px;
 }
 .item-banner.style5 .inner {
-	background-image: url(../images/allpro1.png);
-	background-size: cover;
-	background-position: 65% center;
+	background-image: url(../images/noicom.png);
+	background-position: right center ;
+	background-size: 45% auto;
 }
 .item-banner.style5 .banner-content {
 	padding-left: 40px;
