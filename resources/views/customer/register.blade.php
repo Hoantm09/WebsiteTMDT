@@ -41,13 +41,13 @@
 											<div class="row">
 												<div class="col-lg-6 col-md-6 col-sm-6">
 													<p class="form-row form-row-wide">
-														<label class="text">Họ đệm <span class="required-data">Bắt buộc</span></label>
+														<label class="text">Họ đệm </label>
 														<input title="Bắt buộc" type="text" class="input-text data-name-first" placeholder="Nguyễn Văn">
 													</p>
 												</div>
 												<div class="col-lg-6 col-md-6 col-sm-6">
 													<p class="form-row form-row-wide">
-														<label class="text">Tên <span class="required-data">Bắt buộc</span></label>
+														<label class="text">Tên </label>
 														<input title="Bắt buộc" type="text" class="input-text data-kana-first" placeholder="An">
 													</p>
 												</div>
@@ -74,7 +74,7 @@
 											<div class="row">
 												<div class="col-lg-4 col-md-4 col-sm-12">
 													<p class="form-row form-row-wide">
-														<label class="text">Tỉnh/Thành phố <span class="required-data">Bắt buộc</span></label>
+														<label class="text">Tỉnh/Thành phố </label>
 														<select  class="form-select-wrapper data-address-city"> 
 															<option value="" selected="selected">Chọn tỉnh/thành phố</option>
                                                             <script>
@@ -99,13 +99,13 @@
 												</div>  
 												<div class="col-lg-4 col-md-4 col-sm-12">
 													<p class="form-row form-row-wide">
-														<label class="text">Quận/Huyện <span class="required-data">Bắt buộc</span></label>
+														<label class="text">Quận/Huyện </label>
 														<input title="Địa chỉ" type="text" class="input-text data-address-munic" placeholder="Hoàng Mai"> 
 													</p>
 												</div>   
 												<div class="col-lg-4 col-md-4 col-sm-12">
 													<p class="form-row form-row-wide">
-														<label class="text">Địa chỉ nhà <span class="required-data">Bắt buộc</span></label>
+														<label class="text">Địa chỉ nhà </label>
 														<input title="ĐỊa chỉ" type="text" class="input-text data-address-detail" placeholder="16/1120 Giải Phóng"> 
 													</p>
 												</div>  
@@ -113,7 +113,7 @@
 											<div class="row">
 												<div class="col-lg-4 col-md-4 col-sm-12">
 													<p class="form-row form-row-wide">
-														<label class="text">Số điện thoại <span class="required-data">Bắt buộc</span></label>
+														<label class="text">Số điện thoại </label>
 														<input title="" type="text" class="input-text data-number data-phone" placeholder="0868888888"> 
 													</p>
 												</div>  
@@ -121,13 +121,13 @@
 											<div class="row">
 												<div class="col-lg-6 col-md-6 col-sm-12">
 													<p class="form-row form-row-wide">
-														<label class="text">Email đăng nhập <span class="required-data">Bắt buộc</span></label>
+														<label class="text">Email đăng nhập </label>
 														<input title="" type="text" class="input-text data-email" placeholder="Nhập email"> 
 													</p>
 												</div>  
 												<div class="col-lg-6 col-md-6 col-sm-12">
 													<p class="form-row form-row-wide">
-														<label class="text">Xác nhận email đăng nhập <span class="required-data">Bắt buộc</span></label>
+														<label class="text">Xác nhận email đăng nhập </label>
 														<input title="" type="text" class="input-text data-email-confirm" placeholder="Xác nhận email"> 
 													</p>
 												</div>  
@@ -135,13 +135,13 @@
 											<div class="row">
 												<div class="col-lg-6 col-md-6 col-sm-12">
 													<p class="form-row form-row-wide">
-														<label class="text">Mật khẩu <span class="required-data">Bắt buộc</span></label>
+														<label class="text">Mật khẩu </label>
 														<input title="" type="password" class="input-text data-password" placeholder="Nhập mật khẩu"> 
 													</p>
 												</div>  
 												<div class="col-lg-6 col-md-6 col-sm-12">
 													<p class="form-row form-row-wide">
-														<label class="text">Xác nhận mật khẩu <span class="required-data">Bắt buộc</span></label>
+														<label class="text">Xác nhận mật khẩu </label>
 														<input title="" type="password" class="input-text data-password-confirm" placeholder="Xác nhận mật khẩu"> 
 													</p>
 												</div>  

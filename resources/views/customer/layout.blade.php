@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>SBTC Shop - @yield('title')</title>
+    <title>HomeChoice Shop - @yield('title')</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,14 +34,14 @@
             <div class="container">
                 <div class="top-bar-left">
                     <div class="header-message">
-                        Welcome to our online store!
+                        Chào mừng đến với cửa hàng trực tuyến của chúng tôi!
                     </div>
                 </div>
                 <div class="top-bar-right"> 
                     <ul class="header-user-links">
                         <?php if (!$customer_data['is_login']): ?>  
                         <li>
-                            <a href="{{ route("customer.view.login") }}">LOGIN</a>
+                            <a href="{{ route("customer.view.login") }}">Đăng nhập</a>
                         </li>
                         <?php endif ?> 
                     </ul>
@@ -84,7 +84,7 @@
                         <div class="header-control">
                             <div class="block-minicart stelina-mini-cart block-header ">
                                 <a href="{{ route("customer.view.cart") }}" class="shopcart-icon" data-stelina="stelina-dropdown">
-                                    買い物かご
+                                    Giỏ hàng
                                     <span class="count"> 0 </span>
                                 </a> 
                             </div>
@@ -186,7 +186,7 @@
                                     <a href="/" class="stelina-menu-item-title" title="Home">Trang Chủ</a> 
                                 </li>
                                 <li class="menu-item">
-                                    <a href="{{ route("customer.view.about") }}" class="stelina-menu-item-title" title="About Us">About Us</a>  
+                                    <a href="{{ route("customer.view.about") }}" class="stelina-menu-item-title" title="About Us">Giới thiệu</a>  
                                 </li>  
                                 <li class="menu-item">
                                     <a href="{{ route("customer.view.rule_pay") }}">Thanh toán</a>
@@ -198,11 +198,9 @@
                                     <a href="{{ route("customer.view.rule_ship") }}">Giao Hàng</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="{{ route("customer.view.contact") }}">Liên Hệ Với Chúng Tôi</a>
+                                    <a href="{{ route("customer.view.contact") }}">Liên Hệ</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="{{ route("customer.view.iphone") }}">Iphone</a>
-                                </li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -262,7 +260,7 @@
                             </div>
                             <div class="newsletter-form-wrap">
                                 <div class="list">
-                                    Tạp chí thư SBTC là tạp chí thư cung cấp tin tức từ 6789 Ltd. (SBTC SHOP), thông tin về các sản phẩm mới, v.v. tới độc giả của chúng tôi.
+                                    Tạp chí thư HomeChoice là tạp chí thư cung cấp tin tức từ 6789 Ltd. (HomeChoice SHOP), thông tin về các sản phẩm mới, v.v. tới độc giả của chúng tôi.
                                 </div>
                                 <input type="email" class="input-text email email-newsletter"
                                        placeholder="Your email letter">
@@ -286,7 +284,7 @@
                             </div>
                             <div class="newsletter-form-wrap">
                                 <div class="list">
-                                    Tạp chí thư SBTC là tạp chí thư cung cấp tin tức từ Công ty TNHH 6789 (SBTC SHOP), thông tin về các sản phẩm mới, v.v. tới độc giả của chúng tôi.
+                                    Tạp chí thư HomeChoice là tạp chí thư cung cấp tin tức từ Công ty TNHH 6789 (HomeChoice SHOP), thông tin về các sản phẩm mới, v.v. tới độc giả của chúng tôi.
                                 </div>
                                 <input type="email" class="input-text email email-newsletter"
                                        placeholder="Your email letter">
@@ -297,10 +295,10 @@
                     </div>
                     <div class="box-footer col-xs-12 col-sm-4 col-md-4 col-lg-4">
                         <div class="stelina-custommenu default">
-                            <h2 class="widgettitle">About Us</h2>
+                            <h2 class="widgettitle">Giới thiệu</h2>
                             <ul class="menu">
                                 <li class="menu-item">
-                                    <a href="{{ route("customer.view.about") }}">About Us</a>
+                                    <a href="{{ route("customer.view.about") }}">Thông tin công ty</a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="{{ route("customer.view.rule_privacy") }}">Chính sách bảo mật</a>
@@ -349,7 +347,7 @@
                             </div>
                             <div class="coppyright">
                                 Copyright © 2022
-                                <a href="#">SBTC Shop</a>
+                                <a href="#">HomeChoice Shop</a>
                                 . All rights reserved
                             </div>
                         </div>
@@ -376,7 +374,7 @@
     							0
     						</span>
     					</span>
-                    <span class="text">ショッピングカート</span>
+                    <span class="text">Giỏ hàng</span>
                 </a>
             </div>
             <div class="footer-device-mobile-item device-home device-user">

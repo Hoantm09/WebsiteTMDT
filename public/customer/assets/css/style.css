@@ -37,7 +37,7 @@ REPONSIVE
 ============================================================================ */
 body {
 	font-family: Arial,Tahoma,sans-serif;
-	font-size: 16px;
+	font-size: 16px!important;
 	line-height: 26px;
 	color: #666;
 	overflow-x: hidden;
@@ -1842,8 +1842,8 @@ table tr:last-child td, table tr:last-child th {
 	cursor: pointer;
 	text-transform: uppercase;
 	font-weight: 600;
-	font-family: 'Jost';
-	letter-spacing: 0.05em;
+	font-family: 'Arial,Helvetica,sans-serif';
+	letter-spacing: 0em;
 	color: #000;
 }
 .main-menu > li.menu-item-has-children > a:after {
@@ -5357,6 +5357,24 @@ ul.list-products {
 	min-width: 155px;
 	color: #ffffff;
 }
+.card-deck {
+	list-style-type: none;
+	box-sizing: border-box
+}
+ .card-deck {
+	padding-bottom: 45px ;
+}
+.card-body .card-title {
+    font-size: 2.1rem;
+}
+/* .bd-example {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 0.2rem;
+	position: relative;
+	box-sizing: border-box
+} */ 
 .payment-method .form-row-card-number {
 	max-width: 360px;
 }
@@ -6711,12 +6729,26 @@ ul.list-products {
 /*slider-banner*/
 .home-slider-banner {
 	margin-bottom: 38px;
+	background-image:url(../images/.png);
+	background-repeat: no-repeat;
+
+	
 }
+/*back-ground test*/
+/* .col-lg-8  {
+height: 511px;
+background-image: url(../images/home.png);
+background-repeat: no-repeat;
+background-size: 30%;
+background-position: center;
+} */
 .home-slider-banner .silider-wrapp, .home-slider-banner .banner-wrapp {
 	padding: 0 10px;
-}
+	
 .home-slider-banner .silider-wrapp {
 	margin-bottom: 20px;
+	
+}
 }
 .slider-item.style7 .slider-inner {
 	background-image: url(../images/slider-thumb4.jpg);
@@ -7220,12 +7252,13 @@ body.vertical-menu-open .vertical-menu-overlay {
 	text-align: center;
 }
 .item-banner .banner-content.full-height .title {
-	font-size: 30px;
+	font-size: 35px;
 	letter-spacing: 0;
 	text-transform: uppercase;
 	line-height: 1.2;
 	margin-bottom: 20px;
 }
+
 .item-banner.style28 .banner-content {
 	padding-top: 50px;
 	padding-right: 30px;
@@ -8404,8 +8437,9 @@ body.vertical-menu-open .vertical-menu-overlay {
 	margin-bottom: 30px;
 }
 .item-banner .inner {
-	background-position: center;
+	background-position: right center;
 	background-repeat: no-repeat;
+	background-size: 46% auto;
 	border-radius: 0;
 	position: relative;
 	background-color: #f3f3f3;
@@ -8556,9 +8590,9 @@ body.vertical-menu-open .vertical-menu-overlay {
 }
 /*banner home 02*/
 .item-banner.style4 .inner {
-	background-image: url(../images/bestcoll.png);
-	background-size: cover;
-	background-position: 65% center;
+    background-image: url('https://api-omni.mutosi.com/v0/s3/view/l3KH-1653716825.png');
+    background-position: right center;
+    background-size: 50% auto;
 }
 .item-banner.style4 .banner-content {
 	padding-left: 40px;
@@ -8577,9 +8611,9 @@ body.vertical-menu-open .vertical-menu-overlay {
 	max-width: 195px;
 }
 .item-banner.style5 .inner {
-	background-image: url(../images/noicom.png);
-	background-position: right center ;
-	background-size: 45% auto;
+	background-image: url(https://bizweb.dktcdn.net/thumb/1024x1024/100/448/192/products/0134.png?v=1652956899577&fbclid=IwAR2N7sWAkbObWp_PwxUHNKVbjUrc5MyS0nzFYM2j5B-kqdz9eA1bwKOgEcw);
+	background-size: 40% auto;
+    background-position: 80% center;
 }
 .item-banner.style5 .banner-content {
 	padding-left: 40px;
@@ -8632,7 +8666,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	margin-bottom: 20px;
 }
 .item-banner.style7 .title, .item-banner.style8 .title {
-	font-size: 26px;
+	font-size: 20px;
 	line-height: 32px;
 }
 .item-banner.style7 .description {
@@ -8640,7 +8674,9 @@ body.vertical-menu-open .vertical-menu-overlay {
 	max-width: 185px;
 }
 .item-banner.style8 .inner {
-	background-image: url(../images/spdexuat.png);
+	background-image: url(../images/refrigator.png);
+	background-position: right center;
+	background-size: 40% auto;
 }
 .item-banner.style8 .banner-content {
 	padding-top: 64px;
@@ -9096,7 +9132,8 @@ iframe {
 	padding-top: 5px;
 }
 .item-banner.style17 .inner {
-	background-image: url(../images/banner-home-15.jpg);
+	background-image: url(https://www.robertthomashomes.com/wp-content/uploads/2020/03/Wesley-A-4562-Silverado-Drive-HCW02010003-23.jpg);
+	background-size: cover;
 }
 .item-banner.style17 .banner-content {
 	padding-top: 48px;
@@ -9106,11 +9143,13 @@ iframe {
 	text-align: center;
 }
 .item-banner.style17 .title {
+	color: white;
 	font-size: 34px;
 	line-height: 32px;
 	margin-bottom: 10px;
 }
 .item-banner.style17 .description {
+	color: white;
 	margin-bottom: 15px;
 }
 .item-banner.style17 .banner-price {
@@ -9528,7 +9567,7 @@ iframe {
 	.item-banner.style17 .title,
 	.item-banner.style4 .title, .item-banner.style5 .title, .item-banner.style7 .title, .item-banner.style8 .title, .item-banner.style17 .title,
 	.item-banner.style4 .title, .item-banner.style5 .title, .item-banner.style7 .title, .item-banner.style8 .title {
-		font-size: 24px;
+		font-size: 20px;
 	}
 	.stelina-newsletter.style3 .title {
 		font-size: 24px;
@@ -10989,8 +11028,9 @@ iframe {
 	.item-banner .banner-content {
 		padding-right: 15px !important;
 		padding-left: 15px !important;
+		background-size: 50%;
 	}
-	/*===================home 05======================*/
+	==================home 05======================*/
 	.stelina-newsletter.style3 .newsletter-form-wrap,
 	.stelina-newsletter.style3 .email-newsletter {
 		width: 100%;
@@ -10998,6 +11038,9 @@ iframe {
 	.stelina-newsletter.style3 {
 		padding-left: 15px;
 		padding-right: 15px;
+	}
+	.item-banner style7{
+		background-size: 50% auto;
 	}
 	/*===================home 08======================*/
 	.stelina-testimonials.default .testimonial-item {
