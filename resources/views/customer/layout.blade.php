@@ -198,11 +198,9 @@
                                     <a href="{{ route("customer.view.rule_ship") }}">Giao Hàng</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="{{ route("customer.view.contact") }}">Liên Hệ Với Chúng Tôi</a>
+                                    <a href="{{ route("customer.view.contact") }}">Liên Hệ</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="{{ route("customer.view.iphone") }}">Iphone</a>
-                                </li>
+                                
                             </ul>
                         </div>
                     </div>
