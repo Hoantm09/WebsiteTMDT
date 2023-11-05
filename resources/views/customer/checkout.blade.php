@@ -109,7 +109,7 @@
                                 <span class="title">
                                     Tổng Giá Trị:
                                 </span>
-                                <span class="total-price">3.300.000₫</span>
+                                <span class="total-price">4.300.000₫</span>
                             </div>
                         </div>
                     </div>
