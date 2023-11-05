@@ -80,7 +80,7 @@
                     </div>
                     <div class="about-wrapper">
                         <h3 class="custom_blog_title">Bản đồ truy cập trụ sở chính</h3>
-                        <iframe width="100%" height="500" id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.0359963145197!2d139.6894424!3d35.749919999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ed92ef9ad3b7%3A0x2b0707ef324434ea!2z5qCq5byP5Lya56S-Njc4OQ!5e0!3m2!1svi!2s!4v1656977254514!5m2!1svi!2s" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        <iframe width="100%" height="500" id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.7156114524396!2d105.84229207486176!3d21.00403398063914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac76ec11422d%3A0x2791469add0b8b05!2zxJDDoG8gdOG6oW8gUXXhu5FjIHThur8gKFNJRSkgLSBUcsaw4budbmcgxJDhuqFpIGjhu41jIELDoWNoIEtob2EgSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1699197894790!5m2!1svi!2s" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                     </div> 
                 </div>
             </div>

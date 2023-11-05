@@ -263,7 +263,7 @@
                                     Tạp chí thư HomeChoice là tạp chí thư cung cấp tin tức từ 6789 Ltd. (HomeChoice SHOP), thông tin về các sản phẩm mới, v.v. tới độc giả của chúng tôi.
                                 </div>
                                 <input type="email" class="input-text email email-newsletter"
-                                       placeholder="Your email letter">
+                                       placeholder="Tin nhắn của bạn">
                                 <button class="button btn-submit submit-newsletter">Đăng ký thành viên
                                 </button>
                             </div>
@@ -287,7 +287,7 @@
                                     Tạp chí thư HomeChoice là tạp chí thư cung cấp tin tức từ Công ty TNHH 6789 (HomeChoice SHOP), thông tin về các sản phẩm mới, v.v. tới độc giả của chúng tôi.
                                 </div>
                                 <input type="email" class="input-text email email-newsletter"
-                                       placeholder="Your email letter">
+                                       placeholder="Tin nhắn của bạn">
                                 <button class="button btn-submit submit-newsletter">Đăng ký thành viên
                                 </button>
                             </div>
