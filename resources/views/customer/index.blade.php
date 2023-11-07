@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="carousel-inner">
                                   <div class="carousel-item active">
-                                    <img src="https://giadungsato.com/Uploads/images/giadungsato(2).jpg" class="d-block w-100" alt="...">
+                                    <img src="https://curnonwatch.com/blog/wp-content/uploads/2022/10/nuoc-hoa-nam-mua-xuan-1-1140x641.jpg" class="d-block w-100" alt="...">
                                   </div>
                                 </div>
                               </div>
@@ -37,12 +37,12 @@
                     <div class="col-lg-4 banner-wrapp">
                         <div class="banner">
                             <div class="item-banner style7">
-                                <div class="inner" style="background-image: url('{{ asset("logo3.jpg")  }}');">
+                                <div class="inner" style="background-image: url('{{ asset("dior.jpg")  }}');">
                                     <div class="banner-content">
-                                        <h3 class="title">Sản phẩm đề xuất</h3>
+                                        <h3 class="title">Best selling</h3>
                                         <div class="description">
                                         </div>
-                                        <a href="/category?status=hot" class="button btn-lets-do-it">Mua ngay</a>
+                                        <a href="/category?status=hot" class="button btn-lets-do-it">Shop now</a>
                                     </div>
                                 </div>
                             </div>
@@ -51,10 +51,10 @@
                             <div class="item-banner style8">
                                 <div class="inner">
                                     <div class="banner-content">
-                                        <h3 class="title">Sản phẩm mới</h3>
+                                        <h3 class="title">New</h3>
                                         <div class="description">
                                         </div>
-                                        <a href="/category?status=new" class="button btn-lets-do-it">Mua ngay</a> 
+                                        <a href="/category?status=new" class="button btn-lets-do-it">Shop now</a> 
                                     </div>
                                 </div>
                             </div>
@@ -63,23 +63,20 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="stelina-product produc-featured rows-space-65"> -->
+		<div class="stelina-product produc-featured rows-space-65">
             <div class="container">
                 <h3 class="custommenu-title-blog">
-                    Gợi ý hôm nay
+                    New
                 </h3>
-                {{-- <div class="bd-example"> --}}
-                    <div id="new_arrivals" class="tab-panel active">
-                        <div class="stelina-product">
-                            <ul class="row list-products auto-clear equal-container product-grid">
+                <div class="owl-products owl-slick equal-container nav-center product-new-list slick-initialized slick-slider slick-dotted" data-slick="{&quot;autoplay&quot;:false, &quot;autoplaySpeed&quot;:1000, &quot;arrows&quot;:false, &quot;dots&quot;:true, &quot;infinite&quot;:false, &quot;speed&quot;:800, &quot;rows&quot;:1}" data-responsive="[{&quot;breakpoint&quot;:&quot;2000&quot;,&quot;settings&quot;:{&quot;slidesToShow&quot;:4}},{&quot;breakpoint&quot;:&quot;1200&quot;,&quot;settings&quot;:{&quot;slidesToShow&quot;:3}},{&quot;breakpoint&quot;:&quot;992&quot;,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}},{&quot;breakpoint&quot;:&quot;480&quot;,&quot;settings&quot;:{&quot;slidesToShow&quot;:1}}]" role="toolbar"> 
 
-                            <li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner">
+                <div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 2400px; transform: translate3d(0px, 0px, 0px);" role="listbox"><div class="product-item style-5 slick-slide slick-current slick-active first-slick" style="width: 300px;" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide10">
+			                        <div class="product-inner">
 			                            <div class="product-top">
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://rapido.vn/wp-content/uploads/2023/08/RC1-8L.png)"> </a>
+			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')" tabindex="0"> </a>
 			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
                                             <button class="single_add_to_cart_button button">カートに入れる</button>
                                         </div></div>
@@ -87,69 +84,69 @@
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" tabindex="0">SHIRO</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
 			                                        <div class="star-rating">
-			                                            <span class="star-4"></span>
+			                                            <span class="star-5"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (135)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>9,981₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
 			                        </div>
-                                </li><li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner">
+			                    </div><div class="product-item style-5 slick-slide slick-active" style="width: 300px;" data-slick-index="1" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide11">
+			                        <div class="product-inner">
 			                            <div class="product-top">
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://rapido.vn/wp-content/uploads/2023/08/RC1-8L.png)"> </a>
-			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
+			                                    <a href="/product/109-shiro-シロ-香水-オードパルファン-3本セット-パフューム-お試し-ミニボトル-香水セット" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')" tabindex="0"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="109" meta-id="1"><div class="loop-form-add-to-cart">
                                             <button class="single_add_to_cart_button button">カートに入れる</button>
                                         </div></div>
 			                                </div> 
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/109-shiro-シロ-香水-オードパルファン-3本セット-パフューム-お試し-ミニボトル-香水セット" tabindex="0">SHIRO</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
 			                                        <div class="star-rating">
-			                                            <span class="star-4"></span>
+			                                            <span class="star-3"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (261)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>9,987₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
 			                        </div>
-                                </li><li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner">
+			                    </div><div class="product-item style-5 slick-slide slick-active" style="width: 300px;" data-slick-index="2" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide12">
+			                        <div class="product-inner">
 			                            <div class="product-top">
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://rapido.vn/wp-content/uploads/2023/08/RC1-8L.png)"> </a>
-			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
+			                                    <a href="/product/108-no.2-フィンカ-金木犀の夜更かし-オスマンサスナイト-(オードトワレ)100ｍl-きんもくせい" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')" tabindex="0"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="108" meta-id="1"><div class="loop-form-add-to-cart">
                                             <button class="single_add_to_cart_button button">カートに入れる</button>
                                         </div></div>
 			                                </div> 
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/108-no.2-フィンカ-金木犀の夜更かし-オスマンサスナイト-(オードトワレ)100ｍl-きんもくせい" tabindex="0">SHIRO</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
@@ -157,174 +154,181 @@
 			                                            <span class="star-4"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (290)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>9,932₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
 			                        </div>
-                                </li><li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner">
+			                    </div><div class="product-item style-5 slick-slide slick-active" style="width: 300px;" data-slick-index="3" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide13">
+			                        <div class="product-inner">
 			                            <div class="product-top">
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://rapido.vn/wp-content/uploads/2023/08/RC1-8L.png)"> </a>
-			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
+			                                    <a href="/product/107-tiffany-ティファニー-オードパルファム-50ml-名入れ彫刻代込み名入れ-ギフト-プレゼント" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')" tabindex="0"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="107" meta-id="1"><div class="loop-form-add-to-cart">
                                             <button class="single_add_to_cart_button button">カートに入れる</button>
                                         </div></div>
 			                                </div> 
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/107-tiffany-ティファニー-オードパルファム-50ml-名入れ彫刻代込み名入れ-ギフト-プレゼント" tabindex="0">SHIRO</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
 			                                        <div class="star-rating">
-			                                            <span class="star-4"></span>
+			                                            <span class="star-5"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (285)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>29,897₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
 			                        </div>
-                                </li><li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner">
+			                    </div><div class="product-item style-5 slick-slide" style="width: 300px;" data-slick-index="4" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide14">
+			                        <div class="product-inner">
 			                            <div class="product-top">
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://rapido.vn/wp-content/uploads/2023/08/RC1-8L.png)"> </a>
-			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">カートに入れる</button>
-                                        </div></div>
+			                                    <a href="/product/106-エルメス(hermes)-ナイルの庭-液体-100ミリリットル" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')" tabindex="-1"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="106" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button" tabindex="-1">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
 			                                </div> 
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/106-エルメス(hermes)-ナイルの庭-液体-100ミリリットル" tabindex="-1">SHIRO</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
 			                                        <div class="star-rating">
-			                                            <span class="star-4"></span>
+			                                            <span class="star-7"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (278)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>29,982₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
 			                        </div>
-                                </li><li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner">
+			                    </div><div class="product-item style-5 slick-slide" style="width: 300px;" data-slick-index="5" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide15">
+			                        <div class="product-inner">
 			                            <div class="product-top">
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://rapido.vn/wp-content/uploads/2023/08/RC1-8L.png)"> </a>
-			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">カートに入れる</button>
-                                        </div></div>
+			                                    <a href="/product/105-アクアディパルマ-ブルーメディテラネオ-キノットディリグーリア-150ml-edt-sp" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')" tabindex="-1"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="105" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button" tabindex="-1">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
 			                                </div> 
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/105-アクアディパルマ-ブルーメディテラネオ-キノットディリグーリア-150ml-edt-sp" tabindex="-1">SHIRO 150ML EDT SP</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
 			                                        <div class="star-rating">
-			                                            <span class="star-4"></span>
+			                                            <span class="star-6"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (178)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>29,935₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
 			                        </div>
-                                </li><li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner">
+			                    </div><div class="product-item style-5 slick-slide" style="width: 300px;" data-slick-index="6" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide16">
+			                        <div class="product-inner">
 			                            <div class="product-top">
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://rapido.vn/wp-content/uploads/2023/08/RC1-8L.png)"> </a>
-			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">カートに入れる</button>
-                                        </div></div>
+			                                    <a href="/product/104-【名入れ】-シャネル-香水-メンズ-アリュール-オム-アリューオム-edt-オードトワレ-100ml-chanel" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')" tabindex="-1"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="104" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button" tabindex="-1">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
 			                                </div> 
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/104-【名入れ】-シャネル-香水-メンズ-アリュール-オム-アリューオム-edt-オードトワレ-100ml-chanel" tabindex="-1">【名入れ】 シャネル 香水 メンズ アリュール オム アリューオム EDT オードトワレ 100ml CHANEL</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
 			                                        <div class="star-rating">
-			                                            <span class="star-4"></span>
+			                                            <span class="star-3"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (129)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>29,963₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
 			                        </div>
-                                </li><li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner">
+			                    </div><div class="product-item style-5 slick-slide" style="width: 300px;" data-slick-index="7" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide17">
+			                        <div class="product-inner">
 			                            <div class="product-top">
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://rapido.vn/wp-content/uploads/2023/08/RC1-8L.png)"> </a>
-			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">カートに入れる</button>
-                                        </div></div>
+			                                    <a href="/product/103-【-アウトレット-】-アクアディパルマ-コロニア-オーデコロン-100ml-edc-sp" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')" tabindex="-1"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="103" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button" tabindex="-1">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
 			                                </div> 
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/103-【-アウトレット-】-アクアディパルマ-コロニア-オーデコロン-100ml-edc-sp" tabindex="-1">【 アウトレット 】 アクアディパルマ コロニア オーデコロン 100ML EDC SP</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
 			                                        <div class="star-rating">
-			                                            <span class="star-4"></span>
+			                                            <span class="star-5"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (221)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>29,936₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
 			                        </div>
-                                </li></ul>
-                        </div>
-                    </div>
+			                    </div></div></div><ul class="slick-dots" style="display: block;" role="tablist"><li class="slick-active last-slick" aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation10" id="slick-slide10"><button type="button" data-role="none" role="button" tabindex="0">1</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation11" id="slick-slide11"><button type="button" data-role="none" role="button" tabindex="0">2</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation12" id="slick-slide12"><button type="button" data-role="none" role="button" tabindex="0">3</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation13" id="slick-slide13"><button type="button" data-role="none" role="button" tabindex="0">4</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation14" id="slick-slide14"><button type="button" data-role="none" role="button" tabindex="0">5</button></li></ul></div>
             </div>
+        </div>
                {{-- <div class="card-deck">
     <div class="card">
     <img class="card-img-top" src="https://bizweb.dktcdn.net/100/348/480/products/may-loc-nuoc-mutosi-8-loi-mp-282m-714x714-5-1655092128.png?v=1668131352447" alt="Card image cap">
@@ -380,11 +384,11 @@
                                 <div class="inner">
                                     <div class="banner-content">
                                         {{-- <h4 class="stelina-subtitle">TOP STAFF PICK</h4> --}}
-                                        <h3 class="title">Phổ biến nhất</h3>
+                                        <h3 class="title">Best Collection</h3>
                                         {{-- <div class="description">
                                             Proin interdum magna primis id consequat
                                         </div> --}}
-                                        <a href="/category?status=hot" class="button btn-shop-now">Mua ngay</a>
+                                        <a href="/category?status=hot" class="button btn-shop-now">Shop now</a>
                                     </div>
                                 </div>
                             </div>
@@ -395,8 +399,8 @@
                             <div class="item-banner style5">
                                 <div class="inner">
                                     <div class="banner-content">
-                                        <h3 class="title">Tất cả sản phẩm</h3> 
-                                        <a href="/category?category=0" class="button btn-shop-now">Mua ngay</a>
+                                        <h3 class="title">All products</h3> 
+                                        <a href="/category?category=0" class="button btn-shop-now">Shop now</a>
                                     </div>
                                 </div>
                             </div>
@@ -411,18 +415,18 @@
                     <div class="item-banner style17">
                         <div class="inner">
                             <div class="banner-content">
-                                <h3 class="title">LG</h3>
-                                <div class="description">
-                                    Bạn không có vật phẩm nào & Bạn đã sẵn sàng <br/> sử dụng chưa? hãy đến và mua sắm cùng chúng tôi!
-                                </div> 
-                                <a href="/category?category=3" class="button btn-shop-now">Mua ngay</a>
+                                <h3 class="title">Dior</h3>
+								<div class="description">
+                                    You have no items &amp; Are you <br>ready to use? come &amp; shop with us!
+                                </div>
+                                <a href="/category?category=3" class="button btn-shop-now">Shop now</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="stelina-tabs  default rows-space-40">
+		<div class="stelina-tabs  default rows-space-40">
             <div class="container">
                 <div class="tab-head">
                     <ul class="tab-link">
@@ -430,14 +434,15 @@
                             <a data-toggle="tab" aria-expanded="true" href="#bestseller">Bestseller</a>
                         </li> -->
                         <li class="active">
-                            <a data-toggle="tab" aria-expanded="true" href="#new_arrivals">Sản phẩm mới</a>
+                            <a data-toggle="tab" aria-expanded="true" href="#new_arrivals">New</a>
                         </li>
                         <li class="">
-                            <a data-toggle="tab" aria-expanded="true" href="#top-rated">Sản phẩm nổi bật</a>
+                            <a data-toggle="tab" aria-expanded="true" href="#top-rated">Best selling</a>
                         </li>
                     </ul>
                 </div>
-                <div id="new_arrivals" class="tab-panel active">
+                <div class="tab-container"> 
+                    <div id="new_arrivals" class="tab-panel active">
                         <div class="stelina-product">
                             <ul class="row list-products auto-clear equal-container product-grid">
 
@@ -447,7 +452,7 @@
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://rapido.vn/wp-content/uploads/2023/08/RC1-8L.png)"> </a>
+			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
 			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
                                             <button class="single_add_to_cart_button button">カートに入れる</button>
                                         </div></div>
@@ -455,19 +460,19 @@
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ">SHIRO</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
 			                                        <div class="star-rating">
-			                                            <span class="star-4"></span>
+			                                            <span class="star-7"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (285)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>9,981₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
@@ -478,27 +483,27 @@
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://rapido.vn/wp-content/uploads/2023/08/RC1-8L.png)"> </a>
-			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
+			                                    <a href="/product/109-shiro-シロ-香水-オードパルファン-3本セット-パフューム-お試し-ミニボトル-香水セット" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="109" meta-id="1"><div class="loop-form-add-to-cart">
                                             <button class="single_add_to_cart_button button">カートに入れる</button>
                                         </div></div>
 			                                </div> 
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Tủ lạnh</a>
+			                                    <a href="/product/109-shiro-シロ-香水-オードパルファン-3本セット-パフューム-お試し-ミニボトル-香水セット">SHIRO</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
 			                                        <div class="star-rating">
-			                                            <span class="star-4"></span>
+			                                            <span class="star-5"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (235)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>9,987₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
@@ -509,15 +514,17 @@
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://rapido.vn/wp-content/uploads/2023/08/RC1-8L.png)"> </a>
-			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">カートに入れる</button>
-                                        </div></div>
+			                                    <a href="/product/108-no.2-フィンカ-金木犀の夜更かし-オスマンサスナイト-(オードトワレ)100ｍl-きんもくせい" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="108" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
 			                                </div> 
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/108-no.2-フィンカ-金木犀の夜更かし-オスマンサスナイト-(オードトワレ)100ｍl-きんもくせい">SHIRO</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
@@ -525,11 +532,11 @@
 			                                            <span class="star-4"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (276)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>9,932₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
@@ -540,27 +547,29 @@
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://d1pjg4o0tbonat.cloudfront.net/content/dam/toshiba-aem/vn/tu-lanh/tu-lanh-side-by-side/tu-lanh-toshiba-gr-rs637we-pmw-06-mg/gallery1.png/jcr:content/renditions/cq5dam.compression.png)"> </a>
-			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">カートに入れる</button>
-                                        </div></div>
+			                                    <a href="/product/107-tiffany-ティファニー-オードパルファム-50ml-名入れ彫刻代込み名入れ-ギフト-プレゼント" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="107" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
 			                                </div> 
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/107-tiffany-ティファニー-オードパルファム-50ml-名入れ彫刻代込み名入れ-ギフト-プレゼント">SHIRO</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
 			                                        <div class="star-rating">
-			                                            <span class="star-4"></span>
+			                                            <span class="star-5"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (130)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>29,897₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
@@ -571,27 +580,29 @@
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://d1pjg4o0tbonat.cloudfront.net/content/dam/toshiba-aem/vn/tu-lanh/tu-lanh-side-by-side/tu-lanh-toshiba-gr-rs637we-pmw-06-mg/gallery1.png/jcr:content/renditions/cq5dam.compression.png)"> </a>
-			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">カートに入れる</button>
-                                        </div></div>
+			                                    <a href="/product/106-エルメス(hermes)-ナイルの庭-液体-100ミリリットル" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="106" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
 			                                </div> 
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/106-エルメス(hermes)-ナイルの庭-液体-100ミリリットル">SHIRO</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
 			                                        <div class="star-rating">
-			                                            <span class="star-4"></span>
+			                                            <span class="star-5"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (252)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>29,982₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
@@ -602,27 +613,29 @@
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://d1pjg4o0tbonat.cloudfront.net/content/dam/toshiba-aem/vn/tu-lanh/tu-lanh-side-by-side/tu-lanh-toshiba-gr-rs637we-pmw-06-mg/gallery1.png/jcr:content/renditions/cq5dam.compression.png)"> </a>
-			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">カートに入れる</button>
-                                        </div></div>
+			                                    <a href="/product/105-アクアディパルマ-ブルーメディテラネオ-キノットディリグーリア-150ml-edt-sp" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="105" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
 			                                </div> 
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/105-アクアディパルマ-ブルーメディテラネオ-キノットディリグーリア-150ml-edt-sp">SHIRO</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
 			                                        <div class="star-rating">
-			                                            <span class="star-4"></span>
+			                                            <span class="star-6"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (264)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>29,935₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
@@ -633,27 +646,29 @@
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://d1pjg4o0tbonat.cloudfront.net/content/dam/toshiba-aem/vn/tu-lanh/tu-lanh-side-by-side/tu-lanh-toshiba-gr-rs637we-pmw-06-mg/gallery1.png/jcr:content/renditions/cq5dam.compression.png)"> </a>
-			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">カートに入れる</button>
-                                        </div></div>
+			                                    <a href="/product/104-【名入れ】-シャネル-香水-メンズ-アリュール-オム-アリューオム-edt-オードトワレ-100ml-chanel" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="104" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
 			                                </div> 
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/104-【名入れ】-シャネル-香水-メンズ-アリュール-オム-アリューオム-edt-オードトワレ-100ml-chanel">SHIRO</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
 			                                        <div class="star-rating">
-			                                            <span class="star-4"></span>
+			                                            <span class="star-5"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (287)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>29,963₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
@@ -664,27 +679,29 @@
 			                            </div>
 			                            <div class="product-thumb">
 			                                <div class="thumb-inner">
-			                                    <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url(https://d1pjg4o0tbonat.cloudfront.net/content/dam/toshiba-aem/vn/tu-lanh/tu-lanh-side-by-side/tu-lanh-toshiba-gr-rs637we-pmw-06-mg/gallery1.png/jcr:content/renditions/cq5dam.compression.png)"> </a>
-			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">カートに入れる</button>
-                                        </div></div>
+			                                    <a href="/product/103-【-アウトレット-】-アクアディパルマ-コロニア-オーデコロン-100ml-edc-sp" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="103" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
 			                                </div> 
 			                            </div>
 			                            <div class="product-info">
 			                                <h5 class="product-name product_title">
-			                                    <a href="#">Nồi cơm</a>
+			                                    <a href="/product/103-【-アウトレット-】-アクアディパルマ-コロニア-オーデコロン-100ml-edc-sp">SHIRO</a>
 			                                </h5> 
 			                                <div class="group-info">
 			                                    <div class="stars-rating">
 			                                        <div class="star-rating">
-			                                            <span class="star-4"></span>
+			                                            <span class="star-7"></span>
 			                                        </div>
 			                                        <div class="count-star">
-			                                            (293)
+			                                            (103)
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>10,000,000₫</ins>
+			                                        <ins>29,936 </ins>
 			                                    </div>
 			                                </div>
 			                            </div>
@@ -692,6 +709,278 @@
                                 </li></ul>
                         </div>
                     </div>
+                    <div id="top-rated" class="tab-panel">
+                        <div class="stelina-product">
+                            <ul class="row list-products auto-clear equal-container product-grid">
+
+                            <li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
+                                    <div class="product-inner">
+			                            <div class="product-top">
+			                            </div>
+			                            <div class="product-thumb">
+			                                <div class="thumb-inner">
+			                                    <a href="/product/27-ディオール-オム-スポーツ-(オードゥ-トワレ)" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="27" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
+			                                </div> 
+			                            </div>
+			                            <div class="product-info">
+			                                <h5 class="product-name product_title">
+			                                    <a href="/product/27-ディオール-オム-スポーツ-(オードゥ-トワレ)">ディオール オム スポーツ (オードゥ トワレ)</a>
+			                                </h5> 
+			                                <div class="group-info">
+			                                    <div class="stars-rating">
+			                                        <div class="star-rating">
+			                                            <span class="star-5"></span>
+			                                        </div>
+			                                        <div class="count-star">
+			                                            (268)
+			                                        </div>
+			                                    </div>
+			                                    <div class="price">
+			                                        <ins>10,200₫</ins>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </div>
+                                </li><li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
+                                    <div class="product-inner">
+			                            <div class="product-top">
+			                            </div>
+			                            <div class="product-thumb">
+			                                <div class="thumb-inner">
+			                                    <a href="/product/59-ジャンヌ-ランバン-edp・sp-100ml" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="59" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
+			                                </div> 
+			                            </div>
+			                            <div class="product-info">
+			                                <h5 class="product-name product_title">
+			                                    <a href="/product/59-ジャンヌ-ランバン-edp・sp-100ml">ジャンヌ ランバン EDP・SP 100ml</a>
+			                                </h5> 
+			                                <div class="group-info">
+			                                    <div class="stars-rating">
+			                                        <div class="star-rating">
+			                                            <span class="star-6"></span>
+			                                        </div>
+			                                        <div class="count-star">
+			                                            (210)
+			                                        </div>
+			                                    </div>
+			                                    <div class="price">
+			                                        <ins>14,000₫</ins>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </div>
+                                </li><li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
+                                    <div class="product-inner">
+			                            <div class="product-top">
+			                            </div>
+			                            <div class="product-thumb">
+			                                <div class="thumb-inner">
+			                                    <a href="/product/60-ブランド-ランバン商品名-ランバン-ランバン-オム-100ml-et-sp容量-100ml" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="60" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
+			                                </div> 
+			                            </div>
+			                            <div class="product-info">
+			                                <h5 class="product-name product_title">
+			                                    <a href="/product/60-ブランド-ランバン商品名-ランバン-ランバン-オム-100ml-et-sp容量-100ml">ブランド ランバン商品名 ランバン ランバン オム 100ml ET SP容量 100ml</a>
+			                                </h5> 
+			                                <div class="group-info">
+			                                    <div class="stars-rating">
+			                                        <div class="star-rating">
+			                                            <span class="star-3"></span>
+			                                        </div>
+			                                        <div class="count-star">
+			                                            (157)
+			                                        </div>
+			                                    </div>
+			                                    <div class="price">
+			                                        <ins>5,500₫</ins>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </div>
+                                </li><li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
+                                    <div class="product-inner">
+			                            <div class="product-top">
+			                            </div>
+			                            <div class="product-thumb">
+			                                <div class="thumb-inner">
+			                                    <a href="/product/58-セクシーボーイ-edt・sp-100ml" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="58" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
+			                                </div> 
+			                            </div>
+			                            <div class="product-info">
+			                                <h5 class="product-name product_title">
+			                                    <a href="/product/58-セクシーボーイ-edt・sp-100ml">セクシーボーイ EDT・SP 100ml</a>
+			                                </h5> 
+			                                <div class="group-info">
+			                                    <div class="stars-rating">
+			                                        <div class="star-rating">
+			                                            <span class="star-6"></span>
+			                                        </div>
+			                                        <div class="count-star">
+			                                            (217)
+			                                        </div>
+			                                    </div>
+			                                    <div class="price">
+			                                        <ins>4,000₫</ins>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </div>
+                                </li><li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
+                                    <div class="product-inner">
+			                            <div class="product-top">
+			                            </div>
+			                            <div class="product-thumb">
+			                                <div class="thumb-inner">
+			                                    <a href="/product/2-チャンス-edt・sp-50ml" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="2" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
+			                                </div> 
+			                            </div>
+			                            <div class="product-info">
+			                                <h5 class="product-name product_title">
+			                                    <a href="/product/2-チャンス-edt・sp-50ml">チャンス EDT・SP 50ml</a>
+			                                </h5> 
+			                                <div class="group-info">
+			                                    <div class="stars-rating">
+			                                        <div class="star-rating">
+			                                            <span class="star-4"></span>
+			                                        </div>
+			                                        <div class="count-star">
+			                                            (185)
+			                                        </div>
+			                                    </div>
+			                                    <div class="price">
+			                                        <ins>15,000₫</ins>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </div>
+                                </li><li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
+                                    <div class="product-inner">
+			                            <div class="product-top">
+			                            </div>
+			                            <div class="product-thumb">
+			                                <div class="thumb-inner">
+			                                    <a href="/product/57-ナルシソ-ロドリゲス-フォーヒム-ブルーノワール-edt・sp-50ml" style="background-image: url('/image-upload/1656985273fr3423478805958.jpg')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="57" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
+			                                </div> 
+			                            </div>
+			                            <div class="product-info">
+			                                <h5 class="product-name product_title">
+			                                    <a href="/product/57-ナルシソ-ロドリゲス-フォーヒム-ブルーノワール-edt・sp-50ml">ナルシソ ロドリゲス フォーヒム ブルーノワール EDT・SP 50ml</a>
+			                                </h5> 
+			                                <div class="group-info">
+			                                    <div class="stars-rating">
+			                                        <div class="star-rating">
+			                                            <span class="star-4"></span>
+			                                        </div>
+			                                        <div class="count-star">
+			                                            (174)
+			                                        </div>
+			                                    </div>
+			                                    <div class="price">
+			                                        <ins>7,500₫</ins>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </div>
+                                </li><li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
+                                    <div class="product-inner">
+			                            <div class="product-top">
+			                            </div>
+			                            <div class="product-thumb">
+			                                <div class="thumb-inner">
+			                                    <a href="/product/33-ディオール-ディスカバリー-キット" style="background-image: url('/image-upload/1656940730y4001702_c400170249_e01_zhc.webp')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="33" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
+			                                </div> 
+			                            </div>
+			                            <div class="product-info">
+			                                <h5 class="product-name product_title">
+			                                    <a href="/product/33-ディオール-ディスカバリー-キット">ディオール ディスカバリー キット</a>
+			                                </h5> 
+			                                <div class="group-info">
+			                                    <div class="stars-rating">
+			                                        <div class="star-rating">
+			                                            <span class="star-4"></span>
+			                                        </div>
+			                                        <div class="count-star">
+			                                            (174)
+			                                        </div>
+			                                    </div>
+			                                    <div class="price">
+			                                        <ins>7,000₫</ins>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </div>
+                                </li><li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
+                                    <div class="product-inner">
+			                            <div class="product-top">
+			                            </div>
+			                            <div class="product-thumb">
+			                                <div class="thumb-inner">
+			                                    <a href="/product/94-ukhonthakorn-nat-vejchasat" style="background-image: url('/image-upload/1676462884shopping.webp')"> </a>
+			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="94" meta-id="1"> 
+			                                    	<div class="loop-form-add-to-cart">
+			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                        </div> 
+			                                    </div>
+			                                </div> 
+			                            </div>
+			                            <div class="product-info">
+			                                <h5 class="product-name product_title">
+			                                    <a href="/product/94-ukhonthakorn-nat-vejchasat">Ukhonthakorn Nat Vejchasat</a>
+			                                </h5> 
+			                                <div class="group-info">
+			                                    <div class="stars-rating">
+			                                        <div class="star-rating">
+			                                            <span class="star-5"></span>
+			                                        </div>
+			                                        <div class="count-star">
+			                                            (126)
+			                                        </div>
+			                                    </div>
+			                                    <div class="price">
+			                                        <ins>11,800₫</ins>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </div>
+                                </li></ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="stelina-iconbox-wrapp default">

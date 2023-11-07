@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>HomeChoice Shop - @yield('title')</title>
+    <title>Bk-EShop - @yield('title')</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +34,7 @@
             <div class="container">
                 <div class="top-bar-left">
                     <div class="header-message">
-                        Chào mừng đến với cửa hàng trực tuyến của chúng tôi!
+                        Welcome to our online store!
                     </div>
                 </div>
                 <div class="top-bar-right"> 
@@ -260,7 +260,7 @@
                             </div>
                             <div class="newsletter-form-wrap">
                                 <div class="list">
-                                    Tạp chí thư HomeChoice là tạp chí thư cung cấp tin tức từ 6789 Ltd. (HomeChoice SHOP), thông tin về các sản phẩm mới, v.v. tới độc giả của chúng tôi.
+                                    Bk-EShop - Nước hoa chính hãng, nước hoa Auth nhập khẩu từ các thương hiệu dầu thơm nổi tiếng trên thế giới
                                 </div>
                                 <input type="email" class="input-text email email-newsletter"
                                        placeholder="Tin nhắn của bạn">
@@ -284,7 +284,7 @@
                             </div>
                             <div class="newsletter-form-wrap">
                                 <div class="list">
-                                    Tạp chí thư HomeChoice là tạp chí thư cung cấp tin tức từ Công ty TNHH 6789 (HomeChoice SHOP), thông tin về các sản phẩm mới, v.v. tới độc giả của chúng tôi.
+                                    Bk-EShop chuyên nước hoa chính hãng, nước hoa Auth nhập khẩu từ các thương hiệu dầu thơm nổi tiếng trên thế giới
                                 </div>
                                 <input type="email" class="input-text email email-newsletter"
                                        placeholder="Tin nhắn của bạn">
@@ -346,8 +346,8 @@
                                 </ul>
                             </div>
                             <div class="coppyright">
-                                Copyright © 2022
-                                <a href="#">HomeChoice Shop</a>
+                                Copyright © 2023
+                                <a href="#">Bk-EShop</a>
                                 . All rights reserved
                             </div>
                         </div>

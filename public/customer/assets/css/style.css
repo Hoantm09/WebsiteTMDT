@@ -36,8 +36,8 @@ REPONSIVE
   1.0 COMPONENT STYLES
 ============================================================================ */
 body {
-	font-family: Arial,Tahoma,sans-serif;
-	font-size: 16px!important;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 16px;
 	line-height: 26px;
 	color: #666;
 	overflow-x: hidden;
@@ -1842,8 +1842,8 @@ table tr:last-child td, table tr:last-child th {
 	cursor: pointer;
 	text-transform: uppercase;
 	font-weight: 600;
-	font-family: 'Arial,Helvetica,sans-serif';
-	letter-spacing: 0em;
+	font-family: 'Jost';
+	letter-spacing: 0.05em;
 	color: #000;
 }
 .main-menu > li.menu-item-has-children > a:after {
@@ -2677,7 +2677,7 @@ blockquote .author .desc {
 	margin-bottom: 10px;
 }
 .stelina-iconbox-wrapp.default {
-	background: #4885f0;
+	background: #ab8e66;
 	padding: 50px 0;
 }
 .stelina-iconbox-wrapp.layout2 .stelina-iconbox.default .iconbox-inner .content .title {
@@ -5357,24 +5357,6 @@ ul.list-products {
 	min-width: 155px;
 	color: #ffffff;
 }
-.card-deck {
-	list-style-type: none;
-	box-sizing: border-box
-}
- .card-deck {
-	padding-bottom: 45px ;
-}
-.card-body .card-title {
-    font-size: 2.1rem;
-}
-/* .bd-example {
-    padding: 1.5rem;
-    margin-right: 0;
-    margin-left: 0;
-    border-width: 0.2rem;
-	position: relative;
-	box-sizing: border-box
-} */ 
 .payment-method .form-row-card-number {
 	max-width: 360px;
 }
@@ -6130,7 +6112,7 @@ ul.list-products {
 	display: inline-block;
 }
 .stelina-tabs .tab-link li.active a {
-	background-color: #4885f0;
+	background-color: #ab8e66;
 	color: #fff;
 }
 /*stelina-blog*/
@@ -6422,7 +6404,7 @@ ul.list-products {
 -----------------home 02------------------
 =========================================*/
 .top-bar {
-	background: #4885f0;
+	background: #ab8e66;
 	padding: 10px 0;
 	color: #fff;
 }
@@ -6729,26 +6711,12 @@ ul.list-products {
 /*slider-banner*/
 .home-slider-banner {
 	margin-bottom: 38px;
-	background-image:url(../images/.png);
-	background-repeat: no-repeat;
-
-	
 }
-/*back-ground test*/
-/* .col-lg-8  {
-height: 511px;
-background-image: url(../images/home.png);
-background-repeat: no-repeat;
-background-size: 30%;
-background-position: center;
-} */
 .home-slider-banner .silider-wrapp, .home-slider-banner .banner-wrapp {
 	padding: 0 10px;
-	
+}
 .home-slider-banner .silider-wrapp {
 	margin-bottom: 20px;
-	
-}
 }
 .slider-item.style7 .slider-inner {
 	background-image: url(../images/slider-thumb4.jpg);
@@ -7162,7 +7130,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 .stelina-newsletter.style3 .submit-newsletter {
 	min-width: 139px;
 	margin-left: 5px;
-	background-color: #4885f0;
+	background-color: #ab8e66;
 	color: #ffffff;
 	vertical-align: top;
 	font-size: 14px;
@@ -7252,13 +7220,12 @@ body.vertical-menu-open .vertical-menu-overlay {
 	text-align: center;
 }
 .item-banner .banner-content.full-height .title {
-	font-size: 35px;
+	font-size: 30px;
 	letter-spacing: 0;
 	text-transform: uppercase;
 	line-height: 1.2;
 	margin-bottom: 20px;
 }
-
 .item-banner.style28 .banner-content {
 	padding-top: 50px;
 	padding-right: 30px;
@@ -8437,9 +8404,8 @@ body.vertical-menu-open .vertical-menu-overlay {
 	margin-bottom: 30px;
 }
 .item-banner .inner {
-	background-position: right center;
+	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 46% auto;
 	border-radius: 0;
 	position: relative;
 	background-color: #f3f3f3;
@@ -8590,9 +8556,9 @@ body.vertical-menu-open .vertical-menu-overlay {
 }
 /*banner home 02*/
 .item-banner.style4 .inner {
-    background-image: url('https://api-omni.mutosi.com/v0/s3/view/l3KH-1653716825.png');
-    background-position: right center;
-    background-size: 50% auto;
+	background-image: url(../images/banner-home-2.jpg);
+	background-size: cover;
+	background-position: 65% center;
 }
 .item-banner.style4 .banner-content {
 	padding-left: 40px;
@@ -8611,9 +8577,9 @@ body.vertical-menu-open .vertical-menu-overlay {
 	max-width: 195px;
 }
 .item-banner.style5 .inner {
-	background-image: url(https://bizweb.dktcdn.net/thumb/1024x1024/100/448/192/products/0134.png?v=1652956899577&fbclid=IwAR2N7sWAkbObWp_PwxUHNKVbjUrc5MyS0nzFYM2j5B-kqdz9eA1bwKOgEcw);
-	background-size: 40% auto;
-    background-position: 80% center;
+	background-image: url(../images/banner-home-3.jpg);
+	background-size: cover;
+	background-position: 65% center;
 }
 .item-banner.style5 .banner-content {
 	padding-left: 40px;
@@ -8656,7 +8622,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 }
 /*banner home 03*/
 .item-banner.style7 .inner {
-	background-image: url(../images/spdexuat.png);
+	background-image: url(../images/banner-home-5.jpg);
 }
 .item-banner.style7 .banner-content {
 	padding-top: 59px;
@@ -8666,7 +8632,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	margin-bottom: 20px;
 }
 .item-banner.style7 .title, .item-banner.style8 .title {
-	font-size: 20px;
+	font-size: 26px;
 	line-height: 32px;
 }
 .item-banner.style7 .description {
@@ -8674,9 +8640,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	max-width: 185px;
 }
 .item-banner.style8 .inner {
-	background-image: url(../images/refrigator.png);
-	background-position: right center;
-	background-size: 40% auto;
+	background-image: url(../images/banner-home-6.jpg);
 }
 .item-banner.style8 .banner-content {
 	padding-top: 64px;
@@ -9132,8 +9096,7 @@ iframe {
 	padding-top: 5px;
 }
 .item-banner.style17 .inner {
-	background-image: url(https://www.robertthomashomes.com/wp-content/uploads/2020/03/Wesley-A-4562-Silverado-Drive-HCW02010003-23.jpg);
-	background-size: cover;
+	background-image: url(../images/banner-home-15.jpg);
 }
 .item-banner.style17 .banner-content {
 	padding-top: 48px;
@@ -9143,13 +9106,11 @@ iframe {
 	text-align: center;
 }
 .item-banner.style17 .title {
-	color: white;
 	font-size: 34px;
 	line-height: 32px;
 	margin-bottom: 10px;
 }
 .item-banner.style17 .description {
-	color: white;
 	margin-bottom: 15px;
 }
 .item-banner.style17 .banner-price {
@@ -9328,7 +9289,7 @@ iframe {
 .stelina-newsletter.style1 .newsletter-form-wrap .submit-newsletter {
 	color: #fff;
 	width: 100%;
-	background: #4885f0;
+	background: #ab8e66;
 	height: 56px;
 	line-height: 56px;
 	padding: 0 15px;
@@ -9567,7 +9528,7 @@ iframe {
 	.item-banner.style17 .title,
 	.item-banner.style4 .title, .item-banner.style5 .title, .item-banner.style7 .title, .item-banner.style8 .title, .item-banner.style17 .title,
 	.item-banner.style4 .title, .item-banner.style5 .title, .item-banner.style7 .title, .item-banner.style8 .title {
-		font-size: 20px;
+		font-size: 24px;
 	}
 	.stelina-newsletter.style3 .title {
 		font-size: 24px;
@@ -10548,8 +10509,7 @@ iframe {
 		margin-bottom: 47px;
 	}
 	.logo img {
-		max-width: 73px;
-		max-height: 270px;
+		max-width: 140px;
 	}
 	.slick-dots {
 		margin-top: 25px;
@@ -11028,9 +10988,8 @@ iframe {
 	.item-banner .banner-content {
 		padding-right: 15px !important;
 		padding-left: 15px !important;
-		background-size: 50%;
 	}
-	==================home 05======================*/
+	/*===================home 05======================*/
 	.stelina-newsletter.style3 .newsletter-form-wrap,
 	.stelina-newsletter.style3 .email-newsletter {
 		width: 100%;
@@ -11038,9 +10997,6 @@ iframe {
 	.stelina-newsletter.style3 {
 		padding-left: 15px;
 		padding-right: 15px;
-	}
-	.item-banner style7{
-		background-size: 50% auto;
 	}
 	/*===================home 08======================*/
 	.stelina-testimonials.default .testimonial-item {
@@ -11064,7 +11020,7 @@ iframe {
 .shopcart-description .actions .button-viewcart:hover, .kt-popup-quickview .mfp-close, .stelina-newsletter.style2 .newsletter-form-wrap .submit-newsletter:hover,
 .product-item.style-6 .loop-form-add-to-cart .button, .pinmap-buttom, .header-nav-wapper .vertical-wapper,
 .list-category .category-item:hover {
-	background-color: #4885f0;
+	background-color: #ab8e66;
 	
 }
 .product-item .button:hover,
@@ -11095,7 +11051,7 @@ a:hover, a:focus, a:active,
 .details-infor .group-button .yith-wcwl-add-to-wishlist div a:hover::before, .details-infor .group-button .size-chart-wrapp .btn-size-chart a:hover::before,
 .tab-details-product .tab-link li.active a, .review_form .comment-form-review .stars a.active, .review_form .comment-form-review .stars a:hover,
 .related .slick-slider.nav-center > .slick-arrow:hover, .up-sells .slick-slider.nav-center > .slick-arrow:hover, .slider-item .button:hover, .slick-slider.nav-center > .slick-arrow:hover {
-	color: #4885f0;
+	color: #ab8e66;
 	
 }
 .details-thumd .thumbnails_carousel .owl-item .active img {

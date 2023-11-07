@@ -15,7 +15,7 @@
                 <div class="breadcrumb-trail breadcrumbs">
                     <ul class="trail-items breadcrumb">
                         <li class="trail-item trail-begin">
-                            <a href="/">ホーム</a>
+                            <a href="/">Trang chủ</a>
                         </li>
                         <li class="trail-item trail-end active">
                             GIAO HÀNG
