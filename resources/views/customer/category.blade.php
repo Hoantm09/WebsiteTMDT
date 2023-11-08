@@ -62,7 +62,7 @@
                                     </div>
                                     <div class="product-thumb">
                                         <div class="thumb-inner">
-                                            <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+                                            <a href="http://127.0.0.1:8000/ProductDetail" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
                                             <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
                                         <button class="single_add_to_cart_button button" _msttexthash="129181" _msthash="697">Add to Cart</button>
                                     </div></div>
@@ -70,7 +70,7 @@
                                     </div>
                                     <div class="product-info">
                                         <h5 class="product-name product_title">
-                                            <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" _msttexthash="1838967" _msthash="583">ANước Hoa SHIRO</a>
+                                            <a href="http://127.0.0.1:8000/ProductDetail" _msttexthash="1838967" _msthash="583">ANước Hoa SHIRO</a>
                                         </h5> 
                                         <div class="group-info">
                                             <div class="stars-rating">
@@ -82,7 +82,7 @@
                                                 </div>
                                             </div>
                                             <div class="price"> 
-                                                <ins _msttexthash="86684" _msthash="585">3,000,000₫</ins>
+                                                <ins _msttexthash="86684" _msthash="585">3,000,000 ₫</ins>
                                             </div>
                                         </div>
                                     </div>
@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="product-thumb">
                                         <div class="thumb-inner">
-                                            <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+                                            <a href="http://127.0.0.1:8000/ProductDetail" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
                                             <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
                                         <button class="single_add_to_cart_button button" _msttexthash="129181" _msthash="697">Add to Cart</button>
                                     </div></div>
@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="product-info">
                                         <h5 class="product-name product_title">
-                                            <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" _msttexthash="1838967" _msthash="583">Nước Hoa SHIRO</a>
+                                            <a href="http://127.0.0.1:8000/ProductDetail" _msttexthash="1838967" _msthash="583">Nước Hoa SHIRO</a>
                                         </h5> 
                                         <div class="group-info">
                                             <div class="stars-rating">
@@ -114,7 +114,7 @@
                                                 </div>
                                             </div>
                                             <div class="price"> 
-                                                <ins _msttexthash="86684" _msthash="585">2,000,000₫</ins>
+                                                <ins _msttexthash="86684" _msthash="585">2,000,000 ₫</ins>
                                             </div>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@
                                     </div>
                                     <div class="product-thumb">
                                         <div class="thumb-inner">
-                                            <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+                                            <a href="http://127.0.0.1:8000/ProductDetail" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
                                             <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
                                         <button class="single_add_to_cart_button button" _msttexthash="129181" _msthash="697">Add to Cart</button>
                                     </div></div>
@@ -134,7 +134,7 @@
                                     </div>
                                     <div class="product-info">
                                         <h5 class="product-name product_title">
-                                            <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" _msttexthash="1838967" _msthash="583">Nước Hoa SHIRO</a>
+                                            <a href="http://127.0.0.1:8000/ProductDetail" _msttexthash="1838967" _msthash="583">Nước Hoa SHIRO</a>
                                         </h5> 
                                         <div class="group-info">
                                             <div class="stars-rating">
@@ -146,7 +146,7 @@
                                                 </div>
                                             </div>
                                             <div class="price"> 
-                                                <ins _msttexthash="86684" _msthash="585">2,000,000₫</ins>
+                                                <ins _msttexthash="86684" _msthash="585">2,000,000 ₫</ins>
                                             </div>
                                         </div>
                                     </div>
@@ -158,7 +158,7 @@
                                     </div>
                                     <div class="product-thumb">
                                         <div class="thumb-inner">
-                                            <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+                                            <a href="http://127.0.0.1:8000/ProductDetail" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
                                             <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
                                         <button class="single_add_to_cart_button button" _msttexthash="129181" _msthash="697">Add to Cart</button>
                                     </div></div>
@@ -166,7 +166,7 @@
                                     </div>
                                     <div class="product-info">
                                         <h5 class="product-name product_title">
-                                            <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" _msttexthash="1838967" _msthash="583">Nước Hoa SHIRO</a>
+                                            <a href="http://127.0.0.1:8000/ProductDetail" _msttexthash="1838967" _msthash="583">Nước Hoa SHIRO</a>
                                         </h5> 
                                         <div class="group-info">
                                             <div class="stars-rating">
@@ -178,7 +178,7 @@
                                                 </div>
                                             </div>
                                             <div class="price"> 
-                                                <ins _msttexthash="86684" _msthash="585">2,000,000₫</ins>
+                                                <ins _msttexthash="86684" _msthash="585">2,000,000 ₫</ins>
                                             </div>
                                         </div>
                                     </div>
@@ -190,7 +190,7 @@
                                     </div>
                                     <div class="product-thumb">
                                         <div class="thumb-inner">
-                                            <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+                                            <a href="http://127.0.0.1:8000/ProductDetail" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
                                             <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
                                         <button class="single_add_to_cart_button button" _msttexthash="129181" _msthash="697">Add to Cart</button>
                                     </div></div>
@@ -198,7 +198,7 @@
                                     </div>
                                     <div class="product-info">
                                         <h5 class="product-name product_title">
-                                            <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" _msttexthash="1838967" _msthash="583">Nước Hoa SHIRO</a>
+                                            <a href="http://127.0.0.1:8000/ProductDetail" _msttexthash="1838967" _msthash="583">Nước Hoa SHIRO</a>
                                         </h5> 
                                         <div class="group-info">
                                             <div class="stars-rating">
@@ -210,7 +210,7 @@
                                                 </div>
                                             </div>
                                             <div class="price"> 
-                                                <ins _msttexthash="86684" _msthash="585">2,000,000₫</ins>
+                                                <ins _msttexthash="86684" _msthash="585">2,000,000 ₫</ins>
                                             </div>
                                         </div>
                                     </div>
@@ -222,7 +222,7 @@
                                     </div>
                                     <div class="product-thumb">
                                         <div class="thumb-inner">
-                                            <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
+                                            <a href="http://127.0.0.1:8000/ProductDetail" style="background-image: url('/image-upload/1697040474o9-tkfk-q1us.webp')"> </a>
                                             <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="110" meta-id="1"><div class="loop-form-add-to-cart">
                                         <button class="single_add_to_cart_button button" _msttexthash="129181" _msthash="697">Add to Cart</button>
                                     </div></div>
@@ -230,7 +230,7 @@
                                     </div>
                                     <div class="product-info">
                                         <h5 class="product-name product_title">
-                                            <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" _msttexthash="1838967" _msthash="583">Nước Hoa SHIRO</a>
+                                            <a href="http://127.0.0.1:8000/ProductDetail" _msttexthash="1838967" _msthash="583">Nước Hoa SHIRO</a>
                                         </h5> 
                                         <div class="group-info">
                                             <div class="stars-rating">
@@ -242,7 +242,7 @@
                                                 </div>
                                             </div>
                                             <div class="price"> 
-                                                <ins _msttexthash="86684" _msthash="585">2,000,000₫</ins>
+                                                <ins _msttexthash="86684" _msthash="585">2,000,000 ₫</ins>
                                             </div>
                                         </div>
                                     </div>
@@ -257,14 +257,14 @@
                                 <div class="products-bottom-content" _msthidden="7">
                                     <div class="product-thumb" _msthidden="1">
                                         <div class="thumb-inner" _msthidden="1">
-                                            <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ">
+                                            <a href="http://127.0.0.1:8000/ProductDetail">
                                                 <img src="/image-upload/169704051041s9lovpcnl._sl500_.jpg" alt="img" _msthidden="A" _mstalt="32942" _msthash="575">
                                             </a> 
                                         </div>
                                     </div>
                                     <div class="product-info-left" _msthidden="4"> 
                                         <h5 class="product-name product_title" _msthidden="1">
-                                            <a href="/product/110-金木犀-オーデコロン-30ml-日本製-キンモクセイ" _msttexthash="70685641" _msthidden="1" _msthash="576">金木犀 オーデコロン 30ml 日本製 キンモクセイ</a>
+                                            <a href="http://127.0.0.1:8000/ProductDetail" _msttexthash="70685641" _msthidden="1" _msthash="576">金木犀 オーデコロン 30ml 日本製 キンモクセイ</a>
                                         </h5>
                                         <div class="stars-rating" _msthidden="1">
                                             <div class="star-rating">
@@ -286,7 +286,7 @@
                                     </div>
                                     <div class="product-info-right" _msthidden="2">
                                         <div class="price" _msttexthash="3286439" _msthidden="1" _msthash="580">
-                                            9,981 円
+                                            9,981  ₫
                                         </div> 
                                         <div class="cart" _msthidden="1">
                                             <div class="single_variation_wrap" _msthidden="1">  
@@ -336,7 +336,7 @@
                                     </div>
                                     <div class="product-info-right" _msthidden="2">
                                         <div class="price" _msttexthash="3287297" _msthidden="1" _msthash="569">
-                                            9,987 円
+                                            9,987  ₫
                                         </div> 
                                         <div class="cart" _msthidden="1">
                                             <div class="single_variation_wrap" _msthidden="1">  
@@ -386,7 +386,7 @@
                                     </div>
                                     <div class="product-info-right" _msthidden="2">
                                         <div class="price" _msttexthash="3285932" _msthidden="1" _msthash="558">
-                                            9,932 円
+                                            9,932  ₫
                                         </div> 
                                         <div class="cart" _msthidden="1">
                                             <div class="single_variation_wrap" _msthidden="1">  
@@ -436,7 +436,7 @@
                                     </div>
                                     <div class="product-info-right" _msthidden="2">
                                         <div class="price" _msttexthash="3566667" _msthidden="1" _msthash="547">
-                                            29,897 円
+                                            29,897  ₫
                                         </div> 
                                         <div class="cart" _msthidden="1">
                                             <div class="single_variation_wrap" _msthidden="1">  
@@ -486,7 +486,7 @@
                                     </div>
                                     <div class="product-info-right" _msthidden="2">
                                         <div class="price" _msttexthash="3565874" _msthidden="1" _msthash="536">
-                                            29,982 円
+                                            29,982  ₫
                                         </div> 
                                         <div class="cart" _msthidden="1">
                                             <div class="single_variation_wrap" _msthidden="1">  
@@ -536,7 +536,7 @@
                                     </div>
                                     <div class="product-info-right" _msthidden="2">
                                         <div class="price" _msttexthash="3565627" _msthidden="1" _msthash="525">
-                                            29,935 円
+                                            29,935  ₫
                                         </div> 
                                         <div class="cart" _msthidden="1">
                                             <div class="single_variation_wrap" _msthidden="1">  
@@ -602,12 +602,12 @@
                         <div class="widget widget_filter_price">
                             <h4 class="widgettitle" _msttexthash="58734" _msthash="141">Giá</h4>
                             <div class="price-slider-wrapper">
-                                <div data-label-reasult="Range:" data-min="0" data-max="50000" data-unit="円" class="slider-range-price  ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="0" data-value-max="50000">
+                                <div data-label-reasult="Range:" data-min="0" data-max="50000" data-unit=" ₫" class="slider-range-price  ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="0" data-value-max="50000">
                                 <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span></div>
                                 <input type="hidden" class="js-range-slider" value="0;50000">
                                 <div class="price-slider-amount">
-                                    <span class="from" _msttexthash="32994" _msthash="142">0 ₫</span>
-                                    <span class="to" _msttexthash="69797" _msthash="143">5,000,000 ₫</span>
+                                    <span class="from" _msttexthash="32994" _msthash="142">0  ₫</span>
+                                    <span class="to" _msttexthash="69797" _msthash="143">5,000,000  ₫</span>
                                 </div>
                             </div>
                         </div> 

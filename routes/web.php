@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['GlobalUser:global'])->group(function () {
     Route::get('/', 'Customer\DisplayController@index')->name('customer.view.index');
+
+    //Test product detail
+    Route::get('/ProductDetail', 'Customer\TestController@testProductDetail')->name('customer.test.productdetail');
+
+
     Route::get('about', 'Customer\DisplayController@about')->name('customer.view.about'); 
     Route::get('category', 'Customer\DisplayController@category')->name('customer.view.category'); 
     Route::get('product/{id}-{slug}', 'Customer\DisplayController@product')->name('customer.view.product'); 

@@ -34,11 +34,9 @@
                         <div class="customer_login">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-md-offset-3">
-                                    <p>Tiện lợi hơn! Tiết kiệm nhiều hơn! Làm thế nào để sử dụng nó</p>
-                                    <p>Chúng tôi khuyên bạn nên đăng ký làm thành viên!</p>
-                                    <p>Đăng ký thành viên 3 lợi thế</p>
-                                    <p>* Bạn có thể đặt hàng sản phẩm mà không cần đăng ký làm thành viên.</p>
-                                    <a  href="{{ route("customer.view.checkout") }}" class="btn-auth-action button-submit form-submit m-r-20">Mua với tư cách không phải là thành viên</a>  
+                                    <p>Đăng ký thành viên để mua hàng nhanh chóng, tiện lợi và nhận nhiều ưu đãi hơn !</p>
+                                    <p>Bạn muốn đăng ký thành viên hay tiếp tục mua ngay?</p>
+                                    <a  href="{{ route("customer.view.checkout") }}" class="btn-auth-action button-submit form-submit m-r-20">Mua ngay</a>  
                                     <a href="{{ route("customer.view.register") }}" type="button" class="btn-auth-action register-button" atr="Login">Đăng ký làm thành viên</a>   
                                 </div> 
                             </div>

@@ -50,12 +50,12 @@
                                 <a class="remove"></a>
                             </td>
                             <td class="product-thumbnail">
-                                <a href="/product/15-ギルティ-オー-プールオム-edt・sp-90ml" target="_blank">
+                                <a href="http://127.0.0.1:8000/ProductDetail" target="_blank">
                                     <img src="https://sbtc.co.jp/image-upload/1656937410guc1452-sale_1.jpg" alt="img" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image">
                                 </a>
                             </td>
                             <td class="product-name" data-title="Product">
-                                <a href="/product/15-ギルティ-オー-プールオム-edt・sp-90ml" target="_blank" class="title">Nước Hoa Chanel</a>
+                                <a href="http://127.0.0.1:8000/ProductDetail" target="_blank" class="title">Nước Hoa Chanel</a>
                                 <span class="attributes-select attributes-color">90 ml</span> 
                             </td>
                             <td class="product-quantity" data-title="Quantity">
