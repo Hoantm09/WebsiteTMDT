@@ -39,10 +39,10 @@
                             <div class="item-banner style7">
                                 <div class="inner" style="background-image: url('{{ asset("dior.jpg")  }}');">
                                     <div class="banner-content">
-                                        <h3 class="title">Best selling</h3>
+                                        <h3 class="title">Sản Phẩm Bán Chạy</h3>
                                         <div class="description">
                                         </div>
-                                        <a href="/category?status=hot" class="button btn-lets-do-it">Shop now</a>
+                                        <a href="/category?status=hot" class="button btn-lets-do-it">Mua Ngay</a>
                                     </div>
                                 </div>
                             </div>
@@ -51,10 +51,10 @@
                             <div class="item-banner style8">
                                 <div class="inner">
                                     <div class="banner-content">
-                                        <h3 class="title">New</h3>
+                                        <h3 class="title">Sản Phẩm Mới</h3>
                                         <div class="description">
                                         </div>
-                                        <a href="/category?status=new" class="button btn-lets-do-it">Shop now</a> 
+                                        <a href="/category?status=new" class="button btn-lets-do-it">Mua Ngay</a> 
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
 		<div class="stelina-product produc-featured rows-space-65">
             <div class="container">
                 <h3 class="custommenu-title-blog">
-                    New
+                    Sản Phẩm Mới
                 </h3>
                 <div class="owl-products owl-slick equal-container nav-center product-new-list slick-initialized slick-slider slick-dotted" data-slick="{&quot;autoplay&quot;:false, &quot;autoplaySpeed&quot;:1000, &quot;arrows&quot;:false, &quot;dots&quot;:true, &quot;infinite&quot;:false, &quot;speed&quot;:800, &quot;rows&quot;:1}" data-responsive="[{&quot;breakpoint&quot;:&quot;2000&quot;,&quot;settings&quot;:{&quot;slidesToShow&quot;:4}},{&quot;breakpoint&quot;:&quot;1200&quot;,&quot;settings&quot;:{&quot;slidesToShow&quot;:3}},{&quot;breakpoint&quot;:&quot;992&quot;,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}},{&quot;breakpoint&quot;:&quot;480&quot;,&quot;settings&quot;:{&quot;slidesToShow&quot;:1}}]" role="toolbar"> 
 
@@ -384,11 +384,11 @@
                                 <div class="inner">
                                     <div class="banner-content">
                                         {{-- <h4 class="stelina-subtitle">TOP STAFF PICK</h4> --}}
-                                        <h3 class="title">Best Collection</h3>
+                                        <h3 class="title">Bộ Sưu Tập</h3>
                                         {{-- <div class="description">
                                             Proin interdum magna primis id consequat
                                         </div> --}}
-                                        <a href="/category?status=hot" class="button btn-shop-now">Shop now</a>
+                                        <a href="/category?status=hot" class="button btn-shop-now">Mua Ngay</a>
                                     </div>
                                 </div>
                             </div>
@@ -399,8 +399,8 @@
                             <div class="item-banner style5">
                                 <div class="inner">
                                     <div class="banner-content">
-                                        <h3 class="title">All products</h3> 
-                                        <a href="/category?category=0" class="button btn-shop-now">Shop now</a>
+                                        <h3 class="title">Tất Cả Sản Phẩm</h3> 
+                                        <a href="/category?category=0" class="button btn-shop-now">Mua Ngay</a>
                                     </div>
                                 </div>
                             </div>
@@ -419,7 +419,7 @@
 								<div class="description">
                                     You have no items &amp; Are you <br>ready to use? come &amp; shop with us!
                                 </div>
-                                <a href="/category?category=3" class="button btn-shop-now">Shop now</a>
+                                <a href="/category?category=3" class="button btn-shop-now">Mua Ngay</a>
                             </div>
                         </div>
                     </div>
@@ -434,10 +434,10 @@
                             <a data-toggle="tab" aria-expanded="true" href="#bestseller">Bestseller</a>
                         </li> -->
                         <li class="active">
-                            <a data-toggle="tab" aria-expanded="true" href="#new_arrivals">New</a>
+                            <a data-toggle="tab" aria-expanded="true" href="#new_arrivals">Sản Phẩm Mới</a>
                         </li>
                         <li class="">
-                            <a data-toggle="tab" aria-expanded="true" href="#top-rated">Best selling</a>
+                            <a data-toggle="tab" aria-expanded="true" href="#top-rated">Sản Phẩm Bán Chạy</a>
                         </li>
                     </ul>
                 </div>
