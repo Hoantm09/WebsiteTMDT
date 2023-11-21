@@ -213,7 +213,7 @@
             <div class="item mobile-logo">
                 <div class="logo">
                     <a href="/">
-                        <img src="{{ asset('customer/assets/images/stelia-logo.png') }}" alt="img">
+                        <img src="{{ asset('customer/assets/logo1.png') }}" alt="img">
                     </a>
                 </div>
             </div>

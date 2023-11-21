@@ -24,7 +24,7 @@
                     <div class="profile-action-wrapper">
                         <div class="action-item is-select" tab-item="Information"><i class="fas fa-user"></i>Chỉnh sửa Thông tin</div>
                         <div class="action-item" tab-item="Order"><i class="fas fa-clipboard-list"></i>Lịch sử đặt hàng</div>
-                        <div class="action-item" tab-item="Password"><i class="fas fa-key"></i> Thay đổi mật khẩu của bạn</div>
+                        <div class="action-item" tab-item="Password"><i class="fas fa-key"></i>Thay đổi mật khẩu của bạn</div>
                         <div class="action-item" onclick="event.preventDefault();document.getElementById('logout-form').submit(); localStorage.removeItem('card')"><i class="fas fa-sign-out-alt"></i>Đăng xuất</div>
                         <form id="logout-form" action="{{ route('customer.logout') }}" method="POST" class="d-none"> @csrf </form>
                     </div>

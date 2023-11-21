@@ -27,12 +27,12 @@ const View = {
             var metadata           = JSON.parse(data.metadata).data[meta-1];  
             var real_prices     = metadata.discount == 0 ? metadata.prices : metadata.prices - (metadata.prices*metadata.discount/100);
             var prices = metadata.discount != 0 
-            				? `<del>${ViewIndex.Config.formatPrices(metadata.prices)} 円 / 1 item</del>
+            				? `<del>${ViewIndex.Config.formatPrices(metadata.prices)} ₫ / 1 item</del>
                                 <span class="woocommerce-Price-currencySymbol">
-                                    ${ViewIndex.Config.formatPrices(real_prices)} 円
+                                    ${ViewIndex.Config.formatPrices(real_prices)} ₫
                                 </span>`
                             : `<span class="woocommerce-Price-currencySymbol">
-                                    ${ViewIndex.Config.formatPrices(real_prices)} 円
+                                    ${ViewIndex.Config.formatPrices(real_prices)} ₫
                                 </span>`
 
 			$(".shoppingcart-content table tbody")
@@ -63,7 +63,7 @@ const View = {
                             </td>
                         </tr>`)
 			View.Cart.total += real_prices;
-			$(".order-total .total-price").text(`${ViewIndex.Config.formatPrices(View.Cart.total)} 円`)
+			$(".order-total .total-price").text(`${ViewIndex.Config.formatPrices(View.Cart.total)} ₫`)
 		},
 		updateCart(){
 			var total = 0;
@@ -71,9 +71,9 @@ const View = {
 				.find(".cart_item").each(function(index, el) {
 					var total_row = +$(el).attr("prices") * +$(el).attr("qty");
 					total += total_row;
-					$(el).find(".woocommerce-Price-currencySymbol").text(`${ViewIndex.Config.formatPrices(total_row)} 円`)
+					$(el).find(".woocommerce-Price-currencySymbol").text(`${ViewIndex.Config.formatPrices(total_row)} ₫`)
 				});
-			$(".order-total .total-price").text(`${ViewIndex.Config.formatPrices(total)} 円`)
+			$(".order-total .total-price").text(`${ViewIndex.Config.formatPrices(total)} ₫`)
 		},
 		init(){
             $(document).on('click', `.product-remove a`, function() {
@@ -103,7 +103,7 @@ const View = {
         if (json_cart.cart.length == 0) {
             $(".cart-form").css({"display": "none"})
             $(".btn-cart-to-checkout").css({"display": "none"}) 
-            $(".page-main-content").prepend(`<h3 class="text-center">カートが空です</h3>`)
+            $(".page-main-content").prepend(`<h3 class="text-center">Giỏ hàng trống</h3>`)
         }
         json_cart.cart.map(v => {
         	getOne(v.id, v.meta)

@@ -94,9 +94,9 @@ class AuthController extends Controller
         $route_redirect = Session::get("url_save")  == null ? "/" : Session::get("url_save");
         if ($customer_id) { 
             Cookie::queue('_token_', $this->customer->createTokenClient($customer_id), 2628000);
-            return $this->customer->send_response("Login Successful", $route_redirect, 200); 
+            return $this->customer->send_response("Đăng nhập thành công", $route_redirect, 200); 
         }else{
-            return $this->customer->send_response("ログインできませんでした。 入力内容に誤りがないかご確認ください。", $route_redirect, 500); 
+            return $this->customer->send_response("Thông tin đăng nhập không hợp lệ", $route_redirect, 500); 
         }
     }
 
