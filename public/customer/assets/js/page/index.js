@@ -26,7 +26,7 @@ const View = {
 	                                        </h3>
 	                                        <div class="price">
 	                                            New Price:
-	                                            <span class="number-price"> ${ViewIndex.Config.formatPrices(v.price)} 円 </span>
+	                                            <span class="number-price"> ${ViewIndex.Config.formatPrices(v.price)} ₫ </span>
 	                                        </div>
 	                                        <a href="/product/${v.id}-${v.slug}" class="button btn-shop-the-look bgroud-style">Shop now</a>
 	                                    </div>
@@ -71,7 +71,7 @@ const View = {
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>${ViewIndex.Config.formatPrices(v.price)} 円</ins>
+			                                        <ins>${ViewIndex.Config.formatPrices(v.price)} ₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
@@ -107,7 +107,7 @@ const View = {
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>${ViewIndex.Config.formatPrices(v.price)} 円</ins>
+			                                        <ins>${ViewIndex.Config.formatPrices(v.price)} ₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
@@ -152,7 +152,7 @@ const View = {
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>${ViewIndex.Config.formatPrices(v.price)} 円</ins>
+			                                        <ins>${ViewIndex.Config.formatPrices(v.price)} ₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>

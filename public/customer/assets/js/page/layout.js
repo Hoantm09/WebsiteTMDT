@@ -200,15 +200,15 @@ const ViewIndex = {
         render_top(data){  
             $(".clone-mobile-category")
                 .append(`<li class="menu-item">
-                            <a href="/category?category=0" class="stelina-menu-item-title">全商品を見る</a>
+                            <a href="/category?category=0" class="stelina-menu-item-title">Xem tất cả sản phẩm</a>
                         </li>`)
             $(".clone-mobile-category")
                 .append(`<li class="menu-item">
-                            <a href="/category?status=new" class="stelina-menu-item-title">新着商品</a>
+                            <a href="/category?status=new" class="stelina-menu-item-title">Sản phẩm mới</a>
                         </li>`)
             $(".clone-mobile-category")
                 .append(`<li class="menu-item">
-                            <a href="/category?status=hot" class="stelina-menu-item-title">オススメ商品</a>
+                            <a href="/category?status=hot" class="stelina-menu-item-title">Sản phẩm bán chạy</a>
                         </li>`)
 
             data.map((v, k) => { 

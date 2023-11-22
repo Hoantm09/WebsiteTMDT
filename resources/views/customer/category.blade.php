@@ -1,5 +1,5 @@
 @extends('customer.layout')
-@section('title', "カテゴリー")
+@section('title', "Loai")
 
 
 @section('css')
@@ -16,10 +16,10 @@
                 <div class="breadcrumb-trail breadcrumbs">
                     <ul class="trail-items breadcrumb">
                         <li class="trail-item trail-begin">
-                            <a href="/">ホーム</a>
+                            <a href="/">Trang chủ</a>
                         </li>
                         <li class="trail-item trail-end active">
-                            カテゴリー
+                            Loại
                         </li>
                     </ul>
                 </div>
@@ -33,11 +33,11 @@
                             <span class="title">Sort by</span>
                             <select title="sort-by" class="sort-by" data-placeholder="Price: Low to High" class="chosen-select">
                                 <option value="0">-----------</option> 
-                                <option value="1">新着順</option> 
+                                <option value="1">Đơn hàng mới về</option> 
                                 <option value="2">Name: A to Z</option> 
                                 <option value="3">Name: Z to A</option> 
-                                <option value="4">価格が低い順</option> 
-                                <option value="5">価格が高い順/option>
+                                <option value="4">Giá thấp đến cao</option> 
+                                <option value="5">Theo thứ tự giá giảm dần/option>
                             </select>
                         </form>
                         <div class="grid-view-mode">
@@ -70,7 +70,7 @@
                 <div class="wrapper-sidebar shop-sidebar">
                     <div class="widget woof_Widget">
                         <div class="widget widget-categories">
-                            <h3 class="widgettitle">カテゴリー</h3>
+                            <h3 class="widgettitle">Loai</h3>
                             <ul class="tagcloud category-list-tag">
                                  
                             </ul>
@@ -78,13 +78,13 @@
                         <div class="widget widget-tags"> 
                             <ul class="tagcloud">
                                 <li class="tag-cloud-link">
-                                    <a >紳士</a>
+                                    <a >Quý ông</a>
                                 </li>
                                 <li class="tag-cloud-link">
-                                    <a >レディ</a>
+                                    <a >Quý bà</a>
                                 </li>
                                 <li class="tag-cloud-link active">
-                                    <a >両方</a>
+                                    <a >Cả hai</a>
                                 </li> 
                             </ul>
                         </div>
@@ -93,13 +93,13 @@
                                 Price
                             </h4>
                             <div class="price-slider-wrapper">
-                                <div data-label-reasult="Range:" data-min="0" data-max="50000" data-unit="円"
+                                <div data-label-reasult="Range:" data-min="0" data-max="50000" data-unit="₫"
                                      class="slider-range-price " data-value-min="0" data-value-max="50000">
                                 </div>
                                 <input type="hidden" class="js-range-slider" value="0;50000">
                                 <div class="price-slider-amount">
-                                    <span class="from">0 円</span>
-                                    <span class="to">50000 円</span>
+                                    <span class="from">0 ₫</span>
+                                    <span class="to">50000 ₫</span>
                                 </div>
                             </div>
                         </div> 

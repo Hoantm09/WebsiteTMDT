@@ -70,9 +70,9 @@ const View = {
             var metadata        = meta.data[0];  
             var real_prices     = metadata.discount == 0 ? metadata.prices : metadata.prices - (metadata.prices*metadata.discount/100); 
             var prices = metadata.discount != 0 
-            				? `<del class="d-flex">${ViewIndex.Config.formatPrices(metadata.prices)} 円 / 1 item</del>
-                                ${ViewIndex.Config.formatPrices(real_prices)} 円`
-                            : `${ViewIndex.Config.formatPrices(real_prices)} 円`
+            				? `<del class="d-flex">${ViewIndex.Config.formatPrices(metadata.prices)} ₫ / 1 item</del>
+                                ${ViewIndex.Config.formatPrices(real_prices)} ₫`
+                            : `${ViewIndex.Config.formatPrices(real_prices)} ₫`
 
 			$(".list-product-order")
 				.prepend(`<li class="product-item-order">
@@ -93,7 +93,7 @@ const View = {
                             </div>
                         </li>`)
 			View.Cart.total += real_prices * qty;
-			$(".total-price").text(`${ViewIndex.Config.formatPrices(View.Cart.total)} 円`)
+			$(".total-price").text(`${ViewIndex.Config.formatPrices(View.Cart.total)} ₫`)
 		}, 
 	},
     response: { 

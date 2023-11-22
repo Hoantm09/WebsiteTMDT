@@ -48,7 +48,7 @@ const View = {
 			                                        </div>
 			                                    </div>
 			                                    <div class="price"> 
-			                                        <ins>${ViewIndex.Config.formatPrices(v.price)} 円</ins>
+			                                        <ins>${ViewIndex.Config.formatPrices(v.price)} ₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
@@ -95,7 +95,7 @@ const View = {
                                     </div>
                                     <div class="product-info-right">
                                         <div class="price">
-                                            ${ViewIndex.Config.formatPrices(v.price)} 円
+                                            ${ViewIndex.Config.formatPrices(v.price)} ₫
                                         </div> 
                                         <div class="cart">
                                             <div class="single_variation_wrap">  
@@ -119,10 +119,12 @@ const View = {
 		id: 0,
 		render(data){
             $(".category-list-tag")
-                    .append(`<li class="tag-cloud-link status-tag" status-id="new"><a>新着商品</a> </li>`)
+                    .append(`<li class="tag-cloud-link status-tag" status-id="new"><a>Sản phẩm mới</a> </li>`)
             $(".category-list-tag")
-                    .append(`<li class="tag-cloud-link status-tag" status-id="hot"><a>オススメ商品</a> </li>`)
-			data.map((v, k) => {
+                    .append(`<li class="tag-cloud-link status-tag" status-id="hot"><a>Sản phẩm bán chạy</a> </li>`)
+            $(".category-list-tag")
+                    .append(`<li class="tag-cloud-link status-tag" status-id="colections"><a>Bộ sưu tập</a> </li>`)
+			data.map((v, k,a) => {
 				$(".category-list-tag")
 					.append(`<li class="tag-cloud-link category-tag" category-id="${v.id}"><a category-id="${v.id}">${v.name}</a> </li>`)
 			})

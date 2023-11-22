@@ -53,7 +53,7 @@
 		<div class="stelina-product produc-featured rows-space-65">
             <div class="container">
                 <h3 class="custommenu-title-blog">
-                    今日の取引
+                    Ưu Đãi Hôm Nay
                 </h3>
                 <div class="owl-products owl-slick equal-container nav-center product-new-list"
                      data-slick='{"autoplay":false, "autoplaySpeed":1000, "arrows":false, "dots":true, "infinite":false, "speed":800, "rows":1}'
@@ -62,40 +62,7 @@
                 </div>
             </div>
         </div>
-               {{-- <div class="card-deck">
-    <div class="card">
-    <img class="card-img-top" src="https://bizweb.dktcdn.net/100/348/480/products/may-loc-nuoc-mutosi-8-loi-mp-282m-714x714-5-1655092128.png?v=1668131352447" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Máy Lọc Nước Mutosi</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </div>
-    <div class="card-footer">
-      
-    </div>
-    </div>
-    <div class="card">
-    <img class="card-img-top" src="https://api-omni.mutosi.com/v0/s3/view/noi-ap-suat-mutosi-mip-t820(2).png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Nồi Áp Suất Điện Mutosi</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-    </div>
-    <div class="card-footer">
-      
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="https://bizweb.dktcdn.net/thumb/grande/100/348/480/products/mf-691-714x714-1-1664164155.png?v=1668149499797" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Nồi Chiên Không Dầu Mutosi</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-    <div class="card-footer">
-      
-    </div>
-  </div> --}}
-</div>
-</div>
-
+               
                
  
  
@@ -121,7 +88,7 @@
                                         {{-- <div class="description">
                                             Proin interdum magna primis id consequat
                                         </div> --}}
-                                        <a href="/category?status=hot" class="button btn-shop-now">Mua Ngay</a>
+                                        <a href="/category?status=colections" class="button btn-shop-now">Mua Ngay</a>
                                     </div>
                                 </div>
                             </div>
@@ -167,10 +134,10 @@
                             <a data-toggle="tab" aria-expanded="true" href="#bestseller">Bestseller</a>
                         </li> -->
                         <li class="active">
-                            <a data-toggle="tab" aria-expanded="true" href="#new_arrivals">新着</a>
+                            <a data-toggle="tab" aria-expanded="true" href="#new_arrivals">Sản Phẩm Mới</a>
                         </li>
                         <li class="">
-                            <a data-toggle="tab" aria-expanded="true" href="#top-rated">上面図</a>
+                            <a data-toggle="tab" aria-expanded="true" href="#top-rated">Sản Phẩm Hot</a>
                         </li>
                     </ul>
                 </div>

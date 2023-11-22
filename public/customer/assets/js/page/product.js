@@ -95,7 +95,7 @@ const View = {
 			                                        </div>
 			                                    </div>
 			                                    <div class="price">
-			                                        <ins>${ViewIndex.Config.formatPrices(v.price)} 円</ins>
+			                                        <ins>${ViewIndex.Config.formatPrices(v.price)} ₫</ins>
 			                                    </div>
 			                                </div>
 			                            </div>
@@ -109,8 +109,8 @@ const View = {
 			var price = item.attr("data-prices");
 			var discount = item.attr("data-discount");
 			var real_price = price - ( price / 100 * discount )
-             $(".data-prices").text(`${real_price.toFixed(2).replaceAll('.00', "")} 円`)
-             discount != 0 ? $(".data-discount").text(`${price} 円`) : "";
+             $(".data-prices").text(`${real_price.toFixed(2).replaceAll('.00', "")} ₫`)
+             discount != 0 ? $(".data-discount").text(`${price} ₫`) : "";
 			$(".details-infor .action-add-to-card").attr("meta-id", $(".list-size a[class='is-active']").attr("size-id")); 
 		},
 		onAddToCart(){

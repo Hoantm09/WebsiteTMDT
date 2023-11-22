@@ -77,7 +77,7 @@ const View = {
                 v.order_detail.map((v1,k1) => {
                 	var image           = v1.images.split(",")[0];
                 	var real_prices     = ViewIndex.Config.formatPrices(v1.discount == 0 ? v1.prices : v1.prices - (v1.prices*v1.discount/100));
-                	var discount_price  = v1.discount == 0 ? "" : `<del>${ViewIndex.Config.formatPrices(v1.prices*v1.discount/100)} 円</del>`
+                	var discount_price  = v1.discount == 0 ? "" : `<del>${ViewIndex.Config.formatPrices(v1.prices*v1.discount/100)} ₫</del>`
                 	sub_order += `<div class="order-item">
 									<div class="item-image" style="background-image: url('${image}')"> </div>
 									<div class="item-data">
@@ -86,7 +86,7 @@ const View = {
 									</div>
 									<div class="item-price">
 										${discount_price}
-										<span>${real_prices} 円</span>
+										<span>${real_prices} ₫</span>
 									</div>
 								</div>`
                 })
@@ -101,7 +101,7 @@ const View = {
 								${sub_order}
 							</div>
 							<div class="order-footer">
-								合計: <span>${ViewIndex.Config.formatPrices(v.order.total)} 円</span>
+								合計: <span>${ViewIndex.Config.formatPrices(v.order.total)} ₫</span>
 							</div>
 						</div>
 					`)
@@ -161,8 +161,8 @@ const View = {
             data.order_detail.map((v1,k1) => {
             	var image           = v1.images.split(",")[0];
             	var real_prices     = ViewIndex.Config.formatPrices(v1.discount == 0 ? v1.prices : v1.prices - (v1.prices*v1.discount/100));
-            	var discount_price  = v1.discount == 0 ? "" : `<del>${ViewIndex.Config.formatPrices(v1.prices*v1.discount/100)} 円</del>`
-            	sub_order += `<div class="order-item">
+            	var discount_price  = v1.discount == 0 ? "" : `<del>${ViewIndex.Config.formatPrices(v1.prices*v1.discount/100)} ₫</del>`
+            	sub_order += `<div class="order-item"
 								<div class="item-image" style="background-image: url('${image}')"> </div>
 								<div class="item-data">
 									<h4 class="item-name">${v1.name}</h4>
@@ -170,7 +170,7 @@ const View = {
 								</div>
 								<div class="item-price">
 									${discount_price}
-									<span>${real_prices} 円</span>
+									<span>${real_prices} ₫</span>
 								</div>
 							</div>`
             })
@@ -183,7 +183,7 @@ const View = {
 								${sub_order}
 							</div>
 							<div class="order-footer">
-								合計: <span>${ViewIndex.Config.formatPrices(data.order.total)} 円</span>
+								合計: <span>${ViewIndex.Config.formatPrices(data.order.total)} ₫</span>
 							</div>`);
 			
 
@@ -218,8 +218,8 @@ const View = {
             var data_image         = resource.find("#avatar")[0].files;
  
             if (data_name == '') { required_data.push('Nhập tên.'); onPushData = false }
-            if (data_address == '') { required_data.push('Nhập 円ịa chỉ.'); onPushData = false }
-            if (data_phone == '') { required_data.push('Nhập số 円iện thoại.'); onPushData = false }
+            if (data_address == '') { required_data.push('Nhập ₫ịa chỉ.'); onPushData = false }
+            if (data_phone == '') { required_data.push('Nhập số ₫iện thoại.'); onPushData = false }
 
             if (onPushData) {
                 fd.append('data_name', data_name);
@@ -265,7 +265,7 @@ const View = {
 	        $(document).on('change', '#avatar', function(e) {
 	            var father = $(this).parent().parent()
 	            if(this.files[0].size > 5242880){
-	               alert("File quá lớn, dung lượng upload tối 円a 5 MB!");
+	               alert("File quá lớn, dung lượng upload tối ₫a 5 MB!");
 	            }else{
 	                var img = new Image;
 	                img.src = URL.createObjectURL(e.target.files[0]);

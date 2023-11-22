@@ -1,5 +1,5 @@
 @extends('customer.layout')
-@section('title', "会社情報")
+@section('title', "Gio hang")
 
 
 @section('css')
@@ -15,13 +15,13 @@
                 <li class="trail-item trail-begin">
                     <a href="">
                             <span>
-                                ホーム
+                                Trang chủ
                             </span>
                     </a>
                 </li>
                 <li class="trail-item trail-end active">
                         <span>
-                            ショッピングカート
+                            Giỏ hàng
                         </span>
                 </li>
             </ul>
@@ -29,7 +29,7 @@
         <div class="row">
             <div class="main-content-cart main-content col-sm-12">
                 <h3 class="custom_blog_title">
-                    ショッピングカート
+                    Giỏ hàng
                 </h3>
                 <div class="page-main-content">
                     <div class="shoppingcart-content">
@@ -66,10 +66,10 @@
                         </form>
                         <div class="control-cart">
                             <a href="/category" class="button btn-continue-shopping">
-                                お買い物を続ける
+                                 Tiếp tục mua sắm
                             </a>
                             <a href="<?php if ($customer_data['is_login']): ?>  /checkout <?php else: ?> /checkout-login <?php endif ?> " class="button btn-cart-to-checkout">
-                                今すぐ購入
+                                Mua ngay
                             </a>
                         </div>
                     </div>
