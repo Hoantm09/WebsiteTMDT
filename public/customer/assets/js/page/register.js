@@ -11,23 +11,17 @@ const View = {
                 var regexp = /[\u{3000}-\u{301C}\u{30A1}-\u{30F6}\u{30FB}-\u{30FE}]/mu;
   
                 var data_name_first         = $(`${resource}`).find('.data-name-first').val();
-                var data_name_last          = $(`${resource}`).find('.data-name-last').val(); 
-                var data_kana_first         = $(`${resource}`).find('.data-kana-first').val(); 
-                var data_kana_last          = $(`${resource}`).find('.data-kana-last').val(); 
-                var data_company            = $(`${resource}`).find('.data-company').val(); 
-                var data_zipcode            = $(`${resource}`).find('.data-zipcode').val(); 
                 var data_address_city       = $(`${resource}`).find('.data-address-city').val(); 
                 var data_address_munic      = $(`${resource}`).find('.data-address-munic').val(); 
                 var data_address_detail     = $(`${resource}`).find('.data-address-detail').val(); 
                 var data_phone              = $(`${resource}`).find('.data-phone').val(); 
                 var data_email              = $(`${resource}`).find('.data-email').val(); 
-                var data_email_confirm      = $(`${resource}`).find('.data-email-confirm').val(); 
                 var data_password           = $(`${resource}`).find('.data-password').val(); 
                 var data_password_confirm   = $(`${resource}`).find('.data-password-confirm').val(); 
                 var data_check              = $('input.data-rule:checked').val(); 
 
-                /* if (data_name_first == '') { required_data.push('Name first is required.'); onPushData = false } */
-                if (data_kana_first == '') { required_data.push('Name is required.'); onPushData = false }
+                if (data_name_first == '') { required_data.push('Vui lòng nhập Họ tên'); onPushData = false }
+                /* if (data_kana_first == '') { required_data.push('Name is required.'); onPushData = false } */
 
                 // if (regexp.test(data_kana_first) == false) { 
                 //     if (data_kana_first == '') { 
@@ -38,42 +32,29 @@ const View = {
                 // }  
                 // if (data_company == '') { required_data.push('Company is required.'); onPushData = false }
                 /* if (data_zipcode == '') { required_data.push('Zipcode is required.'); onPushData = false } */
-                if (data_address_city == '') { required_data.push('Address City is required.'); onPushData = false }
-                if (data_address_munic == '') { required_data.push('Address district is required.'); onPushData = false }
-                if (data_address_detail == '') { required_data.push('Address detail is required.'); onPushData = false }
-                if (data_phone == '') { required_data.push('Phone is required.'); onPushData = false } 
+                if (data_address_city == '') { required_data.push('Vui lòng thêm Tỉnh/Thành phố'); onPushData = false }
+                if (data_address_munic == '') { required_data.push('Vui lòng thêm Quận/Huyện'); onPushData = false }
+                if (data_address_detail == '') { required_data.push('Vui lòng thêm địa chỉ nhận'); onPushData = false }
+                if (data_phone == '') { required_data.push('Vui lòng thêm số điện thoại'); onPushData = false } 
                 if (ViewIndex.Config.isEmail(data_email) == null) { 
                     if (data_email == '') { 
-                        /* required_data.push('Email is required.'); onPushData = false  */
+                        required_data.push('Vui lòng thêm email, sử dụng email để đăng nhập'); onPushData = false 
                     }else{
-                        required_data.push('Email is invalid.'); onPushData = false 
+                        required_data.push('Email không hợp lệ'); onPushData = false 
                     }
                 }
-                if (ViewIndex.Config.isEmail(data_email_confirm) == null) { 
-                    if (data_email == '') { 
-                        required_data.push('Email is required.'); onPushData = false 
-                    }else if(data_email != data_email_confirm){
-                        required_data.push('Email does not match.'); onPushData = false 
-                    }else{
-                        required_data.push('Email is invalid.'); onPushData = false 
-                    }
-                }
-                if (data_password.length < 8) { required_data.push('Password must be at least 8 characters.'); onPushData = false } 
-                if (data_password != data_password_confirm) { required_data.push('Re-entered password does not match.'); onPushData = false } 
-                if (!data_check) { required_data.push('You do not agree to the terms.'); onPushData = false } 
+                if (data_password.length < 8) { required_data.push('Mật khẩu tối thiểu 8 ký tự'); onPushData = false } 
+                if (data_password != data_password_confirm) { required_data.push('Mật khẩu không trùng khớp'); onPushData = false } 
+                if (!data_check) { required_data.push('Vui lòng đống ý với Điều khoản sử dụng'); onPushData = false } 
 
 
                 if (onPushData) {
                     fd.append('data_name_first', ViewIndex.Config.toNoTag(data_name_first));
-                    fd.append('data_kana_first', ViewIndex.Config.toNoTag(data_kana_first));
-                    fd.append('data_company', ViewIndex.Config.toNoTag(data_company));
-                    fd.append('data_zipcode', ViewIndex.Config.toNoTag(data_zipcode));
                     fd.append('data_address_city', ViewIndex.Config.toNoTag(data_address_city));
                     fd.append('data_address_munic', ViewIndex.Config.toNoTag(data_address_munic));
                     fd.append('data_address_detail', ViewIndex.Config.toNoTag(data_address_detail));
                     fd.append('data_phone', ViewIndex.Config.toNoTag(data_phone));
                     fd.append('data_email', ViewIndex.Config.toNoTag(data_email));
-                    fd.append('data_email_confirm', ViewIndex.Config.toNoTag(data_email_confirm));
                     fd.append('data_password', ViewIndex.Config.toNoTag(data_password)); 
                     fd.append('data_password_confirm', ViewIndex.Config.toNoTag(data_password_confirm));  
                     return fd;
