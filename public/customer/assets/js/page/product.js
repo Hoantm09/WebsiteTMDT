@@ -41,12 +41,12 @@ const View = {
 			View.Product.setPrice();
 
 			if (data.sex == 1) {
-				$(".list-sex").append(`<a class="is-active" value-id="1"> 男性</a>`)
+				$(".list-sex").append(`<a class="is-active" value-id="1"> Nam giới</a>`)
 			}else if(data.sex == 2){
-				$(".list-sex").append(`<a class="is-active" value-id="2"> 女性</a>`)
+				$(".list-sex").append(`<a class="is-active" value-id="2"> Nữ giới</a>`)
 			}else{
-				$(".list-sex").append(`<a class="is-active" value-id="1"> 男性</a>`)
-				$(".list-sex").append(`<a class="" value-id="2"> 女性</a>`)
+				$(".list-sex").append(`<a class="is-active" value-id="1"> Nam giới</a>`)
+				$(".list-sex").append(`<a class="" value-id="2"> Nữ giới</a>`)
 			}
 
 			$(".category-data-name a").text(data.category_name)
@@ -76,7 +76,7 @@ const View = {
 			                                    <a href="/product/${v.id}-${v.slug}" style="background-image: url('/${image}')"> </a>
 			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="${v.id}" meta-id="1"> 
 			                                    	${View.Cart.item.includes(v.id) ? `<i class="fas fa-check"></i>` : `<div class="loop-form-add-to-cart">
-			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                            <button class="single_add_to_cart_button button">Thêm vào giỏ</button>
 			                                        </div>`} 
 			                                    </div>
 			                                </div> 
