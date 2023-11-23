@@ -57,13 +57,13 @@ class AuthController extends Controller
                 'verify_code' => $verify_code
             ];
             $this->customer->update($data, $auth_register->id);
-            $code = Hash::make($verify_code);
+/*             $code = Hash::make($verify_code);
             $email = $request->data_email;
             $url = route('customer.confirm', ['code' => $code, 'email' => $email]);
             Mail::send('customer/confirm-email', array('url' => $url), function ($message) use ($email) {
                 $message->from('support@gmail.com', 'STBC - Confirm email');
                 $message->to($email)->subject('ebk-shop confirm email!');
-            });
+            }); */
 
             return $this->customer->send_response("Đăng ký thành công", "/register-successful", 201);
         }

@@ -106,7 +106,9 @@ const View = {
     } 
     async function redirect_logined(url, time) {
         await delay(time);
-        window.location.replace(url);
+        /* window.location.replace(url); */
+        //redirect tạm về /login đến khi set up mail
+        window.location.replace('/login');
     }
     function delay(delayInms) {
         return new Promise(resolve => {
