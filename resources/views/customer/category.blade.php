@@ -33,11 +33,11 @@
                             <span class="title">Sort by</span>
                             <select title="sort-by" class="sort-by" data-placeholder="Price: Low to High" class="chosen-select">
                                 <option value="0">-----------</option> 
-                                <option value="1">Đơn hàng mới về</option> 
-                                <option value="2">Name: A to Z</option> 
-                                <option value="3">Name: Z to A</option> 
-                                <option value="4">Giá thấp đến cao</option> 
-                                <option value="5">Theo thứ tự giá giảm dần/option>
+                                <option value="1">Sản phẩm mới nhất</option> 
+                                <option value="2">Tên sản phẩm: A to Z</option> 
+                                <option value="3">Tên sản phẩm: Z to A</option> 
+                                <option value="4">Giá từ thấp đến cao</option> 
+                                <option value="5">Giá giảm dần</option>
                             </select>
                         </form>
                         <div class="grid-view-mode">
@@ -70,11 +70,11 @@
                 <div class="wrapper-sidebar shop-sidebar">
                     <div class="widget woof_Widget">
                         <div class="widget widget-categories">
-                            <h3 class="widgettitle">Loai</h3>
+                            <h3 class="widgettitle">Gợi ý</h3>
                             <ul class="tagcloud category-list-tag">
-                                 
                             </ul>
                         </div>
+                        <h3 class="widgettitle">Giới tính</h3>
                         <div class="widget widget-tags"> 
                             <ul class="tagcloud">
                                 <li class="tag-cloud-link">
@@ -90,7 +90,7 @@
                         </div>
                         <div class="widget widget_filter_price">
                             <h4 class="widgettitle">
-                                Price
+                                Giá
                             </h4>
                             <div class="price-slider-wrapper">
                                 <div data-label-reasult="Range:" data-min="0" data-max="50000" data-unit="₫"

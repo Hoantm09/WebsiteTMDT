@@ -205,6 +205,15 @@ const View = {
 			$('.data-name').val(data.name)
 			$('.data-address').val(data.address)
 			$('.data-phone').val(data.phone)
+			$('.data-birthday').val(data.birthday)
+			$('.data-sex').val(data.sex)
+/* 			if (data.sex==1){
+				$('.data-sex-option').append(`<input type="radio" id="Nam" name="sex" class="data-sex" value="1" checked><label for="Nam">Nam</label><br><input type="radio" id="Nữ" name="sex" class="data-sex" value="2"><label for="Nữ">Nữ</label><br>`)
+			}
+			else {
+				$('.data-sex-option').append(`<input type="radio" id="Nam" name="sex" class="data-sex" value="1"><label for="Nam">Nam</label><br><input type="radio" id="Nữ" name="sex" class="data-sex" value="2" checked><label for="Nữ">Nữ</label><br>`)
+			} */
+			
 		},
 		getVal(){
 			var resource = $(".profile-data-block[tab-data=Information]"); 
@@ -215,6 +224,8 @@ const View = {
             var data_name          = resource.find('.data-name').val();
             var data_address       = resource.find('.data-address').val();
             var data_phone         = resource.find('.data-phone').val();
+			var data_sex         = resource.find('.data-sex').val();
+			var data_birthday         = resource.find('.data-birthday').val();
             var data_image         = resource.find("#avatar")[0].files;
  
             if (data_name == '') { required_data.push('Nhập tên.'); onPushData = false }
@@ -225,6 +236,8 @@ const View = {
                 fd.append('data_name', data_name);
                 fd.append('data_address', data_address);
                 fd.append('data_phone', data_phone);
+				fd.append('data_sex', data_sex);
+				fd.append('data_birthday', data_birthday);
                 fd.append('data_image', data_image[0]);
                 return fd;
             }else{
@@ -262,6 +275,8 @@ const View = {
 			$('.data-name').val('')
 			$('.data-address').val('')
 			$('.data-phone').val('')
+			$('.data-sex').val('')
+			$('.data-birthday').val('')
 	        $(document).on('change', '#avatar', function(e) {
 	            var father = $(this).parent().parent()
 	            if(this.files[0].size > 5242880){
@@ -284,6 +299,12 @@ const View = {
 	        	$(`.profile-data-block[tab-data=Information] .action-save`).addClass("on-save")
 	        });
 	        $(document).on('change', '.data-phone', function(e) {
+	        	$(`.profile-data-block[tab-data=Information] .action-save`).addClass("on-save")
+	        });
+			$(document).on('change', '.data-sex', function(e) {
+	        	$(`.profile-data-block[tab-data=Information] .action-save`).addClass("on-save")
+	        });
+			$(document).on('change', '.data-birthday', function(e) {
 	        	$(`.profile-data-block[tab-data=Information] .action-save`).addClass("on-save")
 	        });
 		}

@@ -137,6 +137,13 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
         Route::prefix('manager')->group(function () {
             Route::get('/', 'Admin\ManagerController@index')->name('admin.manager.index');
         });
+
+        Route::prefix('staff')->group(function () {
+            Route::get('/', 'Admin\StaffController@index')->name('admin.manager.staff');
+        });
+        Route::prefix('customer')->group(function () {
+            Route::get('/', 'Admin\CustomerController@index')->name('admin.manager.customer');
+        });
     });
 
     Route::prefix('apip')->group(function () {

@@ -246,6 +246,8 @@ class AuthController extends Controller
                 "name"          => $this->customer_detail->remove_tag($request->data_name),
                 "phone"         => $this->customer_detail->remove_tag($request->data_phone),
                 "address"       => $this->customer_detail->remove_tag($request->data_address),
+                "sex"           => $this->customer_detail->remove_tag($request->data_sex),
+                "birthday"      => $this->customer_detail->remove_tag($request->data_birthday),
             ];
             if ($request->data_image != "undefined") {
                 $data["avatar"] = $this->customer->imageInventor('image-upload', $request->data_image, 600);

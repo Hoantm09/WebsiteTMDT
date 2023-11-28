@@ -124,6 +124,8 @@ const View = {
                     .append(`<li class="tag-cloud-link status-tag" status-id="hot"><a>Sản phẩm bán chạy</a> </li>`)
             $(".category-list-tag")
                     .append(`<li class="tag-cloud-link status-tag" status-id="colections"><a>Bộ sưu tập</a> </li>`)
+            $(".category-list-tag")
+                    .append(`<h3 style="margin-top: 37px;" class="widgettitle">Thương hiệu</h3>`)
 			data.map((v, k,a) => {
 				$(".category-list-tag")
 					.append(`<li class="tag-cloud-link category-tag" category-id="${v.id}"><a category-id="${v.id}">${v.name}</a> </li>`)

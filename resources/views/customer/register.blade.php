@@ -93,6 +93,36 @@
 													</p>
 												</div>  
 											</div>
+
+{{-- 											<div class="row">
+												<div class="col-lg-4 col-md-4 col-sm-12">
+													<p class="form-row form-row-wide">
+														<label class="text">Số điện thoại (*)</label>
+
+														<div class="col-sm-10">
+															<div class="radio">
+																<input type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+																<label for="gridRadios1">
+																	First radio
+																</label>
+															</div>
+															<div class="radio">
+																<input type="radio" name="gridRadios" id="gridRadios2" value="option2">
+																<label for="gridRadios2">
+																	Second radio
+																</label>
+															</div>
+															<div class="radio">
+																<input type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+																<label for="gridRadios3">
+																	Third disabled radio
+																</label>
+															</div>
+														</div>
+													</p>
+												</div>  
+											</div> --}}
+											
 											<div class="row">
 												<div class="col-lg-6 col-md-6 col-sm-12">
 													<p class="form-row form-row-wide">

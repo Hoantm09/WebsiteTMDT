@@ -59,7 +59,7 @@ class CustomerRepository extends BaseRepository implements RepositoryInterface
 
     // Lấy ra Name, Phone, Address 
     public function get_profile($id){
-         $sql = "SELECT id, name, address, phone
+         $sql = "SELECT id, name, address, phone,sex,birthday
                     FROM customer_detail 
                     WHERE customer_id = ".$id;
         return DB::select($sql);

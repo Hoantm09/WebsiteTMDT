@@ -61,7 +61,7 @@
             </li>
 
             <li class="nav-item dropdown ">
-                <a class="dropdown-toggle " href="{{ route('admin.order.index') }}">
+                <a class="dropdown-toggle " href="{{ route('admin.manager.customer') }}">
                     <span class="icon-holder">
                         <i class="anticon anticon-idcard"></i>
                     </span>
@@ -70,7 +70,7 @@
             </li>
             
             <li class="nav-item dropdown ">
-                <a class="dropdown-toggle " href="{{ route('admin.order.index') }}">
+                <a class="dropdown-toggle " href="{{ route('admin.manager.staff') }}">
                     <span class="icon-holder">
                         <i class="anticon anticon-team"></i>
                     </span>
