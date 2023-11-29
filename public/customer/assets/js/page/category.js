@@ -28,7 +28,7 @@ const View = {
 			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="${v.id}" meta-id="1"> 
 			                                        <div class="loop-form-add-to-cart">  
 			                                            <button class="single_add_to_cart_button button">
-                                                            ${View.Cart.item.includes(v.id) ? `<i class="fas fa-check"></i>` : `カートに入れる`}  
+                                                            ${View.Cart.item.includes(v.id) ? `<i class="fas fa-check"></i>` : `Thêm vào giỏ hàng`}  
                                                         </button>
 			                                        </div>
 			                                    </div>
@@ -103,7 +103,7 @@ const View = {
                                                     ${View.Cart.item.includes(v.id) 
                                                         ? `<i class="fas fa-check"></i>` 
                                                         : `<span class="loop-form-add-to-cart action-add-to-card d-flex" atr="Add to card" product-id="${v.id}" meta-id="1">
-                                                            カートに入れる
+                                                            Thêm vào giỏ hàng
                                                         </span>`}  
                                                 </button>
                                             </div> 

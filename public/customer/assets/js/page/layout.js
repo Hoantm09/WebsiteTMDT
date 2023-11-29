@@ -292,7 +292,7 @@ const ViewIndex = {
             father.html(card_list.includes(+father.attr("product-id")) 
                                     ? `<i class="fas fa-check"></i>` 
                                     : `<div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+                                            <button class="single_add_to_cart_button button">Thêm vào giỏ hàng</button>
                                         </div>`) 
         });
         $(document).on('keypress', `.data-number`, function(event) {
