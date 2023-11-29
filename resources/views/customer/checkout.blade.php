@@ -71,39 +71,6 @@
                                 Đơn Hàng Của Bạn
                             </h3>
                             <ul class="list-product-order"><li class="product-item-order">
-                            <div class="product-thumb">
-                                <a href="/product/3-no.5-edp・sp">
-                                    <img src="https://sbtc.co.jp/image-upload/1656934647cha-6046289.webp" alt="img">
-                                </a>
-                            </div>
-                            <div class="product-order-inner">
-                                <h5 class="product-name">
-                                    <a href="/product/3-no.5-edp・sp">Nước Hoa Gucci</a>
-                                </h5>
-                                <span class="attributes-select attributes-color">35 ml</span> 
-                                <div class="price">
-                                    1.300.000₫
-                                    <span class="count">x1</span>
-                                </div>
-                            </div>
-                        </li><li class="product-item-order">
-                            <div class="product-thumb">
-                                <a href="/product/15-ギルティ-オー-プールオム-edt・sp-90ml">
-                                    <img src="https://sbtc.co.jp/image-upload/1656937410guc1452-sale_1.jpg" alt="img">
-                                </a>
-                            </div>
-                            <div class="product-order-inner">
-                                <h5 class="product-name">
-                                    <a href="/product/15-ギルティ-オー-プールオム-edt・sp-90ml">Nước Hoa Chanel</a>
-                                </h5>
-                                <span class="attributes-select attributes-color">90 ml</span> 
-                                <div class="price">
-                                    3.000.000₫
-                                    <span class="count">x1</span>
-                                </div>
-                            </div>
-                        </li>
-                                 
                             </ul>
                             <div class="order-total">
                                 <span class="title">
