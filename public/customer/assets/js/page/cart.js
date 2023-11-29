@@ -8,6 +8,7 @@ const View = {
 	        json_cart.cart.map(v => { 
 	            View.Cart.item.push(v.id);
 	        })
+            
 		}
 	},
 	Product: {
@@ -65,7 +66,7 @@ const View = {
 			View.Cart.total += real_prices;
 			$(".order-total .total-price").text(`${ViewIndex.Config.formatPrices(View.Cart.total)} ₫`)
 		},
-		updateCart(){
+		updateCart(productId){
 			var total = 0;
 			$(".shoppingcart-content table tbody")
 				.find(".cart_item").each(function(index, el) {
@@ -74,11 +75,30 @@ const View = {
 					$(el).find(".woocommerce-Price-currencySymbol").text(`${ViewIndex.Config.formatPrices(total_row)} ₫`)
 				});
 			$(".order-total .total-price").text(`${ViewIndex.Config.formatPrices(total)} ₫`)
+
+            //cập nhật lại local storage
+            var card = localStorage.getItem("sbtc-cart");  
+            var json_cart = JSON.parse(card);  
+
+            // Lọc ra các phần tử có id khác productId : productId(string) #kiểu v.id (number)
+            json_cart.cart = json_cart.cart.filter(v => v.id !== Number(productId));
+
+            //Hết phần tử refresh, render 'giỏ hàng trống'
+            if(json_cart.cart.length == 0) location.href = location.href;
+
+            json_cart.cart.map(v => {
+                View.Cart.item.push(v.id);
+            });
+            
+            // Cập nhật lại dữ liệu trong localStorage
+            localStorage.setItem("sbtc-cart", JSON.stringify(json_cart));
+            
 		},
 		init(){
             $(document).on('click', `.product-remove a`, function() {
             	$(this).parent().parent().remove();
-            	View.Product.updateCart();
+                var productId = $(this).closest('.cart_item').attr('product-id');
+            	View.Product.updateCart(productId);
             }); 
             $(document).on('keyup', `.input-qty.qty`, function() {
             	var qty = $(this).val(); 

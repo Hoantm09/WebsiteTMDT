@@ -84,7 +84,7 @@
                                     <a >Quý bà</a>
                                 </li>
                                 <li class="tag-cloud-link active">
-                                    <a >Cả hai</a>
+                                    <a >Tất cả</a>
                                 </li> 
                             </ul>
                         </div>
