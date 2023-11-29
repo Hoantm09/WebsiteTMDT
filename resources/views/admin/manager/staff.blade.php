@@ -7,8 +7,9 @@
 
 @section('css')
     <link href="{{ asset('manager/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('manager/assets/css/app.min.css') }}" rel="stylesheet">
 @endsection()
-
 
 @section('body')
 
@@ -516,7 +517,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 text-right">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-member-modal">
                         <i class="anticon anticon-plus-circle m-r-5"></i>
                         <span>Thêm nhân viên</span>
                     </button>
@@ -734,8 +735,110 @@
         </div>
     </div>
 
+
+{{--     <div class="container mt-3">
+        <h3>Modal Example</h3>
+        <p>Click on the button to open the modal.</p>
+        
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-member-modal">
+          Open modal
+        </button>
+      </div> --}}
+      
+<div class="add-member-box">
+          <!-- The Modal -->
+          <div class="modal" id="add-member-modal">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Thêm nhân viên</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group row">
+                            <label for="inputname" class="col-sm-2 col-form-label">Họ tên</label>
+                            <div class="col-sm-10">
+                                <input type="name" class="form-control" id="inputname3" placeholder="Họ tên">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Mật khẩu</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Mật khẩu">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-sm-2 pt-0">Vai trò</label>
+                            <div class="col-sm-10">
+                                <select id="inputState" class="form-control">
+                                    <option selected>Choose...</option>
+                                    <option>Admin</option>
+                                    <option>Nhân viên Quản lý</option>
+                                    <option>Nhân viên Kho</option>
+                                    <option>Nhân viên Kế toán</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-2">Quyền</div>
+                            <div class="col-sm-10">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="rule0">
+                                    <label for="rule0">Tất cả</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="rule1">
+                                    <label for="rule1">Sản phẩm</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="rule2">
+                                    <label for="rule2">Đơn hàng</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="rule3">
+                                    <label for="rule3">Vận chuyển</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="rule4">
+                                    <label for="rule4">Kho hàng</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="rule5">
+                                    <label for="rule5">Khách hàng</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="rule">
+                                    <label for="rule">Etc</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+          
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Lưu lại</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
+                </div>
+          
+              </div>
+            </div>
+          </div>
+</div>
+      
 @endsection()
 
 @section('js')
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 @endsection()

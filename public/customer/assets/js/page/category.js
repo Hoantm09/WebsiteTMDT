@@ -119,6 +119,8 @@ const View = {
 		id: 0,
 		render(data){
             $(".category-list-tag")
+                    .append(`<li class="tag-cloud-link status-tag" status-id="new"><a>Đề xuất cho bạn</a> </li>`)
+            $(".category-list-tag")
                     .append(`<li class="tag-cloud-link status-tag" status-id="new"><a>Sản phẩm mới</a> </li>`)
             $(".category-list-tag")
                     .append(`<li class="tag-cloud-link status-tag" status-id="hot"><a>Sản phẩm bán chạy</a> </li>`)
@@ -216,6 +218,7 @@ const View = {
                 status:       urlParam.get('status') ?? '',
                 prices:       $(".js-range-slider").val(),
                 page:         View.pagination.page ?? '1',
+                
             };
         }, 
         set(item){
