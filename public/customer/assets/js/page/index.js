@@ -52,7 +52,7 @@ const View = {
 			                                    <a href="/product/${v.id}-${v.slug}" style="background-image: url('/${image}')"> </a>
 			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="${v.id}" meta-id="1"> 
 			                                    	${View.Cart.item.includes(v.id) ? `<i class="fas fa-check"></i>` : `<div class="loop-form-add-to-cart">
-			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                            <button class="single_add_to_cart_button button">Thêm vào giỏ hàng</button>
 			                                        </div>`} 
 			                                    </div>
 			                                </div> 
@@ -88,7 +88,7 @@ const View = {
 			                                    <a href="/product/${v.id}-${v.slug}" style="background-image: url('/${image}')"> </a>
 			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="${v.id}" meta-id="1"> 
 			                                    	${View.Cart.item.includes(v.id) ? `<i class="fas fa-check"></i>` : `<div class="loop-form-add-to-cart">
-			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                            <button class="single_add_to_cart_button button">Thêm vào giỏ hàng</button>
 			                                        </div>`} 
 			                                    </div>
 			                                </div> 
@@ -133,7 +133,7 @@ const View = {
 			                                    <a href="/product/${v.id}-${v.slug}" style="background-image: url('/${image}')"> </a>
 			                                    <div class="thumb-group action-group action-add-to-card" atr="Add to card" product-id="${v.id}" meta-id="1"> 
 			                                    	${View.Cart.item.includes(v.id) ? `<i class="fas fa-check"></i>` : `<div class="loop-form-add-to-cart">
-			                                            <button class="single_add_to_cart_button button">カートに入れる</button>
+			                                            <button class="single_add_to_cart_button button">Thêm vào giỏ hàng</button>
 			                                        </div>`} 
 			                                    </div>
 			                                </div> 
