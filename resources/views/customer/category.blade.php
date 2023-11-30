@@ -84,7 +84,7 @@
                                 <li class="tag-cloud-link">
                                     <a >Nữ</a>
                                 </li>
-                                <li class="tag-cloud-link active">
+                                <li class="tag-cloud-link">
                                     <a >Bất kỳ</a>
                                 </li> 
                             </ul>
@@ -107,7 +107,7 @@
                                     <li class="tag-cloud-link">
                                         <a>55+</a>
                                     </li>
-                                    <li class="tag-cloud-link active">
+                                    <li class="tag-cloud-link ">
                                         <a >Tất cả</a>
                                     </li> 
                                 </ul>
