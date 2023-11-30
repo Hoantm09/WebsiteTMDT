@@ -561,3 +561,9 @@ h1,h2,h3,h4,h5,h6{
     padding: 10px;
     border-radius: 4px;
 }
+
+.metadata-item2{
+    border: 1px dashed #3f87f5;
+    padding: 10px;
+    border-radius: 4px;
+}

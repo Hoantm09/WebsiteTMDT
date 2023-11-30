@@ -139,16 +139,16 @@
                                                         <td>Mạnh Mẽ, Nam Tính, Quyến Rũ</td>                                                     
                                                     </tr>
                                                     <tr>
-                                                        <th scope="row">Dung tích</th>
-                                                        <td>50ml, 100ml</td>                                                     
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">Loại nước hoa</th>
-                                                        <td>Nam</td>                                                     
+                                                        <th scope="row">Thành phần</th>
+                                                        <td>Hoa cam, Olibanum, Rêu sồi</td>                                                     
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Nhóm hương</th>
                                                         <td>Aromatic Fougere ( Hương Thơm Thảo Mộc )</td>                                                     
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Độ tuổi</th>
+                                                        <td>18-30</td>                                                     
                                                     </tr>
                                                 </tbody>
                                             </table>

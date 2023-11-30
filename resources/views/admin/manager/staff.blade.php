@@ -562,9 +562,10 @@
                                                 <label for="checkAll" class="m-b-0"></label>
                                             </div>
                                         </th>
-                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                            colspan="1" aria-label="ID: activate to sort column ascending"
-                                            style="width: 28.375px;">ID</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                            rowspan="1" colspan="1"
+                                            aria-label="ID: activate to sort column ascending" style="width: 28.375px;">ID
+                                        </th>
                                         <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                             rowspan="1" colspan="1"
                                             aria-label="Product: activate to sort column ascending"
@@ -576,7 +577,7 @@
                                         <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                             rowspan="1" colspan="1"
                                             aria-label="Stock Left: activate to sort column ascending"
-                                            style="width: 88.7375px;">Đăng nhập</th>
+                                            style="width: 88.7375px;">Email</th>
                                         <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                             rowspan="1" colspan="1"
                                             aria-label="Status: activate to sort column ascending"
@@ -589,13 +590,64 @@
                                 </thead>
                                 <tbody>
 
+                                    {{-- Staff information --}}
+                                    @foreach ($staffInfor as $user)
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1">
+                                                <div class="checkbox">
+                                                    <input id="check-item-{{$user->id}}" type="checkbox">
+                                                    <label for="check-item-{{$user->id}}" class="m-b-0"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {{ $user->id }}
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img class="img-fluid rounded" src="assets/images/others/thumb-9.jpg"
+                                                        style="max-width: 60px" alt="">
+                                                    <h6 class="m-b-0 m-l-10">{{ $user->name }}</h6>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                @if ($user->type==1)
+                                                    Admin
+                                                @elseif ($user->type==2)
+                                                    Nhân viên quản lý
+                                                @elseif ($user->type==3)
+                                                    Nhân viên Kho  
+                                                @else
+                                                    Nhân viên kế toán
+                                                @endif
+                                            </td>
+    
+                                            <td>{{ $user->email }}</td>
+                                            <td>
+                                                @if ($user->status==1)
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="badge badge-success badge-dot m-r-10"></div>
+                                                        <div>Hoạt động</div>
+                                                    </div>
+                                                @else
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="badge badge-danger badge-dot m-r-10"></div>
+                                                        <div>Tạm khóa</div>
+                                                    </div>
+                                                @endif
 
+                                            </td>
+                                            <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
 
-
-
-
-
-                                    <tr role="row" class="odd">
+{{--                                     <tr role="row" class="odd">
                                         <td class="sorting_1">
                                             <div class="checkbox">
                                                 <input id="check-item-1" type="checkbox">
@@ -613,8 +665,8 @@
                                             </div>
                                         </td>
                                         <td>Admin</td>
-                                       
-                                        <td> 171.224.223.56</td>
+
+                                        <td>admin@gmail.com</td>
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <div class="badge badge-success badge-dot m-r-10"></div>
@@ -649,7 +701,7 @@
                                             </div>
                                         </td>
                                         <td>Quản lý</td>
-                                      
+
                                         <td>171.224.223.56</td>
                                         <td>
                                             <div class="d-flex align-items-center">
@@ -684,7 +736,7 @@
                                             </div>
                                         </td>
                                         <td>Nhân viên kho</td>
-                                       
+
                                         <td>171.224.223.56</td>
                                         <td>
                                             <div class="d-flex align-items-center">
@@ -700,7 +752,7 @@
                                                 <i class="anticon anticon-delete"></i>
                                             </button>
                                         </td>
-                                    </tr>
+                                    </tr> --}}
 
 
 
@@ -736,7 +788,7 @@
     </div>
 
 
-{{--     <div class="container mt-3">
+    {{--     <div class="container mt-3">
         <h3>Modal Example</h3>
         <p>Click on the button to open the modal.</p>
         
@@ -744,101 +796,126 @@
           Open modal
         </button>
       </div> --}}
-      
-<div class="add-member-box">
-          <!-- The Modal -->
-          <div class="modal" id="add-member-modal">
+
+    <div class="add-member-box">
+        <!-- The Modal -->
+        <div class="modal" id="add-member-modal">
             <div class="modal-dialog modal-xl">
-              <div class="modal-content">
-          
-                <!-- Modal Header -->
-                <div class="modal-header">
-                  <h4 class="modal-title">Thêm nhân viên</h4>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Thêm nhân viên</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form action="{{route('admin.manager.add-staff')}}" method="POST">
+                            @csrf
+                            <div class="form-group row">
+                                <label for="inputname" class="col-sm-2 col-form-label">Họ tên</label>
+                                <div class="col-sm-10">
+                                    <input type="name" name="name" class="form-control" id="inputname3" placeholder="Họ tên">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Mật khẩu</label>
+                                <div class="col-sm-10">
+                                    <input type="password" name="password" class="form-control" id="inputPassword3"
+                                        placeholder="Mật khẩu">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-sm-2 pt-0">Vai trò</label>
+                                <div class="col-sm-10">
+                                    <select name="role" id="inputState" class="form-control">
+                                        <option>Choose...</option>
+                                        <option value="1">Admin</option>
+                                        <option value="2">Nhân viên Quản lý</option>
+                                        <option value="3">Nhân viên Kho</option>
+                                        <option value="4">Nhân viên Kế toán</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-2">Phân quyền</div>
+                                <div class="col-sm-10">
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule0" value="rule0" >
+                                        <label for="rule0">Tất cả</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule1" value="rule1">
+                                        <label for="rule1">Sản phẩm</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule2" value="rule2">
+                                        <label for="rule2">Đơn hàng</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule3" value="rule3">
+                                        <label for="rule3">Vận chuyển</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule4" value="rule4">
+                                        <label for="rule4">Kho hàng</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule5" value="rule5">
+                                        <label for="rule5">Khách hàng</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule6" value="rule6">
+                                        <label for="rule6">Nhân viên</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule7" value="rule7">
+                                        <label for="rule7">Cấu hình</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule8" value="rule8">
+                                        <label for="rule8">Đóng gói</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule9" value="rule9">
+                                        <label for="rule9">Thống kê</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule" value="rule">
+                                        <label for="rule">Etc</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Lưu lại</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
+                            </div>
+                        </form>
+                    </div>
+
+{{--                     <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Lưu lại</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
+                    </div> --}}
+
                 </div>
-          
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group row">
-                            <label for="inputname" class="col-sm-2 col-form-label">Họ tên</label>
-                            <div class="col-sm-10">
-                                <input type="name" class="form-control" id="inputname3" placeholder="Họ tên">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Mật khẩu</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Mật khẩu">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-form-label col-sm-2 pt-0">Vai trò</label>
-                            <div class="col-sm-10">
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>Admin</option>
-                                    <option>Nhân viên Quản lý</option>
-                                    <option>Nhân viên Kho</option>
-                                    <option>Nhân viên Kế toán</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-2">Quyền</div>
-                            <div class="col-sm-10">
-                                <div class="checkbox">
-                                    <input type="checkbox" id="rule0">
-                                    <label for="rule0">Tất cả</label>
-                                </div>
-                                <div class="checkbox">
-                                    <input type="checkbox" id="rule1">
-                                    <label for="rule1">Sản phẩm</label>
-                                </div>
-                                <div class="checkbox">
-                                    <input type="checkbox" id="rule2">
-                                    <label for="rule2">Đơn hàng</label>
-                                </div>
-                                <div class="checkbox">
-                                    <input type="checkbox" id="rule3">
-                                    <label for="rule3">Vận chuyển</label>
-                                </div>
-                                <div class="checkbox">
-                                    <input type="checkbox" id="rule4">
-                                    <label for="rule4">Kho hàng</label>
-                                </div>
-                                <div class="checkbox">
-                                    <input type="checkbox" id="rule5">
-                                    <label for="rule5">Khách hàng</label>
-                                </div>
-                                <div class="checkbox">
-                                    <input type="checkbox" id="rule">
-                                    <label for="rule">Etc</label>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-          
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Lưu lại</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
-                </div>
-          
-              </div>
             </div>
-          </div>
-</div>
-      
+        </div>
+    </div>
+
+    
 @endsection()
 
 @section('js')
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('manager/assets/js/page/staff_customer.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 @endsection()

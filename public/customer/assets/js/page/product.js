@@ -41,12 +41,12 @@ const View = {
 			View.Product.setPrice();
 
 			if (data.sex == 1) {
-				$(".list-sex").append(`<a class="is-active" value-id="1"> Nam giới</a>`)
+				$(".list-sex").append(`<a class="is-active" value-id="1"> Nam </a>`)
 			}else if(data.sex == 2){
-				$(".list-sex").append(`<a class="is-active" value-id="2"> Nữ giới</a>`)
+				$(".list-sex").append(`<a class="is-active" value-id="2"> Nữ </a>`)
 			}else{
-				$(".list-sex").append(`<a class="is-active" value-id="1"> Nam giới</a>`)
-				$(".list-sex").append(`<a class="" value-id="2"> Nữ giới</a>`)
+				$(".list-sex").append(`<a class="is-active" value-id="1"> Nam </a>`)
+				$(".list-sex").append(`<a class="" value-id="2"> Nữ </a>`)
 			}
 
 			$(".category-data-name a").text(data.category_name)

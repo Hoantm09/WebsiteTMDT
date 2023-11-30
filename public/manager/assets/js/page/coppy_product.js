@@ -7,10 +7,10 @@ const View = {
                 metadata += `<div class="metadata-table-wrapper">
                         <span class="badge badge-pill badge-blue m-r-10">Kích thước: ${v.size} ml</span>
                         <span class="badge badge-pill badge-green m-r-10">Đơn giá: ${IndexView.Config.formatPrices(v.prices)}</span>
-                        <span class="badge badge-pill badge-orange m-r-10">Giảm giá: ${v.discount} %</span>
-                        <span class="badge badge-pill badge-red m-r-10">SL: ${v.quantity}</span>
+                        <span class="badge badge-pill badge-yellow m-r-10">Giảm giá: ${v.discount} %</span>
                     </div>`;
             })
+
             return [
                 `<div class="id-order">${data.id}</div>`,
                 data.name,
@@ -82,12 +82,11 @@ const View = {
                 var father = $(this);
                 var data_size       = father.find(".data-size").val();
                 var data_prices     = father.find(".data-prices").val();
-                var data_discount   = father.find(".data-discount").val();
-                var data_quantity  = father.find(".data-quantity").val();  
+                var data_discount   = father.find(".data-discount").val(); 
                 if (index == 0) global_price = data_prices;
                 data_return.data
                     .push(
-                        JSON.parse(`{ "id": ${index+1}, "size": ${data_size}, "prices": ${data_prices}, "discount": ${data_discount}, "quantity": ${data_quantity} }`)
+                        JSON.parse(`{ "id": ${index+1}, "size": ${data_size}, "prices": ${data_prices}, "discount": ${data_discount} }`)
                     );
             });
             return [
@@ -110,11 +109,7 @@ const View = {
                         <div class="form-group">
                             <label >Giảm giá *</label>
                             <input type="text" class="form-control data-discount number-type" placeholder="%" value="${value_input.discount}">
-                        </div>
-                        <div class="form-group">
-                        <label >Số lượng *</label>
-                        <input type="text" class="form-control data-quantity  number-type" placeholder="%" value="${value_input.quantity}">
-                        </div>  
+                        </div> 
                         <div class="form-group">
                             <button class="btn btn-danger metadata-remove" atr="Delete">Xóa thuộc tính</button>
                         </div>  
@@ -137,11 +132,7 @@ const View = {
                         <div class="form-group">
                             <label >Giảm giá *</label>
                             <input type="text" class="form-control data-discount number-type" placeholder="%">
-                        </div>
-                        <div class="form-group">
-                            <label >Số lượng *</label>
-                            <input type="text" class="form-control data-quantity number-type" placeholder="">
-                        </div>  
+                        </div> 
                         <div class="form-group">
                             <button class="btn btn-danger metadata-remove" atr="Delete">Xóa thuộc tính</button>
                         </div>  
@@ -167,7 +158,6 @@ const View = {
             $(`${resource} .metadata-group`).find('.meta-item').remove()
         }
     },
-
     SideModal: {
         Create: {
             resource: '#side-modal-create',
@@ -194,14 +184,6 @@ const View = {
                 var data_images         = $(`${resource}`).find(".image-list")[0].files;
                 var data_sex            = $(`${resource}`).find('input[name=data-sex]:checked').val(); 
                 var data_meta           = View.Metadata.getVal(resource);
-
-                //Chi tiết đặc tính
-                var data_nongdo           = $(`${resource}`).find('.data-nongdo').val();
-                var data_style           = $(`${resource}`).find('.data-style').val();
-                var data_perfume           = $(`${resource}`).find('.data-perfume').val();
-                var data_agegroup          = $(`${resource}`).find('.data-agegroup').val();
-                var data_ingredient          = $(`${resource}`).find('.data-ingredient').val();
-                var data_property =  data_nongdo + "||" + data_style + "||" + data_perfume + "||" + data_agegroup + "||" + data_ingredient;
  
                 if (data_name == '') { required_data.push('Hãy nhập tên.'); onPushData = false }
                 if (data_sex == null) { required_data.push('Hãy chọn giới tính.'); onPushData = false }
@@ -214,7 +196,6 @@ const View = {
                     fd.append('data_category', data_category);  
                     fd.append('data_sex', data_sex);  
                     fd.append('data_description', data_description); 
-                    fd.append('data_property', data_property);
                     fd.append('data_detail', data_detail); 
                     fd.append('data_meta', data_meta[0]); 
                     fd.append('data_price', data_meta[1]); 
@@ -268,16 +249,7 @@ const View = {
                 IndexView.summerNote.update(`${resource} .data-detail`, data[0].detail);
                 JSON.parse(data[0].metadata).data.map(v => {
                     View.Metadata.setVal(resource, v);
-                }) 
-                //Xử lý đặc tính sản phẩm
-                var data_property =  data[0].property;
-                data_property = data_property.split('||');
-                $(`${resource}`).find('.data-nongdo').val(data_property[0]);
-                $(`${resource}`).find('.data-style').val(data_property[1]);
-                $(`${resource}`).find('.data-perfume').val(data_property[2]);
-                $(`${resource}`).find('.data-agegroup').val(data_property[3]);
-                $(`${resource}`).find('.data-ingredient').val(data_property[4]);
-
+                })  
             },
             getVal(){
                 var resource = this.resource;
@@ -293,15 +265,6 @@ const View = {
                 var data_detail         = $(`${resource}`).find('.data-detail').val(); 
                 var data_sex            = $(`${resource}`).find('input[name=data-sex]:checked').val(); 
                 var data_meta           = View.Metadata.getVal(resource);
-
-                //Chi tiết đặc tính
-                var data_nongdo           = $(`${resource}`).find('.data-nongdo').val();
-                var data_style           = $(`${resource}`).find('.data-style').val();
-                var data_perfume           = $(`${resource}`).find('.data-perfume').val();
-                var data_agegroup          = $(`${resource}`).find('.data-agegroup').val();
-                var data_ingredient          = $(`${resource}`).find('.data-ingredient').val();
-                var data_property =  data_nongdo + "||" + data_style + "||" + data_perfume + "||" + data_agegroup + "||" + data_ingredient;
-
                 var data_images         = $(`${resource}`).find(".image-list")[0].files;
                 var data_images_preview = [];
                 $(`${resource}`).find('.image-preview-item.image-load-data').each(function(index, el) { 
@@ -320,8 +283,7 @@ const View = {
                     fd.append('data_category', data_category);  
                     fd.append('data_sex', data_sex);  
                     fd.append('data_description', data_description); 
-                    fd.append('data_detail', data_detail);
-                    fd.append('data_property',data_property);
+                    fd.append('data_detail', data_detail); 
                     fd.append('data_meta', data_meta[0]); 
                     fd.append('data_price', data_meta[1]); 
                     fd.append('data_images_preview', data_images_preview.toString()); 
@@ -390,7 +352,7 @@ const View = {
         View.Metadata.onCreate("#side-modal-create", "Create");
         View.Metadata.onRemove("#side-modal-create", "Delete");
         View.Metadata.onCreate("#side-modal-update", "Create");
-        View.Metadata.onRemove("#side-modal-update", "Delete");       
+        View.Metadata.onRemove("#side-modal-update", "Delete");
     }
 };
 (() => {

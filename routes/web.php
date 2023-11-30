@@ -138,9 +138,12 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
             Route::get('/', 'Admin\ManagerController@index')->name('admin.manager.index');
         });
 
+        //Quản lý nhân viên
         Route::prefix('staff')->group(function () {
             Route::get('/', 'Admin\StaffController@index')->name('admin.manager.staff');
+            Route::post('/add-staff', 'Admin\StaffController@addStaff')->name('admin.manager.add-staff');
         });
+        //Quản lý khách hàng
         Route::prefix('customer')->group(function () {
             Route::get('/', 'Admin\CustomerController@index')->name('admin.manager.customer');
         });

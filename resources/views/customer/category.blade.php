@@ -3,6 +3,7 @@
 
 
 @section('css')
+<link href="{{asset('manager/assets/vendors/select2/select2.css')}}" rel="stylesheet">
 
 @endsection()
 
@@ -78,16 +79,41 @@
                         <div class="widget widget-tags"> 
                             <ul class="tagcloud">
                                 <li class="tag-cloud-link">
-                                    <a >Quý ông</a>
+                                    <a >Nam</a>
                                 </li>
                                 <li class="tag-cloud-link">
-                                    <a >Quý bà</a>
+                                    <a >Nữ</a>
                                 </li>
                                 <li class="tag-cloud-link active">
-                                    <a >Tất cả</a>
+                                    <a >Bất kỳ</a>
                                 </li> 
                             </ul>
                         </div>
+                        <div class="widget widget_filter_price">
+                            <h4 class="widgettitle">
+                                Độ tuổi
+                            </h4>
+                            <div class="widget widget-tags"> 
+                                <ul class="tagcloud">
+                                    <li class="tag-cloud-link">
+                                        <a>18-25</a>
+                                    </li>
+                                    <li class="tag-cloud-link">
+                                        <a>28-40</a>
+                                    </li>
+                                    <li class="tag-cloud-link">
+                                        <a>41-45</a>
+                                    </li>
+                                    <li class="tag-cloud-link">
+                                        <a>55+</a>
+                                    </li>
+                                    <li class="tag-cloud-link active">
+                                        <a >Tất cả</a>
+                                    </li> 
+                                </ul>
+                            </div>
+                        </div>
+                        
                         <div class="widget widget_filter_price">
                             <h4 class="widgettitle">
                                 Giá
@@ -109,6 +135,65 @@
         </div>
     </div>
 </div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <i class="anticon anticon-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div style="padding-left: 20px;padding-right:20px">
+                    <form action="/action_page.php">
+                        <label class="form-label">Bootstrap 5 DataList</label>
+                        <input class="form-control form-control-sm " list="browsers" name="browser" id="browser">
+                        <datalist id="browsers">
+                          <option value="Edge">
+                          <option value="Firefox">
+                          <option value="Chrome">
+                          <option value="Opera">
+                          <option value="Safari">
+                        </datalist>
+
+                        <label for="browser" class="form-label">Nhóm mùi hương:</label>
+                        <input class="form-control form-control-sm" list="browsers2" name="browser" id="browser">
+                        <datalist id="browsers2">
+                          <option value="Edge">
+                          <option value="Firefox">
+                          <option value="Chrome">
+                          <option value="Opera">
+                          <option value="Safari">
+                        </datalist>
+                        
+                        <label for="browser" class="form-label">Nhóm mùi hương:</label>
+                        <input class="form-control form-control-sm" list="browsers2" name="browser" id="browser">
+                        <datalist id="browsers2">
+                          <option value="Edge">
+                          <option value="Firefox">
+                          <option value="Chrome">
+                          <option value="Opera">
+                          <option value="Safari">
+                        </datalist> 
+                        
+                      </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection()
 
 @section('sub_layout')
@@ -118,4 +203,7 @@
 
 @section('js')
 <script type="text/javascript" src="{{ asset('customer/assets/js/page/category.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('manager/assets/vendors/select2/select2.min.js') }}"></script>
+
 @endsection()

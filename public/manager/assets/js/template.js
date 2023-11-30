@@ -1,19 +1,19 @@
 const Template = {
 	Category: {
-		Create(){
+		Create() {
 			return `<div class="error-log"></div>
 					<input type="hidden" class="form-control data-id" required="">
 					<div class="form-group">
                         <label >Tiêu đề <span class="data-name-return"></span></label>
                         <input type="text" class="form-control data-name" placeholder="Tiêu đề">
                     </div> `
-		}, 
-		Delete(){
+		},
+		Delete() {
 			return `<div class="wrapper d-flex justify-center"><img src="/manager/images_global/funny.gif" alt=""></div>`
 		}
 	},
 	Product: {
-		Create(){
+		Create() {
 			return `<input type="hidden" class="form-control data-id" required="">
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -53,7 +53,32 @@ const Template = {
                             <div class="form-group">
                                 <label >Mô tả ngắn <span class="data-description-return"></span></label>
                                 <textarea class="form-control data-description " name="description" placeholder="Mô tả ngắn" rows="4" required=""></textarea>
-                            </div>   
+                            </div>
+							<div class="form-group">
+								<label >Chi tiết đặc tính <span class="data-description-return"></span></label>
+								<div class="metadata-item2">
+									<div class="form-group">
+										<label>Nồng độ</label>
+										<input type="text" class="form-control data-nongdo" placeholder="ml">
+									</div> 
+									<div class="form-group">
+										<label>Phong cách</label>
+										<input type="text" class="form-control data-style" placeholder="">
+									</div> 
+									<div class="form-group">
+										<label>Nhóm hương</label>
+										<input type="text" class="form-control data-perfume" placeholder="%">
+									</div>
+									<div class="form-group">
+										<label>Độ tuổi</label>
+										<input type="text" class="form-control data-agegroup" placeholder="">
+									</div>
+									<div class="form-group">
+										<label>Thành phần</label>
+										<input type="text" class="form-control data-ingredient" placeholder="">
+									</div>    
+                    			</div>
+							</div>     
                             <div class="form-group summernote">
                                 <label >Mô tả đầy đủ </label>
                                 <textarea class="form-control data-detail " name="detail" placeholder="Mô tả đầy đủ" rows="4" required=""></textarea>
@@ -80,8 +105,8 @@ const Template = {
                             </div>    
 						</div>
 	            	</div>`
-		}, 
-		Update(){
+		},
+		Update() {
 			return `<input type="hidden" class="form-control data-id" required="">
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -121,7 +146,36 @@ const Template = {
                             <div class="form-group">
                                 <label >Mô tả ngắn <span class="data-description-return"></span></label>
                                 <textarea class="form-control data-description " name="description" placeholder="Mô tả ngắn" rows="4" required=""></textarea>
-                            </div>   
+                            </div>
+							<div class="form-group">
+							<label >Mô tả ngắn <span class="data-description-return"></span></label>
+							<textarea class="form-control data-description " name="description" placeholder="Mô tả ngắn" rows="4" required=""></textarea>
+						</div>
+						<div class="form-group">
+							<label >Chi tiết đặc tính <span class="data-description-return"></span></label>
+							<div class=" metadata-item2">
+								<div class="form-group">
+									<label>Nồng độ</label>
+									<input type="text" class="form-control data-nongdo" placeholder="ml">
+								</div> 
+								<div class="form-group">
+									<label>Phong cách</label>
+									<input type="text" class="form-control data-style" placeholder="">
+								</div> 
+								<div class="form-group">
+									<label>Nhóm hương</label>
+									<input type="text" class="form-control data-perfume" placeholder="%">
+								</div>
+								<div class="form-group">
+									<label>Độ tuổi</label>
+									<input type="text" class="form-control data-agegroup" placeholder="">
+								</div>
+								<div class="form-group">
+									<label>Thành phần</label>
+									<input type="text" class="form-control data-ingredient" placeholder="">
+								</div>     
+							</div>
+						</div>     
                             <div class="form-group summernote">
                                 <label >Mô tả đầy đủ </label>
                                 <textarea class="form-control data-detail " name="detail" placeholder="Mô tả đầy đủ" rows="4" required=""></textarea>
@@ -148,13 +202,13 @@ const Template = {
                             </div>    
 						</div>
 	            	</div>`
-		}, 
-		Delete(){
+		},
+		Delete() {
 			return `<div class="wrapper d-flex justify-center"><img src="/manager/images_global/funny.gif" alt=""></div>`
 		}
 	},
 	Warehouse: {
-		Create(){
+		Create() {
 			return `<div class="row warehouse-modal">
 						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 offset-3">
 							<div class="card">
@@ -168,7 +222,7 @@ const Template = {
 						</div>
 	            	</div>`
 		},
-		Update(){
+		Update() {
 			return `<div class="row warehouse-modal">
 						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 offset-3">
 							<table class="table table-bordered sub-warehouse">
@@ -189,7 +243,7 @@ const Template = {
 
 	},
 	Order: {
-		Update(){
+		Update() {
 			return `<div class="container">
                         <div class="card">
                             <div class="card-body">
