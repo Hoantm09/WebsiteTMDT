@@ -592,11 +592,47 @@
 
 
 
+                                 {{--Customer information --}}
+                                 @foreach ($customerInfor as $user)
+                                 <tr role="row" class="odd">
+                                     <td class="sorting_1">
+                                         <div class="checkbox">
+                                             <input id="check-item-{{$user->id}}" type="checkbox">
+                                             <label for="check-item-{{$user->id}}" class="m-b-0"></label>
+                                         </div>
+                                     </td>
+                                     <td>
+                                         {{ $user->id }}
+                                     </td>
+                                     <td>
+                                         <div class="d-flex align-items-center">
+                                             <img class="img-fluid rounded" src="assets/images/others/thumb-9.jpg"
+                                                 style="max-width: 60px" alt="">
+                                             <h6 class="m-b-0 m-l-10">{{ $user->name }}</h6>
+                                         </div>
+                                     </td>
+                                     <td>
+                                        {{$user->phone}}
+                                     </td>
+
+                                     <td>
+                                        {{ $user->company }}
+                                     </td>
+                                     <td>
+                                        {{ $user->address }}
+                                     </td>
+                                     
+                                     <td class="text-right">
+                                         <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                             <i class="anticon anticon-eye"></i>
+                                         </button>
+                                     </td>
+                                 </tr>
+                             @endforeach
 
 
 
-
-                                    <tr role="row" class="odd">
+                                    {{-- <tr role="row" class="odd">
                                         <td class="sorting_1">
                                             <div class="checkbox">
                                                 <input id="check-item-1" type="checkbox">
@@ -668,7 +704,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-5">
@@ -700,5 +736,7 @@
 @endsection()
 
 @section('js')
+    
+    <script src="{{ asset('manager/assets/js/page/product.js') }}"></script>
 
 @endsection()

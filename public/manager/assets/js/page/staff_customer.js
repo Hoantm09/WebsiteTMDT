@@ -44,3 +44,4 @@ document.getElementById('inputState').addEventListener('change', function() {
         });
     }
 });
+
