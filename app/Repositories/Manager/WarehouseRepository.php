@@ -19,7 +19,7 @@ class WarehouseRepository extends BaseRepository implements RepositoryInterface
     public function get_item_all(){
         $sql = "SELECT warehouse.*, 
                     product.name, 
-                    product.prices 
+                    product.price 
                 FROM warehouse
                 LEFT JOIN product
                 ON product.id = warehouse.product_id;";
@@ -35,7 +35,7 @@ class WarehouseRepository extends BaseRepository implements RepositoryInterface
                             LEFT JOIN warehouse_history
                             ON warehouse_history.id = warehouse_history_detail.warehouse_history_id
                             LEFT JOIN admin
-                            ON admin.id = warehouse_history.manager_id
+                            ON admin.id = warehouse_history.admin_id
                             GROUP BY warehouse_history_detail.warehouse_history_id, 
                                     warehouse_history.id, 
                                     admin.email, 

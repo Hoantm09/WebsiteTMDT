@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\Models\ManageStaffCustomer;
 
+use function Ramsey\Uuid\v1;
+
 class StaffController extends Controller
 {
     protected $staff;
@@ -24,5 +26,8 @@ class StaffController extends Controller
         $data = $request->input();
         $this->staff->addStaff($data);
         return redirect(route('admin.manager.staff'));
+    }
+    public function profileStaff(){
+        return view('admin.staff.profile');
     }
 }

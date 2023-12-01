@@ -5,8 +5,9 @@ const View = {
             return [
                 data.product_id,
                 data.name,
-                ViewIndex.table.formatNumber(data.quantity),
-                ViewIndex.table.formatNumber(data.prices) + ` đ`,
+                data.quantity,
+                data.reserve,
+                data.prices + ` $`,
             ]
         },
         init(){
@@ -23,31 +24,37 @@ const View = {
                         orderable: true,
                     },
                     {
-                        title: 'Số lượng',
+                        title: 'Tổng số lượng',
                         name: 'name',
                         orderable: true,
                     },
                     {
-                        title: 'Đơn giá',
+                        title: 'Đang chờ xử lí',
                         name: 'name',
                         orderable: true,
                     },
+                    {
+                        title: 'Giá bán lẻ',
+                        name: 'name',
+                        orderable: true,
+                    }, 
                 ];
-            ViewIndex.table.init("#data-table", row_table);
+            IndexView.table.init("#data-table", row_table);
         }
     },
     tableHistory: {
         __generateDTRow(data){
             var total_price = 0 ;
             data.history_detail.map(v => {
-                total_price += v.price * v.quantity;
+                total_price += v.prices * v.quantity;
             })
 
             return [
                 data.history.id,
                 data.history.email,
-                ViewIndex.table.formatNumber(total_price) + ` đ`,
+                IndexView.table.formatNumber(total_price) + ` $`,
                 data.history.created_at,
+                `<span class="badge badge-pill badge-${data.history.history_status == 1 ? "green" : "red"} m-r-5 m-b-5">${data.history.history_status == 1 ? "Nhập kho" : "Xuất kho"}</span>`,
                 `<div class="view-data modal-fs-control" style="cursor: pointer" atr="View" data-id="${data.history.id}"><i class="anticon anticon-eye"></i></div>`
             ]
         },
@@ -60,7 +67,7 @@ const View = {
                         width: '5%',
                     },
                     {
-                        title: 'Người nhập kho',
+                        title: 'Admin',
                         name: 'name',
                         orderable: true,
                     },
@@ -75,13 +82,18 @@ const View = {
                         orderable: true,
                     },
                     {
+                        title: 'Thao tác',
+                        name: 'icon',
+                        orderable: true,
+                    },
+                    {
                         title: 'Hành động',
                         name: 'Action',
                         orderable: true,
                         width: '10%',
                     },
                 ];
-            ViewIndex.table.init("#data-table", row_table);
+            IndexView.table.init("#data-table", row_table);
         }
     },
     TabData: {
@@ -121,10 +133,10 @@ const View = {
                         </select>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                        <input type="number" class="form-control data-quantity" placeholder="Số lượng">
+                        <input type="text" class="number-type form-control data-quantity" placeholder="Số lượng">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                        <input type="number" class="form-control data-price" placeholder="Đơn giá">
+                        <input type="text" class="number-type form-control data-price" placeholder="Đơn giá">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
                         <button class="btn btn-danger item-remove" atr="Item Delete"><i class="fas fa-times"></i></button>
@@ -245,9 +257,9 @@ const View = {
                     $(".sub-warehouse tbody")
                         .append(`<tr>
                             <td>${v.name}</td>
-                            <td>${ViewIndex.table.formatNumber(v.quantity)}</td>
-                            <td>${ViewIndex.table.formatNumber(v.price)} đ</td>
-                            <td>${ViewIndex.table.formatNumber(v.quantity * v.price)} đ</td>
+                            <td>${IndexView.table.formatNumber(v.quantity)}</td>
+                            <td>${IndexView.table.formatNumber(v.prices)} $</td>
+                            <td>${IndexView.table.formatNumber(v.quantity * v.prices)} $</td>
                           </tr>`)
                 })
             },
@@ -277,13 +289,13 @@ const View = {
         var resource = View.modals.Create.resource;
         View.modals.onShow(resource);
         View.modals.Create.onPush("Push", (fd) => {
-            ViewIndex.helper.showToastProcessing('Processing', 'Đang tạo!');
+            IndexView.helper.showToastProcessing('Processing', 'Đang tạo!');
             Api.Warehouse.Store(fd)
                 .done(res => {
-                    ViewIndex.helper.showToastSuccess('Success', 'Tạo thành công !');
+                    IndexView.helper.showToastSuccess('Success', 'Tạo thành công !');
                     getHistory();
                 })
-                .fail(err => { ViewIndex.helper.showToastError('Error', 'Có lỗi sảy ra'); })
+                .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
                 .always(() => { });
             View.modals.onHide(resource)
             View.modals.Create.setDefaul();
@@ -297,7 +309,7 @@ const View = {
             .done(res => {
                 View.modals.Update.setVal(res.data)
             })
-            .fail(err => { ViewIndex.helper.showToastError('Error', 'Có lỗi sảy ra'); })
+            .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
             .always(() => { }); 
     })
 
@@ -318,27 +330,27 @@ const View = {
     function getData(){
         Api.Warehouse.GetDataItem()
             .done(res => {
-                ViewIndex.table.clearRows();
+                IndexView.table.clearRows();
                 Object.values(res.data).map(v => {
-                    ViewIndex.table.insertRow(View.tableData.__generateDTRow(v));
-                    ViewIndex.table.render();
+                    IndexView.table.insertRow(View.tableData.__generateDTRow(v));
+                    IndexView.table.render();
                 })
-                ViewIndex.table.render();
+                IndexView.table.render();
             })
-            .fail(err => { ViewIndex.helper.showToastError('Error', 'Có lỗi sảy ra'); })
+            .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
             .always(() => { });
     }
     function getHistory(){
         Api.Warehouse.GetDataHistory()
             .done(res => {
-                ViewIndex.table.clearRows();
+                IndexView.table.clearRows();
                 Object.values(res.data).map(v => {
-                    ViewIndex.table.insertRow(View.tableHistory.__generateDTRow(v));
-                    ViewIndex.table.render();
+                    IndexView.table.insertRow(View.tableHistory.__generateDTRow(v));
+                    IndexView.table.render();
                 })
-                ViewIndex.table.render();
+                IndexView.table.render();
             })
-            .fail(err => { ViewIndex.helper.showToastError('Error', 'Có lỗi sảy ra'); })
+            .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
             .always(() => { });
     }
     function getProduct(){
@@ -346,7 +358,7 @@ const View = {
             .done(res => {
                 View.product = res.data;
             })
-            .fail(err => { ViewIndex.helper.showToastError('Error', 'Có lỗi sảy ra'); })
+            .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
             .always(() => { });
     }
 
