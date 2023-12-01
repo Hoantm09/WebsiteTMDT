@@ -43,6 +43,7 @@ const Api = {
             prices: filter.prices ?? '',
             sort: filter.sort ?? '',
             status: filter.status ?? '',
+            sex: filter.sex ?? '',
         }
     });
     Api.Product.Trending = () => $.ajax({

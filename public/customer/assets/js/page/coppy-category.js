@@ -132,6 +132,7 @@ const View = {
 				$(".category-list-tag")
 					.append(`<li class="tag-cloud-link category-tag" category-id="${v.id}"><a category-id="${v.id}">${v.name}</a> </li>`)
 			})
+       
 		},
         onEvent(callback){ 
             $(document).on('click', `.tag-cloud-link.category-tag`, function() {
@@ -146,6 +147,7 @@ const View = {
                 $(this).addClass("active")
                 console.log($(this).attr("status-id"));
                 callback($(this).attr("status-id"))
+
             }); 
         },
         init(){
@@ -218,7 +220,7 @@ const View = {
                 status:       urlParam.get('status') ?? '',
                 prices:       $(".js-range-slider").val(),
                 page:         View.pagination.page ?? '1',
-                sex:          $(".male").val(),
+                
             };
         }, 
         set(item){

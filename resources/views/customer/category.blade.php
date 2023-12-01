@@ -77,15 +77,15 @@
                         </div>
                         <h3 class="widgettitle">Giới tính</h3>
                         <div class="widget widget-tags"> 
-                            <ul class="tagcloud">
-                                <li class="tag-cloud-link">
+                            <ul class="tagcloud category-list-sex">
+                                <li class="tag-cloud-link male" value="1">
                                     <a >Nam</a>
                                 </li>
-                                <li class="tag-cloud-link">
+                                <li class="tag-cloud-link female" value="2">
                                     <a >Nữ</a>
                                 </li>
-                                <li class="tag-cloud-link active">
-                                    <a >Bất kỳ</a>
+                                <li class="tag-cloud-link active any-sex" value="3">
+                                    <a >Cả Nam và Nữ</a>
                                 </li> 
                             </ul>
                         </div>

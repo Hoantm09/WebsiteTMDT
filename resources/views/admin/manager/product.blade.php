@@ -100,3 +100,30 @@
     <script src="{{ asset('manager/assets/js/page/product.js') }}"></script>
 
 @endsection()
+
+{{-- <div class=" metadata-item">
+    <div class="form-group">
+        <label>Độ tuổi *</label>
+        <input type="text" class="form-control data-size number-type" placeholder="ml">
+    </div> 
+    <div class="form-group">
+        <label>Phong cách *</label>
+        <input type="text" class="form-control data-size number-type" placeholder="ml">
+    </div><div class="form-group">
+        <label>Nhóm hương *</label>
+        <input type="text" class="form-control data-prices number-type" placeholder="">
+    </div> 
+    <div class="form-group">
+        <label>Nhãn hiệu</label>
+        <input type="text" class="form-control data-discount number-type" placeholder="%">
+    </div> 
+    <div class="form-group">
+        <label>Nồng độ</label>
+        <input type="text" class="form-control data-discount number-type" placeholder="%">
+    </div><div class="form-group">
+        <label>Thành phần</label>
+        <input type="text" class="form-control data-discount number-type" placeholder="%">
+    </div><div class="form-group">
+        <button class="btn btn-danger metadata-remove" atr="Delete">Xóa thuộc tính</button>
+    </div>  
+</div> --}}

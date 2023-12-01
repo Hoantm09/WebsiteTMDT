@@ -48,12 +48,6 @@ class ProductRepository extends BaseRepository implements RepositoryInterface
         $sort           = $request->sort;
         $status         = $request->status;
         $where_sql      = "";
-        $sex            = $request->sex;
-        $sql_sex        = "";
-
-        if ($sex==1) $sql_sex = "AND sex = ".$sex;
-        elseif ($sex==2) $sql_sex = "AND sex =".$sex;
-        elseif ($sex==3) $sql_sex = "AND sex = ".$sex;
 
         if ($category_id > 0) $where_sql = " AND category_id = ".$category_id;
         if ($keyword != "") $where_sql = " AND name like '".$category_id."'";
@@ -63,7 +57,7 @@ class ProductRepository extends BaseRepository implements RepositoryInterface
             $where_sql = " AND trending = 1";
         }
 
-        $sql = "SELECT * FROM product WHERE price BETWEEN ".$prices_from." AND ".$prices_to.$where_sql.$sql_sex;
+        $sql = "SELECT * FROM product WHERE price BETWEEN ".$prices_from." AND ".$prices_to.$where_sql;
         return DB::select($sql);
     }
     public function get_condition($request, $count){
@@ -75,11 +69,6 @@ class ProductRepository extends BaseRepository implements RepositoryInterface
         $sort           = $request->sort;
         $status         = $request->status;
         $where_sql      = "";
-        $sex            = $request->sex;
-
-        if ($sex == 1) $sql_sex = " AND sex = ".$sex;
-        elseif ($sex == 2) $sql_sex = "AND sex = ".$sex;
-        elseif ($sex == 3) $sql_sex = "AND sex = ".$sex;
 
         if ($category_id > 0) $where_sql = " AND category_id = ".$category_id;
         if ($keyword != "") $where_sql = " AND name like '".$category_id."'";
@@ -104,7 +93,7 @@ class ProductRepository extends BaseRepository implements RepositoryInterface
 
         $sql = "SELECT  *
                 FROM product 
-                WHERE price BETWEEN ".$prices_from." AND ".$prices_to.$where_sql.$sql_sex.$sort_by."
+                WHERE price BETWEEN ".$prices_from." AND ".$prices_to.$where_sql.$sort_by."
                 LIMIT ".$pageSize.$offset;
         
         return DB::select($sql);
