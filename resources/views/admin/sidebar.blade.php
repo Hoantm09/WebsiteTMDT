@@ -42,7 +42,7 @@
                 </a>
             </li>
 
-            <li class="nav-item dropdown manager2-group">
+{{--             <li class="nav-item dropdown manager2-group">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
                         <i class="fas fa-warehouse"></i>
@@ -58,6 +58,15 @@
                     <li class="product1"> <a href="{{ route('admin.product.index') }}">Quản lý đóng gói</a> </li>
                     <li class="product1"> <a href="{{ route('admin.product.index') }}">Khách trả hàng</a> </li>
                 </ul>
+            </li> --}}
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="{{ route('admin.warehouse.index') }}">
+                    <span class="icon-holder">
+                        {{-- <i class="anticon anticon-dashboard"></i> --}}
+                        <i class="fas fa-warehouse"></i>
+                    </span>
+                    <span class="title">Kho hàng</span>
+                </a>
             </li>
 
             <li class="nav-item dropdown ">
