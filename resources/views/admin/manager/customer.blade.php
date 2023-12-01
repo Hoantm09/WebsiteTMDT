@@ -514,10 +514,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 text-right">
-                    <button class="btn btn-primary">
-                        <i class="anticon anticon-plus-circle m-r-5"></i>
-                        <span>Thêm khách hàng</span>
-                    </button>
+                  
                 </div>
             </div>
             <div class="table-responsive">
@@ -592,89 +589,47 @@
 
 
 
+                                 {{--Customer information --}}
+                                 @foreach ($customerInfor as $user)
+                                 <tr role="row" class="odd">
+                                     <td class="sorting_1">
+                                         <div class="checkbox">
+                                             <input id="check-item-{{$user->id}}" type="checkbox">
+                                             <label for="check-item-{{$user->id}}" class="m-b-0"></label>
+                                         </div>
+                                     </td>
+                                     <td>
+                                         {{ $user->id }}
+                                     </td>
+                                     <td>
+                                         <div class="d-flex align-items-center">
+                                             <img class="img-fluid rounded" src="assets/images/others/thumb-9.jpg"
+                                                 style="max-width: 60px" alt="">
+                                             <h6 class="m-b-0 m-l-10">{{ $user->name }}</h6>
+                                         </div>
+                                     </td>
+                                     <td>
+                                        {{$user->phone}}
+                                     </td>
+
+                                     <td>
+                                        {{ $user->company }}
+                                     </td>
+                                     <td>
+                                        {{ $user->address }}
+                                     </td>
+                                     
+                                     <td class="text-right">
+                                         <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                             <i class="anticon anticon-eye"></i>
+                                         </button>
+                                     </td>
+                                 </tr>
+                             @endforeach
 
 
 
-
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">
-                                            <div class="checkbox">
-                                                <input id="check-item-1" type="checkbox">
-                                                <label for="check-item-1" class="m-b-0"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            #31
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img class="img-fluid rounded" src="assets/images/others/thumb-9.jpg"
-                                                    style="max-width: 60px" alt="">
-                                                <h6 class="m-b-0 m-l-10">David Nguyen</h6>
-                                            </div>
-                                        </td>
-                                        <td>0653210666</td>
-                                        <td>912.000</td>
-                                        <td>167 Trương Định, Hà Nội</td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="badge badge-success badge-dot m-r-10"></div>
-                                                <div>Hoạt động</div>
-                                            </div>
-                                        </td>
-                                        <td class="text-right">
-                                            <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                <i class="anticon anticon-edit"></i>
-                                            </button>
-                                            <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                <i class="anticon anticon-delete"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="even">
-                                        <td class="sorting_1">
-                                            <div class="checkbox">
-                                                <input id="check-item-4" type="checkbox">
-                                                <label for="check-item-4" class="m-b-0"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            #34
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img class="img-fluid rounded" src="assets/images/others/thumb-12.jpg"
-                                                    style="max-width: 60px" alt="">
-                                                <h6 class="m-b-0 m-l-10">Json Le</h6>
-                                            </div>
-                                        </td>
-                                        <td>0674532000</td>
-                                        <td>128.000</td>
-                                        <td>Tân Dân A, Hưng Yên</td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="badge badge-danger badge-dot m-r-10"></div>
-                                                <div>Vô hiệu hóa</div>
-                                            </div>
-                                        </td>
-                                        <td class="text-right">
-                                            <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                <i class="anticon anticon-edit"></i>
-                                            </button>
-                                            <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                <i class="anticon anticon-delete"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-5">
-                            <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
-                                Showing 1 to 7 of 7 entries</div>
-                        </div>
+                                    
                         <div class="col-sm-12 col-md-7">
                             <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
                                 <ul class="pagination">
@@ -700,5 +655,7 @@
 @endsection()
 
 @section('js')
+    
+    <script src="{{ asset('manager/assets/js/page/product.js') }}"></script>
 
 @endsection()

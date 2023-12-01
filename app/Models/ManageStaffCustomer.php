@@ -21,8 +21,6 @@ class ManageStaffCustomer extends Model
             'email' => $data['email'],
             'password' => $data['password'],
             'type' => $data['role'],
-            'permissions' => $permissions,
-            'status' => 1,
         ]);
         
     }
