@@ -218,7 +218,7 @@ const View = {
                 status:       urlParam.get('status') ?? '',
                 prices:       $(".js-range-slider").val(),
                 page:         View.pagination.page ?? '1',
-                sex:          $(".male").val(),
+                sex:          $(".any-sex").val(),
             };
         }, 
         set(item){
