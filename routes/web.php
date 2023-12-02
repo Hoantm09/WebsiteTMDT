@@ -131,6 +131,10 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
         Route::prefix('warehouse')->group(function () {
             Route::get('/', 'Admin\WarehouseController@index')->name('admin.warehouse.index');
         });
+        Route::prefix('transport')->group(function () {
+            Route::get('/', 'Admin\TransportController@transportIndex')->name('admin.transport.index');
+            Route::get('/config', 'Admin\TransportController@transportConfig')->name('admin.transport.config');
+        });
         Route::prefix('order')->group(function () {
             Route::get('/', 'Admin\OrderController@index')->name('admin.order.index');
         });
