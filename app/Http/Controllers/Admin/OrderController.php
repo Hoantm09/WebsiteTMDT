@@ -44,8 +44,9 @@ class OrderController extends Controller
         return view("admin.manager.order");
     }
     public function get(Request $request){
-        $tab = $request->id;
-        $order = $this->order->get_all($tab);
+        $tag = $request->tag;
+        $id = $request->id;
+        $order = $this->order->get_all($tag,$id);
         return $this->order->send_response("Danh sách đơn hàng", $order, 200); 
     }
     public function get_one(Request $request){

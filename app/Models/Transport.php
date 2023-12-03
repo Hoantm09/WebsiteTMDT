@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class ManageStaffCustomer extends Model
+class Transport extends Model
 {
-    //Manage staff
-    public function getStaff(){
-        $sql = "SELECT id,name,email,type,status FROM admin";
+    use HasFactory;
+    public function getConfigGeneral(){
+        $sql = "SELECT size_order,mass_order,require_order,note_order,address_warehouse FROM config";
         return DB::select($sql);
     }
     public function addstaff($data){
@@ -24,18 +24,5 @@ class ManageStaffCustomer extends Model
         ]);
         
     }
-    public function getData(){
-        $sql = "SELECT name,email,password,type FROM admin";
-        return DB::select($sql);
-    }
 
-    public function deleteStaff($request)
-    {
-        $admin = Admin::where('id', $request->input('id'))->first();
-        if ($admin) {
-            $admin->delete();
-            return true;
-        }
-        return false;
-    }
 }

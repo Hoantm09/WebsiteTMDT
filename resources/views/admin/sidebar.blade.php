@@ -34,12 +34,19 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="{{ route('admin.order.index') }}">
+                <a class="dropdown-toggle" >
                     <span class="icon-holder">
                         <i class="fas fa-shipping-fast"></i>
                     </span>
                     <span class="title">Vận chuyển</span>
+                    <span class="arrow">
+                        <i class="arrow-icon"></i>
+                    </span>
                 </a>
+                <ul class="dropdown-menu"> 
+                    <li class="category1"> <a href="{{ route('admin.transport.index') }}">Quản lý vận đơn</a> </li>
+                    <li class="product1"> <a href="{{ route('admin.transport.config') }}">Cấu hình giao hàng</a> </li>
+                </ul>
             </li>
 
 {{--             <li class="nav-item dropdown manager2-group">
