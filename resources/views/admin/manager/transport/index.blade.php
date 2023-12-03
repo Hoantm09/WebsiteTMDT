@@ -17,17 +17,22 @@
 @section('body')
 
 
-    <div class="page-header">
-        <h2 class="header-title">Quản lý vận chuyển</h2>
-{{--         <div class="header-sub-title">
-            <nav class="breadcrumb breadcrumb-dash">
-                <a href="#" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
-                <a class="breadcrumb-item" href="#">Apps</a>
-                <a class="breadcrumb-item" href="#">E-commerce</a>
-                <span class="breadcrumb-item active">Orders List</span>
-            </nav>
-        </div> --}}
+<div class="page-header no-gutters">
+    <div class="row align-items-md-center">
+        <div class="col-md-6">
+            <div class="media m-v-10">
+                <div class="avatar avatar-cyan avatar-icon avatar-square">
+                    <i class="anticon anticon-star"></i>
+                </div>
+                <div class="media-body m-l-15">
+                    <h6 class="mb-0">Vận chuyển</h6>
+                    <span class="text-gray font-size-13">Quản lý vận đơn</span>
+                </div>
+            </div>
+        </div>
+
     </div>
+</div>
     <div class="card">
         <div class="card-body">
             <div class="row m-b-30">

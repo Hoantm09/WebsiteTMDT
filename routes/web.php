@@ -134,6 +134,10 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
         Route::prefix('transport')->group(function () {
             Route::get('/', 'Admin\TransportController@transportIndex')->name('admin.transport.index');
             Route::get('/config', 'Admin\TransportController@transportConfig')->name('admin.transport.config');
+
+            //Cấu hình chung
+            Route::post('/update-general-config', 'Admin\TransportController@updateGeneralConfig')->name('admin.transport.update-general-config');
+            Route::post('/update-warehouse-address', 'Admin\TransportController@updateGeneralConfig')->name('admin.transport.update-warehouse-address');
         });
         Route::prefix('order')->group(function () {
             Route::get('/', 'Admin\OrderController@index')->name('admin.order.index');
