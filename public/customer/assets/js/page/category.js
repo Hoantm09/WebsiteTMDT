@@ -132,6 +132,13 @@ const View = {
 				$(".category-list-tag")
 					.append(`<li class="tag-cloud-link category-tag" category-id="${v.id}"><a category-id="${v.id}">${v.name}</a> </li>`)
 			})
+            // Button Chọn Giới Tính
+            $(".category-list-sex")
+                    .append(`<li class="tag-cloud-link sex-tag" value="1"><a>Nam</a> </li>`)
+            $(".category-list-sex")
+                    .append(`<li class="tag-cloud-link sex-tag" value="2"><a>Nữ</a> </li>`)
+            $(".category-list-sex")
+                    .append(`<li class="tag-cloud-link sex-tag" value="3"><a>Cả Nam và Nữ</a> </li>`)
 		},
         onEvent(callback){ 
             $(document).on('click', `.tag-cloud-link.category-tag`, function() {
@@ -147,6 +154,13 @@ const View = {
                 console.log($(this).attr("status-id"));
                 callback($(this).attr("status-id"))
             }); 
+            // Button Chọn Giới Tính
+            $(document).on('click', `.tag-cloud-link.sex-tag`, function() {
+                $(".category-list-sex .tag-cloud-link").removeClass("active");
+                $(this).addClass("active")
+                console.log($(this).attr("value"));
+                callback($(this).attr("value"))
+            }); 
         },
         init(){
             $(".category-list-tag .tag-cloud-link.category-tag").removeClass("active")
@@ -154,6 +168,9 @@ const View = {
 
             $(".category-list-tag .tag-cloud-link.status-tag").removeClass("active")
             $(`.category-list-tag .tag-cloud-link.status-tag[status-id='${View.URL.get("status") ?? 0}']`).addClass("active")
+            // Button Chọn Giới Tính
+            $(".category-list-sex .tag-cloud-link.sex-tag").removeClass("active")
+            $(`.category-list-sex .tag-cloud-link.sex-tag[value='${View.URL.get("sex") ?? 0}']`).addClass("active")
         }
 	},
 	SlidesRange: { 
@@ -218,7 +235,7 @@ const View = {
                 status:       urlParam.get('status') ?? '',
                 prices:       $(".js-range-slider").val(),
                 page:         View.pagination.page ?? '1',
-                sex:          $(".male").val(),
+                sex:          $(".any-sex").val(),
             };
         }, 
         set(item){

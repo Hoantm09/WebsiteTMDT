@@ -26,4 +26,18 @@ class ManageStaffCustomer extends Model
         ]);
         
     }
+    public function getData(){
+        $sql = "SELECT name,email,password,type FROM admin";
+        return DB::select($sql);
+    }
+
+    public function deleteStaff($request)
+    {
+        $admin = Admin::where('id', $request->input('id'))->first();
+        if ($admin) {
+            $admin->delete();
+            return true;
+        }
+        return false;
+    }
 }

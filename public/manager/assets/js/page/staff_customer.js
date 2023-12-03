@@ -44,3 +44,24 @@ document.getElementById('inputState').addEventListener('change', function() {
         });
     }
 });
+
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+function removeRow(id, url){
+    if (confirm('Xóa mà không thể nào khôi phục. Bạn có chắc?')) {
+        $.ajax({
+            type: 'DELETE',
+            datatype: 'JSON',
+            data: {id},
+            url: url,
+            success: function(result) {
+                console.log(result);
+            }
+        })
+    }
+}

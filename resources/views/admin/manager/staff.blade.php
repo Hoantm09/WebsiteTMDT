@@ -637,12 +637,12 @@
 
                                             </td>
                                             <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right" data-bs-toggle="modal" data-bs-target="#edit-member-modal">
                                                     <i class="anticon anticon-edit"></i>
                                                 </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                <a href="#" onclick="removeRow(' . $admin->id . ', \'/admin/manager/delete-staff')">
                                                     <i class="anticon anticon-delete"></i>
-                                                </button>
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -912,6 +912,126 @@
         </div>
     </div>
 
+
+    <div class="edit-member-box">
+        <!-- The Modal -->
+        <div class="modal" id="edit-member-modal">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Chỉnh sửa nhân viên</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form action="{{route('admin.manager.edit-staff')}}" method="POST">
+                            @csrf
+                            <div class="form-group row">
+                                <label for="inputname" class="col-sm-2 col-form-label">Họ tên</label>
+                                <div class="col-sm-10">
+                                    <input type="name" name="name" value="" class="form-control" id="inputname3" placeholder="Họ tên">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Mật khẩu</label>
+                                <div class="col-sm-10">
+                                    <input type="password" name="password" class="form-control" id="inputPassword3"
+                                        placeholder="Mật khẩu">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-sm-2 pt-0">Vai trò</label>
+                                <div class="col-sm-10">
+                                    <select name="role" id="inputState" class="form-control">
+                                        <option>Choose...</option>
+                                        <option value="1">Admin</option>
+                                        <option value="2">Nhân viên Quản lý</option>
+                                        <option value="3">Nhân viên Kho</option>
+                                        <option value="4">Nhân viên Kế toán</option>
+                                        {{-- @foreach($staffsavedInfor as $admin)
+                                        <option value="{{ $admin -> type}}" {{$admin->type == $type->type ? 'selected' : ''}}>
+                                            {{$admin -> type}}
+                                        </option>
+                                        @endforeach --}}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-2">Phân quyền</div>
+                                <div class="col-sm-10">
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule0" value="rule0" >
+                                        <label for="rule0">Tất cả</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule1" value="rule1">
+                                        <label for="rule1">Sản phẩm</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule2" value="rule2">
+                                        <label for="rule2">Đơn hàng</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule3" value="rule3">
+                                        <label for="rule3">Vận chuyển</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule4" value="rule4">
+                                        <label for="rule4">Kho hàng</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule5" value="rule5">
+                                        <label for="rule5">Khách hàng</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule6" value="rule6">
+                                        <label for="rule6">Nhân viên</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule7" value="rule7">
+                                        <label for="rule7">Cấu hình</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule8" value="rule8">
+                                        <label for="rule8">Đóng gói</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule9" value="rule9">
+                                        <label for="rule9">Thống kê</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="permissions[]" id="rule" value="rule">
+                                        <label for="rule">Etc</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Lưu lại</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
+                            </div>
+                        </form>
+                    </div>
+
+{{--                     <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Lưu lại</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
+                    </div> --}}
+
+                </div>
+            </div>
+        </div>
+    </div>
     
 @endsection()
 

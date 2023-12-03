@@ -78,15 +78,15 @@
                         <h3 class="widgettitle">Giới tính</h3>
                         <div class="widget widget-tags"> 
                             <ul class="tagcloud category-list-sex">
-                                <li class="tag-cloud-link male" value="1">
+                                {{-- <li class="tag-cloud-link male" value="1">
                                     <a >Nam</a>
                                 </li>
                                 <li class="tag-cloud-link female" value="2">
                                     <a >Nữ</a>
                                 </li>
-                                <li class="tag-cloud-link">
+                                <li class="tag-cloud-link ">
                                     <a >Bất kỳ</a>
-                                </li> 
+                                </li>  --}}
                             </ul>
                         </div>
                         <div class="widget widget_filter_price">

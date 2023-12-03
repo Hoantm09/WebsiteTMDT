@@ -143,6 +143,9 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
             Route::get('/', 'Admin\StaffController@index')->name('admin.manager.staff');
             Route::post('/add-staff', 'Admin\StaffController@addStaff')->name('admin.manager.add-staff');
             Route::get('/profile', 'Admin\StaffController@profileStaff')->name('admin.staff.profile');
+            Route::post('/edit-staff', 'Admin\StaffController@editStaff')->name('admin.manager.edit-staff');
+            Route::DELETE('destroy', 'Admin\StaffController@deleteStaff')->name('admin.manager.delete-staff');
+
         });
         //Quản lý khách hàng
         Route::prefix('customer')->group(function () {
