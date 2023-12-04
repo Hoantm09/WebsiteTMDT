@@ -176,9 +176,9 @@
                                                 <button data-user-id={{$user->id}}  id="edit-member-btn" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right " data-bs-toggle="modal" data-bs-target="#edit-member-modal">
                                                     <i class="anticon anticon-edit"></i>
                                                 </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                <a href="#" onclick="removeRow(' . $admin->id . ', \'/admin/manager/delete-staff')">
                                                     <i class="anticon anticon-delete"></i>
-                                                </button>
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach
