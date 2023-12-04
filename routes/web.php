@@ -137,7 +137,7 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
 
             //Cấu hình chung
             Route::post('/update-general-config', 'Admin\TransportController@updateGeneralConfig')->name('admin.transport.update-general-config');
-            Route::post('/update-warehouse-address', 'Admin\TransportController@updateGeneralConfig')->name('admin.transport.update-warehouse-address');
+            Route::post('/update-warehouse-address', 'Admin\TransportController@updateWarehouseConfig')->name('admin.transport.update-warehouse-address');
         });
         Route::prefix('order')->group(function () {
             Route::get('/', 'Admin\OrderController@index')->name('admin.order.index');
@@ -150,7 +150,12 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
         Route::prefix('staff')->group(function () {
             Route::get('/', 'Admin\StaffController@index')->name('admin.manager.staff');
             Route::post('/add-staff', 'Admin\StaffController@addStaff')->name('admin.manager.add-staff');
+            Route::post('/update-staff/{id}', 'Admin\StaffController@updateStaff')->name('admin.manager.update-staff');
             Route::get('/profile', 'Admin\StaffController@profileStaff')->name('admin.staff.profile');
+
+            //api
+            Route::get('/api/getdetail/{id}', 'Admin\StaffController@getInforDetail')->name('admin.staff.getdetail');
+
         });
         //Quản lý khách hàng
         Route::prefix('customer')->group(function () {

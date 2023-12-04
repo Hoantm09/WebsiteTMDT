@@ -45,3 +45,26 @@ document.getElementById('inputState').addEventListener('change', function() {
     }
 });
 
+
+
+//Edit nhân viên
+    // Sử dụng lớp chung cho tất cả nút "Edit"
+    document.querySelectorAll('#edit-member-btn').forEach(function(button) {
+        button.addEventListener('click', function () {
+            // Lấy user ID từ thuộc tính data-user-id
+            var userId = this.getAttribute('data-user-id');
+            // Gửi yêu cầu Ajax đến Laravel route để lấy dữ liệu
+            fetch('/admin/staff/api/getdetail/' + userId) // Thay thế đường dẫn phù hợp với route của bạn
+                .then(response => response.json())
+                .then(data => {
+                    // Hiển thị dữ liệu lấy được trong modal
+                    document.getElementById('inputname4').value = data.name;
+                    document.getElementById('inputEmail4').value = data.email;
+                    document.getElementById('inputPassword4').value = ''; // Đặt mật khẩu về trống, bạn có thể điều chỉnh tùy thuộc vào logic của bạn
+                    document.getElementById('inputState4').value = data.role;
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    });
+
+
