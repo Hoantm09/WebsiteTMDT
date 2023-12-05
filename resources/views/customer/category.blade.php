@@ -44,8 +44,8 @@
                         </form>     
 
 
-                        <button class="open-modal-boloc">Bộ lọc</button>
-                        <span class="open-modal-boloc">Bộ lọc nâng cao - ICON trỏ xuống</span>
+                        {{-- <button class="open-modal-boloc">Bộ lọc</button> --}}
+                        <button class="btn open-modal-boloc"><i class="fas fa-filter"> Chi tiết</i></button>
                         <div class="form-boloc1 hide">               
                             <div class="form-body-boloc">
                                 <div class="form-group">
@@ -93,7 +93,7 @@
                             </div>
                         </div>
 
-                        <div class="form-boloc hide">
+                        <div class="form-boloc hide m-t-10">
                             <div class="">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
