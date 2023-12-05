@@ -44,5 +44,12 @@ class StaffController extends Controller
         /* $this->staff->updateStaff($data,$id); */
     }
 
+    //Update thông tin
+    public function deleteStaff($id){
+        $this->staff->deleteStaff($id);
+        return response()->json('success');
+            /* $this->staff->updateStaff($data,$id); */
+    }
+
 
 }

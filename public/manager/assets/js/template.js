@@ -210,7 +210,7 @@ const Template = {
 	Warehouse: {
 		Create() {
 			return `<div class="row warehouse-modal">
-						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 offset-3">
+						<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 offset-2">
 							<div class="card">
 								<div class="card-body">
 									<div class="item-list">

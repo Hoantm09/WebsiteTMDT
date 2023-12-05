@@ -78,21 +78,13 @@
                         <h3 class="widgettitle">Giới tính</h3>
                         <div class="widget widget-tags"> 
                             <ul class="tagcloud category-list-sex">
-<<<<<<< HEAD
                                 {{-- <li class="tag-cloud-link male" value="1">
-=======
-                                <li class="tag-cloud-link sex-status male" value="1">
->>>>>>> 8ee08b1f2a547f8a72abf0a1abf3c9678bc20741
                                     <a >Nam</a>
                                 </li>
                                 <li class="tag-cloud-link sex-status female" value="2">
                                     <a >Nữ</a>
                                 </li>
-<<<<<<< HEAD
                                 <li class="tag-cloud-link ">
-=======
-                                <li class="tag-cloud-link sex-status any-sex" value="3">
->>>>>>> 8ee08b1f2a547f8a72abf0a1abf3c9678bc20741
                                     <a >Bất kỳ</a>
                                 </li>  --}}
                             </ul>

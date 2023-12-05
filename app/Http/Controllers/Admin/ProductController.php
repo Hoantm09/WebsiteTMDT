@@ -31,6 +31,11 @@ class ProductController extends Controller
         $data = $this->product->get_one($id);
         return $this->product->send_response(200, $data, null);
     }
+
+    public function get_one_for_warehouse($id){
+        $data = $this->product->get_one_for_warehouse($id);
+        return $this->product->send_response(200, $data, null);
+    }
  
     public function store(Request $request){   
         $data = [

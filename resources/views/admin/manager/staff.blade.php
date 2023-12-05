@@ -176,9 +176,9 @@
                                                 <button data-user-id={{$user->id}}  id="edit-member-btn" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right " data-bs-toggle="modal" data-bs-target="#edit-member-modal">
                                                     <i class="anticon anticon-edit"></i>
                                                 </button>
-                                                <a href="#" onclick="removeRow(' . $admin->id . ', \'/admin/manager/delete-staff')">
+                                                <button data-user-id={{$user->id}} id="delete-member-btn" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right " data-bs-toggle="modal" data-bs-target="#delete-member-modal">
                                                     <i class="anticon anticon-delete"></i>
-                                                </a>
+                                                </button>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -320,7 +320,7 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form action="/update-staff/" method="POST">
+                        <form id="edit-member-form" action="" method="POST">
                             @csrf
                             <div class="form-group row">
                                 <label for="inputname" class="col-sm-2 col-form-label">Họ tên</label>
@@ -344,7 +344,7 @@
                             <div class="form-group row">
                                 <label class="col-form-label col-sm-2 pt-0">Vai trò</label>
                                 <div class="col-sm-10">
-                                    <select name="role" id="inputState" class="form-control">
+                                    <select name="role" id="inputState4" class="form-control">
                                         <option>Choose...</option>
                                         <option value="1">Admin</option>
                                         <option value="2">Nhân viên Quản lý</option>
@@ -357,47 +357,47 @@
                                 <div class="col-sm-2">Phân quyền</div>
                                 <div class="col-sm-10">
                                     <div class="checkbox">
-                                        <input type="checkbox" name="permissions[]" id="rule0" value="rule0" >
+                                        <input type="checkbox" name="permissions[]" id="rule0a" value="rule0" >
                                         <label for="rule0">Tất cả</label>
                                     </div>
                                     <div class="checkbox">
-                                        <input type="checkbox" name="permissions[]" id="rule1" value="rule1">
+                                        <input type="checkbox" name="permissions[]" id="rule1a" value="rule1">
                                         <label for="rule1">Sản phẩm</label>
                                     </div>
                                     <div class="checkbox">
-                                        <input type="checkbox" name="permissions[]" id="rule2" value="rule2">
+                                        <input type="checkbox" name="permissions[]" id="rule2a" value="rule2">
                                         <label for="rule2">Đơn hàng</label>
                                     </div>
                                     <div class="checkbox">
-                                        <input type="checkbox" name="permissions[]" id="rule3" value="rule3">
+                                        <input type="checkbox" name="permissions[]" id="rule3a" value="rule3">
                                         <label for="rule3">Vận chuyển</label>
                                     </div>
                                     <div class="checkbox">
-                                        <input type="checkbox" name="permissions[]" id="rule4" value="rule4">
+                                        <input type="checkbox" name="permissions[]" id="rule4a" value="rule4">
                                         <label for="rule4">Kho hàng</label>
                                     </div>
                                     <div class="checkbox">
-                                        <input type="checkbox" name="permissions[]" id="rule5" value="rule5">
+                                        <input type="checkbox" name="permissions[]" id="rule5a" value="rule5">
                                         <label for="rule5">Khách hàng</label>
                                     </div>
                                     <div class="checkbox">
-                                        <input type="checkbox" name="permissions[]" id="rule6" value="rule6">
+                                        <input type="checkbox" name="permissions[]" id="rule6a" value="rule6">
                                         <label for="rule6">Nhân viên</label>
                                     </div>
                                     <div class="checkbox">
-                                        <input type="checkbox" name="permissions[]" id="rule7" value="rule7">
+                                        <input type="checkbox" name="permissions[]" id="rule7a" value="rule7">
                                         <label for="rule7">Cấu hình</label>
                                     </div>
                                     <div class="checkbox">
-                                        <input type="checkbox" name="permissions[]" id="rule8" value="rule8">
+                                        <input type="checkbox" name="permissions[]" id="rule8a" value="rule8">
                                         <label for="rule8">Đóng gói</label>
                                     </div>
                                     <div class="checkbox">
-                                        <input type="checkbox" name="permissions[]" id="rule9" value="rule9">
+                                        <input type="checkbox" name="permissions[]" id="rule9a" value="rule9">
                                         <label for="rule9">Thống kê</label>
                                     </div>
                                     <div class="checkbox">
-                                        <input type="checkbox" name="permissions[]" id="rule" value="rule">
+                                        <input type="checkbox" name="permissions[]" id="rulea" value="rule">
                                         <label for="rule">Etc</label>
                                     </div>
                                 </div>
@@ -416,7 +416,26 @@
         </div>
     </div>
 
-
+    {{-- Delete member --}}
+    <div class="modal fade" id="delete-member-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Xác nhận</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i class="anticon anticon-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="member-name"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                    <button id="delete-member-submit" type="button" class="btn btn-danger">Xóa nhân viên</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
 @endsection()
 
