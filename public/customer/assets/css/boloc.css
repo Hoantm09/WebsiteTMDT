@@ -1,0 +1,42 @@
+.form-body-boloc {
+  position: absolute;
+  width: 460px;
+  background: white;
+  left: 400px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  border: 2px solid #a39c9c;
+  margin-top: 10px;
+}
+
+.form-body-boloc .form-group {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: #a39c9c;
+  height: 28px;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-right: 10px;
+  top: 30px;
+  
+ }
+
+ .form-body-boloc .select-option{
+  border-radius: 7px;
+  padding: 10px;
+  width: 200px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 2px solid #a39c9c;
+ }
+
+.form-body-boloc .button-boloc {
+  margin-top: 40px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+.hide { 
+  display: none;
+}

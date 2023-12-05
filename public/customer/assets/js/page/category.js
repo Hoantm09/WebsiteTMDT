@@ -364,3 +364,15 @@ const View = {
 
     init();
 })();
+
+// Event bo loc
+var btnOpen = document.querySelector('.open-modal-boloc')
+var modal = document.querySelector('.form-boloc')
+var btnClose = document.querySelector('.form-boloc hide')
+function toggleModal(){
+    modal.classList.toggle('hide')
+}
+
+btnOpen.addEventListener('click', toggleModal)
+btnClose.addEventListener('click', toggleModal)
+

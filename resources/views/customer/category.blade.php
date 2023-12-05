@@ -4,6 +4,7 @@
 
 @section('css')
 <link href="{{asset('manager/assets/vendors/select2/select2.css')}}" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('customer/assets/css/boloc.css') }}">
 
 @endsection()
 
@@ -40,7 +41,54 @@
                                 <option value="4">Giá từ thấp đến cao</option> 
                                 <option value="5">Giá giảm dần</option>
                             </select>
-                        </form>
+                        </form>                                            
+                        <button class="open-modal-boloc">Bộ lọc</button>
+                        <div class="form-boloc hide">               
+                            <div class="form-body-boloc">
+                                <div class="form-group">
+                                    <select name="thương-hiệu" class="select-option">
+                                        <option value="bất-kỳ">Bất kỳ Thương hiệu</option>
+                                        <option value="chanel">Chanel</option>
+                                        <option value="dior">Dior</option>
+                                        <option value="gucci">Gucci</option>
+                                    </select>
+                                </div>   
+                                <div class="form-group">
+                                    <select name="mùi-hương" class="select-option">
+                                        <option value="bất-kỳ">Bất kỳ Mùi Hương Chính</option>
+                                        <option value="Cashmeran">Cashmeran</option>
+                                        <option value="Hoa-Hồng-Bulgaria">Hoa Hồng Bulgaria</option>
+                                        <option value="Xạ-hương-trắng">Xạ hương trắng</option>
+                                    </select>
+                                </div>                             
+                                <div class="form-group">
+                                    <select name="nhóm-hương" class="select-option">
+                                        <option value="bất-kỳ">Bất kỳ Nhóm hương</option>
+                                        <option value="hoa-cỏ">Hoa cỏ</option>
+                                        <option value="gỗ-xa-xỉ">Gỗ xa xỉ</option>
+                                        <option value="dịu-mát">Dịu mát</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="giới-tính" class="select-option">
+                                        <option value="bất-kỳ">Bất kỳ Giới tính</option>
+                                        <option value="nam">Nam</option>
+                                        <option value="nữ">Nữ</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="xuất-xứ" class="select-option">
+                                        <option value="bất-kỳ">Bất kỳ Xuất xứ</option>
+                                        <option value="pháp">Pháp</option>
+                                        <option value="italia">Italia</option>
+                                        <option value="nhật-bản">Nhật Bản</option>
+                                    </select>
+                                </div>
+                                <div class="button-boloc">
+                                    <button type="button" class="apply" id="apply">Áp dụng</button>
+                                </div>
+                            </div>
+                        </div>
                         <div class="grid-view-mode">
                             <div class="inner">
                                 <a class="modes-mode mode-list" atr="list">
