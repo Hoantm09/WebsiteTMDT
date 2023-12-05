@@ -41,9 +41,12 @@
                                 <option value="4">Giá từ thấp đến cao</option> 
                                 <option value="5">Giá giảm dần</option>
                             </select>
-                        </form>                                            
+                        </form>     
+
+
                         <button class="open-modal-boloc">Bộ lọc</button>
-                        <div class="form-boloc hide">               
+                        <span class="open-modal-boloc">Bộ lọc nâng cao - ICON trỏ xuống</span>
+                        <div class="form-boloc1 hide">               
                             <div class="form-body-boloc">
                                 <div class="form-group">
                                     <select name="thương-hiệu" class="select-option">
@@ -89,6 +92,54 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="form-boloc hide">
+                            <div class="">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <select name="thương-hiệu" class="select-option">
+                                            <option value="bất-kỳ">Bất kỳ Thương hiệu</option>
+                                            <option value="chanel">Chanel</option>
+                                            <option value="dior">Dior</option>
+                                            <option value="gucci">Gucci</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <select name="thương-hiệu" class="select-option">
+                                            <option value="bất-kỳ">Bất kỳ Thương hiệu</option>
+                                            <option value="chanel">Chanel</option>
+                                            <option value="dior">Dior</option>
+                                            <option value="gucci">Gucci</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <select name="thương-hiệu" class="select-option">
+                                            <option value="bất-kỳ">Bất kỳ Thương hiệu</option>
+                                            <option value="chanel">Chanel</option>
+                                            <option value="dior">Dior</option>
+                                            <option value="gucci">Gucci</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <select name="thương-hiệu" class="select-option">
+                                            <option value="bất-kỳ">Bất kỳ Thương hiệu</option>
+                                            <option value="chanel">Chanel</option>
+                                            <option value="dior">Dior</option>
+                                            <option value="gucci">Gucci</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <select name="thương-hiệu" class="select-option">
+                                            <option value="bất-kỳ">Bất kỳ Thương hiệu</option>
+                                            <option value="chanel">Chanel</option>
+                                            <option value="dior">Dior</option>
+                                            <option value="gucci">Gucci</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="grid-view-mode">
                             <div class="inner">
                                 <a class="modes-mode mode-list" atr="list">
@@ -202,15 +253,6 @@
             <div class="modal-body">
                 <div style="padding-left: 20px;padding-right:20px">
                     <form action="/action_page.php">
-                        <label class="form-label">Bootstrap 5 DataList</label>
-                        <input class="form-control form-control-sm " list="browsers" name="browser" id="browser">
-                        <datalist id="browsers">
-                          <option value="Edge">
-                          <option value="Firefox">
-                          <option value="Chrome">
-                          <option value="Opera">
-                          <option value="Safari">
-                        </datalist>
 
                         <label for="browser" class="form-label">Nhóm mùi hương:</label>
                         <input class="form-control form-control-sm" list="browsers2" name="browser" id="browser">
