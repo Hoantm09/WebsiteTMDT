@@ -74,6 +74,12 @@ const Api = {
         url: `/apip/product/get-one/${id}`,
         method: 'GET',
     });
+
+    Api.Product.getOneForWarehouse = (id) => $.ajax({
+        url: `/apip/product/get-one-for-warehouse/${id}`,
+        method: 'GET',
+    });
+
     Api.Product.Update = (data) => $.ajax({
         url: `/apip/product/update`,
         method: 'POST',

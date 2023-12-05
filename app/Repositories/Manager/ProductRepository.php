@@ -33,6 +33,13 @@ class ProductRepository extends BaseRepository implements RepositoryInterface
                 WHERE product.id = ".$id;
         return DB::select($sql);
     }
+        public function get_one_for_warehouse($id){
+        $sql = "SELECT metadata
+                FROM product 
+                WHERE id = ".$id;
+        return DB::select($sql);
+    }
+    
     public function update_trending($id){
         $sql = 'UPDATE product set trending = !trending WHERE id = '.$id;
         DB::select($sql);

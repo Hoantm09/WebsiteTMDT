@@ -52,13 +52,8 @@ class ManageStaffCustomer extends Model
         return DB::select($sql);
     }
 
-    public function deleteStaff($request)
+    public function deleteStaff($id)
     {
-        $admin = Admin::where('id', $request->input('id'))->first();
-        if ($admin) {
-            $admin->delete();
-            return true;
-        }
-        return false;
+        DB::table('admin')->where('id', $id)->delete();
     }
 }

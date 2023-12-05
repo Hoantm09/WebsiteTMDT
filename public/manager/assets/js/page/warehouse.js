@@ -1,5 +1,6 @@
 const View = {
     product: [],
+    typesOfProduct: [],
     tableData: {
         __generateDTRow(data){
             return [
@@ -123,6 +124,30 @@ const View = {
             return JSON.stringify(Object.assign({}, data_return));
         },
         Create(resource){
+            $(document).on('input', `${resource} .item-list .data-item:last`, function () {
+                var idSelected = $(this).val();
+
+                // Tìm phần tử .item-product chứa select đang thay đổi
+                var currentItem = $(this).closest('.item-product');
+
+                // Gọi API để lấy dữ liệu cho select thứ hai (data-item2)
+                Api.Product.getOne(idSelected)
+                    .done(res => {
+                        var listTypesOfProduct = res.data;
+                        var jsonData = listTypesOfProduct[0].metadata;
+                        var typesOfProduct = JSON.parse(jsonData).data;
+        
+                        // Xóa tất cả các option hiện tại trong select thứ hai (data-item2) của phần tử hiện tại
+                        currentItem.find('.data-item2').empty();
+                
+                        // Thêm các option mới từ dữ liệu API vào select thứ hai (data-item2) của phần tử hiện tại
+                        typesOfProduct.forEach(option => {
+                            currentItem.find('.data-item2').append(`<option value="${option.id}">${option.id}-size: ${option.size}</option>`);
+                        });
+                    })
+                    .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
+                    .always(() => { });
+            });
             $(`${resource} .item-list`).append(`
                 <div class="item-product row m-b-10">
                     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -133,17 +158,23 @@ const View = {
                         </select>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                        <select name="" class="form-control category-list2 data-item2">
+
+                        </select>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
                         <input type="text" class="number-type form-control data-quantity" placeholder="Số lượng">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                         <input type="text" class="number-type form-control data-price" placeholder="Đơn giá">
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-1">
                         <button class="btn btn-danger item-remove" atr="Item Delete"><i class="fas fa-times"></i></button>
                     </div>
                 </div>
             `);
         },
+        
         onCreate(resource, name){
             $(document).on('click', `${resource} .item-create`, function() {
                 if($(this).attr('atr').trim() == name) {
@@ -244,6 +275,10 @@ const View = {
                 $(document).off('click', `${View.modals.Create.resource} .item-remove`);
 
                 View.Item.onCreate(View.modals.Create.resource, "Item Create");
+                
+                //Lấy ra sản phẩm được chọn => lấy ra các loại sản phẩm (50ml,100ml,...)
+                /* View.Item.onSelect(View.modals.Create.resource, "Item Select"); */
+
                 View.Item.onRemove(View.modals.Create.resource, "Item Delete");
 
                 View.modals.launch(this.resource, modalTitleHTML, modalBodyHTML, modalFooterHTML);

@@ -151,6 +151,7 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
             Route::get('/', 'Admin\StaffController@index')->name('admin.manager.staff');
             Route::post('/add-staff', 'Admin\StaffController@addStaff')->name('admin.manager.add-staff');
             Route::post('/update-staff/{id}', 'Admin\StaffController@updateStaff')->name('admin.manager.update-staff');
+            Route::post('/delete-staff/{id}', 'Admin\StaffController@deleteStaff')->name('admin.manager.delete-staff');
             Route::get('/profile', 'Admin\StaffController@profileStaff')->name('admin.staff.profile');
 
             //api
@@ -186,6 +187,7 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
         Route::prefix('product')->group(function () {
             Route::get('get', 'Admin\ProductController@get')->name('admin.product.get');
             Route::get('/get-one/{id}', 'Admin\ProductController@get_one')->name('admin.product.get_one');
+            Route::get('/get-one-for-warehouse/{id}', 'Admin\ProductController@get_one_for_warehouse')->name('admin.product.get_one_for_warehouse');
             Route::post('store', 'Admin\ProductController@store')->name('admin.product.store');
             Route::put('/update-trending', 'Admin\ProductController@update_trending')->name('admin.product.trending.update');
             Route::post('/update', 'Admin\ProductController@update')->name('admin.product.update');
