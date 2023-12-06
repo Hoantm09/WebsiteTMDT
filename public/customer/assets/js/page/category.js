@@ -276,8 +276,10 @@ const View = {
                 const selectedValue = $(this).val();
 
                 // Lưu giá trị được chọn vào đối tượng selectedValues
+
                 selectedValues[dropdownName] = selectedValue;
                 console.log(`Selected value for ${dropdownName}: ${selectedValue}`);
+                
             });
         }
     },
@@ -393,6 +395,33 @@ var btnClose = document.querySelector('.form-boloc hide')
 function toggleModal() {
     modal.classList.toggle('hide')
 }
+Api.Product.GetListProperty()
+.done(res => {
+    var listProperty = res.data;
+    var nongdo_pro = listProperty[0];
+    var phongcach_pro = listProperty[1];
+    var nhomhuong = listProperty[2];
+    var dotuoi = listProperty[3]
+    var thanhphan = listProperty[4];
 
+    $.each(nongdo_pro, function(index, option) {
+        $('#nong-do-select').append('<option value="' + option + '">' + option + '</option>');
+    });
+    $.each(phongcach_pro, function(index, option) {
+        $('#phong-cach-select').append('<option value="' + option + '">' + option + '</option>');
+    });
+    $.each(nhomhuong, function(index, option) {
+        $('#nhom-huong-select').append('<option value="' + option + '">' + option + '</option>');
+    });
+    $.each(dotuoi, function(index, option) {
+        $('#do-tuoi-select').append('<option value="' + option + '">' + option + '</option>');
+    });
+    $.each(thanhphan, function(index, option) {
+        $('#thanh-phan-select').append('<option value="' + option + '">' + option + '</option>');
+    });
+})
+.fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
+.always(() => { });
 btnOpen.addEventListener('click', toggleModal)
 btnClose.addEventListener('click', toggleModal)
+
