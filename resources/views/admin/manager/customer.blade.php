@@ -520,23 +520,6 @@
             <div class="table-responsive">
                 <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                     <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            <div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select
-                                        name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"
-                                        class="custom-select custom-select-sm form-control form-control-sm">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
-                                    </select> entries</label></div>
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input
-                                        type="search" class="form-control form-control-sm" placeholder=""
-                                        aria-controls="DataTables_Table_0"></label></div>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col-sm-12">
                             <table class="table table-hover e-commerce-table dataTable no-footer" id="DataTables_Table_0"
                                 role="grid" aria-describedby="DataTables_Table_0_info">
@@ -618,44 +601,162 @@
                                      <td>
                                         {{ $user->address }}
                                      </td>
-                                     
+                                     <td>
+
+                                     </td>
                                      <td class="text-right">
-                                         <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                             <i class="anticon anticon-eye"></i>
-                                         </button>
+                                        <button data-user-id={{$user->id}}  id="view-member-btn" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right " data-bs-toggle="modal" data-bs-target="#edit-member-modal">
+                                            <i class="anticon anticon-eye"></i>
+                                        </button>
+                                        <button data-user-id={{$user->id}} id="delete-member-btn" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right " data-bs-toggle="modal" data-bs-target="#delete-member-modal">
+                                            <i class="anticon anticon-delete"></i>
+                                        </button>
                                      </td>
                                  </tr>
                              @endforeach
+                               
 
-
-
-                                    
-                        <div class="col-sm-12 col-md-7">
-                            <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-                                <ul class="pagination">
-                                    <li class="paginate_button page-item previous disabled"
-                                        id="DataTables_Table_0_previous"><a href="#"
-                                            aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0"
-                                            class="page-link">Previous</a></li>
-                                    <li class="paginate_button page-item active"><a href="#"
-                                            aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0"
-                                            class="page-link">1</a></li>
-                                    <li class="paginate_button page-item next disabled" id="DataTables_Table_0_next"><a
-                                            href="#" aria-controls="DataTables_Table_0" data-dt-idx="2"
-                                            tabindex="0" class="page-link">Next</a></li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+
+
+        {{-- Delete customer --}}
+        <div class="modal fade" id="delete-member-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Xác nhận</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <i class="anticon anticon-close"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="member-name"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                        <button id="delete-member-submit" type="button" class="btn btn-danger">Xóa nhân viên</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    {{-- Hiển thị thông tin khách hàng --}}
+    <div class="edit-member-box">
+        <!-- The Modal -->
+        <div class="modal" id="view-member-modal">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Thông tin khách hàng</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <i class="anticon anticon-close"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+{{--                         <div id="member-name"></div>
+                        <form id="edit-member-form" action="" method="POST">
+                            @csrf
+                            <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>Tiêu đề</th>
+                                    <th>Giá trị</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Tên</td>
+                                    <td><input type="text" class="form-control" readonly></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Số điện thoại</td>
+                                    <td><input type="text" class="form-control" readonly></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Chi tiêu</td>
+                                    <td><input type="text" class="form-control" readonly></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Địa chỉ</td>
+                                    <td><input type="text" class="form-control" readonly></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Giới tính</td>
+                                    <td><input type="text" class="form-control" readonly></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Ngày sinh</td>
+                                    <td><input type="text" class="form-control" readonly></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Hình ảnh</td>
+                                    <td><img src="" class="img-fluid" alt=""></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
+                            </div>
+                        </form> --}}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Edit member --}}
+    <div class="edit-member-box">
+        <!-- The Modal -->
+        <div class="modal" id="edit-member-modal">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Thêm nhân viên</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 @endsection()
 
 @section('js')
     
-    <script src="{{ asset('manager/assets/js/page/product.js') }}"></script>
+    <script src="{{ asset('manager/assets/js/page/customer.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+
+
+    <!-- Core Vendors JS -->
+    <script src="{{ asset('manager/assets/js/vendors.min.js') }}"></script>
+
+    <!-- page js -->
+    <script src="{{ asset('manager/assets/vendors/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('manager/assets/vendors/datatables/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('manager/assets/js/pages/e-commerce-order-list.js') }}"></script>
+
+    <!-- Core JS -->
+    <script src="{{ asset('manager/assets/js/app.min.js') }}"></script>
 @endsection()

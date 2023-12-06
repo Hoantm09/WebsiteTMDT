@@ -13,15 +13,18 @@ class ManageCustomer extends Model
         $sql = "SELECT id,name,phone,company,address FROM customer_detail";
         return DB::select($sql);
     }
-    public function addcustomer($data){
-        DB::table('customer_detail')->insert([
-            'customer_id' => $data['customer_id'],
-            'name' => $data['name'],
-            'phone' => $data['phone'],
-            'company' => $data['company'],
-            'address' => $data['address'],
-            'status' => 1,
-        ]);
-        
+    // Delete Customer
+    public function deleteCustomer($customer_id)
+    {
+        DB::table('customer_detail')->where('customer_id', $customer_id)->delete();
+        DB::table('customer')->where('id', $customer_id)->delete();
+    }
+    // Lấy thông tin customer
+    public function getCustomerDetail($customer_id){
+        $result = DB::table('customer_detail')
+        ->select('id', 'name', 'phone', 'company', 'address')
+        ->where('customer_id', $customer_id)
+        ->first();
+        return $result;
     }
 }

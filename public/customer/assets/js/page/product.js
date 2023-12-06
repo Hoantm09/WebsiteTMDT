@@ -15,7 +15,9 @@ const View = {
 			
 			var dta = data.property;
 			dta = dta.split('||');
-
+			
+			$('.product_des').append(data.detail);
+			$('.producct_title').append(data.category_name);
 			$("#nong-do-id").append(dta[0]);
 			$("#phong-cach-id").append(dta[1]);
 			$("#nhom-huong-id").append(dta[2]);
