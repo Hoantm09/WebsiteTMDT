@@ -277,30 +277,6 @@ const View = {
 
                 // Lưu giá trị được chọn vào đối tượng selectedValues
 
-                Api.Product.GetListProperty()
-                .done(res => {
-                    var listProperty = res.data;
-                    var nongdo_pro = listProperty[0];
-                    var phongcach_pro = listProperty[1];
-                    var nhomhuong = listProperty[2];
-                    var dotuoi = listProperty[3]
-                    var thanhphan = listProperty[4];
-
-                    $.each(nongdo_pro, function(index, option) {
-                        $('#nong-do-select').append('<option value="' + option + '">' + option + '</option>');
-                    });
-    
-/*                     // Xóa tất cả các option hiện tại trong select thứ hai (data-item2) của phần tử hiện tại
-                    currentItem.find('.data-item2').empty();
-            
-                    // Thêm các option mới từ dữ liệu API vào select thứ hai (data-item2) của phần tử hiện tại
-                    Property.forEach(option => {
-                        currentItem.find('.data-item2').append(`<option value="${option.id}">${option.id}-size: ${option.size}</option>`);
-                    }); */
-                })
-                .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
-                .always(() => { });
-
                 selectedValues[dropdownName] = selectedValue;
                 console.log(`Selected value for ${dropdownName}: ${selectedValue}`);
                 
