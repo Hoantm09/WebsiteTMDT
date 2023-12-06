@@ -45,6 +45,11 @@ class ProductRepository extends BaseRepository implements RepositoryInterface
         DB::select($sql);
     }
     
+    //Xử lí lọc nâng cao
+    public function getAllProperty(){
+        $sql = 'SELECT property from product';
+        return DB::select($sql);
+    }
 
 
     // Customer

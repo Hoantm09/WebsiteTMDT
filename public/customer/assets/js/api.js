@@ -31,6 +31,28 @@ const Api = {
 
 //Product
 (() => {
+    //Lọc nâng cao
+    Api.Product.GetListProperty = () => $.ajax({
+        url: `customer/apip/product/get-all-property`,
+        method: 'GET',
+    });
+    Api.Product.GetForAdvanceFilter = (filter) => $.ajax({
+        url: `/customer/apip/product/get-all`,
+        method: 'GET',
+        dataType: 'json',
+        data: {
+            keyword: filter.keyword ?? '',
+            category: filter.category ?? '',
+            page: filter.page ?? '',
+            pageSize: filter.pageSize ?? '',
+            prices: filter.prices ?? '',
+            sort: filter.sort ?? '',
+            status: filter.status ?? '',
+            sex: filter.sex ?? '',
+        }
+    });
+
+
     Api.Product.GetAll = (filter) => $.ajax({
         url: `/customer/apip/product/get-all`,
         method: 'GET',

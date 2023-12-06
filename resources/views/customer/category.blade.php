@@ -97,43 +97,33 @@
                             <div class="form-body-boloc">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <select name="thương-hiệu" class="select-option">
-                                            <option value="bất-kỳ">Nồng độ</option>
-                                            <option value="chanel">Chanel</option>
-                                            <option value="dior">Dior</option>
-                                            <option value="gucci">Gucci</option>
+                                        <select name="nong-do" id="nong-do-select" class="select-option">
+                                            <option>Nồng độ</option>
+                                            <option value="nongdo-any">Tất cả</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <select name="thương-hiệu" class="select-option">
-                                            <option value="bất-kỳ">Phong cách</option>
-                                            <option value="chanel">Chanel</option>
-                                            <option value="dior">Dior</option>
-                                            <option value="gucci">Gucci</option>
+                                        <select name="phong-cach" id="phong-cach-select" class="select-option">
+                                            <option>Phong cách</option>
+                                            <option value="phongcach-any">Tất cả</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <select name="thương-hiệu" class="select-option">
-                                            <option value="bất-kỳ">Nhóm hương</option>
-                                            <option value="chanel">Chanel</option>
-                                            <option value="dior">Dior</option>
-                                            <option value="gucci">Gucci</option>
+                                        <select name="nhom-huong" id="nhom-huong-select" class="select-option">
+                                            <option>Nhóm hương</option>
+                                            <option value="nhomhuong-any">Tất cả</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <select name="thương-hiệu" class="select-option">
-                                            <option value="bất-kỳ">Độ tuổi</option>
-                                            <option value="chanel">Chanel</option>
-                                            <option value="dior">Dior</option>
-                                            <option value="gucci">Gucci</option>
+                                        <select name="do-tuoi" id="do-tuoi-select" class="select-option">
+                                            <option>Độ tuổi</option>
+                                            <option value="dotuoi-any">Tất cả</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <select name="thương-hiệu" class="select-option">
-                                            <option value="bất-kỳ">Thành phần</option>
-                                            <option value="chanel">Chanel</option>
-                                            <option value="dior">Dior</option>
-                                            <option value="gucci">Gucci</option>
+                                        <select name="thanh-phan" id="thanh-phan-select" class="select-option">
+                                            <option>Thành phần</option>
+                                            <option value="thanhphan-any">Tất cả</option>
                                         </select>
                                     </div>
                                 </div>

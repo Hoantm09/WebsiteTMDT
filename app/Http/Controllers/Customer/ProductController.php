@@ -63,4 +63,44 @@ class ProductController extends Controller
         $data = $this->product->find_real_time($slug_data, $category);
         return $this->product->send_response(200, $data, null);
     }
+
+    //Xử lý lọc nâng cao
+
+    //Lấy ra list các thuộc tính
+    public function get_all_property(Request $request){
+        $data = $this->product->getAllProperty();
+
+        $property1 = [];
+        $property2 = [];
+        $property3 = [];
+        $property4 = [];
+        $property5 = [];
+        
+        // Tách mỗi bản ghi thành 5 phần tử
+        $splitData = [];
+        foreach ($data as $item) {
+            // Make sure $item is an object
+            if (is_object($item) && property_exists($item, 'property')) {
+                $properties = explode("||", $item->property);
+                $splitData[] = $properties;
+
+                // Thêm phần tử thứ nhất vào mảng tương ứng
+                $property1[] = isset($properties[0]) ? $properties[0] : null;
+                $property2[] = isset($properties[1]) ? $properties[1] : null;
+                $property3[] = isset($properties[2]) ? $properties[2] : null;
+                $property4[] = isset($properties[3]) ? $properties[3] : null;
+                $property5[] = isset($properties[4]) ? $properties[4] : null;
+            }
+        }
+        $list_property = [$property1,$property2,$property3,$property4,$property5];
+    
+        return $this->product->send_response(200, $list_property, null);
+    }
+    
+    //Lọc
+    public function advance_filter(Request $request){
+        $data = $this->product->getAllProperty();
+        return $this->product->send_response(200, $data, null);
+    } 
+
 }

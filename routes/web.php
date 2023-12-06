@@ -89,6 +89,12 @@ Route::prefix('customer')->group(function () {
             Route::get('get-one-cart/{id}', 'Customer\ProductController@get_one_cart')->name('customer.product.get.cart');
             Route::get('get-recently/{item}', 'Customer\ProductController@get_recently')->name('customer.product.get.recently');
             Route::get('get-related/{id}', 'Customer\ProductController@get_related')->name('customer.product.get.related');
+
+            //Xử lí lọc nâng cao
+            Route::get('get-all-property', 'Customer\ProductController@get_all_property')->name('customer.product.get.allproperty');
+            Route::get('advance-filter', 'Customer\ProductController@advance_filter')->name('customer.product.get.advance_filter');
+
+
         });
         Route::prefix('cart')->group(function () {
             Route::get('get-cart', 'Customer\CartController@get')->name('customer.cart.get');
