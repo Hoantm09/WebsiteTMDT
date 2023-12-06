@@ -1,6 +1,6 @@
-.form-body-boloc {
-  position: absolute;
-  width: 460px;
+.form-boloc .form-body-boloc {
+  position: flex;
+  width: 100%;
   background: white;
   left: 400px;
   flex-direction: row;
@@ -10,7 +10,7 @@
   margin-top: 10px;
 }
 
-.form-body-boloc .form-group {
+.form-boloc .form-body-boloc .form-row .form-group col-md-6 {
   margin-top: 10px;
   margin-bottom: 30px;
   color: #a39c9c;
@@ -22,20 +22,20 @@
   
  }
 
- .form-body-boloc .select-option{
+ .form-boloc .form-body-boloc .form-row .form-group select {
   border-radius: 7px;
   padding: 10px;
   width: 200px;
   margin-top: 10px;
   border-radius: 10px;
-  border: 2px solid #a39c9c;
+  border: 2px solid #a39c9c; 
  }
 
-.form-body-boloc .button-boloc {
+ /* .form-boloc .form-body-boloc .form-row .button-boloc {
   margin-top: 40px;
   margin-left: 30px;
   margin-bottom: 10px;
-}
+} */
 
 .hide { 
   display: none;

@@ -46,7 +46,7 @@
 
                         {{-- <button class="open-modal-boloc">Bộ lọc</button> --}}
                         <button class="btn open-modal-boloc"><i class="fas fa-filter"> Chi tiết</i></button>
-                        <div class="form-boloc1 hide">               
+                        {{-- <div class="form-boloc1 hide">               
                             <div class="form-body-boloc">
                                 <div class="form-group">
                                     <select name="thương-hiệu" class="select-option">
@@ -91,10 +91,10 @@
                                     <button type="button" class="apply" id="apply">Áp dụng</button>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="form-boloc hide m-t-10">
-                            <div class="">
+                            <div class="form-body-boloc">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <select name="thương-hiệu" class="select-option">
