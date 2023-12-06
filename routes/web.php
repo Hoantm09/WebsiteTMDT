@@ -161,6 +161,10 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
         //Quản lý khách hàng
         Route::prefix('customer')->group(function () {
             Route::get('/', 'Admin\CustomerController@index')->name('admin.manager.customer');
+            Route::post('/delete-customer/{id}', 'Admin\CustomerController@deleteCustomer')->name('admin.manager.delete-customer');
+
+            //api
+            Route::get('/api/getdetail/{id}', 'Admin\CustomerController@getInforDetail')->name('admin.customer.getdetail');
         });
     });
 

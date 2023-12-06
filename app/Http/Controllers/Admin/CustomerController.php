@@ -27,4 +27,14 @@ class CustomerController extends Controller
         $this->customer->addCustomer($data);
         return redirect(route('admin.manager.customer'));
     }
+    // Delete Customer
+    public function deleteCustomer($customer_id){
+        $this->customer->deleteCustomer($customer_id);
+        return response()->json('success');
+    }
+        // Lấy thông tin customer
+    public function getInforDetail($customer_id){
+        $data =  $this->customer->getCustomerDetail($customer_id);
+        return response()->json($data);
+    }
 }

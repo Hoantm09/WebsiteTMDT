@@ -97,7 +97,7 @@
                             <div class="form-body-boloc">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <select name="thương-hiệu" class="select-option">
+                                        <select name="nong-do" class="select-option">
                                             <option value="bất-kỳ">Nồng độ</option>
                                             <option value="chanel">Chanel</option>
                                             <option value="dior">Dior</option>
@@ -105,7 +105,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <select name="thương-hiệu" class="select-option">
+                                        <select name="phong-cach" class="select-option">
                                             <option value="bất-kỳ">Phong cách</option>
                                             <option value="chanel">Chanel</option>
                                             <option value="dior">Dior</option>
@@ -113,7 +113,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <select name="thương-hiệu" class="select-option">
+                                        <select name="nhom-huong" class="select-option">
                                             <option value="bất-kỳ">Nhóm hương</option>
                                             <option value="chanel">Chanel</option>
                                             <option value="dior">Dior</option>
@@ -121,7 +121,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <select name="thương-hiệu" class="select-option">
+                                        <select name="do-tuoi" class="select-option">
                                             <option value="bất-kỳ">Độ tuổi</option>
                                             <option value="chanel">Chanel</option>
                                             <option value="dior">Dior</option>
@@ -129,7 +129,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <select name="thương-hiệu" class="select-option">
+                                        <select name="thanh-phan" class="select-option">
                                             <option value="bất-kỳ">Thành phần</option>
                                             <option value="chanel">Chanel</option>
                                             <option value="dior">Dior</option>
