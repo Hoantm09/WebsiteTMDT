@@ -106,15 +106,15 @@
                                 <div class="tab-pane fade active in" id="home-justified" role="tabpanel" aria-labelledby="home-tab-justified">
                                     
                                     
-                                    <div class="content-t active" data-gallery="detail-products-gallery"><div class="des_pro"><div class="des_pro_item"><p>Được giới thiệu lần đầu tại liên hoan phim Cannes 2012, <strong>Versace Eros</strong> lấy nguồn cảm hứng từ vị thần tình yêu trong thần thoại &nbsp;thần thoại Hy Lạp(Eros là vị thần hy lạp của tình yêu). Versace Eros For Men là sự kết hợp và thể hiện của niềm đam mê vô tận và ham muốn mãnh liệt.</p><h2 style="text-align:justify">Versace Eros For Men EDT</h2><h3 style="text-align:justify">Mùi hương</h3><ul>
-    <li><span style="font-size: 12pt; color: #333333; font-family: arial,helvetica,sans-serif;">Hương đầu: bạc hà, táo xanh, chanh.</span></li>
-    <li><span style="font-size: 12pt; color: #333333; font-family: arial,helvetica,sans-serif;">Hương giữa: đậu Tonka, hoa phong lữ, Ambroxan.</span></li>
-    <li><span style="font-size: 12pt; color: #333333; font-family: arial,helvetica,sans-serif;">Hương cuối: hương vani, cỏ Vetiver, địa y, tuyết tùng.</span></li>
-    </ul><p style="display: block;"><strong>Versace Eros</strong> kết hợp hương thơm của bạc hà, táo xanh, đậu tonka và phong lữ tạo nên một hương thơm khó quên. Đây đích thị là hương thơm dành cho người đàn ông mạnh mẽ, đầy đam mê nhưng ẩn giấu dư vị nống ấm, quyến luyến dụ hoặc. Hương thơm tươi mới, mát mẻ ngay từ phát xịt đầu tiên. Sau đó, dậy nên nét quyến rũ bởi các note hương Phương Đông như đậu tonka, hổ phách amrboxan, hoa phong lữ và vani kết hợp với một sự mạnh mẽ đầy nam tính bởi các loại gỗ.</p><p style="text-align:center"><img decoding="async" loading="lazy" class="aligncenter wp-image-166097" src="https://orchard.vn/wp-content/uploads/2014/06/versace-eros-for-men-orchard.vn_.jpg" alt="Versace Eros For Men" width="606" height="606" srcset="https://orchard.vn/wp-content/uploads/2014/06/versace-eros-for-men-orchard.vn_.jpg 960w, https://orchard.vn/wp-content/uploads/2014/06/versace-eros-for-men-orchard.vn_-300x300.jpg 300w, https://orchard.vn/wp-content/uploads/2014/06/versace-eros-for-men-orchard.vn_-150x150.jpg 150w, https://orchard.vn/wp-content/uploads/2014/06/versace-eros-for-men-orchard.vn_-768x768.jpg 768w, https://orchard.vn/wp-content/uploads/2014/06/versace-eros-for-men-orchard.vn_-414x414.jpg 414w, https://orchard.vn/wp-content/uploads/2014/06/versace-eros-for-men-orchard.vn_-165x165.jpg 165w, https://orchard.vn/wp-content/uploads/2014/06/versace-eros-for-men-orchard.vn_-600x600.jpg 600w, https://orchard.vn/wp-content/uploads/2014/06/versace-eros-for-men-orchard.vn_-100x100.jpg 100w" sizes="(max-width: 606px) 100vw, 606px"></p><p style="text-align:center"></p><h3 style="text-align:justify">Phù hợp với</h3><p style="display: block;">Versace Eros là sự lựa chọn hoàn hảo dành cho các quý ông sang chảnh và quyến rũ. Giúp cánh mày râu luôn tự tin tỏa sáng trong mọi thời khắc.</p><p style="text-align:center"></p><p style="text-align:center"></p><h3 style="text-align:justify">Đánh giá</h3><ul style="display: block;">
-    <li>Thời điểm khuyên dùng : Ngày, Đêm, Xuân, Thu, Đông</li>
-    <li>Độ lưu hương : Lâu – 7 giờ đến 12 giờ.</li>
-    <li>Độ toả hương : Xa – Toả hương trong vòng bán kính 2 mét.</li>
-    </ul><p style="text-align:center"></p><p style="text-align:center"></p><p style="text-align:center"></p><p style="text-align:center"></p></div></div></div>
+                                    <div class="content-t active" data-gallery="detail-products-gallery">
+                                        <div class="des_pro">
+                                            <div class="des_pro_item">
+                                                <p class = "product_des">
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                                 <div class="tab-pane fade" id="profile-justified" role="tabpanel" aria-labelledby="profile-tab-justified">
                                     
