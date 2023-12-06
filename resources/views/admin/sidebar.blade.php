@@ -72,14 +72,15 @@
                         {{-- <i class="anticon anticon-dashboard"></i> --}}
                         <i class="fas fa-warehouse"></i>
                     </span>
-                    <span class="title">Kho hàng</span>
+                    <span class="title">Kho hà</span>
                 </a>
             </li>
 
             <li class="nav-item dropdown ">
                 <a class="dropdown-toggle " href="{{ route('admin.manager.customer') }}">
                     <span class="icon-holder">
-                        <i class="anticon anticon-idcard"></i>
+                    {{-- <i class="anticon anticon-dashboard"></i> --}}
+                        <i class="fas fa-warehouse"></i>
                     </span>
                     <span class="title">Khách hàng</span>
                 </a>
