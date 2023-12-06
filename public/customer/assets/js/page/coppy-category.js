@@ -219,8 +219,7 @@ const View = {
                 sort:         urlParam.get('sort') ?? $(".sort-by").val(),
                 status:       urlParam.get('status') ?? '',
                 prices:       $(".js-range-slider").val(),
-                page:         View.pagination.page ?? '1',
-                
+                page:         View.pagination.page ?? '1',   
             };
         }, 
         set(item){
@@ -241,6 +240,7 @@ const View = {
         }
     },
     Layout: {
+
         onChange(){
             $(".grid-view-mode .modes-mode").on("click", function(){
                 $(".grid-view-mode .modes-mode").removeClass("active");
@@ -251,6 +251,23 @@ const View = {
             })
         }
     },
+
+    //Lọc nâng cao theo các đặc tính
+    FilterAdvanced: {
+        onChange(callback) {
+            const selectedValues = {};
+            $(document).on('change', '.select-option', function() {
+                const dropdownName = $(this).attr('name');
+                const selectedValue = $(this).val();
+    
+                // Lưu giá trị được chọn vào đối tượng selectedValues
+                selectedValues[dropdownName] = selectedValue;
+                console.log(`Selected value for ${dropdownName}: ${selectedValue}`);
+            });
+        }
+    },
+
+
 	init(){ 
         View.Layout.onChange();
         View.Cart.init();
@@ -325,6 +342,11 @@ const View = {
         View.pagination.render();
         View.URL.setURL(View.URL.getFilterURL()) 
         getData()
+    });
+
+    //Lọc nâng cao
+    View.FilterAdvanced.onChange(()=>{
+
     });
 
     function getData(){

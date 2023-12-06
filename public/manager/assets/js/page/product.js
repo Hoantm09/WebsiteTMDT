@@ -112,7 +112,7 @@ const View = {
                             <input type="text" class="form-control data-discount number-type" placeholder="%" value="${value_input.discount}">
                         </div>
                         <div class="form-group">
-                        <label >Số lượng *</label>
+                        <label >Số lượng * </label>
                         <input type="text" class="form-control data-quantity  number-type" placeholder="%" value="${value_input.quantity}">
                         </div>  
                         <div class="form-group">
@@ -139,7 +139,7 @@ const View = {
                             <input type="text" class="form-control data-discount number-type" placeholder="%">
                         </div>
                         <div class="form-group">
-                            <label >Số lượng *</label>
+                            <label >Số lượng * (Mặc định 0)</label>
                             <input type="text" class="form-control data-quantity number-type" placeholder="">
                         </div>  
                         <div class="form-group">

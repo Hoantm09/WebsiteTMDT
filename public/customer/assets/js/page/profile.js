@@ -206,14 +206,14 @@ const View = {
 			$('.data-address').val(data.address)
 			$('.data-phone').val(data.phone)
 			$('.data-birthday').val(data.birthday)
-			$('.data-sex').val(data.sex)
-/* 			if (data.sex==1){
-				$('.data-sex-option').append(`<input type="radio" id="Nam" name="sex" class="data-sex" value="1" checked><label for="Nam">Nam</label><br><input type="radio" id="Nữ" name="sex" class="data-sex" value="2"><label for="Nữ">Nữ</label><br>`)
-			}
-			else {
-				$('.data-sex-option').append(`<input type="radio" id="Nam" name="sex" class="data-sex" value="1"><label for="Nam">Nam</label><br><input type="radio" id="Nữ" name="sex" class="data-sex" value="2" checked><label for="Nữ">Nữ</label><br>`)
-			} */
 			
+			if (data.sex == 1) {
+				$('#male-option').prop('checked', true);
+				$('#female-option').prop('checked', false);
+			} else {
+				$('#male-option').prop('checked', false);
+				$('#female-option').prop('checked', true);
+			}
 		},
 		getVal(){
 			var resource = $(".profile-data-block[tab-data=Information]"); 
@@ -224,8 +224,8 @@ const View = {
             var data_name          = resource.find('.data-name').val();
             var data_address       = resource.find('.data-address').val();
             var data_phone         = resource.find('.data-phone').val();
-			var data_sex         = resource.find('.data-sex').val();
-			var data_birthday         = resource.find('.data-birthday').val();
+			var data_sex 		   = resource.find('input[name="sex"]:checked').val();
+			var data_birthday      = resource.find('.data-birthday').val();
             var data_image         = resource.find("#avatar")[0].files;
  
             if (data_name == '') { required_data.push('Nhập tên.'); onPushData = false }

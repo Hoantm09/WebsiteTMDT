@@ -96,9 +96,9 @@
                                                     Giới tính
                                                 </div>
                                                 <div class="profile-value">
-                                                    <input type="radio" id="Nam" name="sex" class="data-sex" value="" checked="checked">
+                                                    <input type="radio" id="male-option" name="sex" class="data-sex" value="1">
                                                     <label for="Nam">Nam</label><br>
-                                                    <input type="radio" id="Nữ" name="sex" class="data-sex" value="">
+                                                    <input type="radio" id="female-option" name="sex" class="data-sex" value="2">
                                                     <label for="Nữ">Nữ</label><br>
                                                     {{-- <div class="data-sex-option"></div> --}}
                                                 </div>

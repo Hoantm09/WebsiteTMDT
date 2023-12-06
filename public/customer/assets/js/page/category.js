@@ -266,6 +266,22 @@ const View = {
             })
         }
     },
+
+        //Lọc nâng cao theo các đặc tính
+        FilterAdvanced: {
+            onChange(callback) {
+                const selectedValues = {};
+                $(document).on('change', '.select-option', function() {
+                    const dropdownName = $(this).attr('name');
+                    const selectedValue = $(this).val();
+        
+                    // Lưu giá trị được chọn vào đối tượng selectedValues
+                    selectedValues[dropdownName] = selectedValue;
+                    console.log(`Selected value for ${dropdownName}: ${selectedValue}`);
+                });
+            }
+        },
+
 	init(){ 
         View.Layout.onChange();
         View.Cart.init();
@@ -341,6 +357,11 @@ const View = {
         View.URL.setURL(View.URL.getFilterURL()) 
         getData()
     });
+
+        //Lọc nâng cao
+        View.FilterAdvanced.onChange(()=>{
+
+        });
 
     function getData(){
         Api.Product.GetAll(View.URL.getFilterURL())
