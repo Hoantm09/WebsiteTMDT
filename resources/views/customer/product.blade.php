@@ -130,18 +130,18 @@
                                                     <tr>
                                                         <th scope="row">Thương hiệu</th>
                                                         
-                                                        <td class = ".producct_title"></td>
+                                                        <td class = "producct_title"></td>
                                                     </tr>
                                                         <tr><th scope="row">Nồng độ</th>
                                                         <td id = "nong-do-id"></td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Phong cách</th>
-                                                        <td id = "phong-canh-id"></td>                                                     
+                                                        <td id = "phong-cach-id"></td>                                                     
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Nhóm hương</th>
-                                                        <td id ="nhom-huong-id "></td>                                                     
+                                                        <td id ="nhom-huong-id"></td>                                                     
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Độ tuổi</th>
