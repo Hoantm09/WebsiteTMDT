@@ -270,8 +270,8 @@ const View = {
                     View.Metadata.setVal(resource, v);
                 }) 
                 //Xử lý đặc tính sản phẩm
-                var data_property =  data[0].property;
-                data_property = data_property.split('||');
+                var data_property =  data[0].property; 
+                data_property = data_property.split('||'); 
                 $(`${resource}`).find('.data-nongdo').val(data_property[0]);
                 $(`${resource}`).find('.data-style').val(data_property[1]);
                 $(`${resource}`).find('.data-perfume').val(data_property[2]);

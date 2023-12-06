@@ -11,25 +11,10 @@ const View = {
 	},
 	Product: { 
 		setVal(data){
-			// chức năng hiển thị chi tiết sp
-			
-			var dta = data.property;
-			dta = dta.split('||');
-
-			$("#nong-do-id").append(dta[0]);
-			$("#phong-cach-id").append(dta[1]);
-			$("#nhom-huong-id").append(dta[2]);
-			$("#do-tuoi-id").append(dta[3]);
-			$("#thanh-phan-id").append(dta[4]);
-
-
-
-			$(`res`)
             var image           = data.images.split(",")[0];
             $(".image_preview_container").css({
             	"background-image": `url('/${image}')`
             })
-			
             $(".image-preview-container img").attr("data-zoom-image", `/${image}`)
             $(".image-preview-container img").attr("src", `/${image}`)
             data.images.split(",").map((v, k )=> {
