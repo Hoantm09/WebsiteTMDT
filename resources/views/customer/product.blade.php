@@ -129,27 +129,29 @@
                                                 <tbody>
                                                     <tr>
                                                         <th scope="row">Thương hiệu</th>
-                                                        <td>Versace</td>
+                                                        
+                                                        <td class = ".producct_title"></td>
                                                     </tr>
                                                         <tr><th scope="row">Nồng độ</th>
-                                                        <td>Eau De Toilette (EDT)</td>
+                                                        <td id = "nong-do-id"></td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Phong cách</th>
-                                                        <td>Mạnh Mẽ, Nam Tính, Quyến Rũ</td>                                                     
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">Thành phần</th>
-                                                        <td>Hoa cam, Olibanum, Rêu sồi</td>                                                     
+                                                        <td id = "phong-canh-id"></td>                                                     
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Nhóm hương</th>
-                                                        <td>Aromatic Fougere ( Hương Thơm Thảo Mộc )</td>                                                     
+                                                        <td id ="nhom-huong-id "></td>                                                     
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Độ tuổi</th>
-                                                        <td>18-30</td>                                                     
+                                                        <td id = "do-tuoi-id"></td>                                                     
                                                     </tr>
+                                                    <tr>
+                                                        <th scope="row">Thành Phần</th>
+                                                        <td id = "thanh-phan-id"></td>                                                     
+                                                    </tr>
+                                                    
                                                 </tbody>
                                             </table>
     

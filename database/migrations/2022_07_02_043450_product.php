@@ -21,6 +21,7 @@ class Product extends Migration
             $table->integer('sex');
             $table->longtext('images'); 
             $table->longtext('metadata'); 
+            $table->longText('property');
             $table->longtext('description'); 
             $table->longtext('detail'); 
             $table->integer('price'); 
