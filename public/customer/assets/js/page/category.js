@@ -316,7 +316,7 @@ const View = {
                 Api.Product.GetForAdvanceFilter(data_request)
                     .done(res => {
                         View.Product.render(res.data)
-                        View.pagination.total = 3;
+                        View.pagination.total = 2;
                         View.pagination.render();
                     })
                     .fail(err => { })

@@ -224,8 +224,8 @@ const View = {
             var data_name          = resource.find('.data-name').val();
             var data_address       = resource.find('.data-address').val();
             var data_phone         = resource.find('.data-phone').val();
-			var data_sex 		   = resource.find('input[name="sex"]:checked').val();
 			var data_birthday      = resource.find('.data-birthday').val();
+			var data_sex 		   = resource.find('input[name="sex"]:checked').val();
             var data_image         = resource.find("#avatar")[0].files;
  
             if (data_name == '') { required_data.push('Nhập tên.'); onPushData = false }
@@ -275,7 +275,7 @@ const View = {
 			$('.data-name').val('')
 			$('.data-address').val('')
 			$('.data-phone').val('')
-			$('.data-sex').val('')
+			/* $('.data-sex').val('') */
 			$('.data-birthday').val('')
 	        $(document).on('change', '#avatar', function(e) {
 	            var father = $(this).parent().parent()

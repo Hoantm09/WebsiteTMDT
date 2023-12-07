@@ -178,7 +178,7 @@
                                 </li>  --}}
                             </ul>
                         </div>
-                        <div class="widget widget_filter_price">
+{{--                         <div class="widget widget_filter_price">
                             <h4 class="widgettitle">
                                 Độ tuổi
                             </h4>
@@ -201,7 +201,7 @@
                                     </li> 
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
                         
                         <div class="widget widget_filter_price">
                             <h4 class="widgettitle">
