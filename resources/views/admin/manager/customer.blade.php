@@ -577,12 +577,12 @@
                                  <tr role="row" class="odd">
                                      <td class="sorting_1">
                                          <div class="checkbox">
-                                             <input id="check-item-{{$user->id}}" type="checkbox">
-                                             <label for="check-item-{{$user->id}}" class="m-b-0"></label>
+                                             <input id="check-item-{{$user->customer_id}}" type="checkbox">
+                                             <label for="check-item-{{$user->customer_id}}" class="m-b-0"></label>
                                          </div>
                                      </td>
                                      <td>
-                                         {{ $user->id }}
+                                         {{ $user->customer_id }}
                                      </td>
                                      <td>
                                          <div class="d-flex align-items-center">
@@ -605,10 +605,10 @@
 
                                      </td>
                                      <td class="text-right">
-                                        <button data-user-id={{$user->id}}  id="view-member-btn" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right " data-bs-toggle="modal" data-bs-target="#edit-member-modal">
+                                        <button data-user-id={{$user->customer_id}}  id="view-member-btn" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right " data-bs-toggle="modal" data-bs-target="#edit-member-modal">
                                             <i class="anticon anticon-eye"></i>
                                         </button>
-                                        <button data-user-id={{$user->id}} id="delete-member-btn" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right " data-bs-toggle="modal" data-bs-target="#delete-member-modal">
+                                        <button data-user-id={{$user->customer_id}} id="delete-member-btn" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right " data-bs-toggle="modal" data-bs-target="#delete-member-modal">
                                             <i class="anticon anticon-delete"></i>
                                         </button>
                                      </td>
@@ -639,7 +639,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-                        <button id="delete-member-submit" type="button" class="btn btn-danger">Xóa nhân viên</button>
+                        <button id="delete-member-submit" type="button" class="btn btn-danger">Xóa khách hàng</button>
                     </div>
                 </div>
             </div>
