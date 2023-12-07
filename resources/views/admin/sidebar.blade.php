@@ -80,7 +80,7 @@
                 <a class="dropdown-toggle " href="{{ route('admin.manager.customer') }}">
                     <span class="icon-holder">
                     {{-- <i class="anticon anticon-dashboard"></i> --}}
-                        <i class="fas fa-warehouse"></i>
+                    <i class="anticon anticon-idcard"></i>
                     </span>
                     <span class="title">Khách hàng</span>
                 </a>
