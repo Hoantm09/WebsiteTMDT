@@ -72,7 +72,7 @@
                         {{-- <i class="anticon anticon-dashboard"></i> --}}
                         <i class="fas fa-warehouse"></i>
                     </span>
-                    <span class="title">Kho hà</span>
+                    <span class="title">Kho hàng</span>
                 </a>
             </li>
 

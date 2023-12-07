@@ -92,6 +92,8 @@ class ProductRepository extends BaseRepository implements RepositoryInterface
         list($prices_from, $prices_to) = explode(';', $request->prices, 2);
         $sort           = $request->sort;
         $status         = $request->status;
+
+
         $where_sql      = "";
 
         if ($category_id > 0) $where_sql = " AND category_id = ".$category_id;
@@ -101,6 +103,7 @@ class ProductRepository extends BaseRepository implements RepositoryInterface
         }else if ($status == "hot") {
             $where_sql = " AND trending = 1";
         }
+
         $sort_by = "";
         if ($sort == 1) {
             $sort_by = " ORDER BY created_at DESC";
@@ -122,7 +125,37 @@ class ProductRepository extends BaseRepository implements RepositoryInterface
 
         return DB::select($sql); */
 
-        //Lọc theo giới tính
+        //Lọc ra sản phẩm đề xuất cho khách hàng
+        $inforUser = $request->input('foryou', []);
+        $age_user = isset($inforUser[0]) ? (int)$inforUser[0] : null;
+        $sex_user = isset($inforUser[1]) ? (int)$inforUser[1] : null;
+        //Xử lý tuổi => khoảng tuổi = $age_user-5 <$age_user <$age_user+5 
+        $age_search = ($age_user-5)."-".($age_user+5);
+
+
+        /* Nếu lọc theo đề xuất => không thể lọc theo giới tính */
+        /* Nếu không lọc theo đề xuất => các bộ lọc dưới  hoạt động */
+        if ($status == "for-you" ){
+            if ($sex_user==1){
+                $sql = "SELECT  *
+                FROM product 
+                WHERE sex=1 AND price BETWEEN ".$prices_from." AND ".$prices_to.$where_sql.$sort_by."
+    LIMIT ".$pageSize.$offset;
+        
+                return DB::select($sql);
+            }
+            if ($sex_user==2){
+                $sql = "SELECT  *
+                FROM product 
+                WHERE sex=2 AND price BETWEEN ".$prices_from." AND ".$prices_to.$where_sql.$sort_by."
+    LIMIT ".$pageSize.$offset;
+        
+                return DB::select($sql);
+            }
+            
+        }
+        else{
+                    //Lọc theo giới tính
         $sex            = $request->sex;
         if ($sex==1){
             $sql = "SELECT  *
@@ -147,6 +180,8 @@ LIMIT ".$pageSize.$offset;
 LIMIT ".$pageSize.$offset;
     
             return DB::select($sql);
+        }
+
         }
 
 

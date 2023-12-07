@@ -59,7 +59,7 @@ const Template = {
 								<div class="metadata-item2">
 									<div class="form-group">
 										<label>Nồng độ</label>
-										<input type="text" class="form-control data-nongdo" placeholder="ml">
+										<input type="text" class="form-control data-nongdo" placeholder="">
 									</div> 
 									<div class="form-group">
 										<label>Phong cách</label>
@@ -67,7 +67,7 @@ const Template = {
 									</div> 
 									<div class="form-group">
 										<label>Nhóm hương</label>
-										<input type="text" class="form-control data-perfume" placeholder="%">
+										<input type="text" class="form-control data-perfume" placeholder="">
 									</div>
 									<div class="form-group">
 										<label>Độ tuổi</label>
@@ -156,7 +156,7 @@ const Template = {
 							<div class=" metadata-item2">
 								<div class="form-group">
 									<label>Nồng độ</label>
-									<input type="text" class="form-control data-nongdo" placeholder="ml">
+									<input type="text" class="form-control data-nongdo" placeholder="">
 								</div> 
 								<div class="form-group">
 									<label>Phong cách</label>
@@ -164,7 +164,7 @@ const Template = {
 								</div> 
 								<div class="form-group">
 									<label>Nhóm hương</label>
-									<input type="text" class="form-control data-perfume" placeholder="%">
+									<input type="text" class="form-control data-perfume" placeholder="">
 								</div>
 								<div class="form-group">
 									<label>Độ tuổi</label>

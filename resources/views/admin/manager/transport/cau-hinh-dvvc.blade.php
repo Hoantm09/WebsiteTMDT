@@ -70,17 +70,17 @@
                                         <div class="tab-content m-l-15" id="myTabContentVertical">
                                             <div class="tab-pane fade show active" id="home-vertical" role="tabpanel" aria-labelledby="home-tab-vertical">
                                                 <div class="form-group">
-                                                    <label for="formGroupExampleInput2">Khối lượng</label>
+                                                    <label for="formGroupExampleInput2">Settings</label>
                                                     <div class="radio3">
                                                         <input type="radio" name="gridRadios3" id="gridRadios3" value="option3" checked="">
                                                         <label for="gridRadios1">
-                                                            Theo sản phẩm theo đơn hàng 
+                                                            Option1
                                                         </label>
                                                     </div>
                                                     <div class="radio3">
                                                         <input type="radio" name="gridRadios3" id="gridRadios4" value="option4">
                                                         <label for="gridRadios2">
-                                                            Tùy chỉnh
+                                                            Option2
                                                         </label>
                                                     </div>
                                                 </div>

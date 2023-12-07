@@ -119,7 +119,7 @@ const View = {
         id: 0,
         render(data) {
             $(".category-list-tag")
-                .append(`<li class="tag-cloud-link status-tag" status-id="for-you"><a>Đề xuất cho bạn</a> </li>`)
+                .append(`<li class="tag-cloud-link for-you" for-you="for-you"><a>Đề xuất cho bạn</a> </li>`)
             $(".category-list-tag")
                 .append(`<li class="tag-cloud-link status-tag" status-id="new"><a>Sản phẩm mới</a> </li>`)
             $(".category-list-tag")
@@ -153,6 +153,13 @@ const View = {
                 $(this).addClass("active")
                 console.log($(this).attr("status-id"));
                 callback($(this).attr("status-id"))
+            });
+            //Đề xuất cho bạn
+            $(document).on('click', `.tag-cloud-link.for-you`, function () {
+                $(".category-list-tag .tag-cloud-link").removeClass("active");
+                $(this).addClass("active")
+                console.log($(this).attr("for-you"));
+                callback($(this).attr("for-you"))
             });
             // Button Chọn Giới Tính
             $(document).on('click', `.tag-cloud-link.sex-tag`, function () {
@@ -221,6 +228,35 @@ const View = {
             const lastEntry = Math.min(this.pageSize * this.page, this.total);
         }
     },
+
+    //Lấy ra một số thông tin người dùng để hiện sản phẩm đề xuất
+    UserData:{
+        age: null,
+        sex:null,
+        getData(){
+            Api.Auth.GetProfile()
+            .done(res => { 
+                if (res.status == 200) {
+                    //Xử lý tuổi
+                    var birthDate = new Date(res.data[0].birthday); 
+                    var currentDate = new Date();
+                    View.UserData.age = currentDate.getFullYear() - birthDate.getFullYear();
+
+                    //Xử lý sex
+                    View.UserData.sex = res.data[0].sex;
+
+                    console.log(View.UserData.age)
+                    console.log(View.UserData.sex)
+
+                }else{ 
+                    redirect_logined(res.data)
+                }
+            })
+            .fail(err => {   })
+            .always(() => { });
+        }
+    },
+
     URL: {
         setURL(filters) {
             const param = (new URLSearchParams({ ...filters })).toString();
@@ -237,6 +273,7 @@ const View = {
                 prices: $(".js-range-slider").val(),
                 page: View.pagination.page ?? '1',
                 sex: $('.tag-cloud-link.sex-tag.active').attr('value')===undefined?3:$('.tag-cloud-link.sex-tag.active').attr('value'),
+                for_you:[View.UserData.age,View.UserData.sex],
             };
         },
         set(item) {
@@ -338,6 +375,8 @@ const View = {
 (() => {
     View.init();
     function init() {
+        View.UserData.getData()
+        
         View.Category.id = View.URL.get("category")
         View.URL.setURL(View.URL.getFilterURL())
         getCategory();

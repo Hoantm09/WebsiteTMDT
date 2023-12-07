@@ -243,7 +243,6 @@
             <div class="modal-body">
                 <div style="padding-left: 20px;padding-right:20px">
                     <form action="/action_page.php">
-
                         <label for="browser" class="form-label">Nhóm mùi hương:</label>
                         <input class="form-control form-control-sm" list="browsers2" name="browser" id="browser">
                         <datalist id="browsers2">
@@ -252,6 +251,10 @@
                           <option value="Chrome">
                           <option value="Opera">
                           <option value="Safari">
+                            <select name="thanh-phan" id="thanh-phan-select" class="select-option">
+                                <option>Thành phần</option>
+                                <option value="thanhphan-any">Tất cả</option>
+                            </select>
                         </datalist>
                         
                         <label for="browser" class="form-label">Nhóm mùi hương:</label>

@@ -62,8 +62,9 @@ const View = {
 			}else if(data.sex == 2){
 				$(".list-sex").append(`<a class="is-active" value-id="2"> Nữ </a>`)
 			}else{
-				$(".list-sex").append(`<a class="is-active" value-id="1"> Nam </a>`)
+				$(".list-sex").append(`<a class="" value-id="1"> Nam </a>`)
 				$(".list-sex").append(`<a class="" value-id="2"> Nữ </a>`)
+				$(".list-sex").append(`<a class="is-active" value-id="3"> Bất kỳ </a>`)
 			}
 
 			$(".category-data-name a").text(data.category_name)
