@@ -50,6 +50,11 @@ class ProductRepository extends BaseRepository implements RepositoryInterface
         $sql = 'SELECT property from product';
         return DB::select($sql);
     }
+    public function getAllProduct($conditions){
+        $sql = "SELECT * FROM product WHERE " . implode(" AND ", $conditions);
+        return DB::select($sql);
+    }
+    
 
 
     // Customer

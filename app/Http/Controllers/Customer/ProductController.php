@@ -90,6 +90,13 @@ class ProductController extends Controller
                 $property3[] = isset($properties[2]) ? $properties[2] : null;
                 $property4[] = isset($properties[3]) ? $properties[3] : null;
                 $property5[] = isset($properties[4]) ? $properties[4] : null;
+
+                // Loại bỏ các giá trị trùng lặp trong mỗi mảng
+                $property1 = array_unique($property1);
+                $property2 = array_unique($property2);
+                $property3 = array_unique($property3);
+                $property4 = array_unique($property4);
+                $property5 = array_unique($property5);
             }
         }
         $list_property = [$property1,$property2,$property3,$property4,$property5];
@@ -99,8 +106,23 @@ class ProductController extends Controller
     
     //Lọc
     public function advance_filter(Request $request){
-        $data = $this->product->getAllProperty();
-        return $this->product->send_response(200, $data, null);
+
+        $searchProperties = [
+            "property1" => $request->property1,     
+            "property5" => $request->property2,             
+            "property3" => $request->property3,
+            "property4" => $request->property4,
+            "property2" => $request->property5,
+        ];
+        $conditions = [];
+        foreach ($searchProperties as $property => $value) {
+            // Kiểm tra xem giá trị của property có được nhập hay không
+            if ($value !== "") {
+                $conditions[] = "CONCAT('||', property, '||') LIKE '%" . $value . "%'";
+            }
+        }
+        $data2 = $this->product->getAllProduct($conditions);
+        return $this->product->send_response(200,$data2, null);
     } 
 
 }

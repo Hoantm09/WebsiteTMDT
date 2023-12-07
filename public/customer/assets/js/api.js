@@ -36,20 +36,17 @@ const Api = {
         url: `customer/apip/product/get-all-property`,
         method: 'GET',
     });
-    Api.Product.GetForAdvanceFilter = (filter) => $.ajax({
-        url: `/customer/apip/product/get-all`,
-        method: 'GET',
-        dataType: 'json',
+    Api.Product.GetForAdvanceFilter = (data_input) => $.ajax({
+        url: `/customer/apip/product/advance-filter`,
+        method: 'POST',
         data: {
-            keyword: filter.keyword ?? '',
-            category: filter.category ?? '',
-            page: filter.page ?? '',
-            pageSize: filter.pageSize ?? '',
-            prices: filter.prices ?? '',
-            sort: filter.sort ?? '',
-            status: filter.status ?? '',
-            sex: filter.sex ?? '',
+            property1: data_input[0],
+            property2: data_input[1],
+            property3: data_input[2],
+            property4: data_input[3],
+            property5: data_input[4],
         }
+  
     });
 
 

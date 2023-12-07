@@ -92,7 +92,7 @@ Route::prefix('customer')->group(function () {
 
             //Xử lí lọc nâng cao
             Route::get('get-all-property', 'Customer\ProductController@get_all_property')->name('customer.product.get.allproperty');
-            Route::get('advance-filter', 'Customer\ProductController@advance_filter')->name('customer.product.get.advance_filter');
+            Route::post('advance-filter', 'Customer\ProductController@advance_filter')->name('customer.product.get.advance_filter');
 
 
         });

@@ -268,17 +268,62 @@ const View = {
     },
 
     //Lọc nâng cao theo các đặc tính
+    FilerBox :{
+        property1 : null,
+        property2 : null,
+        property3 : null,
+        property4 : null,
+        property5 : null,
+
+    },
     FilterAdvanced: {
         onChange(callback) {
             const selectedValues = {};
             $(document).on('change', '.select-option', function () {
+/*                 const property1 = {};
+                const property2 = {};
+                const property3 = {};
+                const property4 = {};
+                const property5 = {}; */
+   
                 const dropdownName = $(this).attr('name');
                 const selectedValue = $(this).val();
 
                 // Lưu giá trị được chọn vào đối tượng selectedValues
-
                 selectedValues[dropdownName] = selectedValue;
-                console.log(`Selected value for ${dropdownName}: ${selectedValue}`);
+                // Ánh xạ giá trị của mỗi select box với biến tương ứng
+                property1 = selectedValues['nong-do'];
+                property2 = selectedValues['phong-cach'];
+                property3 = selectedValues['nhom-huong'];
+                property4 = selectedValues['do-tuoi'];
+                property5 = selectedValues['thanh-phan'];
+
+                View.FilerBox.property1 =  property1;
+                View.FilerBox.property2 =  property2;
+                View.FilerBox.property3 =  property3;
+                View.FilerBox.property4 =  property4;
+                View.FilerBox.property5 =  property5;
+
+                if (property1 === undefined || property1 === "nongdo-any" || property1 === "Nồng độ") property1 = "";
+                if (property2 === undefined || property2 === "phongcach-any" || property2 === "Phong cách") property2 = "";
+                if (property3 === undefined || property3 === "nhomhuong-any" || property3 === "Nhóm hương") property3 = "";
+                if (property4 === undefined || property4 === "dotuoi-any" || property4 === "Độ tuổi") property4 = "";
+                if (property5 === undefined || property5 === "thanhphan-any" || property5 === "Thành phần") property5 = "";
+
+                /* View.URL.set({'status': 0, 'sort': 0}); */
+                data_request = [property1,property2,property3,property4,property5]
+                console.log(data_request);
+                Api.Product.GetForAdvanceFilter(data_request)
+                    .done(res => {
+                        View.Product.render(res.data)
+                        View.pagination.total = 3;
+                        View.pagination.render();
+                    })
+                    .fail(err => { })
+                    .always(() => { });
+
+
+                /* console.log(`Selected value for ${dropdownName}: ${selectedValue}`); */
                 
             });
         }
@@ -362,7 +407,8 @@ const View = {
 
     //Lọc nâng cao
     View.FilterAdvanced.onChange(() => {
-        /* View.URL.set({'status': 0, 'sort': 0}); */
+        console.log('onChange event triggered');
+
     });
 
     function getData() {
@@ -388,7 +434,8 @@ const View = {
     init();
 })();
 
-// Event bo loc
+
+// Xử lí bộ lọc
 var btnOpen = document.querySelector('.open-modal-boloc')
 var modal = document.querySelector('.form-boloc')
 var btnClose = document.querySelector('.form-boloc hide')
