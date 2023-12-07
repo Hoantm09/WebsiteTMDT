@@ -119,7 +119,7 @@ const View = {
         id: 0,
         render(data) {
             $(".category-list-tag")
-                .append(`<li class="tag-cloud-link status-tag" status-id="new"><a>Đề xuất cho bạn</a> </li>`)
+                .append(`<li class="tag-cloud-link status-tag" status-id="for-you"><a>Đề xuất cho bạn</a> </li>`)
             $(".category-list-tag")
                 .append(`<li class="tag-cloud-link status-tag" status-id="new"><a>Sản phẩm mới</a> </li>`)
             $(".category-list-tag")
@@ -158,6 +158,7 @@ const View = {
             $(document).on('click', `.tag-cloud-link.sex-tag`, function () {
                 $(".category-list-sex .tag-cloud-link").removeClass("active");
                 $(this).addClass("active")
+
                 console.log($(this).attr("value"));
                 callback($(this).attr("value"))
             });
@@ -235,7 +236,7 @@ const View = {
                 status: urlParam.get('status') ?? '',
                 prices: $(".js-range-slider").val(),
                 page: View.pagination.page ?? '1',
-                sex: $(".any-sex").val(),
+                sex: $('.tag-cloud-link.sex-tag.active').attr('value')===undefined?3:$('.tag-cloud-link.sex-tag.active').attr('value'),
             };
         },
         set(item) {

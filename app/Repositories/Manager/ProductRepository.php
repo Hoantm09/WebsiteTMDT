@@ -115,14 +115,14 @@ class ProductRepository extends BaseRepository implements RepositoryInterface
         }
         $offset = $page == 1 ? "" : " OFFSET ".(($page-1) * $pageSize);
 
-        $sql = "SELECT  *
+/*         $sql = "SELECT  *
         FROM product 
         WHERE price BETWEEN ".$prices_from." AND ".$prices_to.$where_sql.$sort_by."
         LIMIT ".$pageSize.$offset;
 
-        return DB::select($sql);
+        return DB::select($sql); */
 
-/*         //Lọc theo giới tính
+        //Lọc theo giới tính
         $sex            = $request->sex;
         if ($sex==1){
             $sql = "SELECT  *
@@ -148,7 +148,7 @@ LIMIT ".$pageSize.$offset;
     
             return DB::select($sql);
         }
- */
+
 
     }
 
