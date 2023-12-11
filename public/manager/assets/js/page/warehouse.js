@@ -55,7 +55,7 @@ const View = {
                 data.history.email,
                 IndexView.table.formatNumber(total_price) + ` $`,
                 data.history.created_at,
-                `<span class="badge badge-pill badge-${data.history.history_status == 1 ? "green" : "red"} m-r-5 m-b-5">${data.history.history_status == 1 ? "Nhập kho" : "Xuất kho"}</span>`,
+                `<span class="badge badge-pill badge-${data.history.history_status == 1 ? "green" : "red"} m-r-5 m-b-5">${data.history.history_status == 1 ? "Nhập kho" : "Nhập kho"}</span>`,
                 `<div class="view-data modal-fs-control" style="cursor: pointer" atr="View" data-id="${data.history.id}"><i class="anticon anticon-eye"></i></div>`
             ]
         },
