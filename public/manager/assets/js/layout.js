@@ -293,3 +293,10 @@ const IndexView = {
     }
     init();
 })();
+
+
+var myElement = document.querySelector(".dropdown-toggle");
+
+myElement.addEventListener("click", () => {
+  myElement.classList.add("active");
+});

@@ -435,7 +435,7 @@ const View = {
                         View.SideModal.Update.setDefaul();
                 })
             })
-            .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
+            .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi xảy ra'); })
             .always(() => { }); 
     }) 
     IndexView.SideModal.onControl("Delete", (id) => {
