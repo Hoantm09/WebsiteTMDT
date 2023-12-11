@@ -205,7 +205,7 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
         });
         Route::prefix('order')->group(function () {
             Route::get('get', 'Admin\OrderController@get')->name('admin.order.get');
-            Route::get('get-one/{id}', 'Admin\OrderController@get_one')->name('admin.order.get_one');
+            Route::get('get-one/', 'Admin\OrderController@get_one')->name('admin.order.get_one');
             Route::post('/update', 'Admin\OrderController@update')->name('admin.order.update');
         });
 

@@ -67,9 +67,10 @@ class WarehouseRepository extends BaseRepository implements RepositoryInterface
 
     public function update_item($item_id, $quantity, $reserve, $expiry_date){
         $sql_checkitem = "UPDATE warehouse
-                            SET quantity =".$quantity." ,  reserve =".$reserve.", expiry_date = ".$expiry_date."
-                            WHERE product_id = ".$item_id;
-        DB::select($sql_checkitem);
+                            SET quantity = ? , reserve = ?, expiry_date = ?
+                            WHERE product_id = ?";
+        
+        DB::update($sql_checkitem, [$quantity, $reserve, $expiry_date, $item_id]);
     }
 
 

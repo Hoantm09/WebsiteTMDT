@@ -176,7 +176,7 @@ const View = {
                         <input type="text" class="number-type form-control data-price" placeholder="Đơn giá">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4">
-                        <input type="text" class=" form-control data-date" placeholder="Hạn sử dụng" style="margin-top: 10px">
+                        <input type="date" class=" form-control data-date" placeholder="Hạn sử dụng" style="margin-top: 10px">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 col-lg-1">
                         <button class="btn btn-danger item-remove" atr="Item Delete" style="margin-top: 10px"><i class="fas fa-times" ></i > </button>
