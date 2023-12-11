@@ -8,7 +8,8 @@ const View = {
                 data.name,
                 data.quantity,
                 data.reserve,
-                data.prices + ` $`,
+                data.price + ` ₫`,
+                data.expiry_date,
             ]
         },
         init(){
@@ -39,6 +40,11 @@ const View = {
                         name: 'name',
                         orderable: true,
                     }, 
+                    {
+                        title: 'Hạn sử dụng',
+                        name: 'name',
+                        orderable: true,
+                    }, 
                 ];
             IndexView.table.init("#data-table", row_table);
         }
@@ -53,7 +59,7 @@ const View = {
             return [
                 data.history.id,
                 data.history.email,
-                IndexView.table.formatNumber(total_price) + ` $`,
+                IndexView.table.formatNumber(total_price) + ` ₫`,
                 data.history.created_at,
                 `<span class="badge badge-pill badge-${data.history.history_status == 1 ? "green" : "red"} m-r-5 m-b-5">${data.history.history_status == 1 ? "Nhập kho" : "Xuất kho"}</span>`,
                 `<div class="view-data modal-fs-control" style="cursor: pointer" atr="View" data-id="${data.history.id}"><i class="anticon anticon-eye"></i></div>`
@@ -118,7 +124,8 @@ const View = {
                 var type_item       = {};
                 type_item.item      = $(this).find(".data-item").val()
                 type_item.quantity  = $(this).find(".data-quantity").val() 
-                type_item.price     = $(this).find(".data-price").val() 
+                type_item.price     = $(this).find(".data-price").val()
+                type_item.expiry_date      = $(this).find(".data-date").val()   
                 if (type_item.quantity) data_return.push(type_item)
             });
             return JSON.stringify(Object.assign({}, data_return));
@@ -168,8 +175,11 @@ const View = {
                     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                         <input type="text" class="number-type form-control data-price" placeholder="Đơn giá">
                     </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4">
+                        <input type="text" class=" form-control data-date" placeholder="Hạn sử dụng" style="margin-top: 10px">
+                    </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 col-lg-1">
-                        <button class="btn btn-danger item-remove" atr="Item Delete"><i class="fas fa-times"></i></button>
+                        <button class="btn btn-danger item-remove" atr="Item Delete" style="margin-top: 10px"><i class="fas fa-times" ></i > </button>
                     </div>
                 </div>
             `);

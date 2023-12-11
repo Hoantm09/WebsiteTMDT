@@ -180,7 +180,7 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
         Route::prefix('category')->group(function () {
             Route::get('get', 'Admin\CategoryController@get')->name('admin.category.get');
             Route::get('/get-one/{id}', 'Admin\CategoryController@get_one')->name('admin.category.get_one');
-            Route::post('store', 'Admin\CategoryController@store')->name('admin.category.store');
+            Route::post('/store', 'Admin\CategoryController@store')->name('admin.category.store');
             Route::post('/update', 'Admin\CategoryController@update')->name('admin.category.update');
             Route::get('/delete/{id}', 'Admin\CategoryController@delete')->name('admin.category.delete');
         });
