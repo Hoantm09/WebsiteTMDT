@@ -659,7 +659,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-{{--                         <div id="member-name"></div>
+                        <div id="member-name"></div>
                         <form id="edit-member-form" action="" method="POST">
                             @csrf
                             <table class="table table-bordered">
@@ -707,7 +707,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
                             </div>
-                        </form> --}}
+                        </form>
                     </div>
 
                 </div>
