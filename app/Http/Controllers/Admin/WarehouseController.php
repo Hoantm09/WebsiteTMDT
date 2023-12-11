@@ -75,8 +75,9 @@ class WarehouseController extends Controller
 
     public function store(Request $request){ 
         $warehouse_data = json_decode($request->data_metadata);
-        $token = $request->cookie('_token__');
-        list($user_id, $token) = explode('$', $token, 2); 
+        // $token = $request->cookie('_token_');
+        // list($user_id, $token) = explode('$', $token, 2); 
+        $user_id = 1;
         $history_id   = $this->warehouse_history->create(["admin_id" => $user_id, "history_status" => 1])->id;
 
         foreach ($warehouse_data as $key => $data_item) {
@@ -85,17 +86,20 @@ class WarehouseController extends Controller
                 "product_id"            => $data_item->item,
                 "prices"                => $data_item->price,
                 "quantity"              => 0 + $data_item->quantity,
+                "expiry_date"           => $data_item->expiry_date,
             ];
 
             $this->warehouse_history_detail->create($input_detail);
+            
             $warehouse_item = $this->warehouse->warehouse_get_item($data_item->item); 
             if (count($warehouse_item) > 0) {
-                $this->warehouse_history->update_item($data_item->item,$warehouse_item[0]->quantity += $data_item->quantity, $warehouse_item[0]->reserve);
+                $this->warehouse_history->update_item($data_item->item,$warehouse_item[0]->quantity += $data_item->quantity, $warehouse_item[0]->reserve, $warehouse_item[0]->expiry_date);
             }else{
                 $warehouse_create = [
                     "product_id"    => $data_item->item,
                     "quantity"      => $data_item->quantity,
                     "reserve"       => 0,
+                    "expiry_date"   => $data_item->expiry_date,
                 ];
                 $this->warehouse->create($warehouse_create);
             }

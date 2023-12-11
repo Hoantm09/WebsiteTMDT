@@ -36,16 +36,16 @@ const View = {
             ];
             return [
                 `<div class="id-order">${data.id}</div>`,
-                `<p><i class="far fa-user m-r-10"></i>${data.username}</p>
+                `<p><i class="far fa-user m-r-10"></i>${data.name}</p>
                 <p><i class="far fa-envelope m-r-10"></i>${data.email}</p>
-                <p><i class="fas fa-phone-alt m-r-10"></i>${data.telephone}</p>`,
+                <p><i class="fas fa-phone-alt m-r-10"></i>${data.phone}</p>`,
                 `
                 <div class="d-flex align-items-center">
                     <div class="badge badge-success badge-dot m-r-10"></div>
                     <div>Thực tính: $ ${data.total}</div>
                 </div>`,
                 data.created_at,
-                `<span class="badge m-b-5 ${order_status[data.order_status]}">${order_status_title[data.order_status]}</span>
+                `<span class="badge m-b-5 ${order_status[data.status]}">${order_status_title[data.status]}</span>
                 <span class="badge m-b-5 badge-pill badge-blue">${order_payment_value[data.payment_value]}</span>
                 <span class="badge m-b-5 ${order_payment[data.payment_status]}">${order_payment_title[data.payment_status]}</span>`,
                 `<div class="view-data modal-fs-control" style="cursor: pointer" atr="View" data-id="${data.id}"><i class="anticon anticon-eye"></i></div>`
@@ -210,29 +210,29 @@ const View = {
                                     // <option value="7">Hủy đơn</option>
 
                 $(".order-status option").remove()     
-                if (data.order[0].order_status == 0) {
+                if (data.order[0].status == 0) {
                     $(".order-status").append(`<option value="1">Chưa hoàn thiện</option>`)
                     $(".order-status").append(`<option value="2">Đã hoàn thiện</option>`)
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
                 }
-                if (data.order[0].order_status == 1) { 
+                if (data.order[0].status == 1) { 
                     $(".order-status").append(`<option value="2">Đã hoàn thiện</option>`) 
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
                 }
-                if (data.order[0].order_status == 2) { 
+                if (data.order[0].status == 2) { 
                     $(".order-status").append(`<option value="1">Chưa hoàn thiện</option>`)
                     $(".order-status").append(`<option value="3">Chờ giao hàng</option>`) 
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
                 }
-                if (data.order[0].order_status == 3) { 
+                if (data.order[0].status == 3) { 
                     $(".order-status").append(`<option value="4">Đang giao hàng</option>`) 
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
                 }
-                if (data.order[0].order_status == 4) { 
+                if (data.order[0].status == 4) { 
                     $(".order-status").append(`<option value="5">Đã giao hàng</option>`) 
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
                 }
-                if (data.order[0].order_status == 5) { 
+                if (data.order[0].status == 5) { 
                     $(".order-status").append(`<option value="6">Kết thúc</option>`)  
                 }
                 // $(".order-status").val(data.data_order[0].order_status)
