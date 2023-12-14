@@ -90,7 +90,7 @@ class OrderController extends Controller
                     $warehouse_reserve  = $warehouse_item[0]->reserve;
                     $item_reserve       = $value->quantity;
                     if ($warehouse_quantity > $item_reserve) {
-                        $this->warehouse->update_item($value->product_id, $warehouse_quantity -= $item_reserve, $warehouse_reserve += $item_reserve);
+                        $this->warehouse->update_item($value->product_id, $warehouse_quantity -= $item_reserve, $warehouse_reserve += $item_reserve,"2223-02-02");
                     }else{
                         return $this->order->send_response(500, null, "Hết sản phẩm");
                     }
@@ -115,7 +115,7 @@ class OrderController extends Controller
                 $warehouse_reserve  = $warehouse_item[0]->reserve;
                 $item_reserve       = $value->quantity;
                 if (count($warehouse_item) > 0 && $warehouse_item[0]->quantity > $value->quantity) {
-                    $this->warehouse->update_item($value->product_id, $warehouse_quantity, $warehouse_reserve -= $item_reserve);
+                    $this->warehouse->update_item($value->product_id, $warehouse_quantity, $warehouse_reserve -= $item_reserve,"2223-02-02");
                 }else{
                     return $this->order->send_response(500, null, null);
                 }
@@ -128,7 +128,7 @@ class OrderController extends Controller
                 $warehouse_reserve  = $warehouse_item[0]->reserve;
                 $item_reserve       = $value->quantity;
                 if (count($warehouse_item) > 0 && $warehouse_item[0]->quantity > $value->quantity) {
-                    $this->warehouse->update_item($value->product_id, $warehouse_quantity += $item_reserve, $warehouse_reserve -= $item_reserve);
+                    $this->warehouse->update_item($value->product_id, $warehouse_quantity += $item_reserve, $warehouse_reserve -= $item_reserve,"2223-02-02");
                 }else{
                     return $this->order->send_response(500, null, null);
                 }

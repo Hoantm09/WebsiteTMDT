@@ -45,7 +45,7 @@ const View = {
                     <div>Thực tính: $ ${data.total}</div>
                 </div>`,
                 data.created_at,
-                `<span class="badge m-b-5 ${order_status[data.status]}">${order_status_title[data.status]}</span>
+                `<span class="badge m-b-5 ${order_status[data.order_status]}">${order_status_title[data.order_status]}</span>
                 <span class="badge m-b-5 badge-pill badge-blue">${order_payment_value[data.payment_value]}</span>
                 <span class="badge m-b-5 ${order_payment[data.payment_status]}">${order_payment_title[data.payment_status]}</span>`,
                 `<div class="view-data modal-fs-control" style="cursor: pointer" atr="View" data-id="${data.id}"><i class="anticon anticon-eye"></i></div>`
@@ -157,12 +157,12 @@ const View = {
             },
             setVal(data){ 
                 View.modals.Update.has_full = true;
-                $(".customer-type").html(data.order[0].customer_id == 0 ? "Khách tự do" : "Khách đăng kí")
+                $(".customer-type").html(data.order[0].customer_id == 0 ? "Khách tự do" : "Thành viên")
                 $(".customer-email").html(data.order[0].email)
 
-                $(".customer-name").html(data.order[0].username)
+                $(".customer-name").html(data.order[0].name)
                 $(".customer-address").html(data.order[0].address)
-                $(".customer-telephone").html(data.order[0].telephone)
+                $(".customer-telephone").html(data.order[0].phone)
 
                 $(".customer-order-price").html(data.order[0].sub_total)
                 $(".customer-order-discount").html(data.order[0].discount_total)
@@ -210,29 +210,31 @@ const View = {
                                     // <option value="7">Hủy đơn</option>
 
                 $(".order-status option").remove()     
-                if (data.order[0].status == 0) {
+                if (data.order[0].order_status == 0) {
                     $(".order-status").append(`<option value="1">Chưa hoàn thiện</option>`)
                     $(".order-status").append(`<option value="2">Đã hoàn thiện</option>`)
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
+
+                    $("#ship-setting").html(Template.Order.ShipSetting());
                 }
-                if (data.order[0].status == 1) { 
+                if (data.order[0].order_status == 1) { 
                     $(".order-status").append(`<option value="2">Đã hoàn thiện</option>`) 
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
                 }
-                if (data.order[0].status == 2) { 
+                if (data.order[0].order_status == 2) { 
                     $(".order-status").append(`<option value="1">Chưa hoàn thiện</option>`)
                     $(".order-status").append(`<option value="3">Chờ giao hàng</option>`) 
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
                 }
-                if (data.order[0].status == 3) { 
+                if (data.order[0].order_status == 3) { 
                     $(".order-status").append(`<option value="4">Đang giao hàng</option>`) 
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
                 }
-                if (data.order[0].status == 4) { 
+                if (data.order[0].order_status == 4) { 
                     $(".order-status").append(`<option value="5">Đã giao hàng</option>`) 
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
                 }
-                if (data.order[0].status == 5) { 
+                if (data.order[0].order_status == 5) { 
                     $(".order-status").append(`<option value="6">Kết thúc</option>`)  
                 }
                 // $(".order-status").val(data.data_order[0].order_status)
@@ -256,7 +258,7 @@ const View = {
         },
         init() {
             $(document).on('click', `.order-status`, function() {
-                if(!View.modals.Update.has_full)  $(".order-status option[value=2]").remove()
+                /* if(!View.modals.Update.has_full)  $(".order-status option[value=2]").remove() */
             });
             this.onClose();
 
