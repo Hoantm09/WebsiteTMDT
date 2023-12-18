@@ -12,7 +12,6 @@
 
 @section('body')
 
-
     <div class="page-header no-gutters">
         <div class="row align-items-md-center">
             <div class="col-md-6">
@@ -513,9 +512,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 text-right">
-                  
-                </div>
+
             </div>
             <div class="table-responsive">
                 <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
@@ -605,9 +602,10 @@
 
                                      </td>
                                      <td class="text-right">
-                                        <button data-user-id={{$user->customer_id}}  id="view-member-btn" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right " data-bs-toggle="modal" data-bs-target="#edit-member-modal">
+                                        {{-- <button data-user-id={{$user->customer_id}}  id="update-modal" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right " data-bs-toggle="modal" data-bs-target="#update-modal">
                                             <i class="anticon anticon-eye"></i>
-                                        </button>
+                                        </button> --}}
+                                        <div class="view-data modal-fs-control" style="cursor: pointer" atr="View" data-id="6"><i class="anticon anticon-eye"></i></div>
                                         <button data-user-id={{$user->customer_id}} id="delete-member-btn" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right " data-bs-toggle="modal" data-bs-target="#delete-member-modal">
                                             <i class="anticon anticon-delete"></i>
                                         </button>
@@ -647,98 +645,241 @@
 
 
     {{-- Hiển thị thông tin khách hàng --}}
-    <div class="edit-member-box">
-        <!-- The Modal -->
-        <div class="modal" id="view-member-modal">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Thông tin khách hàng</h5>
-                        <button type="button" class="close" data-dismiss="modal">
-                            <i class="anticon anticon-close"></i>
-                        </button>
+    {{-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="myModalLabel">Thông tin khách hàng</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name">Tên khách hàng</label>
+                    <input type="text" class="form-control" id="name" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="text" class="form-control" id="phone" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="gender">Giới tính</label>
+                    <select class="form-control" id="gender" disabled>
+                      <option value="nam">Nam</option>
+                      <option value="nữ">Nữ</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="dob">Ngày sinh</label>
+                    <input type="date" class="form-control" id="dob" disabled>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="address">Địa chỉ</label>
+                    <input type="text" class="form-control" id="address" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="status">Trạng thái</label>
+                    <select class="form-control" id="status" disabled>
+                      <option value="active">Kích hoạt</option>
+                      <option value="inactive">Không kích hoạt</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+          </div>
+        </div>
+      </div> --}}
+
+
+      {{-- <div class="modal-fullscreen fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="myModalLabel">Thông tin khách hàng</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Tên khách hàng</th>
+                          <th>Số điện thoại</th>
+                          <th>Giới tính</th>
+                          <th>Ngày sinh</th>
+                          <th>Địa chỉ</th>
+                          <th>Email</th>
+                          <th>Trạng thái</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>John Doe</td>
+                          <td>0987654321</td>
+                          <td>Nam</td>
+                          <td>1990-01-01</td>
+                          <td>Hà Nội</td>
+                          <td>johndoe@example.com</td>
+                          <td>Kích hoạt</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Mã đơn hàng</th>
+                          <th>Tổng giá trị</th>
+                          <th>Ngày đặt hàng</th>
+                          <th>Trạng thái</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>200.000</td>
+                          <td>2023-07-20</td>
+                          <td>Đã giao</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>300.000</td>
+                          <td>2023-07-21</td>
+                          <td>Đang giao</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+          </div>
+        </div>
+      </div> --}}
+
+
+      {{-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="myModalLabel">Thông tin khách hàng</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name">Tên khách hàng</label>
+                    <input type="text" class="form-control" id="name" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="text" class="form-control" id="phone" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="gender">Giới tính</label>
+                    <select class="form-control" id="gender" disabled>
+                      <option value="nam">Nam</option>
+                      <option value="nữ">Nữ</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="dob">Ngày sinh</label>
+                    <input type="date" class="form-control" id="dob" disabled>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="address">Địa chỉ</label>
+                    <input type="text" class="form-control" id="address" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="status">Trạng thái</label>
+                    <select class="form-control" id="status">
+                      <option value="active">Kích hoạt</option>
+                      <option value="inactive">Không kích hoạt</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <h5>Thông tin đơn hàng</h5>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Mã đơn hàng</th>
+                        <th>Trạng thái</th>
+                        <th>Ngày tạo</th>
+                        <th>Tổng giá trị</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>id</td>
+                          <td>status</td>
+                          <td>created_at</td>
+                          <td>total_amount</td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+          </div>
+        </div>
+      </div> --}}
+
+      <div class="modal-fullscreen" id="update-modal">
+        <div class="fs-wrapper">
+            <div class="fs-body">
+                <div class="fs-title">
+                    <h4 class="modal-title"> </h4>
+                    <div class="modal-close">
+                        <i class="fas fa-times"></i>
                     </div>
-                    <div class="modal-body">
-                        <div id="member-name"></div>
-                        <form id="edit-member-form" action="" method="POST">
-                            @csrf
-                            <table class="table table-bordered">
-                                <thead>
-                                  <tr>
-                                    <th>Tiêu đề</th>
-                                    <th>Giá trị</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td>Tên</td>
-                                    <td><input type="text" class="form-control" readonly></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Số điện thoại</td>
-                                    <td><input type="text" class="form-control" readonly></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Chi tiêu</td>
-                                    <td><input type="text" class="form-control" readonly></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Địa chỉ</td>
-                                    <td><input type="text" class="form-control" readonly></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Giới tính</td>
-                                    <td><input type="text" class="form-control" readonly></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Ngày sinh</td>
-                                    <td><input type="text" class="form-control" readonly></td>
-                                  </tr>
-                                  <tr>
-                                    <td>Hình ảnh</td>
-                                    <td><img src="" class="img-fluid" alt=""></td>
-                                  </tr>
-                                </tbody>
-                              </table>
-
-
-
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
-                            </div>
-                        </form>
+                </div>
+                <div class="fs-content is-scrolling">
+                    <div class="fs-content-wrapper">
                     </div>
-
+                </div>
+                <div class="fs-footer"> 
                 </div>
             </div>
         </div>
     </div>
-
-    {{-- Edit member --}}
-    <div class="edit-member-box">
-        <!-- The Modal -->
-        <div class="modal" id="edit-member-modal">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Thêm nhân viên</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 @endsection()
 
@@ -756,6 +897,8 @@
     <script src="{{ asset('manager/assets/vendors/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('manager/assets/vendors/datatables/dataTables.bootstrap.min.js') }}"></script>
     <script src="{{ asset('manager/assets/js/pages/e-commerce-order-list.js') }}"></script>
+    <script src="{{ asset('manager/assets/js/template.js') }}"></script>
+
 
     <!-- Core JS -->
     <script src="{{ asset('manager/assets/js/app.min.js') }}"></script>

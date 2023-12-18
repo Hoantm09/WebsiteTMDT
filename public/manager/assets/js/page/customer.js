@@ -32,3 +32,48 @@
                 .catch(error => console.error('Error:', error));
         });
     }); 
+
+const View = {
+    modals: {
+        
+        Update: {
+            resource: '#update-modal',
+            setVal(data){
+                $(".sub-customer tbody tr").remove()
+                data.map(v => {
+                    $(".sub-customer tbody1")
+                        .append(`<tr>
+                            <td>${v.name}</td>
+                            <td>${IndexView.table.formatNumber(v.quantity)}</td>
+                            <td>${IndexView.table.formatNumber(v.prices)} $</td>
+                            <td>${IndexView.table.formatNumber(v.quantity * v.prices)} $</td>
+                          </tr>`)
+                })
+            },
+            init() {
+                var modalTitleHTML = `Thông tin chi tiết`;
+                var modalBodyHTML  = Template.Warehouse.Update();
+                var modalFooterHTML = ['Đóng', 'Cập nhật'];
+                View.modals.launch(this.resource, modalTitleHTML, modalBodyHTML, modalFooterHTML); 
+            }
+        },
+        init() {
+            this.onClose();
+            this.Create.init();
+            this.Update.init();
+        }
+    },
+    init(){
+        View.tableHistory.init();
+        View.modals.init();
+    }
+};
+
+(() => {
+    
+
+
+
+})();
+
+

@@ -332,5 +332,41 @@ const Template = {
                         </div>
                     </div>`
 		}
-	}
+	},
+
+	Customer: {
+		Update() {
+			return `
+		  		  <div class="row customer-modal">
+						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 offset-3">
+							<table class="table table-bordered sub-customer">
+								<thead1>
+									<tr>
+										<th>Tên khách hàng</th>
+										<th>Số điện thoại</th>
+										<th>Giới tính</th>
+										<th>Ngày sinh</th>
+										<th>Địa chỉ</th>
+										<th>Email</th>
+										<th>Trạng thái</th>
+									</tr>
+								</thead1>
+							    <tbody1> 
+							    </tbody1>
+
+								<thead2>
+									<tr>
+										<th>Mã đơn hàng</th>
+										<th>Tổng giá trị</th>
+										<th>Ngày đặt hàng</th>
+										<th>Trạng thái</th>
+									</tr>
+							  	</thead2>
+								<tbody2> 
+								</tbody2>
+							  </table>
+						</div>
+	            	</div> `
+		},
+	},
 }
