@@ -20,6 +20,7 @@ use Carbon\Carbon;
 use Session;
 use Hash;
 use DB;
+use Psy\Readline\Hoa\Console;
 
 class WarehouseController extends Controller
 {
@@ -91,10 +92,6 @@ class WarehouseController extends Controller
 
             $this->warehouse_history_detail->create($input_detail);
             
-            $warehouse_item = $this->warehouse->warehouse_get_item($data_item->item); 
-            if (count($warehouse_item) > 0) {
-                $this->warehouse_history->update_item($data_item->item,$warehouse_item[0]->quantity += $data_item->quantity, $warehouse_item[0]->reserve, $warehouse_item[0]->expiry_date);
-            }else{
                 $warehouse_create = [
                     "product_id"    => $data_item->item,
                     "quantity"      => $data_item->quantity,
@@ -102,7 +99,6 @@ class WarehouseController extends Controller
                     "expiry_date"   => $data_item->expiry_date,
                 ];
                 $this->warehouse->create($warehouse_create);
-            }
         }
         return $request;
     }

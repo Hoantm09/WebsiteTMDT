@@ -19,7 +19,8 @@ class WarehouseRepository extends BaseRepository implements RepositoryInterface
     public function get_item_all(){
         $sql = "SELECT warehouse.*, 
                     product.name, 
-                    product.price 
+                    product.prices,
+                    product.price            
                 FROM warehouse
                 LEFT JOIN product
                 ON product.id = warehouse.product_id;";
