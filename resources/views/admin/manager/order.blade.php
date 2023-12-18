@@ -131,4 +131,10 @@
     
     <script src="{{ asset('manager/assets/js/page/order.js') }}"></script>
 
+    {{-- API GHN --}}
+    <script src="{{ asset('manager/assets/js/page/more/api-ghn/order.js') }}"></script>
+    <script src="{{ asset('manager/assets/js/page/more/api-ghn/api.js') }}"></script>
+    <script src="{{ asset('manager/assets/js/page/more/address_select.js') }}"></script>
+
+
 @endsection()

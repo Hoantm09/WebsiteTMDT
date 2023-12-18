@@ -253,7 +253,7 @@ const Template = {
                                         <div class="d-md-flex align-items-center">
                                             <div class="text-center text-sm-left ">
                                                 <div class="avatar avatar-image" style="width: 150px; height:150px">
-                                                    <img src="assets/images/avatars/thumb-3.jpg" alt="">
+                                                    <img src="https://static-00.iconduck.com/assets.00/user-icon-2048x2048-ihoxz4vq.png" alt="">
                                                 </div>
                                             </div>
                                             <div class="text-center text-sm-left m-v-15 p-l-30">
@@ -266,6 +266,13 @@ const Template = {
                                             <div class="d-md-block d-none border-left col-1"></div>
                                             <div class="col">
                                                 <ul class="list-unstyled m-t-10">
+													<li class="row">
+														<p class="col-sm-4 col-4 font-weight-semibold text-dark m-b-5">
+															<i class="m-r-10 text-primary anticon anticon-idcard"></i>
+															<span>Phân loại: </span> 
+														</p>
+														<p class="col font-weight-semibold customer-type"> </p>
+													</li>
                                                     <li class="row">
                                                         <p class="col-sm-4 col-4 font-weight-semibold text-dark m-b-5">
                                                             <i class="m-r-10 text-primary anticon anticon-mail"></i>
@@ -327,11 +334,335 @@ const Template = {
                                     		<option value="3">Đã giao hàng</option>
                                     		<option value="4">Hoàn trả</option>
                                     	</select>
+										<textarea class="form-control m-t-5" aria-label="With textarea" placeholder="Ghi chú"></textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+						<div id="ship-setting"></div>
+
                     </div>`
+		},
+		ShipSetting(){
+			return `
+			
+			<h5>Tạo đơn giao hàng</h5>
+			
+				<div class="row">
+					<div class="col-md-9">
+						<div class="card">
+							<div class="card-body ">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>Mã</th>
+											<th>Tên sản phẩm</th>
+											<th>Số lượng</th>
+											<th>Giá</th>
+										</tr>
+									</thead>
+									<tbody class="data-list">
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card">
+							<div class="card-body">
+								<select name="" id="" class="form-control">
+									<option value="0">Chọn đơn vị vận chuyển</option>
+									<option value="1">Giao hàng nhanh</option>
+									<option value="2">Bk-Eshop</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-lg-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="m-b-20">Thông tin gói hàng</h5>
+								<form
+									action=""
+									method="post">
+									<input type="hidden" name="_token"
+										value="LwWv2HobMbboa1IeIc9QvV5ZMS4z6XjqfcdGcIOt">
+									<div class="form-row">
+										<div class="form-group col-md-4">
+											<label for="inputLong">Dài(*)</label>
+											<input name="length" type="text" class="form-control"
+												id="length" placeholder="" value="30">
+										</div>
+										<div class="form-group col-md-4">
+											<label for="inputWidth">Rộng(*)</label>
+											<input name="width" type="text" class="form-control"
+												id="width" placeholder="Width" value="10">
+										</div>
+										<div class="form-group col-md-3">
+											<label for="inputHeight">Cao(*)</label>
+											<input name="height" type="text"
+												class="form-control" id="Height"
+												placeholder="Height" value="10">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="formGroupExampleInput2">Khối lượng</label>
+										<div class="radio">
+											<input type="radio" name="massOption"
+												id="gridRadios1" value="option1">
+											<label for="gridRadios1">
+												Theo sản phẩm theo đơn hàng 
+											</label>
+										</div>
+										<div class="radio">
+											<input type="radio" name="massOption"
+												id="gridRadios2" value="option2" checked="">
+											<label for="gridRadios2">
+												Tùy chỉnh
+											</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="formGroupExampleInput2">Nhập khối lượng tùy
+											chỉnh (gam)</label>
+										<input name="mass" type="text" class="form-control"
+											id="weight" placeholder="Nhập khối lượng"
+											value="500">
+									</div>
+									<div class="form-group">
+										<label for="formGroupExampleInput2">Yêu cầu</label>
+										<select name="role" id="required_note" class="form-control">
+											<option value="CHOTHUHANG">Cho xem hàng, cho thử</option>
+											<option value="KHONGCHOXEMHANG">Không cho xem hàng</option>
+											<option value="CHOXEMHANGKHONGTHU">Cho xem hàng, không cho thử
+											</option>
+										</select>
+
+									</div>
+									<div class="form-group">
+										<label for="formGroupExampleInput">Ghi chú</label>
+										<input name="note" type="text" class="form-control"
+											id="note" placeholder="Ghi chú"
+											value="">
+									</div>
+									<div class="row m-b-30">
+										<div class="col-lg-6">
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-6">
+						<div class="card">
+							<div class="card-body">
+								<div
+									class="d-flex justify-content-between align-items-center m-b-10">
+									<h5>Thông tin người gửi</h5>
+								</div>
+								<form
+									action=""
+									method="post">
+									<input type="hidden" name="_token"
+										value="LwWv2HobMbboa1IeIc9QvV5ZMS4z6XjqfcdGcIOt">
+									<div class="form-row">
+										<div class="form-group col-md-6">
+											<label for="inputEmail4">Địa chỉ kho gửi
+												hàng:</label>
+											<select id="inputWarehouse" class="form-control">
+												<option selected>Chọn kho</option>
+												<option  value="1">Kho Trương Định, Quận Hai Bà Trưng, Hà
+													Nội, 167</option>
+												<option  value="2">Kho Ecopark, Hưng Yên</option>
+											</select>
+										</div>
+										<div class="form-group col-md-4">
+											<label for="inputShift">Ca lấy hàng:</label>
+											<select id="inputShift" class="form-control">
+												<option selected>Chọn ca lấy hàng</option>
+												<option>Ca lấy 14-12-2023(7h-12h)</option>
+												<option>Ca lấy 14-12-2023(12h-18h)</option>
+												<option>Ca lấy 15-12-2023(7h-12h)</option>
+											</select>
+										</div>
+										<div class="form-group col-md-4">
+											<label for="senderPhone">Số điện thoại:</label>
+											<input name="" type="text" class="form-control"
+												id="from_phone" placeholder="" value="0888888888">
+										</div>
+									</div>
+									<hr>
+									<div
+										class="d-flex justify-content-between align-items-center m-b-10">
+										<h5>Thông tin người nhận</h5>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-6">
+											<label for="receiverName">Tên người nhận:</label>
+											<input name="" type="text" class="form-control"
+												id="to_name" placeholder="" value="Cong Quyen">
+										</div>
+										<div class="form-group col-md-6">
+											<label for="receiverPhone">Số điện thoại:</label>
+											<input name="" type="text" class="form-control"
+												id="to_phone" placeholder="" value="0888666888">
+										</div>
+										<div class="form-group col-md-3">
+											<label for="inputEmail4">Tỉnh/Thành Phố</label>
+											<select name="warehouse_pro" class="form-control"
+												id="provinceSelect" onchange="loadDistricts()">
+											</select>
+										</div>
+										<div class="form-group col-md-3">
+											<label for="inputPassword4">Quận/Huyện</label>
+											<select name="warehouse_dis" class="form-control"
+												id="districtSelect" onchange="loadWards()">
+											</select>
+										</div>
+										<div class="form-group col-md-3">
+											<label for="inputPassword4">Phường/Thị Xã</label>
+											<select name="warehouse_ward" class="form-control"
+												id="wardSelect">
+												<option value="90816">Thị Trấn Si Ma Cai
+												</option>
+											</select>
+										</div>
+										<div class="form-group col-md-3">
+											<label for="inputPassword4">Chi tiết</label>
+											<input name="warehouse_detail" class="form-control"
+												id="addressDetail" type="text">
+										</div>
+										<input hidden="" name="addressFull" class="form-control"
+											id="addressFull">
+									</div>
+								</form>
+
+
+								<hr>
+								<div
+									class="d-flex justify-content-between align-items-center m-b-10">
+									<h5>Thông tin đơn hàng</h5>
+								</div>
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label for="inputEmail4">Mã đơn khách hàng</label>
+										<input name="" type="text" class="form-control"
+											id="client_order_code" placeholder="Nhập mã đơn"
+											value="12">
+									</div>
+									<div class="form-group col-md-6">
+										<label for="inputEmail4">Tiền thu hộ (COD):</label>
+										<input name="" type="text" class="form-control" id="cod_amount" placeholder=""value="">
+									</div>
+									<div class="form-group col-md-6">
+										<label for="inputEmail4">Tổng giá trị đơn:</label>
+										<input name="" type="text" class="form-control" id="insurance_value" placeholder=""value="">
+									</div>
+									<div class="form-group col-md-6">
+										<label for="inputEmail4">Gói dịch vụ:</label>
+										<select id="inputState" class="form-control">
+											<option selected>Hàng nhẹ (&lt;20kg) </option>
+											<option>Hàng nặng (&gt;20kg) </option>
+										</select>
+									</div>
+									<div class="form-group col-md-6">
+										<label for="payment_type_id">Trả phí:</label>
+										<select id="payment_type_id" class="form-control">
+											<option value="1">Bên gửi trả phí</option>
+											<option value="2">Bên nhận trả phí</option>
+										</select>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-2">
+						<div class="card">
+
+							<div class="card-body">
+								<label for="inputEmail4">Phí dịch vụ:</label>
+								<div class="service-fee text-bold">44.000 đ</div>
+								<hr>
+								<label for="inputEmail4">Tổng phí:</label>
+								<div class="total-fee text-bold">44.000 đ</div>
+								<hr>
+								<div class="form-group">
+									<label for="formGroupExampleInput2">Mã hỗ trợ:</label>
+									<input name="" type="text" class="form-control" id="coupon"
+										placeholder="Nhập mã hỗ trợ từ GHN" value="">
+								</div>
+								<hr>
+								<button id="save-order-btn" type="button" class="btn btn-primary push-modal2"
+									atr="Push2" data-toggle="modal"
+									data-target="#exampleModalCenter">Xác nhận</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			
+
+
+
+
+<!-- Modal Xác nhận -->
+<div class="modal fade" id="exampleModalCenter">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalCenterTitle">Xác nhận tạo đơn</h5>
+				<button type="button" class="close" data-dismiss="modal">
+					<i class="anticon anticon-close"></i>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-3 col-md-3 col-lg-3 text-bold">Người gửi:</div>
+					<div class="col-sm-3 col-md-3 col-lg-3">Bk-Eshop</div>
+					<div class="col-sm-3 col-md-3 col-lg-3">0888888888</div>
+					<div class="col-sm-3 col-md-3 col-lg-3">167 Trương Định</div>
+				</div>
+			   
+				<div class="row">
+					<div class="col-sm-3 col-md-3 col-lg-3 text-bold">Người nhận:</div>
+					<div class="col-sm-3 col-md-3 col-lg-3">Cong Quyen</div>
+					<div class="col-sm-3 col-md-3 col-lg-3">0888388888</div>
+					<div class="col-sm-3 col-md-3 col-lg-3">60 Nguyễn An Ninh</div>
+				</div>
+				<hr>
+				<div class="p-10" style="background-color: rgb(204 213 221 / 50%);">
+						<div class="row">
+							<div class="col-sm-4 col-md-4 col-lg-4 text-bold">COD:</div>
+							<div class="col-sm-4 col-md-4 col-lg-4">0</div>
+						</div>
+<!--                                                 <div class="row">
+							<div class="col-sm-4 col-md-4 col-lg-4 text-bold">GTB thu tiền:</div>
+							<div class="col-sm-4 col-md-4 col-lg-4">20000</div>
+						</div> -->
+						<div class="row">
+							<div class="col-sm-4 col-md-4 col-lg-4 text-bold">Trả phí:</div>
+							<div class="col-sm-4 col-md-4 col-lg-4">Bên gửi trả phí</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-4 col-md-4 col-lg-4 text-bold">Tổng phí:</div>
+							<div class="col-sm-4 col-md-4 col-lg-4">44.000đ</div>
+						</div>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default"
+					data-dismiss="modal">Quay lại</button>
+				<button id="submit-order-btn" type="button" class="btn btn-primary">Xác nhận</button>
+			</div>
+		</div>
+	</div>
+</div>
+			`
 		}
 	}
 }

@@ -92,9 +92,13 @@ class OrderRepository extends BaseRepository implements RepositoryInterface
     
     public function get_all($tag, $id){
         $status_order = $tag == null ? "" : " AND order_status = ".$tag;
-        $sql = "SELECT *
+/*         $sql = "SELECT *
                     FROM order_time 
                     WHERE customer_id = ".$id.$status_order." 
+                    ORDER BY created_at DESC"; */
+            $sql = "SELECT *
+                    FROM order_time 
+                    WHERE order_status = ".$id." 
                     ORDER BY created_at DESC";
         return DB::select($sql);
     }
