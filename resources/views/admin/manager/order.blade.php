@@ -57,7 +57,7 @@
                     <div class="status-event" atr="Shipped" data-id="3">
                         <div class="d-flex align-items-center">
                             <div class="badge badge-purple badge-dot m-r-10"></div>
-                            <div>Chờ giao hàng</div>
+                            <div>Chờ lấy hàng</div>
                         </div>
                     </div>
                     <div class="status-event" atr="Shipped" data-id="4">
@@ -75,7 +75,7 @@
                     <div class="status-event" atr="Shipped" data-id="6">
                         <div class="d-flex align-items-center">
                             <div class="badge badge-success badge-dot m-r-10"></div>
-                            <div>Kêt thúc</div>
+                            <div>Hoàn thành</div>
                         </div>
                     </div>
                     <div class="status-event" atr="Refund" data-id="7">
@@ -134,7 +134,7 @@
     {{-- API GHN --}}
     <script src="{{ asset('manager/assets/js/page/more/api-ghn/order.js') }}"></script>
     <script src="{{ asset('manager/assets/js/page/more/api-ghn/api.js') }}"></script>
-    <script src="{{ asset('manager/assets/js/page/more/address_select.js') }}"></script>
+   
 
 
 @endsection()

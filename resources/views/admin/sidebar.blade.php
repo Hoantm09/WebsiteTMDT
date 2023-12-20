@@ -45,6 +45,7 @@
                 </a>
                 <ul class="dropdown-menu"> 
                     <li class="category1"> <a href="{{ route('admin.transport.index') }}">Quản lý vận đơn</a> </li>
+                    <li class="category1"> <a href="{{ route('admin.transport.doi-soat') }}">Đối soát COD và Phí</a> </li>
                     <li class="product1"> <a href="{{ route('admin.transport.config') }}">Cấu hình giao hàng</a> </li>
                 </ul>
             </li>

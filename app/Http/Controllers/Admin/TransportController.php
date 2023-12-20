@@ -38,4 +38,17 @@ class TransportController extends Controller
     public function updateWarehouseConfig(Request $request){
         dd($request->input());
     }
+
+    public function doiSoat(){
+        return view("admin.manager.transport.doi-soat");
+    }
+
+    public function getDoiSoat($statusID){
+        $list = $this->transport->getDoiSoat($statusID);
+        return response()->json($list);
+    }
+    public function getTicketDetail($id){
+        $list = $this->transport->getTicketDetail($id);
+        return response()->json($list);
+    }
 }

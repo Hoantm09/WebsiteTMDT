@@ -636,7 +636,7 @@ const Template = {
 				<div class="p-10" style="background-color: rgb(204 213 221 / 50%);">
 						<div class="row">
 							<div class="col-sm-4 col-md-4 col-lg-4 text-bold">COD:</div>
-							<div class="col-sm-4 col-md-4 col-lg-4">0</div>
+							<div class="col-sm-4 col-md-4 col-lg-4">200.000</div>
 						</div>
 <!--                                                 <div class="row">
 							<div class="col-sm-4 col-md-4 col-lg-4 text-bold">GTB thu tiền:</div>
@@ -656,11 +656,206 @@ const Template = {
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default"
 					data-dismiss="modal">Quay lại</button>
-				<button id="submit-order-btn" type="button" class="btn btn-primary">Xác nhận</button>
+				<button id="submit-order-btn" type="button" class="btn btn-primary">Tạo đơn</button>
 			</div>
 		</div>
 	</div>
 </div>
+			`
+		},
+		printOrder(){
+			return `
+			<h5>Đóng gói hàng</h5>
+				<div class="row">
+					<div class="col-md-9">
+						<div class="card">
+							<div class="card-body ">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>Mã vận đơn</th>
+											<th>Mã đơn hàng</th>
+											<th>Sản phẩm</th>
+											<th>Dự kiến lấy</th>
+										</tr>
+									</thead>
+									<tbody class="data-list">
+										<tr>
+											<td>LF7GNK</td>
+											<td>12</td>
+											<td>Nước hoa province x 3</td>
+											<td>22-12-2023 (7h-12h)</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card">
+							<div class="card-body">
+								<a href="https://dev-online-gateway.ghn.vn/a5/public-api/printA5?token=d19c8136-9f3e-11ee-9047-56287bcbd5a7" class="btn btn-primary" target="_blank">
+									In đơn hàng <i class="anticon anticon-printer"></i>
+								  </a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			`
+		},
+		vanchuyenDetail(){
+			return `
+			<hr>
+			<h5>Theo dõi đơn hàng</h5>
+			<div class="row">
+			<div class="col-sm-4 m-b-5">
+				<table class="table">
+					<thead class="table-success">
+					  <tr>
+						<th>Người gửi</th>
+						<th></th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td>Tên người gửi</td>
+						<td>Bk-eShop</td>
+					  </tr>
+					  <tr>
+						<td>Điện thoại</td>
+						<td>0888222666</td>
+					  </tr>
+					  <tr>
+						<td>Địa chỉ</td>
+						<td>167 Trương Định, Hai Bà Trưng, Hà Nội</td>
+					  </tr>
+					</tbody>
+				  </table>
+			</div>
+			<div class="col-sm-4 m-b-5">
+			  <table class="table">
+				<thead class="table-success">
+				  <tr>
+					<th colspan="2">Người nhận</th>
+				  </tr>
+				</thead>
+				<tbody>
+				  <tr>
+					<td>Tên người nhận</td>
+					<td>Cong Quyen</td>
+				  </tr>
+				  <tr>
+					<td>Điện thoại</td>
+					<td>0888336888</td>
+				  </tr>
+				  <tr>
+					<td>Địa chỉ</td>
+					<td>Phường 14, Quận 10, Hồ Chí Minh, Vietnam</td>
+				  </tr>
+				</tbody>
+			  </table>
+			</div>
+			<div class="col-sm-4 m-b-5">
+				<table class="table">
+					<thead class="table-success">
+					  <tr>
+						<th>Thông tin đơn  hàng</th>
+						<th></th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td>Mã đơn hàng</td>
+						<td>JHGN7</td>
+					  </tr>
+					  <tr>
+						<td>Mã đơn khách hàng</td>
+						<td>12</td>
+					  </tr>
+					  <tr>
+						<td>Ngày dự kiến lấy</td>
+						<td>22-12-2023</td>
+					  </tr>
+					  <tr>
+						<td>Ngày dự kiến giao</td>
+						<td>25-12-2023</td>
+					  </tr>
+					  <tr>
+						<td>Trạng thái hiện tại</td>
+						<td>Chờ lấy hàng</td>
+					  </tr>
+					</tbody>
+				  </table>
+			</div>
+			<div class="col-sm-4 m-b-5">
+				<table class="table">
+					<thead class="table-success">
+					  <tr>
+						<th>Thông tin chi tiết</th>
+						<th></th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td>Sản phẩm</td>
+						<td>Nước hoa x3</td>
+					  </tr>
+					  <tr>
+						<td>Cân nặng</td>
+						<td>600 gram</td>
+					  </tr>
+					  <tr>
+						<td>Lưu ý giao hàng</td>
+						<td>Cho thử hàng</td>
+					  </tr>
+					  <tr>
+						<td>Người trả</td>
+						<td>Người gửi trả phí</td>
+					  </tr>
+					</tbody>
+				  </table>
+			</div>
+			<div class="col-sm-8 m-b-5">
+				<table class="table">
+					<thead class="table-success">
+					  <tr>
+						<th>Theo dõi đơn hàng</th>
+						<th></th>
+						<th></th>
+					  </tr>
+					</thead>
+					<tr>
+						<th>Thời gian</th>
+						<th>Trạng thái đơn</th>
+						<th>Chi tiết</th>
+					  </tr>
+					<tbody>
+					  <tr>
+						<td>Thứ 5, 14/12/2023 11:27</td>
+						<td>Chờ lấy hàng</td>
+						<td>167 Giải Phóng, Phương Mai, Đống Đa, Hà Nội, Vietnam</td>
+					  </tr>
+					  <tr>
+						<td>Thứ 6, 15/12/2023 11:27</td>
+						<td>Đang giao hàng</td>
+						<td>Đơn hàng đã đến bưu cục 20-HNI Long Bien Hub</td>
+					  </tr>
+					  <tr>
+						<td>Thứ 7, 16/12/2023 11:27</td>
+						<td>Đang giao hàng</td>
+						<td>Đơn hàng đã đến kho phân loại BN B Mega SOC</td>
+					  </tr>
+					  <tr>
+						<td>Thứ 7, 16/12/2023 11:27</td>
+						<td>Đã giao hàng</td>
+						<td>Đơn hàng đã được giao thành công</td>
+					  </tr>
+
+					</tbody>
+				  </table>
+			</div>
+		</div>
 			`
 		}
 	}

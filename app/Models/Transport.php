@@ -25,4 +25,20 @@ class Transport extends Model
         
     }
 
+    //Doi soat
+    public function getDoiSoat($statusID){
+        $list = DB::table('transport')
+            ->where('status', $statusID)
+            ->get();
+        return $list;
+    }
+    public function getTicketDetail($id){
+        $list = DB::table('transport')
+        ->where('id', $id)
+        ->first();
+    return $list;
+    }
+
+
+
 }

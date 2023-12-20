@@ -15,7 +15,7 @@ const View = {
                 "Chờ xử lí",
                 "Chưa hoàn thiện",
                 "Đã hoàn thiện",
-                "Chờ giao hàng",
+                "Chờ lấy hàng",
                 "Đang giao hàng",
                 "Đã giao hàng",
                 "Kết thúc",
@@ -195,7 +195,8 @@ const View = {
                                     <td>${v.name}</td>
                                     <td>${v.quantity}</td>
                                     <td>${v.prices}</td>
-                                    <td>${v.total_price}</td>
+                                    <td>${v.discount}%</td>
+                                    <td>${v.total_price*v.quantity}</td>
                                     <td>${warehouse_value}</td>
                                 </tr>`)
                 })
@@ -203,7 +204,7 @@ const View = {
                                     // <option value="0">Chờ xử lí</option>
                                     // <option value="1">Chưa hoàn thiện</option>
                                     // <option value="2">Đã hoàn thiện</option>
-                                    // <option value="3">Chờ giao hàng</option>
+                                    // <option value="3">Chờ lấy hàng</option>
                                     // <option value="4">Đang giao hàng</option>
                                     // <option value="5">Đã giao hàng</option>
                                     // <option value="6">Kết thúc</option>
@@ -215,24 +216,29 @@ const View = {
                     $(".order-status").append(`<option value="2">Đã hoàn thiện</option>`)
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
 
-                    $("#ship-setting").html(Template.Order.ShipSetting());
+                    
                 }
                 if (data.order[0].order_status == 1) { 
                     $(".order-status").append(`<option value="2">Đã hoàn thiện</option>`) 
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
+                    $("#ship-setting").html(Template.Order.ShipSetting());
                 }
                 if (data.order[0].order_status == 2) { 
                     $(".order-status").append(`<option value="1">Chưa hoàn thiện</option>`)
-                    $(".order-status").append(`<option value="3">Chờ giao hàng</option>`) 
+                    $(".order-status").append(`<option value="3">Chờ lấy hàng</option>`) 
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
+                    $("#ship-setting").html(Template.Order.printOrder());
+                    
                 }
                 if (data.order[0].order_status == 3) { 
                     $(".order-status").append(`<option value="4">Đang giao hàng</option>`) 
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
+                    $("#ship-setting").html(Template.Order.vanchuyenDetail());
                 }
                 if (data.order[0].order_status == 4) { 
                     $(".order-status").append(`<option value="5">Đã giao hàng</option>`) 
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
+                    $("#ship-setting").html(Template.Order.vanchuyenDetail());
                 }
                 if (data.order[0].order_status == 5) { 
                     $(".order-status").append(`<option value="6">Kết thúc</option>`)  
