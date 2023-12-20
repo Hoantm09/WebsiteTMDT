@@ -94,10 +94,10 @@
                                 <tbody>
                                     <tr role="row" class="even">
                                         <td>
-                                            #5331
+                                            JHGN4
                                         </td>
                                         <td>
-                                            #5375
+                                            #15
                                         </td>
                                         <td>
                                             <div class="metadata-table-wrapper">
@@ -124,7 +124,7 @@
                                         </td>
                                         <td class="text-right">
                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                <a class="view-data " style="cursor: pointer" href="#"><i class="anticon anticon-eye"></i></a>
+                                                <a class="view-data " style="cursor: pointer" href="#" data-toggle="modal" data-target=".bd-example-modal-xl"><i class="anticon anticon-eye"></i></a>
                                             </button>   
                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
                                                 <i class="anticon anticon-edit"></i>
@@ -136,10 +136,10 @@
                                     </tr>
                                     <tr role="row" class="even">
                                         <td>
-                                            #12
+                                            JHGN7
                                         </td>
                                         <td>
-                                            #14
+                                            #12
                                         </td>
                                         <td>
                                             <div class="metadata-table-wrapper">
@@ -166,7 +166,7 @@
                                         </td>
                                         <td class="text-right">
                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                <a class="view-data " style="cursor: pointer" href="#"><i class="anticon anticon-eye"></i></a>
+                                                <a class="view-data " style="cursor: pointer" href="#" data-toggle="modal" data-target=".bd-example-modal-xl"><i class="anticon anticon-eye"></i></a>
                                             </button>                                            
                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
                                                 <i class="anticon anticon-edit"></i>
@@ -180,6 +180,173 @@
                             </table>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-xl">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title h4">Chi tiết đơn hàng</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i class="anticon anticon-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-4 m-b-5">
+                            <table class="table">
+                                <thead class="table-success">
+                                  <tr>
+                                    <th>Người gửi</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Tên người gửi</td>
+                                    <td>Bk-eShop</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Điện thoại</td>
+                                    <td>0888222666</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Địa chỉ</td>
+                                    <td>167 Trương Định, Hai Bà Trưng, Hà Nội</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <div class="col-sm-4 m-b-5">
+                          <table class="table">
+                            <thead class="table-success">
+                              <tr>
+                                <th colspan="2">Người nhận</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Tên người nhận</td>
+                                <td>Cong Quyen</td>
+                              </tr>
+                              <tr>
+                                <td>Điện thoại</td>
+                                <td>0888336888</td>
+                              </tr>
+                              <tr>
+                                <td>Địa chỉ</td>
+                                <td>Phường 14, Quận 10, Hồ Chí Minh, Vietnam</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="col-sm-4 m-b-5">
+                            <table class="table">
+                                <thead class="table-success">
+                                  <tr>
+                                    <th>Thông tin đơn  hàng</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Mã vận đơn</td>
+                                    <td>JHGN7</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Mã đơn khách hàng</td>
+                                    <td>12</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Ngày dự kiến lấy</td>
+                                    <td>22-12-2023</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Ngày dự kiến giao</td>
+                                    <td>25-12-2023</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Trạng thái hiện tại</td>
+                                    <td>Chờ lấy hàng</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <div class="col-sm-4 m-b-5">
+                            <table class="table">
+                                <thead class="table-success">
+                                  <tr>
+                                    <th>Thông tin chi tiết</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Sản phẩm</td>
+                                    <td>Nước hoa x3</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Cân nặng</td>
+                                    <td>600 gram</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Lưu ý giao hàng</td>
+                                    <td>Cho thử hàng</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Người trả</td>
+                                    <td>Người gửi trả phí</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <div class="col-sm-8 m-b-5">
+                            <table class="table">
+                                <thead class="table-success">
+                                  <tr>
+                                    <th>Theo dõi đơn hàng</th>
+                                    <th></th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tr>
+                                    <th>Thời gian</th>
+                                    <th>Trạng thái đơn</th>
+                                    <th>Chi tiết</th>
+                                  </tr>
+                                <tbody>
+                                  <tr>
+                                    <td>Thứ 5, 14/12/2023 11:27</td>
+                                    <td>Chờ lấy hàng</td>
+                                    <td>167 Giải Phóng, Phương Mai, Đống Đa, Hà Nội, Vietnam</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Thứ 6, 15/12/2023 11:27</td>
+                                    <td>Đang giao hàng</td>
+                                    <td>Đơn hàng đã đến bưu cục 20-HNI Long Bien Hub</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Thứ 7, 16/12/2023 11:27</td>
+                                    <td>Đang giao hàng</td>
+                                    <td>Đơn hàng đã đến kho phân loại BN B Mega SOC</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Thứ 7, 16/12/2023 11:27</td>
+                                    <td>Đã giao hàng</td>
+                                    <td>Đơn hàng đã được giao thành công</td>
+                                  </tr>
+
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary">Đã đối soát</button>
                 </div>
             </div>
         </div>
