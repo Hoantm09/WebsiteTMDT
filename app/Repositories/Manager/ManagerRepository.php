@@ -45,11 +45,15 @@ class ManagerRepository extends BaseRepository implements RepositoryInterface
         return DB::select($sql);
     }
     public function get_cus_one($id){
-        $sql = "SELECT customer_detail.* , customer.email, customer.status
+        $sql = "SELECT customer_detail.* , customer.email, customer.status,
+                    order_time.id , order_time.order_status, order_time. created_at,
+                    order_time.total 
                     FROM customer_detail 
                     LEFT JOIN customer
                     ON customer.id = customer_detail.customer_id
-                    WHERE customer_id = ".$id;
+                    RIGHT JOIN order_time
+                    ON customer_detail.id = order_time.customer_id
+                    WHERE order_time.customer_id = ".$id;
         return DB::select($sql);
     }
 }

@@ -101,8 +101,10 @@ const View = {
                 data.map(v => {
                     $(".sub-customer-order tbody")
                         .append(`<tr>
-                            <td>${v.name}</td>
-
+                            <td>${v.id}</td>
+                            <td>${v.order_status}</td>
+                            <td>${v.created_at}</td>
+                            <td>${v.total}</td>
                           </tr>`)  
                 })
 
