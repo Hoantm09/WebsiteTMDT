@@ -100,11 +100,21 @@ const View = {
             },
             setVal2(data){
                 $(".sub-customer-order tbody tr").remove()
-                data.map(v => {                    
+                data.map(v => { 
+                    var order_status_title = [
+                        "Chờ xử lí",
+                        "Chưa hoàn thiện",
+                        "Đã hoàn thiện",
+                        "Chờ giao hàng",
+                        "Đang giao hàng",
+                        "Đã giao hàng",
+                        "Kết thúc",
+                        "Hoàn trả",
+                    ];                   
                     $(".sub-customer-order tbody")
                         .append(`<tr>
                             <td>${v.id}</td>
-                            <td>${v.order_status}</td>
+                            <td>${order_status_title[v.order_status]}</td>
                             <td>${v.created_at}</td>
                             <td>${v.total}</td>
                           </tr>`)  
