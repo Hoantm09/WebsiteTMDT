@@ -671,31 +671,34 @@ const Template = {
 		  		  <div class="row customer-modal">
 						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 offset-3">
 							<table class="table table-bordered sub-customer">
-								<thead1>
+								<thead>
 									<tr>
-										<th>Tên khách hàng</th>
-										<th>Số điện thoại</th>
+										<th style="width: 210.825px;">Tên khách hàng</th>
+										<th style="width: 128.025px;">Số điện thoại</th>
 										<th>Giới tính</th>
 										<th>Ngày sinh</th>
-										<th>Địa chỉ</th>
+										<th style="width: 300.7375px;">Địa chỉ</th>
 										<th>Email</th>
 										<th>Trạng thái</th>
 									</tr>
-								</thead1>
-							    <tbody1> 
-							    </tbody1>
+								</thead>
+							    <tbody> 
+							    </tbody>
+							</table>
 
-								<thead2>
+							<h5 class="modal-title" id="myModalLabel">Đơn hàng đã đặt</h5>
+							<table class="table table-bordered sub-customer-order">
+								<thead>
 									<tr>
 										<th>Mã đơn hàng</th>
-										<th>Tổng giá trị</th>
-										<th>Ngày đặt hàng</th>
 										<th>Trạng thái</th>
+										<th>Ngày tạo</th>
+										<th>Tổng giá trị</th>
 									</tr>
-							  	</thead2>
-								<tbody2> 
-								</tbody2>
-							  </table>
+								</thead>
+								<tbody> 
+								</tbody>
+							</table>
 						</div>
 	            	</div> `
 		},

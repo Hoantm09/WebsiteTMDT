@@ -35,44 +35,108 @@
 
 const View = {
     modals: {
+        onControl(name, callback){
+            $(document).on('click', '.modal-fs-control', function() {
+                var id = $(this).attr('data-id');
+                if($(this).attr('atr').trim() == name) {
+                    callback(id);
+                }
+            });
+        },
         
+        onClose(){
+            $(document).on('click', '.modal-close', function() {
+                $('.modal-fullscreen').removeClass('show');
+                $('body').removeClass('modal-fs-open');
+            });
+            $(document).on('click', '.close-modal', function() {
+                $('.modal-fullscreen').removeClass('show');
+                $('body').removeClass('modal-fs-open');
+            });
+            $(document).mouseup(function(e) {
+                var container = $(".fs-body");
+                if (!container.is(e.target) && container.has(e.target).length === 0) {
+                    $('.modal-fullscreen').removeClass('show');
+                    $('body').removeClass('modal-fs-open');
+                }
+            });
+        },
+
+        onShow(resource){
+            $(resource).addClass('show');
+            $('body').addClass('modal-fs-open');
+            $(document).off('click', `${resource} .push-modal`);
+        },
+
+        launch(resource, modalTitleHTML, modalBodyHTML, modalFooterHTML){
+            $(`${resource} .fs-title .modal-title`).html(modalTitleHTML);
+            $(`${resource} .fs-content .fs-content-wrapper`).html(modalBodyHTML);
+            $(`${resource} .fs-footer .close-modal`).html(modalFooterHTML[0]);
+            $(`${resource} .fs-footer .push-modal`).html(modalFooterHTML[1]);
+        },
+        
+        onHide(resource){
+            $(resource).removeClass('show');
+            $('body').removeClass('modal-fs-open');
+        },
+
         Update: {
-            resource: '#update-modal',
+            resource: '#view-cus-modal',
             setVal(data){
                 $(".sub-customer tbody tr").remove()
                 data.map(v => {
-                    $(".sub-customer tbody1")
+                    $(".sub-customer tbody")
                         .append(`<tr>
                             <td>${v.name}</td>
-                            <td>${IndexView.table.formatNumber(v.quantity)}</td>
-                            <td>${IndexView.table.formatNumber(v.prices)} $</td>
-                            <td>${IndexView.table.formatNumber(v.quantity * v.prices)} $</td>
-                          </tr>`)
+                            <td>${v.phone}</td>
+                            <td>${v.sex}</td>
+                            <td>${v.birthday}</td>
+                            <td>${v.address}</td>
+                            <td>${v.email}</td>
+                            <td>${v.status}</td>
+                          </tr>`)  
                 })
+                
+                $(".sub-customer-order tbody tr").remove()
+                data.map(v => {
+                    $(".sub-customer-order tbody")
+                        .append(`<tr>
+                            <td>${v.name}</td>
+
+                          </tr>`)  
+                })
+
             },
             init() {
-                var modalTitleHTML = `Thông tin chi tiết`;
-                var modalBodyHTML  = Template.Warehouse.Update();
+                var modalTitleHTML = `Thông tin chi tiết khách hàng`;
+                var modalBodyHTML  = Template.Customer.Update();
                 var modalFooterHTML = ['Đóng', 'Cập nhật'];
                 View.modals.launch(this.resource, modalTitleHTML, modalBodyHTML, modalFooterHTML); 
             }
         },
         init() {
             this.onClose();
-            this.Create.init();
             this.Update.init();
         }
     },
     init(){
-        View.tableHistory.init();
         View.modals.init();
     }
 };
 
 (() => {
-    
+    View.init();
 
-
+    View.modals.onControl("View", (id) => {
+        var resource = View.modals.Update.resource;  
+        View.modals.onShow(resource);
+        Api.Customer.getOne(id)
+            .done(res => {
+                View.modals.Update.setVal(res.data)
+            })
+            .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
+            .always(() => { }); 
+    })
 
 })();
 

@@ -44,4 +44,12 @@ class ManagerRepository extends BaseRepository implements RepositoryInterface
                 GROUP BY rating;";
         return DB::select($sql);
     }
+    public function get_cus_one($id){
+        $sql = "SELECT customer_detail.* , customer.email, customer.status
+                    FROM customer_detail 
+                    LEFT JOIN customer
+                    ON customer.id = customer_detail.customer_id
+                    WHERE customer_id = ".$id;
+        return DB::select($sql);
+    }
 }

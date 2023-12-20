@@ -5,6 +5,7 @@ const Api = {
     Warehouse: {},
     Order: {},
     Statistic: {},
+    Customer: {},
     
 };
 (() => {
@@ -166,6 +167,7 @@ const Api = {
         url: `/apip/statistic/get-customer`,
         method: 'GET',
     });
+    
 })();
 
 
@@ -177,5 +179,13 @@ const Api = {
         data: data,
         contentType: false,
         processData: false,
+    });
+})();
+
+// Customer
+(() => {
+    Api.Customer.getOne = (id) => $.ajax({
+        url: `/apip/customer/get-cus-one/${id}`,
+        method: 'GET',
     });
 })();

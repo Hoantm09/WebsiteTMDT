@@ -542,7 +542,7 @@
                                         <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                             rowspan="1" colspan="1"
                                             aria-label="Product: activate to sort column ascending"
-                                            style="width: 210.825px;">Họ tên</th>
+                                            style="width: 100.825px;">Họ tên</th>
                                         <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                             rowspan="1" colspan="1"
                                             aria-label="Category: activate to sort column ascending"
@@ -554,14 +554,15 @@
                                         <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                             rowspan="1" colspan="1"
                                             aria-label="Stock Left: activate to sort column ascending"
-                                            style="width: 88.7375px;">Địa chỉ</th>
+                                            style="width: 200.7375px;">Địa chỉ</th>
                                         <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                             rowspan="1" colspan="1"
                                             aria-label="Status: activate to sort column ascending"
                                             style="width: 108.688px;">Trạng thái</th>
                                         <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                             rowspan="1" colspan="1"
-                                            aria-label=": activate to sort column ascending" style="width: 71.475px;">
+                                            aria-label=": activate to sort column ascending"
+                                            style="width: 100px;">Hành động
                                         </th>
                                     </tr>
                                 </thead>
@@ -605,7 +606,9 @@
                                         {{-- <button data-user-id={{$user->customer_id}}  id="update-modal" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right " data-bs-toggle="modal" data-bs-target="#update-modal">
                                             <i class="anticon anticon-eye"></i>
                                         </button> --}}
-                                        <div class="view-data modal-fs-control" style="cursor: pointer" atr="View" data-id="6"><i class="anticon anticon-eye"></i></div>
+                                        <div class="view-data modal-fs-control" style="cursor: pointer" atr="View" data-id={{$user->customer_id}}>
+                                            <i class="anticon anticon-eye"></i>
+                                        </div>
                                         <button data-user-id={{$user->customer_id}} id="delete-member-btn" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right " data-bs-toggle="modal" data-bs-target="#delete-member-modal">
                                             <i class="anticon anticon-delete"></i>
                                         </button>
@@ -862,7 +865,7 @@
         </div>
       </div> --}}
 
-      <div class="modal-fullscreen" id="update-modal">
+      <div class="modal-fullscreen" id="view-cus-modal">
         <div class="fs-wrapper">
             <div class="fs-body">
                 <div class="fs-title">

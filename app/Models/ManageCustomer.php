@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use App\Repositories\Manager\ManagerRepository;
+
 
 class ManageCustomer extends Model
 {
@@ -27,4 +29,13 @@ class ManageCustomer extends Model
         ->first();
         return $result;
     }
+
+    // public function get_cus_one($id){
+    //     $sql = "SELECT customer_detail.* , customer.email
+    //                 FROM customer_detail 
+    //                 LEFT JOIN customer
+    //                 ON customer.id = customer_detail.customer_id
+    //                 WHERE customer_id = ".$id;
+    //     return DB::select($sql);
+    // }
 }
