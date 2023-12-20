@@ -188,4 +188,8 @@ const Api = {
         url: `/apip/customer/get-cus-one/${id}`,
         method: 'GET',
     });
+    Api.Customer.getOneOrder = (id) => $.ajax({
+        url: `/apip/customer/get-cus-one-order/${id}`,
+        method: 'GET',
+    })
 })();

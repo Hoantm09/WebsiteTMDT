@@ -240,6 +240,7 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
         });
         Route::prefix('customer')->group(function () {
             Route::get('/get-cus-one/{id}', 'Admin\CustomerController@get_cus_one')->name('admin.customer.get_cus_one');
+            Route::get('/get-cus-one-order/{id}', 'Admin\CustomerController@get_cus_one_order')->name('admin.customer.get_cus_one_order');
         });
     });
 });

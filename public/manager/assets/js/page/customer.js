@@ -82,7 +82,7 @@ const View = {
 
         Update: {
             resource: '#view-cus-modal',
-            setVal(data){
+            setVal1(data){
                 $(".sub-customer tbody tr").remove()
                 data.map(v => {
                     $(".sub-customer tbody")
@@ -96,9 +96,11 @@ const View = {
                             <td>${v.status}</td>
                           </tr>`)  
                 })
-                
+          
+            },
+            setVal2(data){
                 $(".sub-customer-order tbody tr").remove()
-                data.map(v => {
+                data.map(v => {                    
                     $(".sub-customer-order tbody")
                         .append(`<tr>
                             <td>${v.id}</td>
@@ -106,8 +108,7 @@ const View = {
                             <td>${v.created_at}</td>
                             <td>${v.total}</td>
                           </tr>`)  
-                })
-
+                })          
             },
             init() {
                 var modalTitleHTML = `Thông tin chi tiết khách hàng`;
@@ -134,10 +135,21 @@ const View = {
         View.modals.onShow(resource);
         Api.Customer.getOne(id)
             .done(res => {
-                View.modals.Update.setVal(res.data)
+                View.modals.Update.setVal1(res.data)
             })
             .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
-            .always(() => { }); 
+            .always(() => { });   
+    })
+
+    View.modals.onControl("View", (id) => {
+        var resource = View.modals.Update.resource;  
+        View.modals.onShow(resource);
+        Api.Customer.getOneOrder(id)
+            .done(res => {
+                View.modals.Update.setVal2(res.data)
+            })
+            .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
+            .always(() => { });   
     })
 
 })();
