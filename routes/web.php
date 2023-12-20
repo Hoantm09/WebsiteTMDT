@@ -176,6 +176,8 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
 
             //api
             Route::get('/api/getdetail/{id}', 'Admin\CustomerController@getInforDetail')->name('admin.customer.getdetail');
+            // Route::get('/api/get-cus-one/{id}', 'Admin\CustomerController@getInforDetail')->name('admin.customer.getdetail');
+
         });
     });
 
@@ -240,6 +242,10 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
             Route::post('store', 'Admin\ManagerController@store')->name('admin.manager.store');
             Route::post('/update', 'Admin\ManagerController@update')->name('admin.manager.update');
             Route::get('/delete/{id}', 'Admin\ManagerController@delete')->name('admin.manager.delete');
+        });
+        Route::prefix('customer')->group(function () {
+            Route::get('/get-cus-one/{id}', 'Admin\CustomerController@get_cus_one')->name('admin.customer.get_cus_one');
+            Route::get('/get-cus-one-order/{id}', 'Admin\CustomerController@get_cus_one_order')->name('admin.customer.get_cus_one_order');
         });
     });
 });

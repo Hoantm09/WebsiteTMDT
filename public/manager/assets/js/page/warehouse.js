@@ -7,6 +7,7 @@ const View = {
                 data.product_id,
                 data.name,
                 data.quantity,
+                data.prices,             
                 data.reserve,
                 data.price + ` ₫`,
                 data.expiry_date,
@@ -27,6 +28,11 @@ const View = {
                     },
                     {
                         title: 'Tổng số lượng',
+                        name: 'name',
+                        orderable: true,
+                    },
+                    {
+                        title: 'Kích cỡ',
                         name: 'name',
                         orderable: true,
                     },
@@ -303,6 +309,7 @@ const View = {
                         .append(`<tr>
                             <td>${v.name}</td>
                             <td>${IndexView.table.formatNumber(v.quantity)}</td>
+                            <td>${IndexView.table.formatNumber(v.size)} ml</td>
                             <td>${IndexView.table.formatNumber(v.prices)} $</td>
                             <td>${IndexView.table.formatNumber(v.quantity * v.prices)} $</td>
                           </tr>`)

@@ -230,6 +230,7 @@ const Template = {
 							      <tr>
 							        <th>Tên sản phẩm</th>
 							        <th>Số lượng</th>
+									<th>Loại</th>
 							        <th>Đơn giá nhập</th>
 							        <th>Thành tiền</th>
 							      </tr>
@@ -858,5 +859,44 @@ const Template = {
 		</div>
 			`
 		}
-	}
+	},
+
+	Customer: {
+		Update() {
+			return `
+		  		  <div class="row customer-modal">
+						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 offset-3">
+							<table class="table table-bordered sub-customer">
+								<thead>
+									<tr>
+										<th style="width: 210.825px;">Tên khách hàng</th>
+										<th style="width: 128.025px;">Số điện thoại</th>
+										<th>Giới tính</th>
+										<th>Ngày sinh</th>
+										<th style="width: 300.7375px;">Địa chỉ</th>
+										<th>Email</th>
+										<th>Trạng thái</th>
+									</tr>
+								</thead>
+							    <tbody> 
+							    </tbody>
+							</table>
+
+							<h5 class="modal-title" id="myModalLabel">Đơn hàng đã đặt</h5>
+							<table class="table table-bordered sub-customer-order">
+								<thead>
+									<tr>
+										<th>Mã đơn hàng</th>
+										<th>Trạng thái</th>
+										<th>Ngày tạo</th>
+										<th>Tổng giá trị</th>
+									</tr>
+								</thead>
+								<tbody> 
+								</tbody>
+							</table>
+						</div>
+	            	</div> `
+		},
+	},
 }
