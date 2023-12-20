@@ -44,19 +44,19 @@
                             <div>Tất cả đơn hàng</div>
                         </div>
                     </div>
-                    <div class="status-event" atr="Pending" data-id="0">
+                    <div class="status-event" atr="Pending" data-id="3">
                         <div class="d-flex align-items-center">
                             <div class="badge badge-warning badge-dot m-r-10"></div>
                             <div>Chờ xử lí</div>
                         </div>
                     </div>
-                    <div class="status-event" atr="Unfulfilled" data-id="1">
+                    <div class="status-event" atr="Unfulfilled" data-id="0">
                         <div class="d-flex align-items-center">
                             <div class="badge badge-secondary badge-dot m-r-10"></div>
                             <div>Chưa đối soát</div>
                         </div>
                     </div>
-                    <div class="status-event" atr="Fulfilled" data-id="2">
+                    <div class="status-event" atr="Fulfilled" data-id="1">
                         <div class="d-flex align-items-center">
                             <div class="badge badge-info badge-dot m-r-10"></div>
                             <div>Đã đối soát</div>
