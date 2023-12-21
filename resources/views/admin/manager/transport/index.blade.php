@@ -346,7 +346,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-                    <button type="button" class="btn btn-primary">Đã đối soát</button>
+                    <button type="button" class="btn btn-primary">Lưu</button>
                 </div>
             </div>
         </div>

@@ -145,6 +145,7 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
             //api đối soát
             Route::get('get-doi-soat/{id}', 'Admin\TransportController@getDoiSoat')->name('admin.transport.get-doi-soat');
             Route::get('get-ticket-detail/{id}', 'Admin\TransportController@getTicketDetail')->name('admin.transport.get-ticket-detail');
+            Route::get('confirm-doi-soat/{id}', 'Admin\TransportController@confirmDoiSoat')->name('admin.transport.confirm-doi-soat');
 
             //Cấu hình chung
             Route::post('/update-general-config', 'Admin\TransportController@updateGeneralConfig')->name('admin.transport.update-general-config');

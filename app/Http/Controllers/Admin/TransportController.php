@@ -39,10 +39,10 @@ class TransportController extends Controller
         dd($request->input());
     }
 
+    //Đối soát
     public function doiSoat(){
         return view("admin.manager.transport.doi-soat");
     }
-
     public function getDoiSoat($statusID){
         $list = $this->transport->getDoiSoat($statusID);
         return response()->json($list);
@@ -50,5 +50,9 @@ class TransportController extends Controller
     public function getTicketDetail($id){
         $list = $this->transport->getTicketDetail($id);
         return response()->json($list);
+    }
+    public function confirmDoiSoat($id){
+        $data = $this->transport->confirmDoiSoat(($id));
+        return response()->json($data);
     }
 }

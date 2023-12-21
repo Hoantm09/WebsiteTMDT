@@ -27,9 +27,15 @@ class Transport extends Model
 
     //Doi soat
     public function getDoiSoat($statusID){
-        $list = DB::table('transport')
+        if ($statusID==10){
+            $list = DB::table('transport')
+            ->get();
+        }
+        else {
+            $list = DB::table('transport')
             ->where('status', $statusID)
             ->get();
+        }
         return $list;
     }
     public function getTicketDetail($id){
@@ -37,6 +43,12 @@ class Transport extends Model
         ->where('id', $id)
         ->first();
     return $list;
+    }
+
+    public function confirmDoiSoat($id){
+        DB::table('transport')
+        ->where('id', $id)
+        ->update(['status' => 1]);
     }
 
 

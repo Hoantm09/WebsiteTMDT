@@ -35,6 +35,20 @@ const ApiTransport = {
             console.error(error);
         }
     });
+
+    ApiTransport.Transport.confirmDoiSoat = (id) =>$.ajax({
+        url: `/admin/transport/confirm-doi-soat/${id}`,
+        method: 'GET',
+        headers: ApiTransport.config.headers,
+/*         data: JSON.stringify({
+        }), */
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.error(error);
+        }
+    })
     
 })();
 
@@ -271,6 +285,13 @@ const View = {
                     document.getElementById("COD_detail").innerHTML=res.COD;
                     document.getElementById("fee_detail").innerHTML=res.fee;
 
+                    $("#confirm-doi-soat").on("click",function(){
+                        ApiTransport.Transport.confirmDoiSoat(res.id)
+                            .done(res=>{
+                                document.getElementById("confirm-doi-soat").innerHTML=`<i class="anticon anticon-check"></i>`;
+                                location.reload();
+                            })
+                    })
                 })
                 .fail(err=>{
                     console.log("err")

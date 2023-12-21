@@ -38,7 +38,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="status-list">
-                <div class="status-event is-select" atr="All" data-id="">
+                <div class="status-event is-select" atr="All" data-id="10">
                         <div class="d-flex align-items-center">
                             <div class="badge badge-primary badge-dot m-r-10"></div>
                             <div>Tất cả đơn hàng</div>
@@ -156,7 +156,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr role="row" class="even">
+{{--                                         <tr role="row" class="even">
                                             <td>
                                                 #5331
                                             </td>
@@ -239,7 +239,7 @@
                                                     <i class="anticon anticon-delete"></i>
                                                 </button>
                                             </td>
-                                        </tr>
+                                        </tr> --}}
                                     </tbody>
                                 </table>
                             </div>
@@ -320,7 +320,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-                <button type="button" class="btn btn-primary">Đã đối soát</button>
+                <button type="button" id="confirm-doi-soat" class="btn btn-primary">Đã đối soát</button>
             </div>
         </div>
     </div>

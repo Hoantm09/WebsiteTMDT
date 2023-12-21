@@ -514,26 +514,30 @@ const Template = {
 											<label for="inputEmail4">Tỉnh/Thành Phố</label>
 											<select name="warehouse_pro" class="form-control"
 												id="provinceSelect" onchange="loadDistricts()">
+												<option value="90816">Hồ Chí Minh
+												</option>
 											</select>
 										</div>
 										<div class="form-group col-md-3">
 											<label for="inputPassword4">Quận/Huyện</label>
 											<select name="warehouse_dis" class="form-control"
 												id="districtSelect" onchange="loadWards()">
+												<option value="90816"> Quận 10
+												</option>
 											</select>
 										</div>
 										<div class="form-group col-md-3">
 											<label for="inputPassword4">Phường/Thị Xã</label>
 											<select name="warehouse_ward" class="form-control"
 												id="wardSelect">
-												<option value="90816">Thị Trấn Si Ma Cai
+												<option value="90816">Phường 14
 												</option>
 											</select>
 										</div>
 										<div class="form-group col-md-3">
 											<label for="inputPassword4">Chi tiết</label>
 											<input name="warehouse_detail" class="form-control"
-												id="addressDetail" type="text">
+												id="addressDetail" type="text" value="72 Thành Thái">
 										</div>
 										<input hidden="" name="addressFull" class="form-control"
 											id="addressFull">
@@ -631,7 +635,7 @@ const Template = {
 					<div class="col-sm-3 col-md-3 col-lg-3 text-bold">Người nhận:</div>
 					<div class="col-sm-3 col-md-3 col-lg-3">Cong Quyen</div>
 					<div class="col-sm-3 col-md-3 col-lg-3">0888388888</div>
-					<div class="col-sm-3 col-md-3 col-lg-3">60 Nguyễn An Ninh</div>
+					<div class="col-sm-3 col-md-3 col-lg-3">72 Thành Thái, Phường 14, Quận 10, Hồ Chí Minh, Vietnam</div>
 				</div>
 				<hr>
 				<div class="p-10" style="background-color: rgb(204 213 221 / 50%);">

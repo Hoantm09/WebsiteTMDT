@@ -18,7 +18,7 @@ const View = {
                 "Chờ lấy hàng",
                 "Đang giao hàng",
                 "Đã giao hàng",
-                "Kết thúc",
+                "Hoàn thành",
                 "Hoàn trả",
             ];
             var order_payment = [ 
@@ -37,7 +37,7 @@ const View = {
             return [
                 `<div class="id-order">${data.id}</div>`,
                 `<p><i class="far fa-user m-r-10"></i>${data.name}</p>
-                <p><i class="far fa-envelope m-r-10"></i>${data.email}</p>
+                <p><i class="far fa-envelope m-r-10"></i>${data.email??''}</p>
                 <p><i class="fas fa-phone-alt m-r-10"></i>${data.phone}</p>`,
                 `
                 <div class="d-flex align-items-center">
@@ -46,8 +46,8 @@ const View = {
                 </div>`,
                 data.created_at,
                 `<span class="badge m-b-5 ${order_status[data.order_status]}">${order_status_title[data.order_status]}</span>
-                <span class="badge m-b-5 badge-pill badge-blue">${order_payment_value[data.payment_value]}</span>
-                <span class="badge m-b-5 ${order_payment[data.payment_status]}">${order_payment_title[data.payment_status]}</span>`,
+                <span class="badge m-b-5 badge-pill badge-blue">${order_payment_value[data.payment_value] !== undefined ? order_payment_value[data.payment_value] : 'Chưa thanh toán'}</span>
+                <span class="badge m-b-5 ${order_payment[data.payment_status] !== undefined ? order_payment[data.payment_status] : ''}">${order_payment_title[data.payment_status] !== undefined ? order_payment_title[data.payment_status] : ''}</span>`,
                 `<div class="view-data modal-fs-control" style="cursor: pointer" atr="View" data-id="${data.id}"><i class="anticon anticon-eye"></i></div>`
             ]
         },
@@ -184,7 +184,7 @@ const View = {
                 data.order_detail.map(v => {
                     var warehouse_value = "";
                     if (v.warehouse_quatity == null || v.warehouse_quatity == 0 || v.warehouse_quatity < v.quantity) {
-                        warehouse_value = `<div class="badge badge-red badge-pill m-r-10">${v.warehouse_quatity ?? 0}</div>`
+                        warehouse_value = `<div class="badge badge-red badge-pill m-r-10">${v.warehouse_quatity ?? 0+250}</div>`
                         View.modals.Update.has_full = false;
                     }else{
                         warehouse_value = `<div class="badge badge-green badge-pill m-r-10">${v.warehouse_quatity}</div>`
@@ -192,7 +192,7 @@ const View = {
                     $(".data-list")
                         .append(`<tr>
                                     <td>${v.product_id}</td>
-                                    <td>${v.name}</td>
+                                    <td><a href="http://127.0.0.1:8000/product/3-nuoc-hoa-province" target="_blank">${v.name}</a></td>
                                     <td>${v.quantity}</td>
                                     <td>${v.prices}</td>
                                     <td>${v.discount}%</td>
@@ -207,7 +207,7 @@ const View = {
                                     // <option value="3">Chờ lấy hàng</option>
                                     // <option value="4">Đang giao hàng</option>
                                     // <option value="5">Đã giao hàng</option>
-                                    // <option value="6">Kết thúc</option>
+                                    // <option value="6">Hoàn thành</option>
                                     // <option value="7">Hủy đơn</option>
 
                 $(".order-status option").remove()     
@@ -231,17 +231,19 @@ const View = {
                     
                 }
                 if (data.order[0].order_status == 3) { 
-                    $(".order-status").append(`<option value="4">Đang giao hàng</option>`) 
+                    $(".order-status").append(`<option value="4">Đang giao hàng</option>`)
+                    $(".order-status").append(`<option value="6">Hoàn thành</option>`)  
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
                     $("#ship-setting").html(Template.Order.vanchuyenDetail());
                 }
                 if (data.order[0].order_status == 4) { 
                     $(".order-status").append(`<option value="5">Đã giao hàng</option>`) 
+                    $(".order-status").append(`<option value="6">Hoàn thành</option>`)  
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
                     $("#ship-setting").html(Template.Order.vanchuyenDetail());
                 }
                 if (data.order[0].order_status == 5) { 
-                    $(".order-status").append(`<option value="6">Kết thúc</option>`)  
+                    $(".order-status").append(`<option value="6">Hoàn thành</option>`)  
                 }
                 // $(".order-status").val(data.data_order[0].order_status)
             },
