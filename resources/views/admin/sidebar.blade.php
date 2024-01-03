@@ -96,6 +96,25 @@
                 </a>
             </li>
 
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="#">
+                    <span class="icon-holder">
+                        {{-- <i class="anticon anticon-dashboard"></i> --}}
+                        <i class="anticon anticon-bar-chart"></i>
+                    </span>
+                    <span class="title">Báo cáo</span>
+                    <span class="arrow">
+                        <i class="arrow-icon"></i>
+                    </span>
+                </a>
+                <ul class="dropdown-menu"> 
+                    <li class="product1"> <a href="{{ route('admin.manager.report-general') }}">Báo cáo tổng quan</a> </li>
+                    <li class="product1"> <a href="{{ route('admin.manager.report-sales') }}">Báo cáo bán hàng</a> </li>
+                    <li class="product1"> <a href="{{ route('admin.manager.report-financial') }}">Báo cáo tài chính</a> </li>
+                    <li class="product1"> <a href="{{ route('admin.manager.report-warehouse') }}">Báo cáo kho</a> </li>
+                </ul>
+            </li>
+
             <li class="nav-item dropdown manager3-group">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">

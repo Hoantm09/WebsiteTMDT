@@ -160,8 +160,9 @@ class OrderController extends Controller
         return $best_sale;
     }
     public function get_customer(){
-        $customer_new = $this->order->get_customer_new();
+        /* $customer_new = $this->order->get_customer_new(); */
         
+        $customer_new = $this->order->get_customer_buy();
         return $customer_new;
     }
 

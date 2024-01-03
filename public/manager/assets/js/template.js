@@ -699,7 +699,7 @@ const Template = {
 					<div class="col-md-3">
 						<div class="card">
 							<div class="card-body">
-								<a href="https://dev-online-gateway.ghn.vn/a5/public-api/printA5?token=d19c8136-9f3e-11ee-9047-56287bcbd5a7" class="btn btn-primary" target="_blank">
+								<a href="https://dev-online-gateway.ghn.vn/a5/public-api/printA5?token=e4ad8b74-9fc6-11ee-9047-56287bcbd5a7" class="btn btn-primary" target="_blank">
 									In đơn hàng <i class="anticon anticon-printer"></i>
 								  </a>
 							</div>

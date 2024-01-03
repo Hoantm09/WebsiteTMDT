@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 use App\Repositories\CustomerRepository;
 use App\Models\CustomerAuth;

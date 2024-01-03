@@ -180,6 +180,16 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
             // Route::get('/api/get-cus-one/{id}', 'Admin\CustomerController@getInforDetail')->name('admin.customer.getdetail');
 
         });
+
+        //Báo cáo
+        Route::prefix('report')->group(function () {
+            Route::get('/general', 'Admin\ReportController@reportGeneral')->name('admin.manager.report-general');
+            Route::get('/sales', 'Admin\ReportController@reportSales')->name('admin.manager.report-sales');
+            Route::get('/financial', 'Admin\ReportController@reportFinancial')->name('admin.manager.report-financial');
+            Route::get('/warehouse', 'Admin\ReportController@reportWarehouse')->name('admin.manager.report-warehouse');
+        });
+
+
     });
 
     Route::prefix('apip')->group(function () {
