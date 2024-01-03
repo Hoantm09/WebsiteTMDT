@@ -83,15 +83,15 @@ class OrderController extends Controller
         $route_redirect = "/profile?tab=Order";
         try {
             DB::beginTransaction();
-            $order_key_id = mt_rand(1, 9999999);
+            $order_id = mt_rand(1, 9999999);
             $data_order = [
                 "customer_id"   => $customer_id ? $customer_id : null,
-                "order_key_id"  => $order_key_id,
+                "order_id"      => $order_id,
                 "sub_total"     => $sub_total,
                 "discount"      => $discount,
                 "total"         => $total,
                 "name"          => $name,
-                "email"         => $email,
+                // "email"         => $email,
                 "phone"         => $phone,
                 "zipcode"       => $zipcode,
                 "address"       => $address,
@@ -105,7 +105,7 @@ class OrderController extends Controller
                 $item_order = [
                     "order_id"      => $order_item->id,
                     "product_id"    => $value->id,
-                    "size"          => $value->meta->data[0]->size,
+                    // "size"          => $value->meta->data[0]->size,
                     "quantity"      => $value->qty,
                     "prices"        => $value->meta->data[0]->prices,
                     "discount"      => $value->meta->data[0]->discount,
@@ -122,7 +122,7 @@ class OrderController extends Controller
                 'email'             => $email,
                 'date_created'      => Carbon::now()->toDateTimeString(),
                 'total'             => $total,
-                'order_id'         => "SBTC_".$order_item->id."_".$order_key_id,
+                'order_id'         => "BKShop_".$order_item->id."_".$order_id,
                 'description'      => $description,
                 'customer_login'   => $customer_id ? $customer_id : null,
                 'metadata'          => $metadata,
@@ -134,15 +134,15 @@ class OrderController extends Controller
                 'order_data_address'    => $address,
                 'order_data_description'    => $description,
             ];
-            Mail::send('customer/confirm-order', array('data'=> $data), function($message) use ($email) {
-                $message->from('sbtc.support@gmail.com', 'SBTC - Order email');
-                $message->to($email)->subject('ご注文ありがとうございます');
-            });
+            // Mail::send('customer/confirm-order', array('data'=> $data), function($message) use ($email) {
+            //     $message->from('tmhoanf@gmail.com', 'BKShop - Order email');
+            //     $message->to($email)->subject('Cảm ơn bạn đã đặt hàng!');
+            // });
             DB::commit(); 
             if ($customer_id) { 
-                return $this->order->send_response("ご注文いただきありがとうございます！", $route_redirect, 201); 
+                return $this->order->send_response("Cảm ơn bạn đã đặt hàng!", $route_redirect, 201); 
             }
-            return $this->order->send_response("ご注文いただきありがとうございます！", $route_redirect, 201); 
+            return $this->order->send_response("Cảm ơn bạn đã đặt hàng!", $route_redirect, 201); 
         } catch (\Exception $exception) {
             dd( $exception);
             DB::rollBack(); 
