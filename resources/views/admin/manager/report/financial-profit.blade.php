@@ -52,33 +52,52 @@
                         <!-- Dòng 1 -->
                         <tr class="table-info">
                             <td class="font-weight-bold">I. Doanh Thu Bán Hàng</td>
-                            <td>2,257,116,889</td>
-                            <td>2,190,222,713</td>
-                            <td>-3%</td>
+                            <td>9,250,000</td>
+                            <td>16,300,000</td>
+                            <td>+44%</td>
                         </tr>
 
                         <!-- Dòng 1.1 -->
                         <tr>
                             <td class="ml-4"> 1. Tiền Hàng Thực Bán (1a-1b)</td>
-                            <td>3,530,386,089</td>
-                            <td>3,463,764,779</td>
-                            <td>-2%</td>
+                            <td>9,250,000</td>
+                            <td>16,300,000</td>
+                            <td>+44%</td>
                         </tr>
 
                         <!-- Dòng 1.1.1 -->
                         <tr>
                             <td class="ml-5"> a. Tiền Hàng Bán Ra</td>
-                            <td>3,536,409,339</td>
-                            <td>3,465,419,779</td>
-                            <td>-2%</td>
+                            <td>12,500,000</td>
+                            <td>17,800,000</td>
+                            <td>+30%</td>
                         </tr>
 
                         <!-- Dòng 1.1.2 -->
                         <tr>
                             <td class="ml-5"> b. Tiền Hàng Trả Lại</td>
-                            <td>6,023,250</td>
-                            <td>1,655,000</td>
-                            <td>-73%</td>
+                            <td>3,250,000</td>
+                            <td>1,500,000</td>
+                            <td>-54%</td>
+                        </tr>
+
+                        <tr>
+                            <td> 2. Thuế VAT</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td> 3. Phí giao hàng thu của khách</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td> 4. Chiết khấu</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
                         </tr>
 
                         <!-- ...Thêm các dòng khác tương tự... -->
@@ -86,27 +105,27 @@
                         <!-- Dòng 2 -->
                         <tr class="table-info">
                             <td class="font-weight-bold">II. Chi Phí Bán Hàng (1+2+3)</td>
-                            <td>1,346,926,418</td>
-                            <td>1,303,572,379</td>
-                            <td>-3%</td>
+                            <td>5,675,000</td>
+                            <td>8,035,000</td>
+                            <td>+30%</td>
                         </tr>
                         <tr>
                             <td> 1. Chi phí giá vốn hàng hóa</td>
-                            <td>1,346,926,418</td>
-                            <td>1,303,572,379</td>
-                            <td>-3%</td>
+                            <td>5,250,000</td>
+                            <td>7,300,000</td>
+                            <td>+28%</td>
                         </tr>
                         <tr>
                             <td> 2. Phí giao hàng trả đối tác</td>
-                            <td>1,346,926,418</td>
-                            <td>1,303,572,379</td>
-                            <td>-3%</td>
+                            <td>425,000</td>
+                            <td>735,000</td>
+                            <td>+42%</td>
                         </tr>
                         <tr>
                             <td> 3. Thanh toán bằng điểm</td>
-                            <td>1,346,926,418</td>
-                            <td>1,303,572,379</td>
-                            <td>-3%</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
                         </tr>
 
                         <!-- ...Thêm các dòng khác tương tự... -->
@@ -114,21 +133,21 @@
                         <!-- Dòng 3 -->
                         <tr class="table-info">
                             <td class="font-weight-bold">III. Thu Nhập Khác (1+2)</td>
-                            <td>318,000</td>
                             <td>0</td>
-                            <td>-100%</td>
+                            <td>0</td>
+                            <td>0</td>
                         </tr>
                         <tr>
                             <td> 1. Phiếu thu</td>
-                            <td>1,346,926,418</td>
-                            <td>1,303,572,379</td>
-                            <td>-3%</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
                         </tr>
                         <tr>
                             <td> 2. Phí khách trả hàng</td>
-                            <td>1,346,926,418</td>
-                            <td>1,303,572,379</td>
-                            <td>-3%</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
                         </tr>
 
                         <!-- ...Thêm các dòng khác tương tự... -->
@@ -138,13 +157,13 @@
                             <td class="font-weight-bold">IV. Chi Phí Khác</td>
                             <td>0</td>
                             <td>0</td>
-                            <td>0%</td>
+                            <td>0</td>
                         </tr>
                         <tr>
                             <td> 1. Phiếu chi</td>
-                            <td>1,346,926,418</td>
-                            <td>1,303,572,379</td>
-                            <td>-3%</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
                         </tr>
 
                         <!-- ...Thêm các dòng khác tương tự... -->
@@ -152,9 +171,9 @@
                         <!-- Dòng 5 -->
                         <tr class="table-warning font-weight-bold">
                             <td>Lợi Nhuận (I + III - II - IV)</td>
-                            <td>910,508,471</td>
-                            <td>886,650,334</td>
-                            <td>-3%</td>
+                            <td>3,575,000</td>
+                            <td>8,265,000</td>
+                            <td>+57%</td>
                         </tr>
                     </tbody>
                 </table>

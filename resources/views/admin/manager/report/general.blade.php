@@ -31,7 +31,7 @@
                         <i class="anticon anticon-dollar"></i>
                     </div>
                     <div class="m-l-15">
-                        <h2 class="m-b-0">5,000,000</h2>
+                        <h2 class="m-b-0">16,300,000</h2>
                         <p class="m-b-0 text-muted">Doanh thu</p>
                     </div>
                 </div>
@@ -46,8 +46,8 @@
                         <i class="anticon anticon-line-chart"></i>
                     </div>
                     <div class="m-l-15">
-                        <h2 class="m-b-0">+ 17.21%</h2>
-                        <p class="m-b-0 text-muted">Tăng trưởng tháng</p>
+                        <h2 class="m-b-0">+44%</h2>
+                        <p class="m-b-0 text-muted">Tăng trưởng</p>
                     </div>
                 </div>
             </div>
@@ -297,15 +297,15 @@
                                     <td>
                                         <div class="media align-items-center">
                                             <div class="avatar avatar-image rounded">
-                                                <img src="assets/images/others/thumb-9.jpg" alt="">
+                                                <img src="http://127.0.0.1:8000/image-upload/1701873534louis-vuitton-city-of-stars.png" alt="">
                                             </div>
                                             <div class="m-l-10">
-                                                <span>Gray Sofa</span>
+                                                <span>Nước hoa province</span>
                                             </div>
                                         </div>
                                     </td>
                                     <td>81</td>
-                                    <td>$1,912.00</td>
+                                    <td>1,912.00</td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="progress progress-sm w-100 m-b-0">
@@ -322,15 +322,15 @@
                                     <td>
                                         <div class="media align-items-center">
                                             <div class="avatar avatar-image rounded">
-                                                <img src="assets/images/others/thumb-10.jpg" alt="">
+                                                <img src="http://127.0.0.1:8000/image-upload/1701873534louis-vuitton-city-of-stars.png" alt="">
                                             </div>
                                             <div class="m-l-10">
-                                                <span>Gray Sofa</span>
+                                                <span>Nước hoa province</span>
                                             </div>
                                         </div>
                                     </td>
                                     <td>26</td>
-                                    <td>$1,377.00</td>
+                                    <td>1,377.00</td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="progress progress-sm w-100 m-b-0">
@@ -347,7 +347,7 @@
                                     <td>
                                         <div class="media align-items-center">
                                             <div class="avatar avatar-image rounded">
-                                                <img src="assets/images/others/thumb-11.jpg" alt="">
+                                                <img src="http://127.0.0.1:8000/image-upload/1701873534louis-vuitton-city-of-stars.png" alt="">
                                             </div>
                                             <div class="m-l-10">
                                                 <span>Wooden Rhino</span>
@@ -355,7 +355,7 @@
                                         </div>
                                     </td>
                                     <td>71</td>
-                                    <td>$9,212.00</td>
+                                    <td>9,212.00</td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="progress progress-sm w-100 m-b-0">
@@ -372,7 +372,7 @@
                                     <td>
                                         <div class="media align-items-center">
                                             <div class="avatar avatar-image rounded">
-                                                <img src="assets/images/others/thumb-12.jpg" alt="">
+                                                <img src="http://127.0.0.1:8000/image-upload/1701873534louis-vuitton-city-of-stars.png" alt="">
                                             </div>
                                             <div class="m-l-10">
                                                 <span>Red Chair</span>
@@ -380,7 +380,7 @@
                                         </div>
                                     </td>
                                     <td>79</td>
-                                    <td>$1,298.00</td>
+                                    <td>1,298.00</td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="progress progress-sm w-100 m-b-0">
@@ -397,7 +397,7 @@
                                     <td>
                                         <div class="media align-items-center">
                                             <div class="avatar avatar-image rounded">
-                                                <img src="assets/images/others/thumb-13.jpg" alt="">
+                                                <img src="http://127.0.0.1:8000/image-upload/1701873534louis-vuitton-city-of-stars.png" alt="">
                                             </div>
                                             <div class="m-l-10">
                                                 <span>Wristband</span>
@@ -405,7 +405,7 @@
                                         </div>
                                     </td>
                                     <td>60</td>
-                                    <td>$7,376.00</td>
+                                    <td>7,376.00</td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="progress progress-sm w-100 m-b-0">
@@ -438,13 +438,13 @@
             <div class="m-t-10">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#tab-today">Today</a>
+                        <a class="nav-link active" data-toggle="tab" href="#tab-today">Tồn kho</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#tab-week">Week</a>
+                        <a class="nav-link" data-toggle="tab" href="#tab-week1">Week</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#tab-month">Month</a>
+                        <a class="nav-link" data-toggle="tab" href="#tab-month1">Month</a>
                     </li>
                 </ul>
                 <div class="tab-content m-t-15">
