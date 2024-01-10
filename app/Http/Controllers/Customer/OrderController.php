@@ -21,6 +21,7 @@ use Carbon\Carbon;
 use Session;
 use Hash;
 use DB;
+use Symfony\Component\Console\Logger\ConsoleLogger;
 
 class OrderController extends Controller
 {
@@ -53,7 +54,7 @@ class OrderController extends Controller
                 ];
                 array_push($data, $order_group);
             }
-            return $this->order->send_response("Danh sách đơn hàng", $data, 200); 
+            return $this->order->send_response("Danh sách đơn hàng", $data, 200);
         }else{
             return $this->order->send_response("Phiên đăng nhập hết hạn", $route_redirect, 404); 
         } 

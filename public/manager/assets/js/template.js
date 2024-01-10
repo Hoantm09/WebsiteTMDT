@@ -230,6 +230,7 @@ const Template = {
 							      <tr>
 							        <th>Tên sản phẩm</th>
 							        <th>Số lượng</th>
+									<th>Giới tính</th>
 									<th>Loại</th>
 							        <th>Đơn giá nhập</th>
 							        <th>Thành tiền</th>
