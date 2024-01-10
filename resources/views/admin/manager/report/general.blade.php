@@ -31,8 +31,8 @@
                         <i class="anticon anticon-dollar"></i>
                     </div>
                     <div class="m-l-15">
-                        <h2 class="m-b-0">$23,523</h2>
-                        <p class="m-b-0 text-muted">Profit</p>
+                        <h2 class="m-b-0">5,000,000</h2>
+                        <p class="m-b-0 text-muted">Doanh thu</p>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="m-l-15">
                         <h2 class="m-b-0">+ 17.21%</h2>
-                        <p class="m-b-0 text-muted">Growth</p>
+                        <p class="m-b-0 text-muted">Tăng trưởng tháng</p>
                     </div>
                 </div>
             </div>
@@ -61,8 +61,8 @@
                         <i class="anticon anticon-profile"></i>
                     </div>
                     <div class="m-l-15">
-                        <h2 class="m-b-0">3,685</h2>
-                        <p class="m-b-0 text-muted">Orders</p>
+                        <h2 class="m-b-0">6</h2>
+                        <p class="m-b-0 text-muted">Đơn hàng</p>
                     </div>
                 </div>
             </div>
@@ -76,8 +76,8 @@
                         <i class="anticon anticon-user"></i>
                     </div>
                     <div class="m-l-15">
-                        <h2 class="m-b-0">1,832</h2>
-                        <p class="m-b-0 text-muted">Customers</p>
+                        <h2 class="m-b-0">20</h2>
+                        <p class="m-b-0 text-muted">Khách hàng</p>
                     </div>
                 </div>
             </div>
@@ -109,12 +109,12 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-12 col-lg-12 m-b-20">
+    <div class="col-md-12 col-lg-12 m-b-50">
         <div class="card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <h2 class="m-b-0">$17,267</h2>
+                        <h2 class="m-b-0">15,000,000</h2>
                         <p class="m-b-0 text-muted">Doanh thu trung bình</p>
                     </div>
                     <div>
@@ -607,7 +607,7 @@
         </div>
     </div>
 </div>
-<div class="row">
+{{-- <div class="row">
     <div class="col-md-12 col-lg-4">
         <div class="card">
             <div class="card-body">
@@ -1220,7 +1220,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 @endsection()
