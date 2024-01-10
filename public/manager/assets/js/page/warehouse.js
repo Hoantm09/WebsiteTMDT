@@ -3,11 +3,23 @@ const View = {
     typesOfProduct: [],
     tableData: {
         __generateDTRow(data){
+            var metadata = "";
+            var sex_status = [
+                "",
+                "Nam",
+                "Nữ",
+            ];
+            JSON.parse(data.metadata).data.map(v => {
+                metadata += `<div class="metadata-table-wrapper">
+                        <span class="badge badge-pill badge-blue m-r-10">${v.size} ml</span>
+                    </div>`;
+            })
             return [
                 data.product_id,
                 data.name,
                 data.quantity,
-                data.prices,             
+                sex_status[data.sex],
+                metadata,             
                 data.reserve,
                 data.price + ` ₫`,
                 data.expiry_date,
@@ -28,6 +40,11 @@ const View = {
                     },
                     {
                         title: 'Tổng số lượng',
+                        name: 'name',
+                        orderable: true,
+                    },
+                    {
+                        title: 'Giới tính',
                         name: 'name',
                         orderable: true,
                     },
@@ -302,16 +319,29 @@ const View = {
         },
         Update: {
             resource: '#update-modal',
-            setVal(data){
+            setVal(data){     
                 $(".sub-warehouse tbody tr").remove()
                 data.map(v => {
+                    var sex_status = [
+                        "",
+                        "Nam",
+                        "Nữ",
+                    ];
+                    // var metadata = "";
+                    // JSON.parse(data.metadata).data.map(v => {
+                    //     metadata += `<div class="metadata-table-wrapper">
+                    //             <span class="badge badge-pill badge-blue m-r-10">${v.size} ml</span>
+                    //         </div>`;
+                    //         return metadata;
+                    // });
                     $(".sub-warehouse tbody")
                         .append(`<tr>
                             <td>${v.name}</td>
-                            <td>${IndexView.table.formatNumber(v.quantity)}</td>
-                            <td>${IndexView.table.formatNumber(v.size)} ml</td>
-                            <td>${IndexView.table.formatNumber(v.prices)} $</td>
-                            <td>${IndexView.table.formatNumber(v.quantity * v.prices)} $</td>
+                            <td>${v.quantity}</td>
+                            <td>${sex_status[v.sex]}</td>
+                            <td>${v.quantity} ml</td>
+                            <td>${v.prices} $</td>
+                            <td>${v.quantity * v.prices} $</td>
                           </tr>`)
                 })
             },

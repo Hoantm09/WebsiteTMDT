@@ -19,7 +19,9 @@ class WarehouseRepository extends BaseRepository implements RepositoryInterface
     public function get_item_all(){
         $sql = "SELECT warehouse.*, 
                     product.name, 
-                    product.price                    
+                    product.price,
+                    product.metadata,
+                    product.sex                 
                 FROM warehouse
                 LEFT JOIN product
                 ON product.id = warehouse.product_id;";
@@ -44,7 +46,7 @@ class WarehouseRepository extends BaseRepository implements RepositoryInterface
         return DB::select($sql_getall);
     }
     public function get_ware_one($id){
-        $sql = "SELECT warehouse_history_detail.* , product.name, product.images
+        $sql = "SELECT warehouse_history_detail.* , product.name, product.metadata, product.sex
                     FROM warehouse_history_detail 
                     LEFT JOIN product
                     ON product.id = warehouse_history_detail.product_id
