@@ -28,7 +28,7 @@
             <div class="card-body">
                 <div class="media align-items-center">
                     <div class="avatar avatar-icon avatar-lg avatar-blue">
-                        <i class="anticon anticon-dollar"></i>
+                        <img src="https://png.pngtree.com/png-clipart/20230417/original/pngtree-revenue-line-icon-png-image_9063740.png" alt="" srcset="">
                     </div>
                     <div class="m-l-15">
                         <h2 class="m-b-0">16,300,000</h2>
@@ -43,7 +43,8 @@
             <div class="card-body">
                 <div class="media align-items-center">
                     <div class="avatar avatar-icon avatar-lg avatar-cyan">
-                        <i class="anticon anticon-line-chart"></i>
+                        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149665.png" alt="" srcset="">
+                        {{-- <i class="anticon anticon-line-chart"></i> --}}
                     </div>
                     <div class="m-l-15">
                         <h2 class="m-b-0">+44%</h2>
@@ -58,7 +59,8 @@
             <div class="card-body">
                 <div class="media align-items-center">
                     <div class="avatar avatar-icon avatar-lg avatar-gold">
-                        <i class="anticon anticon-profile"></i>
+                        <img src="https://png.pngtree.com/png-vector/20230407/ourlarge/pngtree-order-confirm-line-icon-vector-png-image_6690378.png" alt="" srcset="">
+                       {{--  <i class="anticon anticon-profile"></i> --}}
                     </div>
                     <div class="m-l-15">
                         <h2 class="m-b-0">6</h2>
@@ -73,7 +75,8 @@
             <div class="card-body">
                 <div class="media align-items-center">
                     <div class="avatar avatar-icon avatar-lg avatar-purple">
-                        <i class="anticon anticon-user"></i>
+                        <img src="https://static.thenounproject.com/png/186492-200.png" alt="" srcset="">
+                        {{-- <i class="anticon anticon-user"></i> --}}
                     </div>
                     <div class="m-l-15">
                         <h2 class="m-b-0">20</h2>
