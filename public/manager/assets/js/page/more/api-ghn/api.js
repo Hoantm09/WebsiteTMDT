@@ -125,6 +125,96 @@ const ApiGHN = {
     ApiGHN.Order.CreateOrder = (data_input) => $.ajax({
         url: `https://dev-online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/create`,
         method: 'POST',
+        headers: ApiGHN.config.headers,
+        data: JSON.stringify({
+            "payment_type_id": data_input.payment_type_id,
+            "note": data_input.note,
+            "required_note": data_input.required_note,
+            "return_phone": null, //
+            "return_address": null, //
+            "return_district_id": null, //
+            "return_ward_code": null, //
+            "client_order_code": data_input.client_order_code,
+            "from_name": "BkEShop", //
+            "from_phone": data_input.from_phone,
+            "from_address": "167 Giải Phóng, Phương Mai, Đống Đa, Hà Nội, Vietnam",
+            "from_ward_name": "Phương Mai",
+            "from_district_name": "Đống Đa",
+            "from_province_name": "Hà Nội",
+            "to_name": data_input.to_name,
+            "to_phone": data_input.to_phone,
+            "to_address": data_input.to_address,
+            "to_ward_name": data_input.to_ward_name,
+            "to_district_name": data_input.to_district_name,
+            "to_province_name": data_input.to_province_name,
+            "cod_amount": data_input.cod_amount, //
+            "content": null, //
+            "weight": data_input.weight,
+            "length": data_input.length,
+            "width": data_input.width,
+            "height": data_input.height,
+            "cod_failed_amount": null,                  
+            "pick_station_id": null, // 
+            "deliver_station_id": null, // 
+            "insurance_value": data_input.insurance_value,
+            "service_id": null, //
+            "service_type_id":data_input.service_type_id,
+            "coupon":null,
+            "pickup_time":null, //
+            "pick_shift":null, //
+            "items": [
+                 {
+                     "name":data_input.items[0].name,
+                     "code":data_input.items[0].code,
+                     "quantity": data_input.items[0].quantity,
+                     "price": null,
+                     "length": null,
+                     "width": null,
+                     "weight": null,
+                     "height": null,
+                     "category": 
+                     {
+                         "level1":"Áo"
+                     }
+                 }
+                 
+             ]
+        }),
+        success: function(response) {
+            console.log(response);
+            document.getElementById("submit-order-btn").innerHTML = `Tạo đơn thành công <i class="fas fa-check"></i>`
+        },
+        error: function(error) {
+            console.error(error);
+        }
+    });
+    
+})();
+
+//Get order detail
+(() => {
+    ApiGHN.Order.GetOrderDetail = () => $.ajax({
+        url: `https://dev-online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/detail-by-client-code`,
+        method: 'POST',
+        data: JSON.stringify({
+            "client_order_code": "LF7FXA"
+        }),
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.error(error);
+        }
+    });
+    
+})();
+
+//Preview order
+(()=>{
+    ApiGHN.Order.Preview = (data_input)=>$.ajax({
+        url: `https://dev-online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/preview`,
+        method: 'POST',
+        headers: ApiGHN.config.headers,
         data: JSON.stringify({
             "payment_type_id": data_input.payment_type_id,
             "note": data_input.note,
@@ -185,17 +275,17 @@ const ApiGHN = {
         error: function(error) {
             console.error(error);
         }
-    });
-    
+    })
 })();
 
-//Get order detail
-(() => {
-    ApiGHN.Order.GetOrderDetail = () => $.ajax({
-        url: `https://dev-online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/detail-by-client-code`,
+//Print order
+(()=>{
+    ApiGHN.Order.genToken = (id)=>$.ajax({
+        url: `https://dev-online-gateway.ghn.vn/shiip/public-api/v2/a5/gen-token`,
         method: 'POST',
+        headers: ApiGHN.config.headers,
         data: JSON.stringify({
-            "client_order_code": "LF7FXA"
+            "order_codes" : id,
         }),
         success: function(response) {
             console.log(response);
@@ -203,10 +293,54 @@ const ApiGHN = {
         error: function(error) {
             console.error(error);
         }
-    });
-    
+    })
 })();
 
-//Api.Category.Fee();
-//Api.Order.CreateOrder2();
-//Api.Order.GetOrderDetail();
+
+//Update trong transport
+(()=>{
+    ApiGHN.Order.updateTransport = (data_r)=>$.ajax({
+        url: `/apip/order/insertOrder`,
+        method: 'POST',
+        headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr('content'),
+                'Content-Type': 'application/json',
+        },
+        data: JSON.stringify({
+            'vandonID' : data_r.order_code,
+            'orderID' : data_r.order_id,
+            'customer_id' : 1,
+            'partner' : "Giao hàng nhanh(GHN)",
+            'COD' : data_r.cod,
+            'fee' : data_r.total_fee,
+            'employeeID' : 1,
+            'order_log' : "",
+            'status' : 0,
+        }),
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.error(error);
+        }
+    })
+})();
+
+(()=>{
+        //Get trạng thái đơn hàng
+        ApiGHN.Order.GetOrderStatus = (id) => $.ajax({
+            url: `/apip/order/get-order-status/${id}`,
+            method: 'GET',
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr('content'),
+                'Content-Type': 'application/json',
+            },
+            crossDomain: true,
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+})();

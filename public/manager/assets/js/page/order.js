@@ -163,6 +163,7 @@ const View = {
                 $(".customer-name").html(data.order[0].name)
                 $(".customer-address").html(data.order[0].address)
                 $(".customer-telephone").html(data.order[0].phone)
+                $(".order-id-api").html(data.order[0].id)
 
                 $(".customer-order-price").html(data.order[0].sub_total)
                 $(".customer-order-discount").html(data.order[0].discount_total)
@@ -221,7 +222,15 @@ const View = {
                 if (data.order[0].order_status == 1) { 
                     $(".order-status").append(`<option value="2">Đã hoàn thiện</option>`) 
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
+
+                    //Thêm thông tin đơn giao hàng
                     $("#ship-setting").html(Template.Order.ShipSetting());
+                    $('#cod_amount').val(data.order[0].total);
+                    $('#insurance_value').val(data.order[0].total);
+                    $('#client_order_code').val(data.order[0].id);
+                    $('#to_name').val(data.order[0].name);
+                    $('#to_phone').val(data.order[0].phone);
+
                 }
                 if (data.order[0].order_status == 2) { 
                     $(".order-status").append(`<option value="1">Chưa hoàn thiện</option>`)
@@ -234,7 +243,10 @@ const View = {
                     $(".order-status").append(`<option value="4">Đang giao hàng</option>`)
                     $(".order-status").append(`<option value="6">Hoàn thành</option>`)  
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
+
                     $("#ship-setting").html(Template.Order.vanchuyenDetail());
+                    ViewGHN.OrderLog.getOrderlog(data.order[0].id);
+
                 }
                 if (data.order[0].order_status == 4) { 
                     $(".order-status").append(`<option value="5">Đã giao hàng</option>`) 

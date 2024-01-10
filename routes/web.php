@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['GlobalUser:global'])->group(function () {
     Route::get('/', 'Customer\DisplayController@index')->name('customer.view.index');
 
+    //Webhook callback trạng thái đơn hàng
+    Route::post('/update-order-status', 'Admin\WebhookController@update')->name('admin.webhook');
+
     //Test product detail
     Route::get('/ProductDetail', 'Customer\TestController@testProductDetail')->name('customer.test.productdetail');
 
@@ -225,6 +228,12 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
             Route::get('get', 'Admin\OrderController@get')->name('admin.order.get');
             Route::get('get-one/', 'Admin\OrderController@get_one')->name('admin.order.get_one');
             Route::post('/update', 'Admin\OrderController@update')->name('admin.order.update');
+
+            //Get order status
+            Route::get('get-order-status/{id}', 'Admin\WebhookController@getOrderStatusAPI')->name('admin.order.get_order_status_api');
+            //Thêm order vào transport
+            Route::post('insertOrder', 'Admin\WebhookController@insertOrder')->name('admin.order.insert_order');
+            
         });
 
         Route::prefix('warehouse')->group(function () {
@@ -245,6 +254,8 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
             Route::get('get-total', 'Admin\OrderController@get_total')->name('admin.order.get_total');
             Route::get('get-best-sale', 'Admin\OrderController@get_best_sale')->name('admin.order.get_best_sale');
             Route::get('get-customer', 'Admin\OrderController@get_customer')->name('admin.order.get_customer');
+
+            Route::get('get-financial', 'Admin\StatisticController@get_financial')->name('admin.static.get_financial');
         });
 
         Route::prefix('manager')->group(function () {

@@ -370,4 +370,8 @@
     <!-- Core JS -->
     <script src="{{ asset('manager/assets/js/app.min.js') }}"></script>
 
+    <!-- Order Status API -->
+    <script src="{{ asset('manager/assets/js/api.js') }}"></script>
+    <script src="{{ asset('manager/assets/js/page/more/transport/order.js') }}"></script>
+
 @endsection()

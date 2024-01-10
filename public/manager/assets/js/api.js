@@ -128,6 +128,13 @@ const Api = {
         contentType: false,
         processData: false,
     });
+
+    //Get trạng thái đơn hàng
+    Api.Order.GetOrderStatus = (id) => $.ajax({
+        url: `/apip/order/get-order-status/${id}`,
+        method: 'GET',
+        dataType: 'json',
+    });
 })();
 
 // Warehouse

@@ -294,6 +294,13 @@ const Template = {
                                                         </p>
                                                         <p class="col font-weight-semibold customer-address"></p>
                                                     </li>
+													<li class="row">
+													<p class="col-sm-4 col-5 font-weight-semibold text-dark m-b-5">
+														<i class="m-r-10 text-primary anticon anticon-shopping"></i>
+														<span>Mã đơn: </span> 
+													</p>
+													<p class="col font-weight-semibold order-id-api"></p>
+												</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -373,7 +380,7 @@ const Template = {
 							<div class="card-body">
 								<select name="" id="" class="form-control">
 									<option value="0">Chọn đơn vị vận chuyển</option>
-									<option value="1">Giao hàng nhanh</option>
+									<option value="1" selected >Giao hàng nhanh</option>
 									<option value="2">Bk-Eshop</option>
 								</select>
 							</div>
@@ -474,7 +481,7 @@ const Template = {
 												hàng:</label>
 											<select id="inputWarehouse" class="form-control">
 												<option selected>Chọn kho</option>
-												<option  value="1">Kho Trương Định, Quận Hai Bà Trưng, Hà
+												<option  value="1" selected>Kho Trương Định, Quận Hai Bà Trưng, Hà
 													Nội, 167</option>
 												<option  value="2">Kho Ecopark, Hưng Yên</option>
 											</select>
@@ -626,22 +633,22 @@ const Template = {
 			<div class="modal-body">
 				<div class="row">
 					<div class="col-sm-3 col-md-3 col-lg-3 text-bold">Người gửi:</div>
-					<div class="col-sm-3 col-md-3 col-lg-3">Bk-Eshop</div>
-					<div class="col-sm-3 col-md-3 col-lg-3">0888888888</div>
-					<div class="col-sm-3 col-md-3 col-lg-3">167 Trương Định</div>
+					<div id="from_name_cf" class="col-sm-3 col-md-3 col-lg-3">Bk-Eshop</div>
+					<div id="from_phone_cf" class="col-sm-3 col-md-3 col-lg-3">0888388888</div>
+					<div id="from_address_cf" class="col-sm-3 col-md-3 col-lg-3">167 Trương Định</div>
 				</div>
 			   
 				<div class="row">
 					<div class="col-sm-3 col-md-3 col-lg-3 text-bold">Người nhận:</div>
-					<div class="col-sm-3 col-md-3 col-lg-3">Cong Quyen</div>
-					<div class="col-sm-3 col-md-3 col-lg-3">0888388888</div>
-					<div class="col-sm-3 col-md-3 col-lg-3">72 Thành Thái, Phường 14, Quận 10, Hồ Chí Minh, Vietnam</div>
+					<div id="to_name_cf" class="col-sm-3 col-md-3 col-lg-3">Cong Quyen</div>
+					<div id="to_phone_cf" class="col-sm-3 col-md-3 col-lg-3">0888388888</div>
+					<div id="to_address_cf" class="col-sm-3 col-md-3 col-lg-3">72 Thành Thái, Phường 14, Quận 10, Hồ Chí Minh, Vietnam</div>
 				</div>
 				<hr>
 				<div class="p-10" style="background-color: rgb(204 213 221 / 50%);">
 						<div class="row">
 							<div class="col-sm-4 col-md-4 col-lg-4 text-bold">COD:</div>
-							<div class="col-sm-4 col-md-4 col-lg-4">200.000</div>
+							<div id="COD_cf" class="col-sm-4 col-md-4 col-lg-4">200.000</div>
 						</div>
 <!--                                                 <div class="row">
 							<div class="col-sm-4 col-md-4 col-lg-4 text-bold">GTB thu tiền:</div>
@@ -831,32 +838,16 @@ const Template = {
 					  </tr>
 					</thead>
 					<tr>
+						<th>Trạng thái</th>
 						<th>Thời gian</th>
-						<th>Trạng thái đơn</th>
 						<th>Chi tiết</th>
 					  </tr>
-					<tbody>
+					<tbody id="order-log-table">
 					  <tr>
-						<td>Thứ 5, 14/12/2023 11:27</td>
 						<td>Chờ lấy hàng</td>
+						<td>2024-01-04 8:27:22</td>
 						<td>167 Giải Phóng, Phương Mai, Đống Đa, Hà Nội, Vietnam</td>
 					  </tr>
-					  <tr>
-						<td>Thứ 6, 15/12/2023 11:27</td>
-						<td>Đang giao hàng</td>
-						<td>Đơn hàng đã đến bưu cục 20-HNI Long Bien Hub</td>
-					  </tr>
-					  <tr>
-						<td>Thứ 7, 16/12/2023 11:27</td>
-						<td>Đang giao hàng</td>
-						<td>Đơn hàng đã đến kho phân loại BN B Mega SOC</td>
-					  </tr>
-					  <tr>
-						<td>Thứ 7, 16/12/2023 11:27</td>
-						<td>Đã giao hàng</td>
-						<td>Đơn hàng đã được giao thành công</td>
-					  </tr>
-
 					</tbody>
 				  </table>
 			</div>

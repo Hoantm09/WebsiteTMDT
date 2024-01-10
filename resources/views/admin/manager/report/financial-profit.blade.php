@@ -44,7 +44,7 @@
                         <tr class="font-size-15">
                             <th class="font-weight-bold">CHỈ TIÊU BÁO CÁO</th>
                             <th class="font-weight-bold">KỲ TRƯỚC</th>
-                            <th class="font-weight-bold">KỲ HIỆN TẠi</th>
+                            <th class="font-weight-bold">KỲ HIỆN TẠI</th>
                             <th class="font-weight-bold">THAY ĐỔI (%)</th>
                         </tr>
                     </thead>
