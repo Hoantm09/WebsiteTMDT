@@ -94,85 +94,71 @@
                 <td>$162,700</td>
             </tr>
             <tr role="row" class="odd">
-                <td class="sorting_1">1</td>
+                <td class="sorting_1">2</td>
                 <td>Nước hoa Versace</td>
                 <td>150ml</td>
                 <td>Nam</td>
-                <td>2008</td>
-                <td>$162,700</td>
+                <td>208</td>
+                <td>$30,700</td>
             </tr><tr role="row" class="odd">
-                <td class="sorting_1">1</td>
+                <td class="sorting_1">3</td>
                 <td>Nước hoa Chanel</td>
                 <td>10ml</td>
                 <td>Nam</td>
-                <td>2008</td>
-                <td>$162,700</td>
+                <td>1048</td>
+                <td>$70,700</td>
             </tr><tr role="row" class="odd">
-                <td class="sorting_1">1</td>
+                <td class="sorting_1">4</td>
                 <td>Nước hoa Dior</td>
                 <td>50ml</td>
                 <td>Nữ</td>
-                <td>2008</td>
-                <td>$162,700</td>
+                <td>308</td>
+                <td>$45,700</td>
             </tr><tr role="row" class="odd">
-                <td class="sorting_1">1</td>
+                <td class="sorting_1">5</td>
                 <td>Nước hoa Dior</td>
                 <td>100ml</td>
                 <td>Nam</td>
-                <td>2008</td>
-                <td>$162,700</td>
+                <td>27</td>
+                <td>$20,700</td>
             </tr><tr role="row" class="odd">
-                <td class="sorting_1">1</td>
+                <td class="sorting_1">6</td>
                 <td>Nước hoa Dior</td>
                 <td>100ml</td>
                 <td>Nam</td>
-                <td>2008</td>
-                <td>$162,700</td>
+                <td>85</td>
+                <td>$78,700</td>
             </tr><tr role="row" class="odd">
-                <td class="sorting_1">1</td>
+                <td class="sorting_1">7</td>
                 <td>Nước hoa Dior</td>
                 <td>100ml</td>
                 <td>Nam</td>
-                <td>2008</td>
-                <td>$162,700</td>
+                <td>146</td>
+                <td>$66,700</td>
             </tr><tr role="row" class="odd">
-                <td class="sorting_1">1</td>
+                <td class="sorting_1">8</td>
                 <td>Nước hoa Dior</td>
                 <td>100ml</td>
                 <td>Nam</td>
-                <td>2008</td>
+                <td>256</td>
                 <td>$162,700</td>
             </tr><tr role="row" class="odd">
-                <td class="sorting_1">1</td>
+                <td class="sorting_1">9</td>
                 <td>Nước hoa Dior</td>
                 <td>100ml</td>
                 <td>Nam</td>
-                <td>2008</td>
-                <td>$162,700</td>
+                <td>478</td>
+                <td>$55,700</td>
             </tr><tr role="row" class="odd">
-                <td class="sorting_1">1</td>
+                <td class="sorting_1">10</td>
                 <td>Nước hoa Dior</td>
                 <td>100ml</td>
                 <td>Nam</td>
-                <td>2008</td>
-                <td>$162,700</td>
-            </tr><tr role="row" class="odd">
-                <td class="sorting_1">1</td>
-                <td>Nước hoa Dior</td>
-                <td>100ml</td>
-                <td>Nam</td>
-                <td>2008</td>
-                <td>$162,700</td>
-            </tr><tr role="row" class="odd">
-                <td class="sorting_1">1</td>
-                <td>Nước hoa Dior</td>
-                <td>100ml</td>
-                <td>Nam</td>
-                <td>2008</td>
-                <td>$162,700</td>
+                <td>48</td>
+                <td>$14,700</td>
             </tr>
         </tbody>
-    </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="data-table_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="data-table_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="data-table_previous"><a href="#" aria-controls="data-table" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="data-table" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="data-table" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="data-table" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="data-table" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="data-table" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="data-table" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="data-table_next"><a href="#" aria-controls="data-table" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+    </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="data-table_info" role="status" aria-live="polite">Showing 1 to 10 of 50 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="data-table_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="data-table_previous"><a href="#" aria-controls="data-table" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="data-table" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="data-table" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="data-table" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="data-table" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="data-table" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="data-table" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="data-table_next"><a href="#" aria-controls="data-table" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
 
 
 </div>
