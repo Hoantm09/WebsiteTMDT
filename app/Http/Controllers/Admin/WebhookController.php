@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Webhook;
 use DateTimeZone;
 use DateTime;
+use Illuminate\Support\Facades\Log;
 
 class WebhookController extends Controller
 {
@@ -50,7 +51,7 @@ class WebhookController extends Controller
 
         $updateSuccess = true;
         $status_old = $this->webhook->getOrderLog($data_return['OrderCode'])->order_log;
-        $order_id = $this->webhook->getOrderLog($data_return['OrderCode'])->orderID; //oder cần cập nhật status trong order_time
+        $order_id = $this->webhook->getOrderLog($data_return['OrderCode'])->orderID; //order cần cập nhật status trong order_time
 
         if ($type == 'create') {
             // Thực hiện xử lý đơn hàng được tạo trên GHN
@@ -61,24 +62,55 @@ class WebhookController extends Controller
             //Check đơn hàng có tồn tại trên hệ thống không
 
             //Cập nhật trạng thái
-            if ($Status == 'picking'){
-                $status_old = $status_old . '|Nhân viên đang lấy hàng,';
-            }elseif ($Status == 'picked'){
-                $status_old = $status_old . '|Đã lấy hàng,';
-                
-            }elseif ($Status == 'delivering'){
-                $status_old = $status_old . '|Đang giao hàng,';
+            $updateSuccess = true;
+            switch ($Status) {
+                case 'picking':
+                    $status_old = $status_old . '|Nhân viên đang lấy hàng,';
+                    break;
+                case 'picked':
+                    $status_old = $status_old . '|Đã lấy hàng,';
+                    break;
+                case 'delivering':
+                    $status_old = $status_old . '|Đang giao hàng,';
+                    $this->webhook->updateOrderTime($order_id, 4);
+                    break;
+                case 'money_collect_delivering':
+                    $status_old = $status_old . '|Đang thu tiền người nhận,';
+                    $this->webhook->updateOrderTime($order_id, 5);
+                    break;
+                case 'delivered':
+                    $status_old = $status_old . '|Giao hàng thành công,';
+                    $this->webhook->updateOrderTime($order_id, 6);
 
-                //Chuyển trạng thái trong order_time sang Đang giao hàng
-                $this->webhook->updateOrderTime($order_id,4);
-            }elseif ($Status == 'delivered'){
-                $status_old = $status_old . '|Đã giao hàng,';
+                    //Update trạng thái đơn ( Giao thành công || Hoàn trả) vào Transport để đối soát
+                    $this->webhook->updateStatusOrderTransport($order_id,1,0); //1: Giao thành công, 0: Chưa đối soát
+
+                    break;
+                case 'delivery_fail':
+                    $status_old = $status_old . '|Giao hàng không thành công,';
+                    break;
+                case 'return':
+                    $status_old = $status_old . '|Đang hoàn hàng,';
+                    $this->webhook->updateOrderTime($order_id, 7);
+                    break;
+                case 'returning':
+                    $status_old = $status_old . '|Đang luân chuyển hàng trả,';
+                    break;
+                case 'returned':
+                    $status_old = $status_old . '|Trả hàng thành công,';
+
+                    //Update trạng thái đơn ( Giao thành công || Hoàn trả) vào Transport để đối soát
+                    $this->webhook->updateStatusOrderTransport($order_id, 0, 0); //1: Hoàn trả, 0: Chưa đối soát
+
+                    break;
+                default:
+                    $updateSuccess = false;
             }
 
-        } elseif ($type == ' Update_weight') {
+        } elseif ($type == 'Update_weight') {
             // Thực hiện xử lý cập nhật thông tin đơn hàng
             // ...
-        } elseif ($type == ' Update_cod') {
+        } elseif ($type == 'Update_fee') {
             // Thực hiện xử lý xóa đơn hàng
             // ...
         } elseif($type == 'Update_cod'){
@@ -87,17 +119,24 @@ class WebhookController extends Controller
             $updateSuccess = false;
         }
 
-        $data_return['Status_new'] = $status_old.$data_return['Time'].','.$data_return['Warehouse'];
-        $this->webhook->updateOrder($data_return);
+        if ($updateSuccess) {
+            $data_return['Status_new'] = $status_old.$data_return['Time'].','.$data_return['Warehouse'];
+            $this->webhook->updateOrder($data_return);
+            return $this->response(200, 'Cập nhật thành công',$data_return);
+        } else {
+            return $this->response(500, 'Cập nhật không thành công, trạng thái không hợp lệ',null);
+        }
 
 
-        // Thực hiện xử lý response tùy thuộc vào thành công hay thất bại
+
+/*         // Thực hiện xử lý response tùy thuộc vào thành công hay thất bại
         if ($updateSuccess) {
             return $this->response(200, 'Cập nhật thành công',$data_return);
         } else {
             // Trả về response lỗi và thực hiện gửi lại cập nhật
-            return $this->response(500, 'Cập nhật không thành công',$data);
-        }
+            
+        } */
+
     }
 
     private function response($statusCode, $message, $data)
@@ -126,17 +165,28 @@ class WebhookController extends Controller
     }
 
     //insert đơn hàng vào bảng transport
-    public function insertOrder(Request $request){
-        $data = $request->json()->all();
+    public function insertOrder(Request $request)
+    {
+        try {
+            $orderCode = $request->OrderCode;
+            $orderID = $request->orderID;
+            $COD = $request->COD;
+            $fee = $request->fee;
 
-/*         $orderCode = $data['OrderCode'];
-        $orderID = $data['orderID'];
-        $COD = $data['COD'];
-        $fee = $data['fee'];
-    
-        $this->webhook->insertOrder($orderCode, $orderID, $COD, $fee); */
-    
-        return $this->response(200, 'Cập nhật thành công haha', $data);
+            if ($orderCode == null || $orderID == null || $COD == null || $fee == null) {
+                return $this->response(500, 'Cập nhật không thành công, thiếu trường dữ liệu', null);
+            }else{
+                // Gọi hàm insertOrder từ webhook
+                $this->webhook->insertOrder($orderCode, $orderID, $COD, $fee);
+        
+                return $this->response(200, 'Cập nhật thành công', null);
+            }
+
+        } catch (\Exception $e) {
+            // Bắt ngoại lệ và xử lý
+            Log::error('Error inserting order: ' . $e->getMessage());
+            return $this->response(500, 'Đã xảy ra lỗi khi cập nhật đơn hàng', null);
+        }
     }
 
 }

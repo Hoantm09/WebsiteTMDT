@@ -63,7 +63,7 @@ class Webhook extends Model
         DB::table('transport')
         ->where('vandonID', $data['OrderCode'])
         ->update([
-            'status' => 1,
+            /* 'status' => 1, */
             'order_log' => $data['Status_new'],
         ]);
     }
@@ -88,7 +88,18 @@ class Webhook extends Model
             'fee' => $fee,
             'employeeID' => 1,
             'order_log' => "",
-            'status' => 0,
+            'status' => 2,  //0: Chưa đối soát, 1: Đã đối soát, 2: Đang giao - không thể đối soát => Chờ xử lý
+            'status_order' =>2,  //0: Hoàn trả, 1: Giao thành công
+        ]);
+    }
+
+    //Update trạng thái đơn ( Giao thành công || Hoàn trả) vào Transport để đối soát
+    public function updateStatusOrderTransport($orderID, $status_order, $status_new){
+        $list = DB::table('transport')
+        ->where('orderID', $orderID)
+        ->update([
+            'status_order' => $status_order,
+            'status' => $status_new,
         ]);
     }
 }

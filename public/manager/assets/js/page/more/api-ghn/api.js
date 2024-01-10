@@ -304,19 +304,19 @@ const ApiGHN = {
         method: 'POST',
         headers: {
                 "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr('content'),
-                'Content-Type': 'application/json',
+                
         },
-        data: JSON.stringify({
-            'vandonID' : data_r.order_code,
-            'orderID' : data_r.order_id,
+        data: {
+            'OrderCode' : data_r['OrderCode'],
+            'orderID' : data_r['orderID'],
             'customer_id' : 1,
             'partner' : "Giao hàng nhanh(GHN)",
-            'COD' : data_r.cod,
-            'fee' : data_r.total_fee,
+            'COD' : data_r['COD'],
+            'fee' : data_r['fee'],
             'employeeID' : 1,
             'order_log' : "",
             'status' : 0,
-        }),
+        },
         success: function(response) {
             console.log(response);
         },
@@ -343,4 +343,23 @@ const ApiGHN = {
                 console.error(error);
             }
         });
+})();
+
+(()=>{
+    //Get các thông tin đơn hàng từ khâu Chờ lấy hàng
+    ApiGHN.Order.GetOrderStatus = (id) => $.ajax({
+        url: `/apip/order/get-order-status/${id}`,
+        method: 'GET',
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr('content'),
+            'Content-Type': 'application/json',
+        },
+        crossDomain: true,
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.error(error);
+        }
+    });
 })();

@@ -183,13 +183,18 @@ const View = {
                         event.classList.add('is-select');
                         var dataId = event.getAttribute('data-id');
                         console.log('Selected data-id:', dataId);
-                        ApiTransport.Transport.getDoiSoat(dataId)
-                        
+                        ApiTransport.Transport.getDoiSoat(dataId)             
                             .done(res => {
                                 if (res.length) console.log('Looxi roi')
                                 var tableBody = document.querySelector('.table tbody');
 
                                 tableBody.innerHTML = '';
+
+                                /* 
+                                Chờ xử lý: status=2, status_order=2 (Đang giao hàng)
+                                Chưa đối soát: status=0, status_order=1 (Đã giao hàng) || status_order=0 (Hoàn hàng)
+                                Đã đối soát: status=1, status_order=1 (Đã giao hàng) || status_order=0 (Hoàn hàng)
+                                */
 
                                 res.forEach(function (item) {
                                     var row = `
@@ -214,6 +219,18 @@ const View = {
                                             </div>
                                         </td>
                                         <td>
+                                            <div class="d-flex align-items-center">
+                                            ${(() => {
+                                                if (item.status_order === 1) {
+                                                    return `<div class="badge badge-success badge-dot m-r-10"></div> <div>Giao thành công</div>`;
+                                                } else if (item.status_order === 0 || item.status_order === null) {
+                                                    return `<div class="badge badge-danger badge-dot m-r-10"></div> <div>Hoàn trả</div>`;
+                                                } else {
+                                                    return `<div class="badge badge-success badge-dot m-r-10"></div> <div>Đang giao hàng</div>`;
+                                                }
+                                            })()}
+                                            
+                                            </div>
                                             <div class="d-flex align-items-center">
                                                 ${item.status === 1
                                                     ? `<div class="badge badge-success badge-dot m-r-10"></div> <div>Đã đối soát</div>`
@@ -285,11 +302,29 @@ const View = {
                     document.getElementById("COD_detail").innerHTML=res.COD;
                     document.getElementById("fee_detail").innerHTML=res.fee;
 
+                    //disable khi đang giao hàng => không thể đối soát
+                    const selectedElement = document.querySelector('.status-event.is-select');
+                    // Kiểm tra xem phần tử có tồn tại không
+                    if (selectedElement) {
+                        // Lấy giá trị của thuộc tính 'data-id'
+                        const dataIdValue = selectedElement.getAttribute('data-id');
+                        
+                        // In ra giá trị 'data-id'
+                        console.log('Data ID of the selected element:', dataIdValue);
+
+                        if (dataIdValue==2) {
+                            document.getElementById("confirm-doi-soat").disabled=true;
+                        }
+                    }
+                    
+
                     $("#confirm-doi-soat").on("click",function(){
                         ApiTransport.Transport.confirmDoiSoat(res.id)
                             .done(res=>{
-                                document.getElementById("confirm-doi-soat").innerHTML=`<i class="anticon anticon-check"></i>`;
-                                location.reload();
+                                document.getElementById("confirm-doi-soat").innerHTML=`<i class="anticon anticon-check"></i> Đối soát thành công`;
+                                setTimeout(function () {
+                                    location.reload();
+                                }, 1000);
                             })
                     })
                 })

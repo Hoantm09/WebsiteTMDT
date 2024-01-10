@@ -2,24 +2,56 @@
 const ViewGHN = {
     DataSend: [],
     Category: {},
+    Toast:{
+        showToast(message) {
+            $(document).ready(function () {
+                var toastHTML = `<div class="toast fade hide" data-delay="3000">
+                <div class="toast-header">
+                    <i class="anticon anticon-info-circle text-primary m-r-5"></i>
+                    <strong class="mr-auto">Thông báo</strong>
+                    <small>now</small>
+                    <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    `+ message + `
+                </div>
+            </div>`;
+
+            $('#notification-toast').append(toastHTML)
+            $('#notification-toast .toast').toast('show');
+            setTimeout(function(){ 
+                $('#notification-toast .toast:first-child').remove();
+            }, 3000);
+
+            });
+        }
+    },
     Order: {
         create(data) {
             //Api.Order.CreateOrder2();
             $(document).on('click', `#submit-order-btn`, function () {
                 ApiGHN.Order.CreateOrder(data)
                     .done(res => {
-                        let dta = [];
-                        dta['OrderCode'] = res.data.order_code;
-                        dta['orderID'] = data.client_order_code;
-                        dta['COD'] = data.insurance_value;
-                        dta['fee'] = res.data.total_fee;
+                        let dta = {
+                            'OrderCode': res.data.order_code,
+                            'orderID': data.client_order_code,
+                            'COD': data.insurance_value,
+                            'fee': res.data.total_fee,
+                            'status': 2, //0:Hoàn trả, 1: Giao thành công, 2:Đang vận chuyển-chưa thể đối soát
+                        };
+                        
+                        console.log("thông tin đơn hàng: " + dta['OrderCode'] + " " + dta['orderID'] + " " + dta['COD'] + " " + dta['fee']);
+                        
 
-                        console.log(dta);
                         ApiGHN.Order.updateTransport(dta)
                             .done(res => {
+                                ViewGHN.Toast.showToast(res.message);
                                 console.log(res);
                             })
                             .fail(err => {
+                                ViewGHN.Toast.showToast("Cập nhật không thành công trên hệ thống");
                                 console.log(err);
                             })
                             .always(() => {
@@ -175,6 +207,45 @@ const ViewGHN = {
                     })
             });
 
+        },
+        getNewOrderInfo(id) {
+            $(document).ready(function () {
+
+                document.getElementById('new-order-id').textContent = "ok2";
+
+                //Người nhận
+                document.getElementById('').textContent = "";
+                document.getElementById('').textContent = "";
+                document.getElementById('').textContent = "";
+
+                //Thông tin đơn hàng
+                document.getElementById('').textContent = "";
+                document.getElementById('').textContent = "";
+                document.getElementById('').textContent = "";
+                document.getElementById('').textContent = "";
+                document.getElementById('').textContent = "";
+
+                //Thông tin chi tiết
+                document.getElementById('').textContent = "";
+                document.getElementById('').textContent = "";
+                document.getElementById('').textContent = "";
+                document.getElementById('').textContent = "";
+
+/*                 ApiGHN.Order.GetOrderInfo(id)
+                    .done(res => {
+                        console.log(res.data);
+                        var tbody = document.getElementById('new-order-info-table');
+
+                        var newDataArray = [res.data.order_code, res.data.order_status, res.data.to_name, res.data.to_phone, res.data.to_address, res.data.to_ward_name, res.data.to_district_name, res.data.to_province_name, res.data.total_fee, res.data.insurance_fee, res.data.cod_fee, res.data.weight, res.data.length, res.data.width, res.data.height, res.data.created_at, res.data.updated_at];
+
+                        // Duyệt qua mảng dữ liệu và thêm mỗi phần tử vào ô tương ứng
+                        for (var i = 0; i < newDataArray.length; i++) {
+                            var newCell = newRow.insertCell(i);
+                            newCell.textContent = newDataArray[i];
+                        }
+
+                    }) */
+            });
         },
     },
     init() {

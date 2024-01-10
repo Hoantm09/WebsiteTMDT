@@ -246,6 +246,8 @@ const Template = {
 	Order: {
 		Update() {
 			return `<div class="container">
+						<div class="notification-toast top-right" id="notification-toast"></div>
+						
                         <div class="card">
                             <div class="card-body">
                                 <div class="row align-items-center">
@@ -779,7 +781,7 @@ const Template = {
 					<tbody>
 					  <tr>
 						<td>Mã đơn hàng</td>
-						<td>JHGN7</td>
+						<td id="new-order-id">JHGN7</td>
 					  </tr>
 					  <tr>
 						<td>Mã đơn khách hàng</td>

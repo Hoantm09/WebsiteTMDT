@@ -43,6 +43,12 @@ class TransportController extends Controller
     public function doiSoat(){
         return view("admin.manager.transport.doi-soat");
     }
+
+    /* 
+    Chờ xử lý: status=2, status_order=2 (Đang giao hàng)
+    Chưa đối soát: status=0, status_order=1 (Đã giao hàng) || status_order=0 (Hoàn hàng)
+    Đã đối soát: status=1, status_order=1 (Đã giao hàng) || status_order=0 (Hoàn hàng)
+    */
     public function getDoiSoat($statusID){
         $list = $this->transport->getDoiSoat($statusID);
         return response()->json($list);

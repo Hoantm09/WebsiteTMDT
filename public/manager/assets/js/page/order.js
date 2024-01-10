@@ -252,10 +252,33 @@ const View = {
                     $(".order-status").append(`<option value="5">Đã giao hàng</option>`) 
                     $(".order-status").append(`<option value="6">Hoàn thành</option>`)  
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
+
                     $("#ship-setting").html(Template.Order.vanchuyenDetail());
+                    ViewGHN.OrderLog.getOrderlog(data.order[0].id);
                 }
                 if (data.order[0].order_status == 5) { 
-                    $(".order-status").append(`<option value="6">Hoàn thành</option>`)  
+                    $(".order-status").append(`<option value="6">Hoàn thành</option>`)
+                    
+                    //update trạng thái
+                    $("#ship-setting").html(Template.Order.vanchuyenDetail());
+                    ViewGHN.OrderLog.getOrderlog(data.order[0].id);
+                }
+
+                if (data.order[0].order_status == 6) { 
+                    //update trạng thái
+                    $("#ship-setting").html(Template.Order.vanchuyenDetail());
+
+                    ViewGHN.OrderLog.getNewOrderInfo(data.order[0].id);
+                    ViewGHN.OrderLog.getOrderlog(data.order[0].id);
+
+                }
+                if (data.order[0].order_status == 7) { 
+                    //update trạng thái
+                    $("#ship-setting").html(Template.Order.vanchuyenDetail());
+
+                    ViewGHN.OrderLog.getNewOrderInfo(data.order[0].id);
+                    ViewGHN.OrderLog.getOrderlog(data.order[0].id);
+
                 }
                 // $(".order-status").val(data.data_order[0].order_status)
             },

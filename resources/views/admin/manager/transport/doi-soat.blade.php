@@ -38,13 +38,13 @@
         <div class="card">
             <div class="card-body">
                 <div class="status-list">
-                <div class="status-event is-select" atr="All" data-id="10">
+                <div class="status-event" atr="All" data-id="10">
                         <div class="d-flex align-items-center">
                             <div class="badge badge-primary badge-dot m-r-10"></div>
                             <div>Tất cả đơn hàng</div>
                         </div>
                     </div>
-                    <div class="status-event" atr="Pending" data-id="3">
+                    <div class="status-event is-select" atr="Pending" data-id="2">
                         <div class="d-flex align-items-center">
                             <div class="badge badge-warning badge-dot m-r-10"></div>
                             <div>Chờ xử lí</div>
@@ -140,14 +140,14 @@
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                                 rowspan="1" colspan="1"
                                                 aria-label="Amount: activate to sort column ascending"
-                                                style="width: 15%;">Đơn vị vận chuyển</th>
+                                                style="width: 10%;">ĐV vận chuyển</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                                 rowspan="1" colspan="1"
                                                 aria-label="Status: activate to sort column ascending"
                                                 style="width: 15%;">COD và Phí trả</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                                                 colspan="1" aria-label="ID: activate to sort column ascending"
-                                                style="width:10%;">Trạng thái</th>
+                                                style="width:15%;">Trạng thái</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                                 rowspan="1" colspan="1"
                                                 aria-label=": activate to sort column ascending" style="width: 10%;">
