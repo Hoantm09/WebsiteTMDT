@@ -15,5 +15,7 @@ class VerifyCsrfToken extends Middleware
         //
         'update-order-status',
         '/apip/order/insertOrder',
+        'payment',
+        'return-vnpay',
     ];
 }

@@ -33,7 +33,7 @@
                     <div class="row-col-1 row-col">
                         <div class="shipping-address js-validate"> 
                             <h3 class="title-form">
-                                Thông Tin Vận Chuyển
+                                Thông Tin Đơn Hàng
                             </h3>
                             <div class="error-log"></div>
                             <input title="id" type="hidden" class="input-text data-id" value="{{ $customer_data["is_login"] == 1 ? $customer_data["id"] : "" }}">
@@ -56,12 +56,22 @@
                             <p class="form-row form-row-first">
                                 <label class="text">Địa chỉ</label>
                                 <input title="Address" type="text" class="input-text data-address" value="{{ $customer_data["is_login"] == 1 ? $customer_data["address"] : "" }}">
-                            </p> 
+                            </p>
                             <div> 
                                 <label class="text">Ghi chú thêm</label>
                                 <textarea title="Description" type="text" class="input-text data-description">
                                     
                                 </textarea> 
+                            </div>
+                            <div class="m-t-15">
+                                <div>
+                                    <input type="radio" id="account1" value="1" name="payment_method" checked="" style="width: auto; height: auto;">
+                                    <label for="account1">Thanh toán khi nhận hàng</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="account2" value="2" name="payment_method" style="width: auto; height: auto;">
+                                    <label for="account2">Thanh toán ngay với VNPay</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -76,7 +86,7 @@
                                 <span class="title">
                                     Tổng Giá Trị:
                                 </span>
-                                <span class="total-price">4.300.000₫</span>
+                                <span class="total-price">300.000₫</span>
                             </div>
                         </div>
                     </div>

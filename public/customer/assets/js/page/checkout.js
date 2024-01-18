@@ -23,7 +23,11 @@ const View = {
             var data_phone      = $(`${resource}`).find('.data-phone').val(); 
             var data_address      = $(`${resource}`).find('.data-address').val(); 
             var data_zipcode      = $(`${resource}`).find('.data-zipcode').val(); 
-            var data_description      = $(`${resource}`).find('.data-description').val(); 
+            var data_description      = $(`${resource}`).find('.data-description').val();
+
+            //payment
+            var data_payment    = $("input[name=payment_method]:checked").val();
+
             $(`${resource}`).find('.error-log .js-errors').remove();
 
             if (ViewIndex.Config.isEmail(data_email) == null) { 
@@ -47,6 +51,8 @@ const View = {
                 fd.append('data_zipcode', ViewIndex.Config.toNoTag(data_zipcode));
                 fd.append('data_description', ViewIndex.Config.toNoTag(data_description));
                 fd.append('metadata', localStorage.getItem("sbtc-cart-data"));
+                fd.append('data_payment', data_payment);
+
                 // $(`${resource}`).find('.error-log').prepend(` <ul class="js-errors"><li class="error">この機能を更新しています</li></ul> `)
                 return fd;
             }else{
@@ -131,7 +137,7 @@ const View = {
     }
 
     async function redirect_logined(url) {
-        await delay(1500);
+        await delay(2000);
         window.location.replace(url);
     }
     function delay(delayInms) {
@@ -145,15 +151,56 @@ const View = {
         Api.Order.Checkout(fd)
             .done(res => {
                 if (res.status == 200) {
-                    View.response.success(res.message)
+/*                     View.response.success(res.message)
                     localStorage.removeItem("sbtc-cart");
-                    localStorage.removeItem("sbtc-cart-data");
-                    redirect_logined(res.data)
+                    localStorage.removeItem("sbtc-cart-data"); */
+
+                    //payment
+                    if (res.payment == 1) {
+                        View.response.success(res.message)
+                        localStorage.removeItem("sbtc-cart");
+                        localStorage.removeItem("sbtc-cart-data");
+                        redirect_logined("/")
+                    }else{
+                        var formVNpay = new FormData();
+                        formVNpay.append('data_id', res.id);
+                        formVNpay.append('data_prices', res.total);
+                        Api.VNpay.Create(formVNpay).done(res => {
+                            window.location.replace(res);
+                        })
+                        .fail(err => { LayoutView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
+                        .always(() => { });
+                    }
+
+                    //redirect_logined(res.data)
+
                 }else if (res.status == 201) {
-                    View.response.success(res.message)
-                    localStorage.removeItem("sbtc-cart"); 
-                    localStorage.removeItem("sbtc-cart-data");
-                    redirect_logined("/")
+                    
+                    //payment
+                    if (res.data.payment == 2) {
+                        var formVNpay = new FormData();
+                        formVNpay.append('data_id', res.data.order_id);
+                        formVNpay.append('data_prices', res.data.total);
+                        Api.VNpay.Create(formVNpay).done(res => {
+
+                            localStorage.removeItem("sbtc-cart"); 
+                            localStorage.removeItem("sbtc-cart-data");
+                            // Open a new tab or window with the redirect URL
+                            window.open(res, '_blank');
+                            // Redirect the current page to the index
+                            window.location.replace('/');
+                        })
+                        .fail(err => { LayoutView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
+                        .always(() => { });
+                        
+                    }else{
+                        console.log("payment1");
+                        View.response.success(res.message)
+                        localStorage.removeItem("sbtc-cart"); 
+                        localStorage.removeItem("sbtc-cart-data");
+                        redirect_logined("/cart")
+                    }
+                    //redirect_logined("/")
                 }else{
                     View.response.error(res.message)
                 }
