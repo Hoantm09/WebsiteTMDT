@@ -42,6 +42,10 @@ Route::middleware(['GlobalUser:global'])->group(function () {
     Route::get('rule-privacy', 'Customer\DisplayController@rule_privacy')->name('customer.view.rule_privacy'); 
     Route::get('rule-recruit', 'Customer\DisplayController@rule_recruit')->name('customer.view.rule_recruit'); 
 
+    // Payment
+    Route::post('payment', 'PaymentController@create_pay')->name('payment.create_pay');
+    Route::get('return-vnpay', 'PaymentController@return_pay')->name('payment.return_vnpay');
+    Route::get('payment-check', 'PaymentController@payment_check')->name('payment.check');
 });
 
 Route::middleware(['AuthCustomer:login'])->group(function () {

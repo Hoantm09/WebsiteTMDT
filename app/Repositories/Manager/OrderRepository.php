@@ -140,4 +140,13 @@ class OrderRepository extends BaseRepository implements RepositoryInterface
                     WHERE customer_id = ".$customer_id;
         return DB::select($sql);
     }
+
+
+    //update payment
+    public function update_payment($payment_id){
+        $sql = "UPDATE order_time
+                    SET status = 2
+                    WHERE payment = ".$payment_id;
+        return DB::select($sql);
+    }
 }

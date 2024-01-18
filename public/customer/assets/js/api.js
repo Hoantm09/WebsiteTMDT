@@ -5,6 +5,7 @@ const Api = {
     Cart: {},
     Order: {},
     Comment: {},
+    VNpay: {},
 
 };
 (() => {
@@ -220,5 +221,14 @@ const Api = {
     });
 })();
 
-
+//VNpay
+(() => {
+    Api.VNpay.Create = (data) => $.ajax({
+        url: `/payment`,
+        method: 'POST',
+        data: data,
+        contentType: false,
+        processData: false,
+    });
+})();
 

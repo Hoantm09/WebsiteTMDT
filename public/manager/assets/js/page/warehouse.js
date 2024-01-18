@@ -18,7 +18,7 @@ const View = {
                 data.product_id,
                 data.name,
                 data.quantity,
-                sex_status[data.sex],
+                sex_status[data.sex-1],
                 metadata,             
                 data.reserve,
                 data.price + ` ₫`,

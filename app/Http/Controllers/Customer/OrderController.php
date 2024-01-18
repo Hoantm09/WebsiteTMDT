@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
-use Mail; 
+
 
 use App\Repositories\CustomerRepository;
 use App\Models\CustomerAuth;
@@ -22,6 +22,7 @@ use Session;
 use Hash;
 use DB;
 use Symfony\Component\Console\Logger\ConsoleLogger;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -29,6 +30,7 @@ class OrderController extends Controller
     protected $customer;
     protected $order;
     protected $order_detail;
+
 
     public function __construct(Product $product, CustomerAuth $customer, Order $order, OrderDetail $order_detail){
         $this->customer         = new CustomerRepository($customer);
@@ -72,6 +74,8 @@ class OrderController extends Controller
         $phone      = preg_replace('/(<([^>]+)>)/', '', $request->data_phone);
         $zipcode      = preg_replace('/(<([^>]+)>)/', '', $request->data_zipcode);
         $description      = preg_replace('/(<([^>]+)>)/', '', $request->data_description);
+        $data_payment   = $request->data_payment;
+
 
         $sub_total  = 0;
         $discount   = 0;
@@ -84,7 +88,9 @@ class OrderController extends Controller
         $route_redirect = "/profile?tag=Order";
         try {
             DB::beginTransaction();
+
             $order_id = mt_rand(1, 9999999);
+
             $data_order = [
                 "customer_id"   => $customer_id ? $customer_id : null,
                 "order_id"      => $order_id,
@@ -99,6 +105,8 @@ class OrderController extends Controller
                 "description"   => $description,
                 "order_value"   => Carbon::now()->toDateTimeString() . "|Đặt hàng thành công",
                 "order_status"  => 0,
+                /* "payment"       => $data_payment, */
+                "payment"       => ($data_payment == 1) ? 1 : $order_id, //Nếu có payment id => Thanh toán online , nếu không thì trực tiếp
             ]; 
             $order_item = $this->order->create($data_order);
             foreach ($metadata->cart as $key => $value) {
@@ -135,15 +143,37 @@ class OrderController extends Controller
                 'order_data_address'    => $address,
                 'order_data_description'    => $description,
             ];
-            // Mail::send('customer/confirm-order', array('data'=> $data), function($message) use ($email) {
-            //     $message->from('tmhoanf@gmail.com', 'BKShop - Order email');
-            //     $message->to($email)->subject('Cảm ơn bạn đã đặt hàng!');
-            // });
-            DB::commit(); 
+
+/*             $data_new = "hihi";
+            Mail::send('customer/confirm-order', array('data'=> $data_new), function($message) use ($email) {
+                 $message->from('bkeshop@gmail.com', 'BKShop - Order email');
+                 $message->to($email)->subject('Cảm ơn bạn đã đặt hàng!');
+            }); */
+
+/*             Mail::raw("123", function($message) use ($email) {
+                $message->from('bkeshop@gmail.com', 'Thông tin đơn hàng');
+                $message->to($email)->subject('Elite');
+            }); */
+
+            DB::commit();
+
+            $data_return = [
+                "customer_id"   => $customer_id ? $customer_id : null,
+                "order_id"      => $order_id,
+                "sub_total"     => $sub_total,
+                "discount"      => $discount,
+                "total"         => $total,
+                "order_status"  => 0,
+                /* "payment"       => $data_payment, */
+                "payment"       => $data_payment, //Nếu có payment id => Thanh toán online , nếu không thì trực tiếp
+            ]; 
+            
+            
             if ($customer_id) { 
-                return $this->order->send_response("Cảm ơn bạn đã đặt hàng!", $route_redirect, 201); 
+                return $this->order->send_response("Cảm ơn bạn đã đặt hàng!", $data_return, 201); 
             }
-            return $this->order->send_response("Cảm ơn bạn đã đặt hàng!", $route_redirect, 201); 
+            return $this->order->send_response("Cảm ơn bạn đã đặt hàng, chúng tôi sẽ gửi thông tin chi tiết qua Email và Số điện thoại !!", $data_return, 201); 
+            //return $this->order->send_response("Cảm ơn bạn đã đặt hàng !!", $route_redirect, 201); 
         } catch (\Exception $exception) {
             dd( $exception);
             DB::rollBack(); 
