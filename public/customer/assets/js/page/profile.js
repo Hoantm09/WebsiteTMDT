@@ -54,13 +54,13 @@ const View = {
 		},
 		render(data){
 			var order_status = [
-				"ご注文を確認中",
-                "満たされない",
-                "満たす",
-				"アイテムを入手",
-				"出荷",
-				"配達完了",
-				"キャンセル",
+				"Đang kiểm tra đơn hàng của bạn",
+                "Không hoàn thành",
+                "Hoàn thành",
+				"Đã lấy hàng",
+				"Đang vận chuyển",
+				"Đã giao hàng",
+				"Hủy bỏ",
 			];
 			var order_status_text = [
 				"pending",
@@ -101,7 +101,7 @@ const View = {
 								${sub_order}
 							</div>
 							<div class="order-footer">
-								合計: <span>${ViewIndex.Config.formatPrices(v.order.total)} ₫</span>
+								Tổng: <span>${ViewIndex.Config.formatPrices(v.order.total)} ₫</span>
 							</div>
 						</div>
 					`)
@@ -109,13 +109,13 @@ const View = {
 		},
 		render_sub(id){
 			var order_status = [
-				"ご注文を確認中",
-                "満たされない",
-                "満たす",
-				"アイテムを入手",
-				"出荷",
-				"配達完了",
-				"キャンセル",
+				"Đang kiểm tra đơn hàng của bạn",
+                "Không hoàn thành",
+                "Hoàn thành",
+				"Đã lấy hàng",
+				"Đang vận chuyển",
+				"Đã giao hàng",
+				"Hủy bỏ",
 			];
 			var order_status_text = [
 				"pending",
@@ -183,7 +183,7 @@ const View = {
 								${sub_order}
 							</div>
 							<div class="order-footer">
-								合計: <span>${ViewIndex.Config.formatPrices(data.order.total)} ₫</span>
+								Tổng: <span>${ViewIndex.Config.formatPrices(data.order.total)} ₫</span>
 							</div>`);
 			
 

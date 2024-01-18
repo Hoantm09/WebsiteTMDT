@@ -43,16 +43,16 @@ class OrderController extends Controller
         $route_redirect = "/";
         if ($is_user) { 
             $tab = $request->tab;
-            list($user_id, $token) = static::unpack_token($request); 
+            list($user_id, $token) = static::unpack_token($request);
             $data   = [];
-            $order = $this->order->get_all($tab, $user_id);
+            $order = $this->order->get_all_cus($tab, $user_id);           
             foreach ($order as $key => $value) {
-                $order_detail = $this->order->get_detail($value->id);
+            $order_detail = $this->order->get_detail($value->id);
                 $order_group = [
                     "order"         => $value,
                     "order_detail"  => $order_detail,
                 ];
-                array_push($data, $order_group);
+                array_push($data, $order_group);   
             }
             return $this->order->send_response("Danh sách đơn hàng", $data, 200);
         }else{
@@ -81,7 +81,7 @@ class OrderController extends Controller
             $discount   += $sub_total / 100 * $value->meta->data[0]->discount;
             $total      += $value->meta->data[0]->prices - ( $value->meta->data[0]->prices / 100 * $value->meta->data[0]->discount );
         }
-        $route_redirect = "/profile?tab=Order";
+        $route_redirect = "/profile?tag=Order";
         try {
             DB::beginTransaction();
             $order_id = mt_rand(1, 9999999);
