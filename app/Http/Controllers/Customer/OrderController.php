@@ -233,7 +233,7 @@ class OrderController extends Controller
         //Get old number
         $size_index = $sizeId - 1;
         $old_numer =  $list_size[$size_index]->quantity;
-        $new_number = $old_numer - 1;
+        $new_number = $old_numer - 5;
 
         $update_num = $this->product->updateNumBySize($productId,$sizeId,$new_number);
         return $this->product->send_response(200, $update_num, null);
