@@ -112,6 +112,12 @@ class DisplayController extends Controller
         $customer_data = static::generate_logined($request);  
         return view("customer.iphone", compact("customer_data"));
     }
+
+    //Theo dõi trạng thái đơn
+    public function my_order(Request $request){
+        $customer_data = static::generate_logined($request);  
+        return view("customer.my-order", compact("customer_data"));
+    }
     
 
     // Generate user detail

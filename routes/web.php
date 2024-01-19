@@ -41,6 +41,7 @@ Route::middleware(['GlobalUser:global'])->group(function () {
     Route::get('rule-ship', 'Customer\DisplayController@rule_ship')->name('customer.view.rule_ship'); 
     Route::get('rule-privacy', 'Customer\DisplayController@rule_privacy')->name('customer.view.rule_privacy'); 
     Route::get('rule-recruit', 'Customer\DisplayController@rule_recruit')->name('customer.view.rule_recruit'); 
+    Route::get('my-order', 'Customer\DisplayController@my_order')->name('customer.view.my_order'); 
 
     // Payment
     Route::post('payment', 'PaymentController@create_pay')->name('payment.create_pay');
