@@ -51,6 +51,7 @@ const View = {
                 fd.append('data_zipcode', ViewIndex.Config.toNoTag(data_zipcode));
                 fd.append('data_description', ViewIndex.Config.toNoTag(data_description));
                 fd.append('metadata', localStorage.getItem("sbtc-cart-data"));
+                fd.append('size_metadata', localStorage.getItem("sbtc-cart"));
                 fd.append('data_payment', data_payment);
 
                 // $(`${resource}`).find('.error-log').prepend(` <ul class="js-errors"><li class="error">この機能を更新しています</li></ul> `)
@@ -71,9 +72,9 @@ const View = {
         },
     },
 	Product: { 
-		render(data, meta, qty){
+		render(data, meta, qty, size_index){
             var image           = data.images.split(",")[0];
-            var metadata        = meta.data[0];  
+            var metadata        = meta.data[size_index-1];  
             var real_prices     = metadata.discount == 0 ? metadata.prices : metadata.prices - (metadata.prices*metadata.discount/100); 
             var prices = metadata.discount != 0 
             				? `<del class="d-flex">${ViewIndex.Config.formatPrices(metadata.prices)} ₫ / 1 sản phẩm</del>
@@ -130,9 +131,25 @@ const View = {
         if (json_cart == null) {
             window.location.replace("/cart"); 
         }
+        
+        //Lấy ra cụ thể loại sản phẩm
+        var card_detail        = localStorage.getItem("sbtc-cart");
+        var json_cart_detail = JSON.parse(card_detail);
+        console.log(json_cart_detail['cart']); //index size được chọn
+
+
         json_cart.cart.map(v => {
             console.log(v);
-        	getOne(v.id, v.meta, v.qty)
+
+            //Lấy ra index size được chọn
+            var size_index = 0;
+            json_cart_detail.cart.map(v2=>{
+                if (v2.id == v.id){
+                    size_index = v2.meta;
+                }
+            })
+
+        	getOne(v.id, v.meta, v.qty, size_index)
         }) 
     }
 
@@ -208,10 +225,10 @@ const View = {
             .fail(err => {  })
             .always(() => { });
     })
-    function getOne(id, meta, qty){
+    function getOne(id, meta, qty, size_index){
         Api.Product.GetOne(id)
             .done(res => {  
-            	View.Product.render(res.data[0], meta, qty)
+            	View.Product.render(res.data[0], meta, qty, size_index)
             })
             .fail(err => {  })
             .always(() => { });

@@ -45,7 +45,7 @@
                         </div>
                         <div class="details-infor">
                             <h1 class="product-title"> </h1> 
-                            <div class="availability">
+                            <div class="availability" id="avail-status">
                                 Tình trạng：
                                 <a href="#">Còn hàng</a>
                             </div>
