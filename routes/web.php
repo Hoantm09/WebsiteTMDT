@@ -150,6 +150,9 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
             Route::get('/config', 'Admin\TransportController@transportConfig')->name('admin.transport.config');
             Route::get('/doi-soat', 'Admin\TransportController@doiSoat')->name('admin.transport.doi-soat');
 
+            //get-all
+            Route::post('/get-all', 'Admin\TransportController@getAll')->name('admin.transport.get-all');
+
             //api đối soát
             Route::get('get-doi-soat/{id}', 'Admin\TransportController@getDoiSoat')->name('admin.transport.get-doi-soat');
             Route::get('get-ticket-detail/{id}', 'Admin\TransportController@getTicketDetail')->name('admin.transport.get-ticket-detail');

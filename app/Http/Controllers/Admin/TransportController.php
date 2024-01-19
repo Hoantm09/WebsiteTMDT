@@ -39,6 +39,26 @@ class TransportController extends Controller
         dd($request->input());
     }
 
+    //get-all transport
+    public function getAll(Request $request){
+        $orderID = $request->orderId;
+        $list = $this->transport->getAll($orderID);
+        return response()->json($list[0]);
+/*         {
+            "id": 1,
+            "vandonID": "LF7GNK",
+            "orderID": 4,
+            "customerID": 1,
+            "partner": "Giao hàng nhanh (GHN)",
+            "COD": 200000,
+            "fee": 44000,
+            "status_order": 2,
+            "status": 0,
+            "employeeID": 1,
+            "order_log": ""
+        } */
+    }
+
     //Đối soát
     public function doiSoat(){
         return view("admin.manager.transport.doi-soat");

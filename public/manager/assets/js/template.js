@@ -302,7 +302,7 @@ const Template = {
 														<i class="m-r-10 text-primary anticon anticon-shopping"></i>
 														<span>Mã đơn: </span> 
 													</p>
-													<p class="col font-weight-semibold order-id-api"></p>
+													<p id="order_id_api" class="col font-weight-semibold order-id-api"></p>
 												</li>
                                                 </ul>
                                             </div>
@@ -690,16 +690,16 @@ const Template = {
 										<tr>
 											<th>Mã vận đơn</th>
 											<th>Mã đơn hàng</th>
-											<th>Sản phẩm</th>
+											
 											<th>Dự kiến lấy</th>
 										</tr>
 									</thead>
 									<tbody class="data-list">
 										<tr>
-											<td>LF7GNK</td>
-											<td>12</td>
-											<td>Nước hoa province x 3</td>
-											<td>22-12-2023 (7h-12h)</td>
+											<td id="print_vandonID" >LF7GNK</td>
+											<td id="print_orderID">12</td>
+											
+											<td id="print_plan_date">28-1-2024 (7h-12h)</td>
 										</tr>
 									</tbody>
 								</table>
@@ -709,9 +709,7 @@ const Template = {
 					<div class="col-md-3">
 						<div class="card">
 							<div class="card-body">
-								<a href="https://dev-online-gateway.ghn.vn/a5/public-api/printA5?token=e4ad8b74-9fc6-11ee-9047-56287bcbd5a7" class="btn btn-primary" target="_blank">
-									In đơn hàng <i class="anticon anticon-printer"></i>
-								  </a>
+								  <button id="print_order" type="button" class="btn btn-primary push-modal2">In đơn hàng<i class="anticon anticon-printer"></i></button>
 							</div>
 						</div>
 					</div>

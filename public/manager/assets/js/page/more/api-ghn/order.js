@@ -51,7 +51,7 @@ const ViewGHN = {
                                 console.log(res);
                             })
                             .fail(err => {
-                                ViewGHN.Toast.showToast("Cập nhật không thành công trên hệ thống");
+                                ViewGHN.Toast.showToast("Sai định dạng: số điện thoại !");
                                 console.log(err);
                             })
                             .always(() => {
@@ -80,6 +80,7 @@ const ViewGHN = {
 
                 })
                 .fail(err => {
+                    ViewGHN.Toast.showToast("Sai định dạng: số điện thoại !");
                 })
                 .always(() => { });
         },
@@ -87,23 +88,86 @@ const ViewGHN = {
 
         },
         print() {
-            $("#print_order").on("click", function () {
-                ApiGHN.Order.genToken([$("#order_code").val()])
+            $(document).on('click', `#print_order`, function () {
+                console.log("print");
+                vandonID = $("#order_id_api").text()
+
+                ApiGHN.Order.getAllTransport({ orderId: vandonID })
                     .done(res => {
-                        window.location.href = "https://dev-online-gateway.ghn.vn/a5/public-api/printA5?token=" + res.data.token;
+                        //console.log(res);
+                        ApiGHN.Order.genToken([res.vandonID])
+                            .done(res=>{
+                                url = "https://dev-online-gateway.ghn.vn/a5/public-api/printA5?token="+res.data.token;
+                                window.open(url, "_blank");
+                            })
+                            .fail(err=>{
+        
+                            })
+                            .always(()=>{
+        
+                            });
                     })
                     .fail(err => {
-
                     })
-                    .always(() => {
-
-                    });
-            })
+            });
         },
     },
-    PackageInfor: {
 
+    //Bước tạo đơn hàng
+    CreateStep: {
+        dataArray: [],
+        show(){
+            $(document).ready(function () {
+                orderID = $("#order_id_api").text()
+                Api.Order.GetOne(orderID)
+                .done(res => {
+
+                    let orderDetailArray = res.data.order_detail;
+                    
+                    ViewGHN.CreateStep.dataArray = orderDetailArray.map(element => ({ 
+                            name: element.name, 
+                            code: element.product_id.toString(),
+                            quantity: element.quantity ,
+                            price: null,
+                            length: null,
+                            width: null,
+                            weight: null,
+                            height: null,
+                            category: 
+                            {
+                                "level1":"Nước hoa"
+                            }
+                    }));
+                    console.log(ViewGHN.CreateStep.dataArray);
+                    
+                })
+                .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
+                .always(() => { }); 
+            });
+            
+        }
     },
+
+    //Bước in đóng gói
+    PackageStep: {
+        show(){
+            $(document).ready(function () {
+                
+                vandonID = $("#order_id_api").text()
+                ApiGHN.Order.getAllTransport({ orderId: vandonID })
+                .done(res => {
+                    $("#print_plan_date").html('28-02-2024 (7h-12h)');
+                    $("#print_vandonID").html(res.vandonID);
+                    $("#print_orderID").html(res.orderID);
+                    
+                })
+                .fail(err => {
+                })
+            });
+
+        }
+    },
+
     SenderInfor: {
         getInfor() {
             return new Promise((resolve) => {
@@ -134,15 +198,17 @@ const ViewGHN = {
 
                     data['coupon'] = ($("#coupon").val() == null) ? null : $("#coupon").val();
 
+                    data_product = ViewGHN.CreateStep.dataArray;
+                    data['items'] = ViewGHN.CreateStep.dataArray;
 
                     //Sản phẩm
-                    data['items'] = [
+/*                     data['items'] = [
                         {
                             "name": "Nước hoa province",
                             "code": "3",
                             "quantity": 3,
                         }
-                    ]
+                    ] */
 
                     ViewGHN.DataSend = data
                     resolve(ViewGHN.DataSend);
@@ -261,6 +327,8 @@ const ViewGHN = {
         ViewGHN.Order.create(data);
     });
 
+    
+    ViewGHN.Order.print();
 
 
     /*  

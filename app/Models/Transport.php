@@ -25,6 +25,14 @@ class Transport extends Model
         
     }
 
+    //get all
+    public function getAll($orderID){
+        $list = DB::table('transport')
+        ->where('orderID', $orderID)
+        ->get();
+        return $list;
+    }
+
     //Doi soat
     public function getDoiSoat($statusID){
         if ($statusID==10){
