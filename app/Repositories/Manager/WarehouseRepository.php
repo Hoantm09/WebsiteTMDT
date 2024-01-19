@@ -29,7 +29,8 @@ class WarehouseRepository extends BaseRepository implements RepositoryInterface
     }
     public function get_history_all(){
         $sql_getall =   "SELECT warehouse_history.id, 
-                                admin.email, 
+                                admin.email,
+                                admin.name, 
                                 sum(quantity) as quantities, 
                                 sum(prices) as prices, 
                                 warehouse_history.created_at

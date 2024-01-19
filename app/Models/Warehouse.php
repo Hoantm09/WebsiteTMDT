@@ -9,5 +9,5 @@ class Warehouse extends Model
 {
     use HasFactory;
     protected $table = 'warehouse';
-    protected $fillable = ['product_id', 'quantity', 'reserve', 'expiry_date','status', 'created_at', 'updated_at'];
+    protected $fillable = ['product_id','size_id', 'quantity', 'reserve', 'expiry_date','status', 'created_at', 'updated_at'];
 }

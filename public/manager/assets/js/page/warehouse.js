@@ -5,9 +5,9 @@ const View = {
         __generateDTRow(data){
             var metadata = "";
             var sex_status = [
-                "",
                 "Nam",
                 "Nữ",
+                "Nam và Nữ",
             ];
             JSON.parse(data.metadata).data.map(v => {
                 metadata += `<div class="metadata-table-wrapper">
@@ -81,7 +81,7 @@ const View = {
 
             return [
                 data.history.id,
-                data.history.email,
+                data.history.name,
                 IndexView.table.formatNumber(total_price) + ` ₫`,
                 data.history.created_at,
                 `<span class="badge badge-pill badge-${data.history.history_status == 1 ? "green" : "red"} m-r-5 m-b-5">${data.history.history_status == 1 ? "Nhập kho" : "Nhập kho"}</span>`,
@@ -97,7 +97,7 @@ const View = {
                         width: '5%',
                     },
                     {
-                        title: 'Admin',
+                        title: 'Người nhập',
                         name: 'name',
                         orderable: true,
                     },
@@ -146,6 +146,9 @@ const View = {
             list_classify.each(function( index ) {
                 var type_item       = {};
                 type_item.item      = $(this).find(".data-item").val()
+
+                type_item.size_id      = $(this).find(".data-item2").val()
+
                 type_item.quantity  = $(this).find(".data-quantity").val() 
                 type_item.price     = $(this).find(".data-price").val()
                 type_item.expiry_date      = $(this).find(".data-date").val()   
@@ -187,22 +190,22 @@ const View = {
                             }).join("")}
                         </select>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
                         <select name="" class="form-control category-list2 data-item2">
 
                         </select>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
+                    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
                         <input type="text" class="number-type form-control data-quantity" placeholder="Số lượng">
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
                         <input type="text" class="number-type form-control data-price" placeholder="Đơn giá">
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4">
-                        <input type="date" class=" form-control data-date" placeholder="Hạn sử dụng" style="margin-top: 10px">
+                    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 pr-0">
+                        <input type="date" class=" form-control data-date" placeholder="Hạn sử dụng">
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-1">
-                        <button class="btn btn-danger item-remove" atr="Item Delete" style="margin-top: 10px"><i class="fas fa-times" ></i > </button>
+                    <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                        <button class="btn btn-danger item-remove" atr="Item Delete"><i class="fas fa-times" ></i > </button>
                     </div>
                 </div>
             `);
@@ -323,9 +326,9 @@ const View = {
                 $(".sub-warehouse tbody tr").remove()
                 data.map(v => {
                     var sex_status = [
-                        "",
                         "Nam",
                         "Nữ",
+                        "Nam và Nữ",
                     ];
                     // var metadata = "";
                     // JSON.parse(data.metadata).data.map(v => {
@@ -340,8 +343,8 @@ const View = {
                             <td>${v.quantity}</td>
                             <td>${sex_status[v.sex]}</td>
                             <td>${v.quantity} ml</td>
-                            <td>${v.prices} $</td>
-                            <td>${v.quantity * v.prices} $</td>
+                            <td>${v.prices} ₫</td>
+                            <td>${v.quantity * v.prices} ₫</td>
                           </tr>`)
                 })
             },
@@ -374,8 +377,9 @@ const View = {
             IndexView.helper.showToastProcessing('Processing', 'Đang tạo!');
             Api.Warehouse.Store(fd)
                 .done(res => {
-                    IndexView.helper.showToastSuccess('Success', 'Tạo thành công !');
-                    getHistory();
+                    IndexView.helper.showToastSuccess('Success', 'Tạo thành công!');
+                    //getHistory();
+                    //location.reload(true);
                 })
                 .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
                 .always(() => { });

@@ -112,4 +112,17 @@ class ProductController extends Controller
         $this->product->update_trending($request->id);
         return $this->product->send_response(200, null, null);
     }
+
+    //Cập nhật số lượng sản phẩm theo dung tích
+    //Lấy dữ liệu cũ => update
+    public function get_size_number(Request $request){
+        $data = $this->product->getNumBySize($request->productId,$request->sizeId);
+        $list_size = json_decode($data[0]->metadata)->data;
+
+        //id của size = index trong mảng
+        $size1 = $list_size[0]->quantity;
+        $new_num = 1000;
+        $update_num = $this->product->updateNumBySize($request->productId,1,$new_num);
+        return $this->product->send_response(200, $update_num, null);
+    }
 }

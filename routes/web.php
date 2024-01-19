@@ -238,6 +238,9 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
             //Thêm order vào transport
             Route::post('insertOrder', 'Admin\WebhookController@insertOrder')->name('admin.order.insert_order');
             
+            //Cập nhật số lượng theo từng loại size sản phẩm
+            Route::post('get-size-number', 'Admin\ProductController@get_size_number')->name('admin.product.get-size-number');
+            Route::post('update-size-number', 'Admin\ProductController@update_size_number')->name('admin.product.update-size-number');
         });
 
         Route::prefix('warehouse')->group(function () {

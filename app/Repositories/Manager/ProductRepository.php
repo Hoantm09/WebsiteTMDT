@@ -282,4 +282,21 @@ LIMIT ".$pageSize.$offset;
                 LIMIT 5";
         return DB::select($sql);
     }
+
+    //Cập nhật số lượng sản phẩm theo dung tích
+    //Lấy dữ liệu cũ
+    public function getNumBySize($productId,$sizeId){
+        $sql = "SELECT  metadata
+                FROM product 
+                WHERE id = ".$productId;
+        return DB::select($sql);
+    }
+    //Cập nhật số lượng sản phẩm theo dung tích, size_id -1 = index trong mảng
+    public function updateNumBySize($productId,$sizeId,$num){
+        $size_index = $sizeId-1;
+        $sql = "UPDATE product
+                SET metadata = JSON_SET(metadata, '$.data[$size_index].quantity', $num)
+                WHERE id = ".$productId;
+        return DB::update($sql);
+    }
 }
