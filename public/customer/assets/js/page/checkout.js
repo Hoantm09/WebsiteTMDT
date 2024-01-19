@@ -76,7 +76,7 @@ const View = {
             var metadata        = meta.data[0];  
             var real_prices     = metadata.discount == 0 ? metadata.prices : metadata.prices - (metadata.prices*metadata.discount/100); 
             var prices = metadata.discount != 0 
-            				? `<del class="d-flex">${ViewIndex.Config.formatPrices(metadata.prices)} ₫ / 1 item</del>
+            				? `<del class="d-flex">${ViewIndex.Config.formatPrices(metadata.prices)} ₫ / 1 sản phẩm</del>
                                 ${ViewIndex.Config.formatPrices(real_prices)} ₫`
                             : `${ViewIndex.Config.formatPrices(real_prices)} ₫`
 

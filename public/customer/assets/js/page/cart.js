@@ -28,7 +28,7 @@ const View = {
             var metadata           = JSON.parse(data.metadata).data[meta-1];  
             var real_prices     = metadata.discount == 0 ? metadata.prices : metadata.prices - (metadata.prices*metadata.discount/100);
             var prices = metadata.discount != 0 
-            				? `<del>${ViewIndex.Config.formatPrices(metadata.prices)} ₫ / 1 item</del>
+            				? `<del>${ViewIndex.Config.formatPrices(metadata.prices)} ₫ / 1 sản phẩm</del>
                                 <span class="woocommerce-Price-currencySymbol">
                                     ${ViewIndex.Config.formatPrices(real_prices)} ₫
                                 </span>`
