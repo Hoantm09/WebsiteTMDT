@@ -65,7 +65,10 @@ class OrderController extends Controller
     // Đặt hàng
     public function checkout(Request $request){ 
         $is_user = static::check_token($request); 
-        $metadata = json_decode($request->metadata); 
+        $metadata = json_decode($request->metadata);
+        
+        //size
+        $size_metadata = json_decode($request->size_metadata);
 
         $customer_id         = $request->data_id ? preg_replace('/(<([^>]+)>)/', '', $request->data_id) : "";
         $name       = preg_replace('/(<([^>]+)>)/', '', $request->data_name);
@@ -80,11 +83,25 @@ class OrderController extends Controller
         $sub_total  = 0;
         $discount   = 0;
         $total      = 0; 
-        foreach ($metadata->cart as $key => $value) { 
+/*         foreach ($metadata->cart as $key => $value) { 
             $sub_total  += $value->meta->data[0]->prices;
             $discount   += $sub_total / 100 * $value->meta->data[0]->discount;
             $total      += $value->meta->data[0]->prices - ( $value->meta->data[0]->prices / 100 * $value->meta->data[0]->discount );
+        } */
+
+        //Xử lý theo size
+        foreach ($metadata->cart as $key => $value) {
+            $size_index = 1;
+            foreach ($size_metadata->cart as $key => $value_size) {
+                if ($value->id == $value_size->id) {
+                    $size_index = $value_size->meta;
+                }
+            }
+            $sub_total  += $value->meta->data[$size_index-1]->prices;
+            $discount   += $sub_total / 100 * $value->meta->data[$size_index-1]->discount;
+            $total      += $value->meta->data[$size_index-1]->prices - ( $value->meta->data[$size_index-1]->prices / 100 * $value->meta->data[$size_index-1]->discount );
         }
+
         $route_redirect = "/profile?tab=Order";
         try {
             DB::beginTransaction();
@@ -109,7 +126,7 @@ class OrderController extends Controller
                 "payment"       => ($data_payment == 1) ? 1 : $order_id, //Nếu có payment id => Thanh toán online , nếu không thì trực tiếp
             ]; 
             $order_item = $this->order->create($data_order);
-            foreach ($metadata->cart as $key => $value) {
+/*             foreach ($metadata->cart as $key => $value) {
                 $product = $this->product->get_one($value->id);
                 $item_order = [
                     "order_id"      => $order_item->id,
@@ -121,6 +138,28 @@ class OrderController extends Controller
                     "total_price"   => ($value->meta->data[0]->prices - ( $value->meta->data[0]->prices / 100 * $value->meta->data[0]->discount ) ) * $value->qty,
                 ];
                 $this->order_detail->create($item_order);
+            } */
+            foreach ($metadata->cart as $key => $value) {
+                $size_index = 1;
+                foreach ($size_metadata->cart as $key => $value_size) {
+                    if ($value->id == $value_size->id) {
+                        $size_index = $value_size->meta;
+                    }
+                }
+                $product = $this->product->get_one($value->id);
+                $item_order = [
+                    "order_id"      => $order_item->id,
+                    "product_id"    => $value->id,
+                    // "size"          => $value->meta->data[0]->size,
+                    "quantity"      => $value->qty,
+                    "prices"        => $value->meta->data[$size_index-1]->prices,
+                    "discount"      => $value->meta->data[$size_index-1]->discount,
+                    "total_price"   => ($value->meta->data[$size_index-1]->prices - ( $value->meta->data[$size_index-1]->prices / 100 * $value->meta->data[$size_index-1]->discount ) ) * $value->qty,
+                ];
+                $this->order_detail->create($item_order);
+
+                //Trừ số lượng trong sản phẩm và trong kho
+                $this->update_size_number($value->id,$size_index);
             }
 
             $data_customer = null;
@@ -180,6 +219,26 @@ class OrderController extends Controller
             return $this->order->send_response("Error", $route_redirect, 404);  
         } 
     }
+
+    //Cập nhật số lượng sản phẩm theo dung tích
+    //Lấy dữ liệu cũ => update
+    public function update_size_number($productId,$sizeId){
+        $data = $this->product->getNumBySize($productId,$sizeId);
+        $list_size = json_decode($data[0]->metadata)->data;
+
+        //id của size -1 = index trong mảng
+        $size1 = $list_size[0]->quantity;
+        //$new_num = 1000;
+
+        //Get old number
+        $size_index = $sizeId - 1;
+        $old_numer =  $list_size[$size_index]->quantity;
+        $new_number = $old_numer - 1;
+
+        $update_num = $this->product->updateNumBySize($productId,$sizeId,$new_number);
+        return $this->product->send_response(200, $update_num, null);
+    }
+
     // Kiểm tra token hợp lệ
     public function check_token(Request $request){
         $token = $request->cookie('_token_');
