@@ -197,7 +197,7 @@ const View = {
                                     <td>${v.quantity}</td>
                                     <td>${v.prices}</td>
                                     <td>${v.discount}%</td>
-                                    <td>${v.total_price*v.quantity}</td>
+                                    <td>${v.total_price}</td>
                                     <td>${warehouse_value}</td>
                                 </tr>`)
                 })

@@ -97,9 +97,15 @@ class OrderController extends Controller
                     $size_index = $value_size->meta;
                 }
             }
+            $num   = $value->qty;
+
             $sub_total  += $value->meta->data[$size_index-1]->prices;
             $discount   += $sub_total / 100 * $value->meta->data[$size_index-1]->discount;
+
+            //$total += $sub_total - $discount;
             $total      += $value->meta->data[$size_index-1]->prices - ( $value->meta->data[$size_index-1]->prices / 100 * $value->meta->data[$size_index-1]->discount );
+           
+            
         }
 
         $route_redirect = "/profile?tab=Order";
