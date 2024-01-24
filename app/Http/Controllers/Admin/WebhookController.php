@@ -91,7 +91,7 @@ class WebhookController extends Controller
                     break;
                 case 'return':
                     $status_old = $status_old . '|Đang hoàn hàng,';
-                    $this->webhook->updateOrderTime($order_id, 7);
+                    $this->webhook->updateOrderTime($order_id, 8);
                     break;
                 case 'returning':
                     $status_old = $status_old . '|Đang luân chuyển hàng trả,';
@@ -172,12 +172,13 @@ class WebhookController extends Controller
             $orderID = $request->orderID;
             $COD = $request->COD;
             $fee = $request->fee;
+            $expected_delivery_time = $request->expected_delivery_time;
 
-            if ($orderCode == null || $orderID == null || $COD == null || $fee == null) {
+            if ($orderCode == null || $orderID == null || $COD == null || $fee == null || $expected_delivery_time == null) {
                 return $this->response(500, 'Cập nhật không thành công, thiếu trường dữ liệu', null);
             }else{
                 // Gọi hàm insertOrder từ webhook
-                $this->webhook->insertOrder($orderCode, $orderID, $COD, $fee);
+                $this->webhook->insertOrder($orderCode, $orderID, $COD, $fee, $expected_delivery_time);
         
                 return $this->response(200, 'Cập nhật thành công', null);
             }

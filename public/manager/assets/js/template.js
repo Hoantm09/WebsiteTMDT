@@ -315,7 +315,7 @@ const Template = {
                             <div class="col-md-9">
                                 <div class="card">
                                     <div class="card-body ">
-										<table class="table table-bordered">
+										<table id="list-product-order" class="table table-bordered">
 									    	<thead>
 									      		<tr>
 											        <th>Mã</th>
@@ -337,7 +337,7 @@ const Template = {
                             <div class="col-md-3">
                                 <div class="card">
                                     <div class="card-body">
-                                    	<select name="" id="" class="form-control order-status">
+                                    	<select name="" id="form-select-status" class="form-control order-status">
                                     		<option value="0">Chờ xử lí</option>
                                     		<option value="1">Chưa hoàn thiện</option>
                                     		<option value="2">Đã hoàn thiện</option>
@@ -756,15 +756,15 @@ const Template = {
 				<tbody>
 				  <tr>
 					<td>Tên người nhận</td>
-					<td>Cong Quyen</td>
+					<td id="rtp-customer-name">Cong Quyen</td>
 				  </tr>
 				  <tr>
 					<td>Điện thoại</td>
-					<td>0888336888</td>
+					<td id="rtp-customer-phone">0888336888</td>
 				  </tr>
 				  <tr>
 					<td>Địa chỉ</td>
-					<td>Phường 14, Quận 10, Hồ Chí Minh, Vietnam</td>
+					<td id="rtp-customer-address">Phường 14, Quận 10, Hồ Chí Minh, Vietnam</td>
 				  </tr>
 				</tbody>
 			  </table>
@@ -780,23 +780,23 @@ const Template = {
 					<tbody>
 					  <tr>
 						<td>Mã đơn hàng</td>
-						<td id="new-order-id">JHGN7</td>
+						<td id="rtp-vandonID">JHGN7</td>
 					  </tr>
 					  <tr>
 						<td>Mã đơn khách hàng</td>
-						<td>12</td>
+						<td id="rtp-orderID">12</td>
 					  </tr>
 					  <tr>
 						<td>Ngày dự kiến lấy</td>
-						<td>22-12-2023</td>
+						<td>2024-01-27T08:59:59Z</td>
 					  </tr>
 					  <tr>
 						<td>Ngày dự kiến giao</td>
-						<td>25-12-2023</td>
+						<td id="rtp-expected_delivery_time" >2024-01-30T23:59:59Z</td>
 					  </tr>
 					  <tr>
 						<td>Trạng thái hiện tại</td>
-						<td>Chờ lấy hàng</td>
+						<td id="order-transport-product">Chờ lấy hàng</td>
 					  </tr>
 					</tbody>
 				  </table>
@@ -812,7 +812,7 @@ const Template = {
 					<tbody>
 					  <tr>
 						<td>Sản phẩm</td>
-						<td>Nước hoa x3</td>
+						<td><a href="#list-product-order">Danh sách sản phẩm</a></td>
 					  </tr>
 					  <tr>
 						<td>Cân nặng</td>

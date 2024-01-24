@@ -319,6 +319,7 @@ const ApiGHN = {
             'fee' : data_r['fee'],
             'employeeID' : 1,
             'order_log' : "",
+            'expected_delivery_time' : data_r['expected_delivery_time'],
             'status' : 0,
         },
         success: function(response) {

@@ -78,10 +78,16 @@
                             <div>Hoàn thành</div>
                         </div>
                     </div>
-                    <div class="status-event" atr="Refund" data-id="7">
+                    <div class="status-event" atr="Refund" data-id="8">
                         <div class="d-flex align-items-center">
                             <div class="badge badge-danger badge-dot m-r-10"></div>
                             <div>Hoàn trả</div>
+                        </div>
+                    </div>
+                    <div class="status-event" atr="cancel" data-id="7">
+                        <div class="d-flex align-items-center">
+                            <div class="badge badge-danger badge-dot m-r-10"></div>
+                            <div>Hủy</div>
                         </div>
                     </div>
                 </div>

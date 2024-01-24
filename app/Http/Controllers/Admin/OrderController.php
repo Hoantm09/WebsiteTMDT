@@ -70,6 +70,7 @@ class OrderController extends Controller
             "Received product",
             "Order completed",
             "Cancelled",
+            "Returned",
         ];
         $order = $this->order->get_one($order_id);
         $order_message_array = explode(",",$order[0]->order_value);
@@ -104,6 +105,9 @@ class OrderController extends Controller
             $this->order->update(["order_status" => $request->data_status], $request->data_id);
         }else if ($request->data_status == 5) {
             // Giao hàng thành công
+            $this->order->update(["order_status" => $request->data_status], $request->data_id);
+        }else if ($request->data_status == 8) {
+            // Hoàn trả hàng
             $this->order->update(["order_status" => $request->data_status], $request->data_id);
         }else if ($request->data_status == 6) {
             // Kết thúc đơn hàng

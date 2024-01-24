@@ -78,7 +78,7 @@ class Webhook extends Model
     }
 
     //Thêm đơn hàng vào Transport
-    public function insertOrder($orderCode, $orderID, $COD, $fee){
+    public function insertOrder($orderCode, $orderID, $COD, $fee, $expected_delivery_time){
         DB::table('transport')->insert([
             'vandonID' => $orderCode,
             'orderID' => $orderID,
@@ -87,6 +87,7 @@ class Webhook extends Model
             'COD' => $COD,
             'fee' => $fee,
             'employeeID' => 1,
+            'expected_delivery_time' => $expected_delivery_time,
             'order_log' => "",
             'status' => 2,  //0: Chưa đối soát, 1: Đã đối soát, 2: Đang giao - không thể đối soát => Chờ xử lý
             'status_order' =>2,  //0: Hoàn trả, 1: Giao thành công

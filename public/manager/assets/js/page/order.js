@@ -10,6 +10,7 @@ const View = {
                 "badge-geekblue badge-pill",
                 "badge-success badge-pill",
                 "badge-danger badge-pill",
+                "badge-danger badge-pill",
             ]; 
             var order_status_title = [
                 "Chờ xử lí",
@@ -19,6 +20,7 @@ const View = {
                 "Đang giao hàng",
                 "Đã giao hàng",
                 "Hoàn thành",
+                "Hủy đơn",
                 "Hoàn trả",
             ];
             var order_payment = [ 
@@ -210,6 +212,7 @@ const View = {
                                     // <option value="5">Đã giao hàng</option>
                                     // <option value="6">Hoàn thành</option>
                                     // <option value="7">Hủy đơn</option>
+                                    //<option value="8">Hoàn trả đơn</option>
 
                 $(".order-status option").remove()     
                 if (data.order[0].order_status == 0) {
@@ -249,16 +252,22 @@ const View = {
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
 
                     $("#ship-setting").html(Template.Order.vanchuyenDetail());
+                    ViewGHN.ReadyToPickStep.show();
                     ViewGHN.OrderLog.getOrderlog(data.order[0].id);
+                    $("#order-transport-product").html("Chờ lấy hàng");
 
                 }
                 if (data.order[0].order_status == 4) { 
                     $(".order-status").append(`<option value="5">Đã giao hàng</option>`) 
-                    $(".order-status").append(`<option value="6">Hoàn thành</option>`)  
+                    $(".order-status").append(`<option value="6">Hoàn thành</option>`)
+                    $(".order-status").append(`<option value="8">Hoàn trả</option>`)  
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
 
                     $("#ship-setting").html(Template.Order.vanchuyenDetail());
                     ViewGHN.OrderLog.getOrderlog(data.order[0].id);
+                    $("#order-transport-product").html("Đang giao hàng");
+                    $('#form-select-status option[value="7"]').prop('disabled', true);
+                    
                 }
                 if (data.order[0].order_status == 5) { 
                     $(".order-status").append(`<option value="6">Hoàn thành</option>`)
@@ -266,6 +275,8 @@ const View = {
                     //update trạng thái
                     $("#ship-setting").html(Template.Order.vanchuyenDetail());
                     ViewGHN.OrderLog.getOrderlog(data.order[0].id);
+                    $("#order-transport-product").html("Đã giao hàng");
+                    
                 }
 
                 if (data.order[0].order_status == 6) { 
@@ -274,6 +285,7 @@ const View = {
 
                     ViewGHN.OrderLog.getNewOrderInfo(data.order[0].id);
                     ViewGHN.OrderLog.getOrderlog(data.order[0].id);
+                    $("#order-transport-product").html("Giao hàng thành công");
 
                 }
                 if (data.order[0].order_status == 7) { 
@@ -282,8 +294,21 @@ const View = {
 
                     ViewGHN.OrderLog.getNewOrderInfo(data.order[0].id);
                     ViewGHN.OrderLog.getOrderlog(data.order[0].id);
+                    ViewGHN.ReadyToPickStep.show();
+                    $("#order-transport-product").html("Hủy đơn");
 
                 }
+                if (data.order[0].order_status == 8) { 
+                    //update trạng thái
+                    $("#ship-setting").html(Template.Order.vanchuyenDetail());
+
+                    ViewGHN.OrderLog.getNewOrderInfo(data.order[0].id);
+                    ViewGHN.OrderLog.getOrderlog(data.order[0].id);
+                    ViewGHN.ReadyToPickStep.show();
+                    $("#order-transport-product").html("Hoàn trả");
+
+                }
+
                 // $(".order-status").val(data.data_order[0].order_status)
             },
             getVal(){ 

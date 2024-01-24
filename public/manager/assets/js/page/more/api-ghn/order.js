@@ -39,10 +39,11 @@ const ViewGHN = {
                             'orderID': data.client_order_code,
                             'COD': data.insurance_value,
                             'fee': res.data.total_fee,
+                            'expected_delivery_time': res.data.expected_delivery_time,
                             'status': 2, //0:Hoàn trả, 1: Giao thành công, 2:Đang vận chuyển-chưa thể đối soát
                         };
                         
-                        console.log("thông tin đơn hàng: " + dta['OrderCode'] + " " + dta['orderID'] + " " + dta['COD'] + " " + dta['fee']);
+                        console.log("thông tin đơn hàng: " + dta['OrderCode'] + " " + dta['orderID'] + " " + dta['COD'] + " " + dta['fee'] + " " + dta['expected_delivery_time']);
                         
 
                         ApiGHN.Order.updateTransport(dta)
@@ -160,6 +161,30 @@ const ViewGHN = {
                     $("#print_vandonID").html(res.vandonID);
                     $("#print_orderID").html(res.orderID);
                     
+                })
+                .fail(err => {
+                })
+            });
+
+        }
+    },
+
+    //Chờ lấy hàng
+    ReadyToPickStep:{
+        show(){
+            $(document).ready(function () {
+                
+                vandonID = $("#order_id_api").text()
+                ApiGHN.Order.getAllTransport({ orderId: vandonID })
+                .done(res => {
+                    console.log(res)
+                    //$("#print_plan_date").html('28-02-2024 (7h-12h)');
+                    $("#rtp-vandonID").html(res.vandonID);
+                    $("#rtp-orderID").html(res.orderID);
+                    $("#rtp-expected_delivery_time").html(res.expected_delivery_time);
+                    $('#rtp-customer-name').html($(".customer-name").text());
+                    $('#rtp-customer-phone').html($(".customer-telephone").text());
+                    $('#rtp-customer-address').html($(".customer-address").text());
                 })
                 .fail(err => {
                 })
