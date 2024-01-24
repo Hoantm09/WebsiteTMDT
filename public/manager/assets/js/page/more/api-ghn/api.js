@@ -93,7 +93,7 @@ const ApiGHN = {
             "coupon":null,
             "pickup_time":1692840132,
             "pick_shift":[2],
-            "items": [
+/*             "items": [
                  {
                      "name":"Áo Polo",
                      "code":"Polo123",
@@ -109,7 +109,8 @@ const ApiGHN = {
                      }
                  }
                  
-             ]
+             ] */
+             "items": data_input.items, 
         }),
         success: function(response) {
             console.log(response);
@@ -162,7 +163,7 @@ const ApiGHN = {
             "coupon":null,
             "pickup_time":null, //
             "pick_shift":null, //
-            "items": [
+/*             "items": [
                  {
                      "name":data_input.items[0].name,
                      "code":data_input.items[0].code,
@@ -176,9 +177,11 @@ const ApiGHN = {
                      {
                          "level1":"Áo"
                      }
-                 }
+                 },
                  
-             ]
+                 
+             ] */
+            "items": data_input.items,
         }),
         success: function(response) {
             console.log(response);
@@ -251,7 +254,7 @@ const ApiGHN = {
             "coupon":null,
             "pickup_time":null, //
             "pick_shift":null, //
-            "items": [
+/*             "items": [
                  {
                      "name":data_input.items[0].name,
                      "code":data_input.items[0].code,
@@ -263,11 +266,12 @@ const ApiGHN = {
                      "height": null,
                      "category": 
                      {
-                         "level1":"Áo"
+                         "level1":"Nước hoa"
                      }
                  }
                  
-             ]
+             ] */
+             "items": data_input.items,
         }),
         success: function(response) {
             console.log(response);
@@ -355,6 +359,25 @@ const ApiGHN = {
             'Content-Type': 'application/json',
         },
         crossDomain: true,
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.error(error);
+        }
+    });
+})();
+
+
+//Get all transport 
+(()=>{
+    ApiGHN.Order.getAllTransport = (data_input) => $.ajax({
+        url: `/admin/transport/get-all`,
+        method: 'POST',
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr('content'),
+        },
+        data: data_input,
         success: function(response) {
             console.log(response);
         },

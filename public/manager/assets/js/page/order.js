@@ -163,7 +163,7 @@ const View = {
                 $(".customer-name").html(data.order[0].name)
                 $(".customer-address").html(data.order[0].address)
                 $(".customer-telephone").html(data.order[0].phone)
-                $(".order-id-api").html(data.order[0].id)
+                $("#order_id_api").html(data.order[0].id)
 
                 $(".customer-order-price").html(data.order[0].sub_total)
                 $(".customer-order-discount").html(data.order[0].discount_total)
@@ -231,12 +231,16 @@ const View = {
                     $('#to_name').val(data.order[0].name);
                     $('#to_phone').val(data.order[0].phone);
 
+                    ViewGHN.CreateStep.show();
+
                 }
                 if (data.order[0].order_status == 2) { 
                     $(".order-status").append(`<option value="1">Chưa hoàn thiện</option>`)
                     $(".order-status").append(`<option value="3">Chờ lấy hàng</option>`) 
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
+                    
                     $("#ship-setting").html(Template.Order.printOrder());
+                    ViewGHN.PackageStep.show();
                     
                 }
                 if (data.order[0].order_status == 3) { 

@@ -215,7 +215,7 @@ const View = {
                         View.response.success(res.message)
                         localStorage.removeItem("sbtc-cart"); 
                         localStorage.removeItem("sbtc-cart-data");
-                        //redirect_logined("/cart")
+                        redirect_logined("/cart")
                     }
                     //redirect_logined("/")
                 }else{
