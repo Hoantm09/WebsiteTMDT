@@ -103,7 +103,8 @@ class OrderRepository extends BaseRepository implements RepositoryInterface
         return DB::select($sql);
     }
     // Hiển thị đơn của cus
-    public function get_all_cus($tab, $id){
+    public function get_all_cus($tab, $id2){
+        $id=2;
         $status_order = $tab == null ? "" : " AND order_status = ".$tab;
 /*         $sql = "SELECT *
                     FROM order_time 

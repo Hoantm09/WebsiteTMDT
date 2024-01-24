@@ -43,11 +43,10 @@ class OrderController extends Controller
     public function get(Request $request){
         $is_user = static::check_token($request); 
         $route_redirect = "/";
-        $data   = [];
         if ($is_user) { 
             $tab = $request->tab;
             list($user_id, $token) = static::unpack_token($request);
-            
+            $data   = [];
             $order = $this->order->get_all_cus($tab, $user_id);           
             foreach ($order as $key => $value) {
             $order_detail = $this->order->get_detail($value->id);
@@ -57,7 +56,7 @@ class OrderController extends Controller
                 ];
                 array_push($data, $order_group);   
             }
-            return $this->order->send_response("Danh sách đơn hàng",$data, 200);
+            return $this->order->send_response("Danh sách đơn hàng", $data, 200);
         }else{
             return $this->order->send_response("Phiên đăng nhập hết hạn", $route_redirect, 404); 
         } 
@@ -105,7 +104,7 @@ class OrderController extends Controller
 
             //$total += $sub_total - $discount;
             $total      += $value->meta->data[$size_index-1]->prices - ( $value->meta->data[$size_index-1]->prices / 100 * $value->meta->data[$size_index-1]->discount );
-           
+            
         }
 
         $route_redirect = "/profile?tab=Order";
@@ -165,7 +164,7 @@ class OrderController extends Controller
                 $this->order_detail->create($item_order);
 
                 //Trừ số lượng trong sản phẩm và trong kho
-                $this->update_size_number($value->id,$size_index,$request);
+                $this->update_size_number($value->id,$size_index);
             }
 
             $data_customer = null;
@@ -228,23 +227,18 @@ class OrderController extends Controller
 
     //Cập nhật số lượng sản phẩm theo dung tích
     //Lấy dữ liệu cũ => update
-    public function update_size_number($productId,$sizeId,Request $request){
+    public function update_size_number($productId,$sizeId){
         $data = $this->product->getNumBySize($productId,$sizeId);
         $list_size = json_decode($data[0]->metadata)->data;
 
         //id của size -1 = index trong mảng
         $size1 = $list_size[0]->quantity;
         //$new_num = 1000;
-        // Get số lượng của sản phẩm khách muốn mua (qty)
-        $metadata = json_decode($request->metadata);
-        $size_metadata = json_decode($request->size_metadata);
-        foreach ($metadata->cart as $key => $value) {
-            $num   = $value->qty;
-        }
+
         //Get old number
         $size_index = $sizeId - 1;
         $old_numer =  $list_size[$size_index]->quantity;
-        $new_number = $old_numer - $num;
+        $new_number = $old_numer - 5;
 
         $update_num = $this->product->updateNumBySize($productId,$sizeId,$new_number);
         return $this->product->send_response(200, $update_num, null);

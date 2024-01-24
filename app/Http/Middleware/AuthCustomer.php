@@ -31,12 +31,12 @@ class AuthCustomer{
                     }else{
                         $request->session()->forget('_token_');
                         Cookie::queue(Cookie::forget('_token_'));
-                        return redirect()->route('customer.view.index')->with('error', 'アカウントがアクティブ化されていません!');  
+                        return redirect()->route('customer.view.index')->with('error', 'Tài khoản chưa được kích hoạt!');  
                     }
                 }else{
                     $request->session()->forget('_token_');
                     Cookie::queue(Cookie::forget('_token_'));
-                    return redirect()->route('customer.view.index')->with('success', 'アカウントは未定義です!');  
+                    return redirect()->route('customer.view.index')->with('success', 'Tài khoản không được xác định!');  
                 }
             }else{
                 return $next($request);
@@ -58,12 +58,12 @@ class AuthCustomer{
                     }else{
                         $request->session()->forget('_token_');
                         Cookie::queue(Cookie::forget('_token_'));
-                        return redirect()->route('customer.view.index')->with('success', 'アカウントは未定義です!');  
+                        return redirect()->route('customer.view.index')->with('success', 'Tài khoản không được xác định!');  
                     }
                 }else{
                     $request->session()->forget('_token_');
                     Cookie::queue(Cookie::forget('_token_'));
-                    return redirect()->route('customer.view.index')->with('error', 'アカウントがアクティブ化されていません!');  
+                    return redirect()->route('customer.view.index')->with('error', 'Tài khoản chưa được kích hoạt!');  
                 }
             }else{
                 return redirect()->route('customer.view.index')->with('success', 'Bạn cần đăng nhập để thực hiện hành động này');  

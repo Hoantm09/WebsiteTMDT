@@ -42,7 +42,7 @@ const View = {
                 `
                 <div class="d-flex align-items-center">
                     <div class="badge badge-success badge-dot m-r-10"></div>
-                    <div>Thực tính: $ ${data.total}</div>
+                    <div>Thực tính: $ ${data.total_price}</div>
                 </div>`,
                 data.created_at,
                 `<span class="badge m-b-5 ${order_status[data.order_status]}">${order_status_title[data.order_status]}</span>

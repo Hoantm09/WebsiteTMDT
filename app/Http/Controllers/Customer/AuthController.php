@@ -171,7 +171,7 @@ class AuthController extends Controller
                 $this->customer->update(["verify_code" => $code], $user_id);
                 $email = $customer->email;
                 Mail::send('email-forgot', array('code' => $code), function ($message) use ($email) {
-                    $message->from('techchat2110@gmail.com', 'Computer Store đổi mật khẩu');
+                    $message->from('tmhoanf@gmail.com', 'Computer Store đổi mật khẩu');
                     $message->to($email)->subject('Computer Store');
                 });
                 return $this->customer->send_response("Đã gửi mã xác thực về email", null, 200);
