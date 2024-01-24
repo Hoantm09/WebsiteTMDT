@@ -350,6 +350,29 @@ const ApiGHN = {
         });
 })();
 
+//Get trạng thái đơn hàng của khách không login
+(()=>{
+    //Get trạng thái đơn hàng
+    ApiGHN.Order.GetOrderStatus2 = (id) => $.ajax({
+        url: `my-order`,
+        method: 'GET',
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr('content'),
+            'Content-Type': 'application/json',
+        },
+        crossDomain: true,
+        data: {
+            'id' : id,
+        },
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.error(error);
+        }
+    });
+})();
+
 (()=>{
     //Get các thông tin đơn hàng từ khâu Chờ lấy hàng
     ApiGHN.Order.GetOrderStatus = (id) => $.ajax({

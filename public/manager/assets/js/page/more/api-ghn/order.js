@@ -114,6 +114,41 @@ const ViewGHN = {
         },
     },
 
+    //Đơn hàng cho khách không phải thành viên
+    OrderNotLogin: {
+        dataArray: [],
+        show(){
+            $(document).ready(function () {
+                orderID = $("#order_id_api").text()
+                Api.Order.GetOne(orderID)
+                .done(res => {
+
+                    let orderDetailArray = res.data.order_detail;
+                    
+                    ViewGHN.CreateStep.dataArray = orderDetailArray.map(element => ({ 
+                            name: element.name, 
+                            code: element.product_id.toString(),
+                            quantity: element.quantity ,
+                            price: null,
+                            length: null,
+                            width: null,
+                            weight: null,
+                            height: null,
+                            category: 
+                            {
+                                "level1":"Nước hoa"
+                            }
+                    }));
+                    console.log(ViewGHN.CreateStep.dataArray);
+                    
+                })
+                .fail(err => { IndexView.helper.showToastError('Error', 'Có lỗi sảy ra'); })
+                .always(() => { }); 
+            });
+            
+        }
+    },
+
     //Bước tạo đơn hàng
     CreateStep: {
         dataArray: [],

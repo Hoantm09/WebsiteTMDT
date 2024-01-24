@@ -62,7 +62,7 @@ class OrderController extends Controller
             return $this->order->send_response("Phiên đăng nhập hết hạn", $route_redirect, 404); 
         } 
     }
-    
+
     // Đặt hàng
     public function checkout(Request $request){ 
         $is_user = static::check_token($request); 

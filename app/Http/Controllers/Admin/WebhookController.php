@@ -190,4 +190,67 @@ class WebhookController extends Controller
         }
     }
 
+    //Get thông tin đơn của khách hàng không đăng nhập
+    public function getOrderCustomerNotLogin(Request $request){
+        $customer_data = static::generate_logined($request);
+        $data = $this->webhook->getOrderStatusAPI($request->id);
+
+        $phrases = explode('|', $data->order_log);
+        // chia mỗi phần tử thành mảng các phần tử theo dấu ,
+        $order_log = [];
+        foreach ($phrases as $phrase) {
+            $order_log[] = explode(',', $phrase);
+        }
+
+        //Thông tin người nhận
+
+        //Trạng thái cuối cùng
+        $count = count($order_log)-1;
+        $last_status = $order_log[$count][0];
+
+        // Kết quả là một mảng đa chiều
+        return view("customer.my-order", compact("customer_data","order_log","last_status"));
+
+    }
+        // Generate user detail
+        public function generate_logined($request){
+            $user_login = [
+                'id'        => null,
+                'email'     => null,
+                'name'      => null,
+                'phone'     => null,
+                'avatar'    => null,
+                'address'   => null,
+                'is_login'  => false
+            ];
+            $token = $request->cookie('_token_');
+            if ($token) {
+                list($user_id, $token) = explode('$', $request->cookie('_token_'), 2);
+                $sql_getAuth    = 'SELECT   customer.id,
+                                            customer.email,
+                                            customer_detail.name,
+                                            customer_detail.phone,
+                                            customer_detail.avatar,
+                                            customer_detail.address,
+                                            customer_detail.zipcode
+                                    FROM customer 
+                                    LEFT JOIN customer_detail
+                                    ON customer.id = customer_detail.customer_id
+                                    WHERE customer.id = "'.$user_id.'"';
+                $hasAuth    = DB::select($sql_getAuth);
+                if (count($hasAuth) != 0) {
+                    $user_login['id']           = $hasAuth[0]->id;
+                    $user_login['email']        = $hasAuth[0]->email;
+                    $user_login['name']         = $hasAuth[0]->name;
+                    $user_login['avatar']       = $hasAuth[0]->avatar;
+                    $user_login['phone']        = $hasAuth[0]->phone;
+                    $user_login['address']      = $hasAuth[0]->address;
+                    $user_login['zipcode']      = $hasAuth[0]->zipcode;
+                    $user_login['is_login']     = true;
+                }
+            }
+            return $user_login;
+        }
+    
+
 }
