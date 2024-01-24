@@ -62,8 +62,8 @@ const View = {
 			}else if(data.sex == 2){
 				$(".list-sex").append(`<a class="is-active" value-id="2"> Nữ </a>`)
 			}else{
-				$(".list-sex").append(`<a class="" value-id="1"> Nam </a>`)
-				$(".list-sex").append(`<a class="" value-id="2"> Nữ </a>`)
+				$(".list-sex").append(`<a class="disabled" value-id="1" > Nam </a>`)
+				$(".list-sex").append(`<a class="disabled" value-id="2"> Nữ </a>`)
 				$(".list-sex").append(`<a class="is-active" value-id="3"> Bất kỳ </a>`)
 			}
 
@@ -144,11 +144,11 @@ const View = {
                 $(this).addClass("is-active")
                 View.Product.setPrice();
             });
-			$(document).on('click', `.list-sex a`, function() {
-                $(".list-sex a").removeClass("is-active");
-                $(this).addClass("is-active")
-                View.Product.setPrice();
-            });
+			// $(document).on('click', `.list-sex a`, function() {
+            //     $(".list-sex a").removeClass("is-active");
+            //     $(this).addClass("is-active")
+            //     View.Product.setPrice();
+            // });
 		}
 	},
 	Carousel: {

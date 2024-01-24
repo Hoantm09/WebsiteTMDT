@@ -447,7 +447,7 @@ const View = {
             	if (res.status == 200) {
                     View.Password.response.success(res.message);
                     $(".profile-data-block[tab-data=Password] .action-save").attr("atr", "Update");
-                    $(".profile-data-block[tab-data=Password] .action-save").html("パスワードの更新");
+                    $(".profile-data-block[tab-data=Password] .action-save").html("Cập nhật mật khẩu");
                 }else{
                 	View.Password.response.error(res.message);
                 }

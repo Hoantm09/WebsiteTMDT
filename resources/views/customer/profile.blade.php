@@ -219,11 +219,11 @@
                     </div>
                     <div class="profile-data-wrapper order-tab-wrapper" view-data="OrderDetail">
                         <div class="go-back">
-                            <div class="do-action"><i class="fas fa-caret-left m-r-20"></i>戻る</div>
+                            <div class="do-action"><i class="fas fa-caret-left m-r-20"></i>Trở lại</div>
                         </div>
                         <div class="profile-data-block is-open">
                             <div class="order-procedure-wrapper">
-                                <h5 class="title">情報</h5>
+                                <h5 class="title">Thông tin</h5>
                                 <div class="row description-wrapper">
                                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                         <div class="user-data">

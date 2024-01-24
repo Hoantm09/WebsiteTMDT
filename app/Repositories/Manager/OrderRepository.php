@@ -103,8 +103,7 @@ class OrderRepository extends BaseRepository implements RepositoryInterface
         return DB::select($sql);
     }
     // Hiển thị đơn của cus
-    public function get_all_cus($tab, $id2){
-        $id=2;
+    public function get_all_cus($tab, $id){       
         $status_order = $tab == null ? "" : " AND order_status = ".$tab;
 /*         $sql = "SELECT *
                     FROM order_time 
@@ -112,7 +111,7 @@ class OrderRepository extends BaseRepository implements RepositoryInterface
                     ORDER BY created_at DESC"; */
             $sql = "SELECT *
                     FROM order_time 
-                    WHERE order_status = ".$id." 
+                    WHERE customer_id = ".$id." $status_order
                     ORDER BY created_at DESC";
         return DB::select($sql);
     }
