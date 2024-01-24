@@ -41,7 +41,7 @@ class WarehouseRepository extends BaseRepository implements RepositoryInterface
                             ON admin.id = warehouse_history.admin_id
                             GROUP BY warehouse_history_detail.warehouse_history_id, 
                                     warehouse_history.id, 
-                                    admin.email, 
+                                    admin.email, admin.name,
                                     warehouse_history.created_at
                             ORDER BY warehouse_history.created_at DESC";
         return DB::select($sql_getall);
