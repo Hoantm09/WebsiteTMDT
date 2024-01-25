@@ -82,7 +82,7 @@ class StatisticController extends Controller
         //Tiền hàng thực bán = money_sold - money_return (bán ra: xuất kho)
         $money_sold = DB::select("SELECT SUM(order_time.total) AS money_sold
                 FROM order_time
-                WHERE (order_time.order_status = 4 OR order_time.order_status = 5 OR order_time.order_status = 6)
+                WHERE order_time.order_status = 4 OR order_time.order_status = 5 OR order_time.order_status = 6
                 AND $ordertime_filter;");
 
         $money_return = DB::select("SELECT SUM(order_time.total) AS money_return
@@ -102,7 +102,7 @@ class StatisticController extends Controller
                                 FROM order_detail
                                 INNER JOIN warehouse_history_detail ON order_detail.product_id = warehouse_history_detail.product_id
                                 INNER JOIN order_time ON order_detail.order_id = order_time.id
-                                WHERE (order_time.order_status = 4 OR order_time.order_status = 5 OR order_time.order_status = 6)
+                                WHERE order_time.order_status = 4 OR order_time.order_status = 5 OR order_time.order_status = 6
                                 AND $ordertime_filter;");
         $fee_sale = $fee_ship[0]->fee + $actual_cost[0]->actual_cost;
 
@@ -136,13 +136,20 @@ class StatisticController extends Controller
         //Kì hiện tại
         $current_period_start = strtotime($start_time . ' 00:00:00');
         $current_period_end = strtotime($end_time . ' 23:59:59');
+
         //Kì trước
         $before_period_start = strtotime('-1 month', $current_period_start);
         $before_period_end = strtotime('-1 month', $current_period_end);
+/*         $before_period_start = strtotime('2023-12-01 00:00:00');
+        $before_period_end = strtotime('2024-01-01 23:59:59'); */
 
         $data = [];
         $data["perid_profit"] = $this->getFeeByTime($current_period_start,$current_period_end);
         $data["before_period_profit"] = $this->getFeeByTime($before_period_start,$before_period_end );
         return response()->json($data);
+    }
+
+    public function generalReport(){
+
     }
 }

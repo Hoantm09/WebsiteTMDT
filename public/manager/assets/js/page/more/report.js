@@ -111,7 +111,7 @@ const ViewReport ={
 
                     function formatDate(inputDateString) {
                         var dateArray = inputDateString.split('/');
-                        return dateArray[2] + '-' + dateArray[1] + '-' + dateArray[0];
+                        return dateArray[2] + '-' + dateArray[0] + '-' + dateArray[1];
                     }
 
                     // Lấy giá trị ngày từ ô input có name="start"
