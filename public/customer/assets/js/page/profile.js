@@ -55,12 +55,12 @@ const View = {
 		render(data){
 			var order_status = [
 				"Đang kiểm tra đơn hàng của bạn",
-                "Không hoàn thành",
+                "Chưa hoàn thành",
                 "Hoàn thành",
 				"Đã lấy hàng",
 				"Đang vận chuyển",
 				"Đã giao hàng",
-				"Hủy bỏ",
+				"Hoàn thành",
 			];
 			var order_status_text = [
 				"pending",
@@ -115,7 +115,7 @@ const View = {
 				"Đã lấy hàng",
 				"Đang vận chuyển",
 				"Đã giao hàng",
-				"Hủy bỏ",
+				"Hoàn thành",
 			];
 			var order_status_text = [
 				"pending",
@@ -124,7 +124,7 @@ const View = {
 				"fulfill",
 				"shipping",
 				"shiped",
-				"cancel",
+				"done",
 			];
 			var payment = [
 				"",
@@ -179,9 +179,9 @@ const View = {
 				.html(`<div class="order-header ${order_status_text[data.order.order_status]}">
 								${order_status[data.order.order_status]}
 							</div>
-							<div class="order-body">
+							<li class="order-body">
 								${sub_order}
-							</div>
+							</li>
 							<div class="order-footer">
 								Tổng: <span>${ViewIndex.Config.formatPrices(data.order.total)} ₫</span>
 							</div>`);
