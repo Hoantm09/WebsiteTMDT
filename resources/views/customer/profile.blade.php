@@ -168,7 +168,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="profile-data-block " tab-data="Password">
+                        <div class="profile-data-block oder-block " tab-data="Password">
                             <div class="profile-wrapper">
                                 <div class="profile-header">
                                     <h3>Thay đổi mật khẩu của bạn</h3>
