@@ -382,7 +382,7 @@
     					<span class="icon">
     						<i class="fa fa-user" aria-hidden="true"></i>
     					</span>
-                    <?php if ($customer_data['is_login']): ?>  マイページ <?php else: ?> LOGIN <?php endif ?> 
+                    <?php if ($customer_data['is_login']): ?>  Trang của tôi <?php else: ?> LOGIN <?php endif ?> 
                 </a>
             </div>
         </div>
