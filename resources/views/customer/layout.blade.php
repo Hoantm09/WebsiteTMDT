@@ -121,7 +121,7 @@
                                                         <input type="password" class="input-text data-password" placeholder="Password">
                                                     </p> 
                                                     <p class="form-row lost_password">
-                                                        <a href="#">Lấy mật khẩu</a>
+                                                        <a href="#">パスワードの取得</a>
                                                     </p>
                                                     <p class="form-row"> 
                                                         <button type="button" class="button form-submit" atr="Login">LOGIN</button>
