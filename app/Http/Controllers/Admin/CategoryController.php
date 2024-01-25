@@ -20,8 +20,9 @@ class CategoryController extends Controller
     public function __construct(Category $category){
         $this->category             = new CategoryRepository($category); 
     }
-    public function index(){
-        return view("admin.manager.category");
+    public function index(Request $request){
+        $rule = isset($this->category->checkRule($request)->type) ? $this->category->checkRule($request)->type : 1;
+        return view("admin.manager.category",compact('rule'));
     }
     public function get(){
         $data = $this->category->get_data();

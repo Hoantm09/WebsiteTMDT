@@ -22,10 +22,12 @@ class CustomerController extends Controller
         $this->customer_detail = new ManagerRepository($customer_detail);
         $this->order_time= new ManagerRepository($order_time);
     }
-    public function index(){
+    public function index(Request $request){
         $customerInfor = $this->customer->getCustomer();
+        $rule = isset($this->customer_detail->checkRule($request)->type) ? $this->customer_detail->checkRule($request)->type : 1;
         return view('admin.manager.customer',[
             'customerInfor' => $customerInfor,
+            'rule' => $rule
         ]);
     }
     public function addCustomer(Request $request){

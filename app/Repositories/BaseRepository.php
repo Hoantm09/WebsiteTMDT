@@ -9,6 +9,7 @@ use Image;
 use Session;
 use Hash;
 use DB;
+use Illuminate\Http\Request;
 
 abstract class BaseRepository implements RepositoryInterface
 {
@@ -146,5 +147,12 @@ abstract class BaseRepository implements RepositoryInterface
         $str = preg_replace('/(\/)/', '-', $str);
         $str = preg_replace('/([\s]+)/', '-', $str);
         return $str;
+    }
+
+    public function checkRule($request){
+            $token = Session('_token__') ? Session('_token__') : $request->cookie('_token__');
+            list($user_id, $token) = explode('$', $token, 2);
+            $sqlAuth = DB::table('admin')->where('id', $user_id)->first();
+            return $sqlAuth;
     }
 }

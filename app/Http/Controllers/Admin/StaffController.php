@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\ManageStaffCustomer;
 
@@ -15,10 +16,16 @@ class StaffController extends Controller
     public function __construct(){
         $this->staff = new ManageStaffCustomer();
     }
-    public function index(){
+    public function index(Request $request){
+        $token = Session('_token__') ? Session('_token__') : $request->cookie('_token__');
+        list($user_id, $token) = explode('$', $token, 2);
+        $sqlAuth = DB::table('admin')->where('id', $user_id)->first();
+        $rule = isset($sqlAuth->type) ? $sqlAuth->type : 1;
+
         $staffInfor = $this->staff->getStaff();
         return view('admin.manager.staff',[
             'staffInfor' => $staffInfor,
+            'rule' => $rule
         ]);
     }
     public function addStaff(Request $request){

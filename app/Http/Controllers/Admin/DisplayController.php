@@ -24,8 +24,9 @@ class DisplayController extends Controller
     public function login(){
         return view('admin.auth.login');
     }
-    public function statistic(){
-        return view('admin.manager.statistic');
+    public function statistic(Request $request){
+        $rule = isset($this->product->checkRule($request)->type) ? $this->product->checkRule($request)->type : 1;
+        return view('admin.manager.statistic',compact('rule'));
     }
     public function watermark1(){
         return view('admin.manager.watermark');
@@ -40,9 +41,6 @@ class DisplayController extends Controller
     }
 
     public function watermark(Request $request){
-        $token = Session('_token__') ? Session('_token__') : $request->cookie('_token__');
-        list($user_id, $token) = explode('$', $token, 2);
-        $sqlAuth = DB::table('admin')->where('id', $user_id)->first();
-        print_r($sqlAuth->id);
+        print_r($this->product->checkRule($request)->type);
     }
 }

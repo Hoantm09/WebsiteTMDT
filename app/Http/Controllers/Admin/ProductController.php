@@ -20,8 +20,9 @@ class ProductController extends Controller
     public function __construct(Product $product){
         $this->product             = new ProductRepository($product); 
     }
-    public function index(){
-        return view("admin.manager.product");
+    public function index(Request $request){
+        $rule = isset($this->product->checkRule($request)->type) ? $this->product->checkRule($request)->type : 1;
+        return view("admin.manager.product",compact('rule'));
     }
     public function get(){
         $data = $this->product->get_data();

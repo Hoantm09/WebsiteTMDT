@@ -40,8 +40,9 @@ class OrderController extends Controller
         $this->product          = new ProductRepository($product);
         $this->warehouse        = new WarehouseRepository($warehouse);
     }
-    public function index(){
-        return view("admin.manager.order");
+    public function index(Request $request){
+        $rule = isset($this->product->checkRule($request)->type) ? $this->product->checkRule($request)->type : 1;
+        return view("admin.manager.order",compact('rule'));
     }
     public function get(Request $request){
         $tag = $request->tag;

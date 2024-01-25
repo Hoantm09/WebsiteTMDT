@@ -414,6 +414,8 @@
     <script src="{{ asset('customer/assets/js/api.js') }}"></script>
     <script src="{{ asset('customer/assets/js/pagination.js') }}"></script>
     <script src="{{ asset('customer/assets/js/page/layout.js') }}"></script>
+
+
     @yield('js')
 </body>
 </html>

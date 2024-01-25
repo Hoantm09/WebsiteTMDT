@@ -1,7 +1,8 @@
 <div class="side-nav">
+    <input type="hidden" name="admin_rule" value="{{ isset($rule) ? $rule : 1 }}" id="adminRuleInput">
     <div class="side-nav-inner">
         <ul class="side-nav-menu scrollable">
-            <li class="nav-item dropdown statistic-group">
+            <li menu-rule="1" class="nav-item dropdown statistic-group">
                 <a class="dropdown-toggle statistic statistic-href-control" href="{{ route('admin.statistic.index') }}">
                     <span class="icon-holder">
                         <i class="anticon anticon-dashboard"></i>
@@ -9,7 +10,7 @@
                     <span class="title">Thống kê</span>
                 </a>
             </li>
-            <li class="nav-item dropdown manager-group">
+            <li menu-rule="2" class="nav-item dropdown manager-group">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
                         <i class="anticon anticon-appstore"></i>
@@ -24,7 +25,7 @@
                     <li class="product"> <a href="{{ route('admin.product.index') }}">Sản phẩm</a> </li>
                 </ul>
             </li> 
-            <li class="nav-item dropdown order-group">
+            <li menu-rule="3" class="nav-item dropdown order-group">
                 <a class="dropdown-toggle order" href="{{ route('admin.order.index') }}">
                     <span class="icon-holder">
                         <i class="anticon anticon-shopping-cart"></i>
@@ -33,7 +34,7 @@
                 </a>
             </li>
 
-            <li class="nav-item dropdown">
+            <li menu-rule="4" class="nav-item dropdown">
                 <a class="dropdown-toggle" >
                     <span class="icon-holder">
                         <i class="fas fa-shipping-fast"></i>
@@ -67,7 +68,7 @@
                     <li class="product1"> <a href="{{ route('admin.product.index') }}">Khách trả hàng</a> </li>
                 </ul>
             </li> --}}
-            <li class="nav-item dropdown">
+            <li menu-rule="5" class="nav-item dropdown">
                 <a class="dropdown-toggle" href="{{ route('admin.warehouse.index') }}">
                     <span class="icon-holder">
                         {{-- <i class="anticon anticon-dashboard"></i> --}}
@@ -77,7 +78,7 @@
                 </a>
             </li>
 
-            <li class="nav-item dropdown ">
+            <li menu-rule="6" class="nav-item dropdown ">
                 <a class="dropdown-toggle " href="{{ route('admin.manager.customer') }}">
                     <span class="icon-holder">
                     {{-- <i class="anticon anticon-dashboard"></i> --}}
@@ -87,7 +88,7 @@
                 </a>
             </li>
             
-            <li class="nav-item dropdown ">
+            <li menu-rule="7" class="nav-item dropdown ">
                 <a class="dropdown-toggle " href="{{ route('admin.manager.staff') }}">
                     <span class="icon-holder">
                         <i class="anticon anticon-team"></i>
@@ -96,7 +97,7 @@
                 </a>
             </li>
 
-            <li class="nav-item dropdown">
+            <li menu-rule="8" class="nav-item dropdown">
                 <a class="dropdown-toggle" href="#">
                     <span class="icon-holder">
                         {{-- <i class="anticon anticon-dashboard"></i> --}}
@@ -115,7 +116,7 @@
                 </ul>
             </li>
 
-            <li class="nav-item dropdown manager3-group">
+            <li menu-rule="9" class="nav-item dropdown manager3-group">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
                         <i class="anticon anticon-setting"></i>
@@ -126,14 +127,11 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu"> 
-                    <li class="product1"> <a href="{{ route('admin.category.index') }}">Cấu hình đơn vị vận chuyển</a> </li>
-                    <li class="product1"> <a href="{{ route('admin.product.index') }}">Danh sách đơn hàng</a> </li>
-                    <li class="product1"> <a href="{{ route('admin.product.index') }}">Quản lý đóng gói</a> </li>
-                    <li class="product1"> <a href="{{ route('admin.product.index') }}">Khách trả hàng</a> </li>
+                    <li class="product1"> <a href="{{ route('admin.category.index') }}">Cấu hình hệ thống</a> </li>
                 </ul>
             </li> 
 
-            <li class="nav-item dropdown ">
+            <li menu-rule="10" class="nav-item dropdown ">
                 <a class="dropdown-toggle" href="{{ route('admin.watermark.index') }}">
                     <span class="icon-holder">
                         <i class="anticon anticon-tool"></i>
@@ -144,7 +142,7 @@
 
             <hr class="hr" />
             {{-- Dashboard cho nhân viên kho --}}
-            <li class="nav-item dropdown ">
+            <li menu-rule="11" class="nav-item dropdown ">
                 <a class="dropdown-toggle" href="{{ route('admin.watermark.index') }}">
                     <span class="icon-holder">
                         <i class="anticon anticon-build"></i>
@@ -153,7 +151,7 @@
                 </a>
             </li>
 
-            <li class="nav-item dropdown ">
+            <li menu-rule="12" class="nav-item dropdown ">
                 <a class="dropdown-toggle" href="{{ route('admin.watermark.index') }}">
                     <span class="icon-holder">
                         <i class="fas fa-warehouse"></i>

@@ -20,7 +20,7 @@ class ManageStaffCustomer extends Model
             'secret_key' => 8888,
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => $data['password'],
+            'password' => bcrypt($data['password']),
             'type' => $data['role'],
         ]);   
     }

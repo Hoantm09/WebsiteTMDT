@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Transport;
+use App\Repositories\Manager\OrderRepository;
+use Illuminate\Support\Facades\DB;
 
 class TransportController extends Controller
 {   
@@ -12,23 +14,38 @@ class TransportController extends Controller
     public function __construct(){
         $this->transport = new Transport();
     }
-    public function transportIndex(){
+    public function transportIndex(Request $request){
         $name = "Quyen";
+
+        $token = Session('_token__') ? Session('_token__') : $request->cookie('_token__');
+        list($user_id, $token) = explode('$', $token, 2);
+        $sqlAuth = DB::table('admin')->where('id', $user_id)->first();
+
+        $rule = isset($sqlAuth->type) ? $sqlAuth->type : 1;
+
         return view('admin.manager.transport.index',[
-            'name' => $name
+            'name' => $name,
+            'rule' => $rule
         ]);
     }
 
-    public function transportConfig(){
+    public function transportConfig(Request $request){
         //Xử lý tách size theo ||
         $generalConfig = $this->transport->getConfigGeneral();
         $size_order = explode("||", $generalConfig[0]->size_order);
         $address_warehouse = explode("||", $generalConfig[0]->address_warehouse);
 
+        $token = Session('_token__') ? Session('_token__') : $request->cookie('_token__');
+        list($user_id, $token) = explode('$', $token, 2);
+        $sqlAuth = DB::table('admin')->where('id', $user_id)->first();
+
+        $rule = isset($sqlAuth->type) ? $sqlAuth->type : 1;
+
         return view('admin.manager.transport.config',[
             'size_order' => $size_order,
             'address_warehouse' => $address_warehouse,
             'generalConfig' => $generalConfig[0],
+            'rule' => $rule
         ]);
     }
 
@@ -60,8 +77,14 @@ class TransportController extends Controller
     }
 
     //Đối soát
-    public function doiSoat(){
-        return view("admin.manager.transport.doi-soat");
+    public function doiSoat(Request $request){
+        $token = Session('_token__') ? Session('_token__') : $request->cookie('_token__');
+        list($user_id, $token) = explode('$', $token, 2);
+        $sqlAuth = DB::table('admin')->where('id', $user_id)->first();
+
+        $rule = isset($sqlAuth->type) ? $sqlAuth->type : 1;
+
+        return view("admin.manager.transport.doi-soat",compact('rule'));
     }
 
     /* 

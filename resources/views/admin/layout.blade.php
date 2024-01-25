@@ -134,7 +134,45 @@
 
     <!-- Core JS -->
     <script src="{{ asset('manager/assets/js/app.min.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            var adminRuleValue = $('#adminRuleInput').val();
+            console.log(adminRuleValue);
 
+/*             var liElement = $('li[menu-rule="1"]');
+            // Thêm thuộc tính hidden
+            liElement.attr('hidden', true); */
+
+            if (adminRuleValue == '4') {
+                $('li[menu-rule]').not('[menu-rule="8"]').not('[menu-rule="9"]').attr('hidden', true);
+            }
+            else if (adminRuleValue == '2') {
+                var liElement = $('li[menu-rule="7"]');
+                liElement.attr('hidden', true);
+
+                var liElement2 = $('li[menu-rule="9"]');
+                liElement2.attr('hidden', true);
+
+                var liElement3 = $('li[menu-rule="11"]');
+                liElement3.attr('hidden', true);
+
+                var liElement4 = $('li[menu-rule="12"]');
+                liElement4.attr('hidden', true);
+
+            }
+            else if (adminRuleValue == '3') {
+                $('li[menu-rule]').not('[menu-rule="10"]').attr('hidden', true);
+            }
+            else if (adminRuleValue == '1') {
+                var liElement3 = $('li[menu-rule="11"]');
+                liElement3.attr('hidden', true);
+
+                var liElement4 = $('li[menu-rule="12"]');
+                liElement4.attr('hidden', true);
+            }
+
+        });
+    </script>
 </body>
 
 </html>
