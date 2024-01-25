@@ -136,5 +136,9 @@ class WarehouseController extends Controller
         return $this->product->send_response(200, $update_num, null);
     }
     
+    public function checkInput($product_id,$size_id){
+        $check = DB::select("SELECT * FROM warehouse WHERE product_id = $product_id");
+        return $check->size_id = $size_id;
+    }
     
 }

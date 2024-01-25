@@ -44,13 +44,13 @@
                             <div>Tất cả đơn hàng</div>
                         </div>
                     </div>
-                    <div class="status-event is-select" atr="Pending" data-id="2">
+                    <div class="status-event" atr="Pending" data-id="2">
                         <div class="d-flex align-items-center">
                             <div class="badge badge-warning badge-dot m-r-10"></div>
                             <div>Chờ xử lí</div>
                         </div>
                     </div>
-                    <div class="status-event" atr="Unfulfilled" data-id="0">
+                    <div class="status-event is-select" atr="Unfulfilled" data-id="0">
                         <div class="d-flex align-items-center">
                             <div class="badge badge-secondary badge-dot m-r-10"></div>
                             <div>Chưa đối soát</div>

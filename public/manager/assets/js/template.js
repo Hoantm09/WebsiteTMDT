@@ -651,7 +651,7 @@ const Template = {
 				<div class="p-10" style="background-color: rgb(204 213 221 / 50%);">
 						<div class="row">
 							<div class="col-sm-4 col-md-4 col-lg-4 text-bold">COD:</div>
-							<div id="COD_cf" class="col-sm-4 col-md-4 col-lg-4">200.000</div>
+							<div id="COD_cf" class="col-sm-4 col-md-4 col-lg-4">50.000</div>
 						</div>
 <!--                                                 <div class="row">
 							<div class="col-sm-4 col-md-4 col-lg-4 text-bold">GTB thu tiền:</div>

@@ -109,6 +109,12 @@ class OrderController extends Controller
         }else if ($request->data_status == 8) {
             // Hoàn trả hàng
             $this->order->update(["order_status" => $request->data_status], $request->data_id);
+            $list = DB::table('transport')
+            ->where('orderID',  $request->data_id)
+            ->update([
+                'status_order' => 0,
+                'status' => 0,
+            ]);
         }else if ($request->data_status == 6) {
             // Kết thúc đơn hàng
             $this->order->update(["order_status" => $request->data_status], $request->data_id);

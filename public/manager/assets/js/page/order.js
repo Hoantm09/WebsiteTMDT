@@ -250,8 +250,8 @@ const View = {
 
                 }
                 if (data.order[0].order_status == 2) { 
-                    $(".order-status").append(`<option value="1">Chưa hoàn thiện</option>`)
                     $(".order-status").append(`<option value="3">Chờ lấy hàng</option>`) 
+                    $(".order-status").append(`<option value="1">Chưa hoàn thiện</option>`)
                     $(".order-status").append(`<option value="7">Hủy đơn</option>`)
                     
                     $("#ship-setting").html(Template.Order.printOrder());
@@ -398,8 +398,8 @@ const View = {
                     fd.append('data_status', data_status);
                     Api.Order.Update(fd)
                         .done(res => {
-                            if (res.message == 500) {
-                                IndexView.helper.showToastError('Success', 'Cập nhật thất bại !');
+                            if (res.message == 501) {
+                                IndexView.helper.showToastError('Success', 'Cập nhật thất bại 2 !');
                             }else{
                                 IndexView.helper.showToastSuccess('Success', 'Cập nhật thành công !');
                             }

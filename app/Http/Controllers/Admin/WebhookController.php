@@ -8,6 +8,7 @@ use App\Models\Webhook;
 use DateTimeZone;
 use DateTime;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class WebhookController extends Controller
 {
@@ -53,6 +54,8 @@ class WebhookController extends Controller
         $status_old = $this->webhook->getOrderLog($data_return['OrderCode'])->order_log;
         $order_id = $this->webhook->getOrderLog($data_return['OrderCode'])->orderID; //order cần cập nhật status trong order_time
 
+        $new_order_value = "";
+
         if ($type == 'create') {
             // Thực hiện xử lý đơn hàng được tạo trên GHN
             // Trên hệ thống đã set Chờ lấy hàng => Không cần update trong order_time => Trả về response 200
@@ -71,14 +74,20 @@ class WebhookController extends Controller
                     $status_old = $status_old . '|Đã lấy hàng,';
                     break;
                 case 'delivering':
+                    $new_order_value = '|'.$time_update.'Đang giao hàng '.$data_return['Warehouse'];
+
                     $status_old = $status_old . '|Đang giao hàng,';
                     $this->webhook->updateOrderTime($order_id, 4);
                     break;
                 case 'money_collect_delivering':
+                    $new_order_value = '|'.$time_update.'Đang thu tiền người nhận '.$data_return['Warehouse'];
+
                     $status_old = $status_old . '|Đang thu tiền người nhận,';
                     $this->webhook->updateOrderTime($order_id, 5);
                     break;
                 case 'delivered':
+                    $new_order_value = '|'.$time_update.'Giao hàng thành công '.$data_return['Warehouse'];
+
                     $status_old = $status_old . '|Giao hàng thành công,';
                     $this->webhook->updateOrderTime($order_id, 6);
 
@@ -120,6 +129,8 @@ class WebhookController extends Controller
         }
 
         if ($updateSuccess) {
+            //$this->updateLogs($data_return['OrderCode'],$new_order_value);
+
             $data_return['Status_new'] = $status_old.$data_return['Time'].','.$data_return['Warehouse'];
             $this->webhook->updateOrder($data_return);
             return $this->response(200, 'Cập nhật thành công',$data_return);
@@ -252,6 +263,20 @@ class WebhookController extends Controller
             } */
             return $user_login;
         }
-    
+        
+        //update log cho order_value
+        public function updateLogs($vandonID,$new_log){
+            $id = DB::select("SELECT orderID FROM transport WHERE vandonID = '$vandonID';");
+            $order_id = $id[0]->orderID;
+
+            $old_data = DB::select("SELECT order_value FROM order_time WHERE id = '$order_id';");
+            $old_log = $old_data[0]->order_value;
+            $new_log = $old_log ."|".$new_log;
+            $list = DB::table('order_time')
+            ->where('id', $order_id)
+            ->update([
+                'order_value' => $new_log,
+            ]);
+        }
 
 }
