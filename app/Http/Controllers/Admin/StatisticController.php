@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 
 class StatisticController extends Controller
 {
@@ -53,16 +54,25 @@ class StatisticController extends Controller
         return response()->json($money_return);
     }
 
-    public function getFee()
-    {
+    public function getFeeByTime($start_time,$end_time)
+    {   
         $data = [];
-        $time_start = '2024-01-25';
-        $time_end = '2024-01-24';
-
+/*          if (!isset($start_time) || !isset($end_time)) {
+            $start_time = '2024-01-01';
+            $end_time = '2024-01-30';
+        } */
+/*         $start_time = '2024-01-01';
+        $end_time = '2024-01-25'; */
+/* 
         //Kì hiện tại
-        $current_period_start = strtotime('2024-01-25' . ' 00:00:00');
-        $current_period_end = strtotime(date('Y-m-d 23:59:59'));
-        
+        $current_period_start = strtotime($start_time . ' 00:00:00');
+        $current_period_end = strtotime($end_time . ' 23:59:59');
+        //Kì trước
+        $before_period_start = strtotime('-1 month', $current_period_start);
+        $before_period_end = strtotime('-1 month', $current_period_end); */
+        $current_period_start = $start_time;
+        $current_period_end = $end_time;
+
         $transport_filter = "transport.created_at >= FROM_UNIXTIME($current_period_start)
                         AND transport.created_at <= FROM_UNIXTIME($current_period_end)";
         $ordertime_filter = "order_time.created_at >= FROM_UNIXTIME($current_period_start)
@@ -87,12 +97,59 @@ class StatisticController extends Controller
                                 FROM transport
                                 WHERE $transport_filter;");
 
+        //Giá gốc
+        $actual_cost = DB::select("SELECT SUM(warehouse_history_detail.prices * order_detail.quantity) AS actual_cost
+                                FROM order_detail
+                                INNER JOIN warehouse_history_detail ON order_detail.product_id = warehouse_history_detail.product_id
+                                INNER JOIN order_time ON order_detail.order_id = order_time.id
+                                WHERE order_time.order_status = 4 OR order_time.order_status = 5 OR order_time.order_status = 6
+                                AND $ordertime_filter;");
+        $fee_sale = $fee_ship[0]->fee + $actual_cost[0]->actual_cost;
 
-        $data['fee_ship'] = $fee_ship[0]->fee;
-        $data['money_sold'] = $money_sold[0]->money_sold;
-        $data['money_return'] = $money_return[0]->money_return;
-        $data['monel_real'] = $monel_real;
+        //Doanh thu bán hàng
+        $data['money_sold'] = isset($money_sold[0]->money_sold) ? $money_sold[0]->money_sold : 0;
+        $data['money_return'] = isset($money_return[0]->money_return) ? $money_return[0]->money_return : 0;
+        $data['monel_real'] = isset($monel_real) ? $monel_real : 0;
 
+        //Chi phí bán hàng
+        $data['fee_ship'] = isset($fee_ship[0]->fee) ? $fee_ship[0]->fee : 0;
+        $data['actual_cost'] = isset($actual_cost[0]->actual_cost) ? $actual_cost[0]->actual_cost : 0;
+        $data['fee_sale'] = isset($fee_sale) ? $fee_sale : 0;
+
+        //Lợi nhuận
+        $data['profit'] = isset($monel_real, $fee_sale) ? $monel_real - $fee_sale : 0;
+
+
+        return $data;
+        //return response()->json($data);
+    }
+
+    public function getFee(Request $request){
+        $start_time = $request->start_time;
+        $end_time = $request->end_time;
+        if (!isset($start_time) || !isset($end_time)) {
+            $start_time = '2024-01-01';
+            $end_time = '2024-01-30';
+        }
+
+
+        //Kì hiện tại
+        $current_period_start = strtotime($start_time . ' 00:00:00');
+        $current_period_end = strtotime($end_time . ' 23:59:59');
+
+        //Kì trước
+        $before_period_start = strtotime('-1 month', $current_period_start);
+        $before_period_end = strtotime('-1 month', $current_period_end);
+/*         $before_period_start = strtotime('2023-12-01 00:00:00');
+        $before_period_end = strtotime('2024-01-01 23:59:59'); */
+
+        $data = [];
+        $data["perid_profit"] = $this->getFeeByTime($current_period_start,$current_period_end);
+        $data["before_period_profit"] = $this->getFeeByTime($before_period_start,$before_period_end );
         return response()->json($data);
+    }
+
+    public function generalReport(){
+
     }
 }

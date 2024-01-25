@@ -23,12 +23,12 @@
                     <div class="col-sm-2">
                         <input type="text" class="form-control datepicker-input" name="start" placeholder="From">
                     </div>
-                    to
+                    -
                     <div class="col-sm-2">
                         <input type="text" class="form-control datepicker-input" name="end" placeholder="To">
                     </div>
                     <div class="col-md-6 col-sm-2">
-                        <button class="btn btn-success m-l-5"><i class="fas fa-filter"></i></button>
+                        <button id="filter_financial" class="btn btn-success m-l-5"><i class="fas fa-filter"></i></button>
                     </div>
                 </div>
             </div>
@@ -45,40 +45,40 @@
                             <th class="font-weight-bold">CHỈ TIÊU BÁO CÁO</th>
                             <th class="font-weight-bold">KỲ TRƯỚC</th>
                             <th class="font-weight-bold">KỲ HIỆN TẠI</th>
-                            <th class="font-weight-bold">THAY ĐỔI (%)</th>
+                            <th class="font-weight-bold">THAY ĐỔI </th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- Dòng 1 -->
                         <tr class="table-info">
                             <td class="font-weight-bold">I. Doanh Thu Bán Hàng (1+2+3-4)</td>
-                            <td>9,250,000</td>
-                            <td>16,300,000</td>
-                            <td>+44%</td>
+                            <td id="pre_1" >9,250,000</td>
+                            <td id="now_1">16,300,000</td>
+                            <td id="rate1">+44%</td>
                         </tr>
 
                         <!-- Dòng 1.1 -->
                         <tr>
                             <td class="ml-4"> 1. Tiền Hàng Thực Bán (1a-1b)</td>
-                            <td>9,250,000</td>
-                            <td>16,300,000</td>
-                            <td>+44%</td>
+                            <td id="pre_2">9,250,000</td>
+                            <td id="now_2">16,300,000</td>
+                            <td id="rate2">+44%</td>
                         </tr>
 
                         <!-- Dòng 1.1.1 -->
                         <tr>
                             <td class="ml-5"> a. Tiền Hàng Bán Ra</td>
-                            <td>12,500,000</td>
-                            <td>17,800,000</td>
-                            <td>+30%</td>
+                            <td id="pre_3">12,500,000</td>
+                            <td id="now_3">17,800,000</td>
+                            <td id="rate3">+30%</td>
                         </tr>
 
                         <!-- Dòng 1.1.2 -->
                         <tr>
                             <td class="ml-5"> b. Tiền Hàng Trả Lại</td>
-                            <td>3,250,000</td>
-                            <td>1,500,000</td>
-                            <td>-54%</td>
+                            <td id="pre_4">3,250,000</td>
+                            <td id="now_4">1,500,000</td>
+                            <td id="rate4">-54%</td>
                         </tr>
 
                         <tr>
@@ -105,21 +105,21 @@
                         <!-- Dòng 2 -->
                         <tr class="table-info">
                             <td class="font-weight-bold">II. Chi Phí Bán Hàng (1+2+3)</td>
-                            <td>5,675,000</td>
-                            <td>8,035,000</td>
-                            <td>+30%</td>
+                            <td id="pre_5">5,675,000</td>
+                            <td id="now_5">8,035,000</td>
+                            <td id="rate5">+30%</td>
                         </tr>
                         <tr>
                             <td> 1. Chi phí giá vốn hàng hóa</td>
-                            <td>5,250,000</td>
-                            <td>7,300,000</td>
-                            <td>+28%</td>
+                            <td id="pre_6">5,250,000</td>
+                            <td id="now_6">7,300,000</td>
+                            <td id="rate6">+28%</td>
                         </tr>
                         <tr>
                             <td> 2. Phí giao hàng trả đối tác</td>
-                            <td>425,000</td>
-                            <td>735,000</td>
-                            <td>+42%</td>
+                            <td id="pre_7">425,000</td>
+                            <td id="now_7">735,000</td>
+                            <td id="rate7">+42%</td>
                         </tr>
                         <tr>
                             <td> 3. Thanh toán bằng điểm</td>
@@ -171,9 +171,9 @@
                         <!-- Dòng 5 -->
                         <tr class="table-warning font-weight-bold">
                             <td>Lợi Nhuận (I + III - II - IV)</td>
-                            <td>3,575,000</td>
-                            <td>8,265,000</td>
-                            <td>+57%</td>
+                            <td id="pre_9">3,575,000</td>
+                            <td id="now_9">8,265,000</td>
+                            <td id="rate_9">+57%</td>
                         </tr>
                     </tbody>
                 </table>
@@ -341,5 +341,5 @@
 </div>
 
 <script>
-    $('.datepicker-input').datepicker();
+    
 </script>

@@ -75,5 +75,7 @@
         <script src="{{asset('manager/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
         <script src="{{asset('manager/assets/vendors/quill/quill.min.js')}}"></script>
         <script src="{{asset('manager/assets/js/pages/form-elements.js')}}"></script>
+
+        <script src="{{asset('manager/assets/js/page/more/report.js')}}"></script>
         {{-- <script src="{{asset('manager/assets/js/app.min.js')}}"></script> --}}
 @endsection()
