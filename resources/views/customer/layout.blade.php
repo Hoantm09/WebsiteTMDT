@@ -106,7 +106,7 @@
                                                 <a data-toggle="tab" aria-expanded="true" href="#header-tab-login">LOGIN</a>
                                             </li>
                                             <li>
-                                                <a data-toggle="tab" aria-expanded="true" href="#header-tab-rigister">会員登録</a>
+                                                <a data-toggle="tab" aria-expanded="true" href="#header-tab-rigister">Đăng ký thành viên</a>
                                             </li>
                                         </ul>
                                         <div class="tab-container">
@@ -121,7 +121,7 @@
                                                         <input type="password" class="input-text data-password" placeholder="Password">
                                                     </p> 
                                                     <p class="form-row lost_password">
-                                                        <a href="#">パスワードの取得</a>
+                                                        <a href="#">Lấy mật khẩu</a>
                                                     </p>
                                                     <p class="form-row"> 
                                                         <button type="button" class="button form-submit" atr="Login">LOGIN</button>
@@ -142,7 +142,7 @@
                                                         <input type="password" class="input-text data-password" placeholder="Password">
                                                     </p>
                                                     <p class="form-row"> 
-                                                        <button type="button" class="button form-submit" atr="Register">会員登録</button>
+                                                        <button type="button" class="button form-submit" atr="Register">Đăng ký thành viên</button>
                                                     </p>
                                                 </div>
                                             </form>

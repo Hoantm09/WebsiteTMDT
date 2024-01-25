@@ -28,20 +28,23 @@
             </div>
         </div>
     </div>
-    <div class="row m-b-50">
-        <div class="col-md-12 col-sm-12">
-            <div class="form-group">
-                <div class="row">
-                    <label class="font-weight-bold">Thời gian:</label>
-                    <div class="col-sm-2">
-                        <input type="text" class="form-control datepicker-input" name="end" placeholder="To">
-                    </div>
-                    <div class="col-md-6 col-sm-2">
-                        <button class="btn btn-success m-l-5"><i class="fas fa-filter"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Tổng</th>
+                    <th scope="col">Tồn kho</th>
+                    <th scope="col">Giá trị tồn kho</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <div class="card">
         <div class="card-body">

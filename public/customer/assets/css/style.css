@@ -38,9 +38,23 @@ REPONSIVE
 body {
 	font-family: Arial,Helvetica,sans-serif;
 	font-size: 16px;
-	line-height: 26px;
+	line-height: 50px;
 	color: #666;
 	overflow-x: hidden;
+}
+/*Responsive change                    */
+.profile-data-wrapper .profile-wrapper .profile-body .profile-component .profile-value .action-save {
+	margin: 10px -51px !important;
+	padding: 0px 20px !important;
+}
+.order-item-wrapper .order-body .order-item .item-data h4.item-name {
+	font-size:12px !important;
+}
+.order-item-wrapper .order-body .order-item .item-price {
+	width: 120px !important;
+}
+button, input, optgroup, select, textarea {
+	margin: 10px;
 }
 label {
 	font-weight: 600;
