@@ -186,7 +186,7 @@ class WebhookController extends Controller
         } catch (\Exception $e) {
             // Bắt ngoại lệ và xử lý
             Log::error('Error inserting order: ' . $e->getMessage());
-            return $this->response(500, 'Đã xảy ra lỗi khi cập nhật đơn hàng', null);
+            return $this->response(500, $e->getMessage(), null);
         }
     }
 

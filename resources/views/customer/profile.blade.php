@@ -151,10 +151,10 @@
                                     <div class="order-nav-item" order-status="4">
                                         Đang vận chuyển
                                     </div>
-                                    <div class="order-nav-item" order-status="5">
+                                    <div class="order-nav-item" order-status="6">
                                         Giao hàng hoàn tất
                                     </div>
-                                    <div class="order-nav-item" order-status="6">
+                                    <div class="order-nav-item" order-status="7">
                                         Đơn hàng hủy
                                     </div>
                                 </div>
