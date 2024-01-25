@@ -203,6 +203,7 @@ class WebhookController extends Controller
         }
 
         //Thông tin người nhận
+        
 
         //Trạng thái cuối cùng
         $count = count($order_log)-1;
@@ -221,9 +222,9 @@ class WebhookController extends Controller
                 'phone'     => null,
                 'avatar'    => null,
                 'address'   => null,
-                'is_login'  => false
+                'is_login'  => true,
             ];
-            $token = $request->cookie('_token_');
+/*             $token = $request->cookie('_token_');
             if ($token) {
                 list($user_id, $token) = explode('$', $request->cookie('_token_'), 2);
                 $sql_getAuth    = 'SELECT   customer.id,
@@ -248,7 +249,7 @@ class WebhookController extends Controller
                     $user_login['zipcode']      = $hasAuth[0]->zipcode;
                     $user_login['is_login']     = true;
                 }
-            }
+            } */
             return $user_login;
         }
     

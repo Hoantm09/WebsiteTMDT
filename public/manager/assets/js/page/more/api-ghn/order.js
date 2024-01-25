@@ -253,6 +253,7 @@ const ViewGHN = {
                     data['width'] = parseInt($("#width").val());
                     data['height'] = parseInt($("#height").val());
 
+                    data['cod_amount'] = parseInt($("#cod_amount").val());
                     data['insurance_value'] = parseInt($("#insurance_value").val());
                     data['service_type_id'] = 2;
 

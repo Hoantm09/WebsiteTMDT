@@ -51,7 +51,7 @@
                     <tbody>
                         <!-- Dòng 1 -->
                         <tr class="table-info">
-                            <td class="font-weight-bold">I. Doanh Thu Bán Hàng</td>
+                            <td class="font-weight-bold">I. Doanh Thu Bán Hàng (1+2+3-4)</td>
                             <td>9,250,000</td>
                             <td>16,300,000</td>
                             <td>+44%</td>

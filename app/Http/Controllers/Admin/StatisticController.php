@@ -26,15 +26,15 @@ class StatisticController extends Controller
                         FROM order_time
                         INNER JOIN transport ON order_time.id = transport.orderID
                         WHERE order_time.order_status = 6 AND transport.status = 1;");
-        
+
         $money_return = DB::select("SELECT SUM(order_time.total) AS money_return
                         FROM order_time
                         INNER JOIN transport ON order_time.id = transport.orderID
                         WHERE order_time.order_status = 7 AND transport.status = 1;");
-        
+
         $money_sold_real = $money_sold[0]->money_sold - $money_return[0]->money_return;
 
-        
+
         /* 
         Chi phí bán hàng = actual_goods_cost + shipping_cost + ship_fee + pay_with_point (=0 : Hệ thống không trả bằng điểm)
         Công thức tính:
@@ -47,9 +47,52 @@ class StatisticController extends Controller
                         INNER JOIN warehouse_history_detail ON order_detail.product_id = warehouse_history_detail.product_id
                         INNER JOIN order_time ON order_detail.order_id = order_time.id
                         WHERE order_time.order_status = 6;");
-        
+
 
 
         return response()->json($money_return);
+    }
+
+    public function getFee()
+    {
+        $data = [];
+        $time_start = '2024-01-25';
+        $time_end = '2024-01-24';
+
+        //Kì hiện tại
+        $current_period_start = strtotime('2024-01-25' . ' 00:00:00');
+        $current_period_end = strtotime(date('Y-m-d 23:59:59'));
+        
+        $transport_filter = "transport.created_at >= FROM_UNIXTIME($current_period_start)
+                        AND transport.created_at <= FROM_UNIXTIME($current_period_end)";
+        $ordertime_filter = "order_time.created_at >= FROM_UNIXTIME($current_period_start)
+                        AND order_time.created_at <= FROM_UNIXTIME($current_period_end)";
+
+
+        //Tiền hàng thực bán = money_sold - money_return (bán ra: xuất kho)
+        $money_sold = DB::select("SELECT SUM(order_time.total) AS money_sold
+                FROM order_time
+                WHERE order_time.order_status = 4 OR order_time.order_status = 5 OR order_time.order_status = 6
+                AND $ordertime_filter;");
+
+        $money_return = DB::select("SELECT SUM(order_time.total) AS money_return
+                FROM order_time
+                WHERE order_time.order_status = 8 
+                AND $ordertime_filter;");
+
+        $monel_real = $money_sold[0]->money_sold - $money_return[0]->money_return;
+
+        //Chi phí bán hàng = actual-cost + fee_ship + điểm
+        $fee_ship = DB::select("SELECT SUM(transport.fee) AS fee
+                                FROM transport
+                                WHERE $transport_filter;");
+
+
+        $data['fee_ship'] = $fee_ship[0]->fee;
+        $data['money_sold'] = $money_sold[0]->money_sold;
+        $data['money_return'] = $money_return[0]->money_return;
+        $data['monel_real'] = $monel_real;
+
+        return response()->json($data);
     }
 }

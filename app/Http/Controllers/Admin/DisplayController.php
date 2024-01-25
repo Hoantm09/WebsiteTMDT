@@ -16,6 +16,7 @@ use DB;
 class DisplayController extends Controller
 {
     protected $product;
+    
 
     public function __construct(Product $product){
         $this->product             = new ProductRepository($product); 
@@ -26,7 +27,7 @@ class DisplayController extends Controller
     public function statistic(){
         return view('admin.manager.statistic');
     }
-    public function watermark(){
+    public function watermark1(){
         return view('admin.manager.watermark');
     }
     public function image(Request $request){
@@ -36,5 +37,12 @@ class DisplayController extends Controller
 
     public function test(){
         return view('admin.test');
+    }
+
+    public function watermark(Request $request){
+        $token = Session('_token__') ? Session('_token__') : $request->cookie('_token__');
+        list($user_id, $token) = explode('$', $token, 2);
+        $sqlAuth = DB::table('admin')->where('id', $user_id)->first();
+        print_r($sqlAuth->id);
     }
 }

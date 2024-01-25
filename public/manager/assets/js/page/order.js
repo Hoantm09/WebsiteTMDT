@@ -44,12 +44,17 @@ const View = {
                 `
                 <div class="d-flex align-items-center">
                     <div class="badge badge-success badge-dot m-r-10"></div>
-                    <div>Thực tính: $ ${data.total_price}</div>
+                    <div>Thực tính: $ ${data.total}</div>
                 </div>`,
                 data.created_at,
                 `<span class="badge m-b-5 ${order_status[data.order_status]}">${order_status_title[data.order_status]}</span>
-                <span class="badge m-b-5 badge-pill badge-blue">${order_payment_value[data.payment_value] !== undefined ? order_payment_value[data.payment_value] : 'Chưa thanh toán'}</span>
-                <span class="badge m-b-5 ${order_payment[data.payment_status] !== undefined ? order_payment[data.payment_status] : ''}">${order_payment_title[data.payment_status] !== undefined ? order_payment_title[data.payment_status] : ''}</span>`,
+
+                
+                ${data.status == 2 ? `<span class="badge m-b-5 badge-pill badge-cyan">Đã thanh toán</span>`:`<span class="badge m-b-5 badge-pill badge-orange">Chưa thanh toán</span>`}
+                ${data.payment == 1 || data.payment == 0 ?  `<span class="badge m-b-5 ">Thanh toán khi nhận</span>` : `<span class="badge m-b-5 ">Thanh toán Online</span>`}
+
+                `,
+                
                 `<div class="view-data modal-fs-control" style="cursor: pointer" atr="View" data-id="${data.id}"><i class="anticon anticon-eye"></i></div>`
             ]
         },
@@ -228,7 +233,14 @@ const View = {
 
                     //Thêm thông tin đơn giao hàng
                     $("#ship-setting").html(Template.Order.ShipSetting());
-                    $('#cod_amount').val(data.order[0].total);
+
+                    //status = 2: Đã thanh toán => code =0
+                    if (data.order[0].status == 2) {
+                        $('#cod_amount').val(0);
+                    } else {
+                        $('#cod_amount').val(data.order[0].total);
+                    }
+
                     $('#insurance_value').val(data.order[0].total);
                     $('#client_order_code').val(data.order[0].id);
                     $('#to_name').val(data.order[0].name);

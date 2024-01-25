@@ -100,12 +100,15 @@ class OrderController extends Controller
             }
             $num   = $value->qty;
 
-            $sub_total  += $value->meta->data[$size_index-1]->prices;
+            $dis = 1 - $value->meta->data[$size_index-1]->discount/100;
+            $sub_total  += ($value->meta->data[$size_index-1]->prices)*$num*$dis;
+
             $discount   += $sub_total / 100 * $value->meta->data[$size_index-1]->discount;
 
             //$total += $sub_total - $discount;
-            $total      += $value->meta->data[$size_index-1]->prices - ( $value->meta->data[$size_index-1]->prices / 100 * $value->meta->data[$size_index-1]->discount );
+            //$total      += $value->meta->data[$size_index-1]->prices - ( $value->meta->data[$size_index-1]->prices / 100 * $value->meta->data[$size_index-1]->discount );
            
+            $total = $sub_total;
         }
 
         $route_redirect = "/profile?tab=Order";
