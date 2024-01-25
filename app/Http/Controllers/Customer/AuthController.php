@@ -114,7 +114,7 @@ class AuthController extends Controller
                 $this->customer->update(["verify_code" => $code], $customer->id);
                 $email = $request->data_email;
                 Mail::send('email-forgot', array('code' => $code), function ($message) use ($email) {
-                    $message->from('techchat2110@gmail.com', 'Computer Store khôi phục mật khẩu');
+                    $message->from('boymuonchet2002@gmail.com', 'BK-Eshop khôi phục mật khẩu');
                     $message->to($email)->subject('Computer Store');
                 });
                 return $this->customer->send_response("Kiểm tra email để nhận mã khôi phục", null, 200);
@@ -171,8 +171,8 @@ class AuthController extends Controller
                 $this->customer->update(["verify_code" => $code], $user_id);
                 $email = $customer->email;
                 Mail::send('email-forgot', array('code' => $code), function ($message) use ($email) {
-                    $message->from('tmhoanf@gmail.com', 'Computer Store đổi mật khẩu');
-                    $message->to($email)->subject('Computer Store');
+                    $message->from('boymuonchet2002@gmail.com', 'Bk-eshop đổi mật khẩu');
+                    $message->to($email)->subject('BK-Eshop');
                 });
                 return $this->customer->send_response("Đã gửi mã xác thực về email", null, 200);
             } else {
