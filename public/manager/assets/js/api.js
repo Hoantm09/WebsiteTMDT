@@ -6,6 +6,7 @@ const Api = {
     Order: {},
     Statistic: {},
     Customer: {},
+    Report: {},
     
 };
 (() => {
@@ -199,4 +200,15 @@ const Api = {
         url: `/apip/customer/get-cus-one-order/${id}`,
         method: 'GET',
     })
+})();
+
+
+//Report
+(() => {
+    Api.Report.getFinancial = (data) => $.ajax({
+        url: `/admin/report/get-fee`,
+        method: 'GET',
+        data: data,
+    });
+
 })();
