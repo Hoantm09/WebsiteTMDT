@@ -211,4 +211,10 @@ const Api = {
         data: data,
     });
 
+    Api.Report.getGeneral = (data) => $.ajax({
+        url: `/admin/report/get-general`,
+        method: 'GET',
+        data: data,
+    });
+
 })();

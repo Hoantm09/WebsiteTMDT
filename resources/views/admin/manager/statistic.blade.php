@@ -68,6 +68,7 @@
                         <div class="m-l-15">
                             <h2 class="m-b-0 data-customer_buy"> </h2>
                             <p class="m-b-0 text-muted">Khách hàng</p>
+                            
                         </div>
                     </div>
                 </div>
@@ -105,7 +106,17 @@
         <div class="col-md-12 col-lg-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="m-b-0">Khách hàng</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="m-b-0">Khách hàng</h5>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-default active" onclick="window.location.href='admin/report/general#type_customer'">
+                                <span>Xem chi tiết</span>
+                            </button>
+                        </div>
+                    </div>
+                    
                     <div class="m-v-60 text-center" style="height: 200px"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
                         <canvas class="chart chartjs-render-monitor" id="donut-chart" ></canvas>
                     </div>

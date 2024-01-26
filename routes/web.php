@@ -205,6 +205,7 @@ Route::middleware(['AuthAdmin:admin'])->group(function () {
             Route::get('/warehouse', 'Admin\ReportController@reportWarehouse')->name('admin.manager.report-warehouse');
 
             Route::get('/get-fee', 'Admin\StatisticController@getFee')->name('admin.manager.get-fee');
+            Route::get('/get-general', 'Admin\StatisticController@getGeneral')->name('admin.manager.get-general');
         });
 
 

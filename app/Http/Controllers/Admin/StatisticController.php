@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
+use DateTime;
 
 class StatisticController extends Controller
 {
@@ -152,4 +153,115 @@ class StatisticController extends Controller
     public function generalReport(){
 
     }
+    public function getGeneral()
+    {
+        $data =[];
+
+        // Lấy dữ liệu từ cột 'birthday' trong bảng 'customer_detail'
+        $birthdays = DB::select("SELECT birthday FROM customer_detail");
+    
+        // Mảng để lưu trữ số lượng từng nhóm tuổi
+        $ageGroups = [
+            '18-25' => 0,
+            '26-35' => 0,
+            '36-45' => 0,
+            '>50'   => 0
+        ];
+        foreach ($birthdays as $birthday) {
+            // Check if the 'birthday' field is not empty
+            if (!empty($birthday->birthday)) {
+                $dateParts = explode("/", $birthday->birthday);
+                
+                // Check if the dateParts array has three elements before accessing them
+                if (count($dateParts) === 3) {
+                    // Now you can access the individual date components
+                    $day = $dateParts[0];
+                    $month = $dateParts[1];
+                    $year = 2024-$dateParts[2];
+
+                    if ($year >= 18 && $year <= 25) {
+                        $ageGroups['18-25']++;
+                    } elseif ($year >= 26 && $year <= 35) {
+                        $ageGroups['26-35']++;
+                    } elseif ($year >= 36 && $year <= 45) {
+                        $ageGroups['36-45']++;
+                    } elseif ($year > 50) {
+                        $ageGroups['>50']++;
+                    }
+                }
+            }
+        }
+        
+        //Xử lý giới tính
+        $sexs = DB::select("SELECT sex FROM customer_detail");
+        $sexGroups = [
+            'male' => 0,
+            'female' => 0,
+            'all' => 0,
+        ];
+        
+        foreach ($sexs as $sex) {
+            if (!empty($sex->sex)) {
+                // Tăng số lượng cho giới tính nam (male)
+                if (strtolower($sex->sex) == 1) {
+                    $sexGroups['male']++;
+                }
+                // Tăng số lượng cho giới tính nữ (female)
+                elseif (strtolower($sex->sex) == 2) {
+                    $sexGroups['female']++;
+                }
+                elseif (strtolower($sex->sex) == 3){
+                    $sexGroups['all']++;
+                }
+            }
+            // Tăng số lượng cho tất cả các giới tính (all)
+            
+        }
+
+        //Số khách quay lại
+        // Đếm số lượng đơn đặt hàng của từng khách hàng
+        $ordersCountByCustomer = DB::table('order_time')
+        ->select('customer_id', DB::raw('count(*) as order_count'))
+        ->groupBy('customer_id')
+        ->get();
+
+        // Đếm số lượng khách mới và khách quay lại
+        $newCustomers = 0;
+        $returningCustomers = 0;
+        $noreturningCustomers = 0;
+
+        foreach ($ordersCountByCustomer as $order) {
+            if ($order->order_count === 1) {
+                $newCustomers++;
+            } else {
+                $returningCustomers++;
+            }
+        }
+        //Khách không mua đơn
+        $noReturningCustomers = DB::table('customer')
+        ->whereNotExists(function ($query) {
+            $query->select(DB::raw(1))
+                ->from('order_time')
+                ->whereRaw('order_time.customer_id = customer.id');
+        })
+        ->get();
+        foreach ($noReturningCustomers as $customer) {
+            $noreturningCustomers++;
+        }
+
+        $returngroups = [
+            'new_customer' => $newCustomers,
+            'return_customer' => $returningCustomers,
+            'no_return_customer' => $noreturningCustomers,
+        ];
+    
+        // Code xử lý kết quả ở đây
+        // Ví dụ: trả về JSON response
+        $data['ageGroups'] = $ageGroups;
+        $data['sexGroups'] = $sexGroups;
+        $data['returngroups'] = $returngroups;
+        return response()->json($data);
+        
+    }
+    
 }

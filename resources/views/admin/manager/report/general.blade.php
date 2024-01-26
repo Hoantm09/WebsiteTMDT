@@ -22,71 +22,8 @@
 
 @section('body')
 
-<div class="row">
-    <div class="col-md-6 col-lg-3">
-        <div class="card">
-            <div class="card-body">
-                <div class="media align-items-center">
-                    <div class="avatar avatar-icon avatar-lg avatar-blue">
-                        <img src="https://png.pngtree.com/png-clipart/20230417/original/pngtree-revenue-line-icon-png-image_9063740.png" alt="" srcset="">
-                    </div>
-                    <div class="m-l-15">
-                        <h2 class="m-b-0">16,300,000</h2>
-                        <p class="m-b-0 text-muted">Doanh thu</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 col-lg-3">
-        <div class="card">
-            <div class="card-body">
-                <div class="media align-items-center">
-                    <div class="avatar avatar-icon avatar-lg avatar-cyan">
-                        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149665.png" alt="" srcset="">
-                        {{-- <i class="anticon anticon-line-chart"></i> --}}
-                    </div>
-                    <div class="m-l-15">
-                        <h2 class="m-b-0">+44%</h2>
-                        <p class="m-b-0 text-muted">Tăng trưởng</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 col-lg-3">
-        <div class="card">
-            <div class="card-body">
-                <div class="media align-items-center">
-                    <div class="avatar avatar-icon avatar-lg avatar-gold">
-                        <img src="https://png.pngtree.com/png-vector/20230407/ourlarge/pngtree-order-confirm-line-icon-vector-png-image_6690378.png" alt="" srcset="">
-                       {{--  <i class="anticon anticon-profile"></i> --}}
-                    </div>
-                    <div class="m-l-15">
-                        <h2 class="m-b-0">6</h2>
-                        <p class="m-b-0 text-muted">Đơn hàng</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 col-lg-3">
-        <div class="card">
-            <div class="card-body">
-                <div class="media align-items-center">
-                    <div class="avatar avatar-icon avatar-lg avatar-purple">
-                        <img src="https://static.thenounproject.com/png/186492-200.png" alt="" srcset="">
-                        {{-- <i class="anticon anticon-user"></i> --}}
-                    </div>
-                    <div class="m-l-15">
-                        <h2 class="m-b-0">20</h2>
-                        <p class="m-b-0 text-muted">Khách hàng</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+
 <div class="row">
     <div class="col-md-12 col-lg-12">
         <div class="card">
@@ -138,7 +75,7 @@
         <div class="col-md-12 col-lg-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="m-b-0">Theo loại khách hàng</h5>
+                    <h5 id="type_customer" class="m-b-0">Theo loại khách hàng</h5>
                     <div class="m-v-60 text-center" style="height: 200px">
                         <div class="ct-chart" id="donut-chart3"></div>
                     </div>
@@ -264,6 +201,17 @@
                                     <div class="m-l-5">
                                         <!--  <h4 class="m-b-0">100</h4> -->
                                         <p class="m-b-0 muted">Nữ</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="d-flex justify-content-center">
+                                <div class="media align-items-center">
+                                    <span class="badge badge-Warning badge-dot m-r-10"></span>
+                                    <div class="m-l-5">
+                                        <!--  <h4 class="m-b-0">100</h4> -->
+                                        <p class="m-b-0 muted">Unisex</p>
                                     </div>
                                 </div>
                             </div>
@@ -1310,13 +1258,63 @@
             showLabel: true
         });
     
-        new Chartist.Pie('#donut-chart2', { series: [20, 20, 20, 20, 20] }, {
-            donut: true,
-            donutWidth: 60,
-            donutSolid: true,
-            startAngle: 270,
-            showLabel: true
+
+        Api.Report.getGeneral()
+        .then((res)=>{
+            console.log(res);
+            var age_18_25 = res.ageGroups["18-25"];
+            var age_26_35 = res.ageGroups["26-35"];
+            var age_36_45 = res.ageGroups["36-45"];
+            var age_gt_50 = res.ageGroups[">50"];
+            var age_all = age_18_25 + age_26_35 + age_36_45 + age_gt_50;
+
+            new Chartist.Pie('#donut-chart2', { series: [(age_18_25/age_all*100).toFixed(2), (age_26_35/age_all*100).toFixed(2) , (age_36_45/age_all*100).toFixed(2), (age_gt_50/age_all*100).toFixed(2)] }, {
+                donut: true,
+                donutWidth: 60,
+                donutSolid: true,
+                startAngle: 270,
+                showLabel: true
         });
+        });
+
+        Api.Report.getGeneral()
+        .then((res)=>{
+            console.log(res.sexGroups);
+            var sex_all_num = res.sexGroups["male"] + res.sexGroups["female"] +  res.sexGroups["all"];
+            var sex_male = ((res.sexGroups["male"]/sex_all_num)*100).toFixed(2)
+            var sex_female = ((res.sexGroups["female"]/sex_all_num)*100).toFixed(2)
+            var sex_all = (100 - sex_male -sex_female).toFixed(2);
+            var sex_all_num = sex_male + sex_female + sex_all;
+
+            new Chartist.Pie('#donut-chart', { series: [sex_male, sex_female,sex_all] }, {
+                donut: true,
+                donutWidth: 60,
+                donutSolid: true,
+                startAngle: 270,
+                showLabel: true
+            });
+        });
+
+        //Khách quay lại
+        Api.Report.getGeneral()
+        .then((res)=>{
+            console.log(res.returngroups);
+                var new_customer = res.returngroups["new_customer"];
+                var return_customer = res.returngroups["return_customer"];
+                var no_return_customer = res.returngroups["no_return_customer"];
+                var return_all = new_customer + return_customer + no_return_customer;
+                var rate1 = ((new_customer/return_all)*100).toFixed(2);
+                var rate2 = ((return_customer/return_all)*100).toFixed(2);
+                var rate3 = ((no_return_customer/return_all)*100).toFixed(2);
+
+            new Chartist.Pie('#donut-chart3', { series: [rate1,rate2,rate3] }, {
+                donut: true,
+                donutWidth: 60,
+                donutSolid: true,
+                startAngle: 270,
+            showLabel: true
+            });
+        })
     
         new Chartist.Pie('#donut-chart3', { series: [30, 60, 10] }, {
             donut: true,
